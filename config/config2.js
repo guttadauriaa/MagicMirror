@@ -1,6 +1,6 @@
 //ajout 2eme ecran (2)
 var config = {
-	electronOptions: { x: 1920 },
+	electronOptions: { x: 1080, y: 0},
 	address: "0.0.0.0", // can be whatever you set as your original.
 	port: 8081, // Must be different than the other configuration file.
 	ipWhitelist: [], // Can be whatever you set as your original.
