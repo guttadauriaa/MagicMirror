@@ -1,0 +1,45 @@
+
+Upgrade started - mar déc  5 08:31:18 CET 2023
+system is Linux pi 6.1.0-rpi7-rpi-v8 #1 SMP PREEMPT Debian 1:6.1.63-1+rpt1 (2023-11-24) aarch64 GNU/Linux
+doing test run = true, NO updates will be applied!
+the os is Distributor ID: Debian Description: Debian GNU/Linux 12 (bookworm) Release: 12 Codename: bookworm
+node not installed, trying via apt-get
+node not installed, doing test run, install skipped
+n (node version manager tool) not installed, doing test run, install skipped
+[96mCheck current Node installation ...[0m
+[93mNode.js is not installed.[0m
+[92mNode.js upgrade defered, doing test run[0m
+[96mCheck current NPM installation ...[0m
+[93mnpm is not installed.[0m
+[96mnpm upgrade defered, doing test run  ...[0m
+
+saving custom.css
+remote name = origin
+upgrading from version 2.26.0 to 2.26.0
+fetching latest revisions
+git fetch rc=0
+current branch = master
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    package-lock.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	css/save_custom.css
+	run-start.sh
+
+no changes added to commit (use "git add" and/or "git commit -a")
+no files different from github version
+test merge result rc='' , if empty, no conflicts
+skipping merge, only test run
+
+Checking for modules with removed libraries
+downloading dumpactivemodules script
+no modules found needing npm refresh
+restoring custom.css
+removing git alias
+Upgrade ended - mar déc  5 08:31:19 CET 2023

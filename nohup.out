@@ -1,0 +1,1211 @@
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[06.03.2024 09:20.56.532] [LOG]   Starting MagicMirror: v2.26.0
+[06.03.2024 09:20.56.538] [LOG]   Loading config ...
+[06.03.2024 09:20.56.543] [DEBUG] config template file not exists, no envsubst
+[06.03.2024 09:20.56.544] [ERROR] [31mWARNING! Could not find config file. Please create one. Starting with default configuration.[39m
+[06.03.2024 09:20.56.546] [LOG]   Loading module helpers ...
+[06.03.2024 09:20.56.563] [LOG]   Initializing new module helper ...
+[06.03.2024 09:20.56.564] [LOG]   Module helper loaded: updatenotification
+[06.03.2024 09:20.56.566] [LOG]   No helper found for module: helloworld.
+[06.03.2024 09:20.56.567] [LOG]   All module helpers loaded.
+[06.03.2024 09:20.56.576] [LOG]   Starting server on port 8080 ... 
+[06.03.2024 09:20.57.253] [LOG]   Server started ...
+[06.03.2024 09:20.57.255] [LOG]   Connecting socket for: updatenotification
+[06.03.2024 09:20.57.256] [LOG]   Starting module helper: updatenotification
+[06.03.2024 09:20.57.257] [LOG]   Sockets connected & modules started ...
+[06.03.2024 09:20.57.280] [LOG]   Launching application.
+[8683:0306/092059.320516:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.321321:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.321880:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.322403:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.322762:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.323061:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.323335:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.325042:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.325520:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.325857:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.326460:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.326812:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.327121:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8683:0306/092059.327419:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[06.03.2024 09:21.00.121] [INFO]  updatenotification: Updater Class Loaded!
+[06.03.2024 09:21.00.121] [INFO]  updatenotification: Checking PM2 using...
+[06.03.2024 09:21.00.123] [INFO]  Checking git for module: MagicMirror
+[06.03.2024 09:21.00.166] [INFO]  updatenotification: You are not using pm2
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[06.03.2024 09:21.59.616] [LOG]   Starting MagicMirror: v2.26.0
+[06.03.2024 09:21.59.622] [LOG]   Loading config ...
+[06.03.2024 09:21.59.625] [DEBUG] config template file not exists, no envsubst
+[06.03.2024 09:21.59.627] [ERROR] [31mWARNING! Could not find config file. Please create one. Starting with default configuration.[39m
+[06.03.2024 09:21.59.629] [LOG]   Loading module helpers ...
+[06.03.2024 09:21.59.642] [LOG]   Initializing new module helper ...
+[06.03.2024 09:21.59.642] [LOG]   Module helper loaded: updatenotification
+[06.03.2024 09:21.59.643] [LOG]   No helper found for module: helloworld.
+[06.03.2024 09:21.59.644] [LOG]   All module helpers loaded.
+[06.03.2024 09:21.59.653] [LOG]   Starting server on port 8080 ... 
+[06.03.2024 09:21.59.892] [LOG]   Server started ...
+[06.03.2024 09:21.59.894] [LOG]   Connecting socket for: updatenotification
+[06.03.2024 09:21.59.896] [LOG]   Starting module helper: updatenotification
+[06.03.2024 09:21.59.897] [LOG]   Sockets connected & modules started ...
+[06.03.2024 09:21.59.914] [LOG]   Launching application.
+[8824:0306/092200.760648:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.761256:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.761620:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.762327:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.762738:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.763129:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.763470:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.765361:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.765882:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.766361:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.766970:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.767428:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.767830:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8824:0306/092200.768240:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[06.03.2024 09:22.01.402] [INFO]  updatenotification: Updater Class Loaded!
+[06.03.2024 09:22.01.403] [INFO]  updatenotification: Checking PM2 using...
+[06.03.2024 09:22.01.434] [INFO]  updatenotification: You are not using pm2
+[06.03.2024 09:22.01.503] [INFO]  Checking git for module: MagicMirror
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[06.03.2024 09:23.10.797] [LOG]   Starting MagicMirror: v2.26.0
+[06.03.2024 09:23.10.803] [LOG]   Loading config ...
+[06.03.2024 09:23.10.806] [DEBUG] config template file not exists, no envsubst
+[06.03.2024 09:23.10.808] [ERROR] [31mWARNING! Could not find config file. Please create one. Starting with default configuration.[39m
+[06.03.2024 09:23.10.810] [LOG]   Loading module helpers ...
+[06.03.2024 09:23.10.823] [LOG]   Initializing new module helper ...
+[06.03.2024 09:23.10.823] [LOG]   Module helper loaded: updatenotification
+[06.03.2024 09:23.10.824] [LOG]   No helper found for module: helloworld.
+[06.03.2024 09:23.10.825] [LOG]   All module helpers loaded.
+[06.03.2024 09:23.10.834] [LOG]   Starting server on port 8080 ... 
+[06.03.2024 09:23.11.066] [LOG]   Server started ...
+[06.03.2024 09:23.11.067] [LOG]   Connecting socket for: updatenotification
+[06.03.2024 09:23.11.068] [LOG]   Starting module helper: updatenotification
+[06.03.2024 09:23.11.069] [LOG]   Sockets connected & modules started ...
+[06.03.2024 09:23.11.081] [LOG]   Launching application.
+[8970:0306/092312.002805:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.003431:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.003934:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.004475:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.004958:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.005446:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.005980:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.008138:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.008638:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.009119:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.009443:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.009713:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.009964:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[8970:0306/092312.010309:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[06.03.2024 09:23.12.613] [INFO]  updatenotification: Updater Class Loaded!
+[06.03.2024 09:23.12.615] [INFO]  updatenotification: Checking PM2 using...
+[06.03.2024 09:23.12.641] [INFO]  updatenotification: You are not using pm2
+[06.03.2024 09:23.12.703] [INFO]  Checking git for module: MagicMirror
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[06.03.2024 10:08.53.192] [LOG]   Starting MagicMirror: v2.26.0
+[06.03.2024 10:08.53.198] [LOG]   Loading config ...
+[06.03.2024 10:08.53.202] [DEBUG] config template file not exists, no envsubst
+[06.03.2024 10:08.53.203] [ERROR] [31mWARNING! Could not find config file. Please create one. Starting with default configuration.[39m
+[06.03.2024 10:08.53.206] [LOG]   Loading module helpers ...
+[06.03.2024 10:08.53.218] [LOG]   Initializing new module helper ...
+[06.03.2024 10:08.53.219] [LOG]   Module helper loaded: updatenotification
+[06.03.2024 10:08.53.220] [LOG]   No helper found for module: helloworld.
+[06.03.2024 10:08.53.220] [LOG]   All module helpers loaded.
+[06.03.2024 10:08.53.230] [LOG]   Starting server on port 8080 ... 
+[06.03.2024 10:08.53.460] [LOG]   Server started ...
+[06.03.2024 10:08.53.461] [LOG]   Connecting socket for: updatenotification
+[06.03.2024 10:08.53.462] [LOG]   Starting module helper: updatenotification
+[06.03.2024 10:08.53.463] [LOG]   Sockets connected & modules started ...
+[06.03.2024 10:08.53.482] [LOG]   Launching application.
+[9455:0306/100854.363154:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.364178:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.364730:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.365180:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.365765:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.366540:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.367029:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.370514:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.371261:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.371614:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.372012:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.372328:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.372591:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9455:0306/100854.372873:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[06.03.2024 10:08.55.171] [INFO]  updatenotification: Updater Class Loaded!
+[06.03.2024 10:08.55.172] [INFO]  updatenotification: Checking PM2 using...
+[06.03.2024 10:08.55.219] [INFO]  updatenotification: You are not using pm2
+[06.03.2024 10:08.55.295] [INFO]  Checking git for module: MagicMirror
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[06.03.2024 10:09.34.797] [LOG]   Starting MagicMirror: v2.26.0
+[06.03.2024 10:09.34.803] [LOG]   Loading config ...
+[06.03.2024 10:09.34.806] [DEBUG] config template file not exists, no envsubst
+[06.03.2024 10:09.34.813] [LOG]   Loading module helpers ...
+[06.03.2024 10:09.34.814] [LOG]   No helper found for module: alert.
+[06.03.2024 10:09.34.826] [LOG]   Initializing new module helper ...
+[06.03.2024 10:09.34.827] [LOG]   Module helper loaded: updatenotification
+[06.03.2024 10:09.34.828] [LOG]   No helper found for module: clock.
+[06.03.2024 10:09.34.995] [LOG]   Initializing new module helper ...
+[06.03.2024 10:09.34.996] [LOG]   Module helper loaded: calendar
+[06.03.2024 10:09.34.997] [LOG]   No helper found for module: compliments.
+[06.03.2024 10:09.34.997] [LOG]   No helper found for module: weather.
+[06.03.2024 10:09.35.102] [LOG]   Initializing new module helper ...
+[06.03.2024 10:09.35.102] [LOG]   Module helper loaded: newsfeed
+[06.03.2024 10:09.35.103] [LOG]   All module helpers loaded.
+[06.03.2024 10:09.35.111] [LOG]   Starting server on port 8080 ... 
+[06.03.2024 10:09.35.353] [LOG]   Server started ...
+[06.03.2024 10:09.35.356] [LOG]   Connecting socket for: updatenotification
+[06.03.2024 10:09.35.357] [LOG]   Starting module helper: updatenotification
+[06.03.2024 10:09.35.357] [LOG]   Connecting socket for: calendar
+[06.03.2024 10:09.35.358] [LOG]   Starting node helper for: calendar
+[06.03.2024 10:09.35.359] [LOG]   Connecting socket for: newsfeed
+[06.03.2024 10:09.35.359] [LOG]   Starting node helper for: newsfeed
+[06.03.2024 10:09.35.360] [LOG]   Sockets connected & modules started ...
+[06.03.2024 10:09.35.372] [LOG]   Launching application.
+[9590:0306/100936.260335:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.261985:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.262761:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.264554:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.265316:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.266144:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.266766:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.269451:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.270349:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.271636:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.272740:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.273272:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.273701:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9590:0306/100936.274308:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[06.03.2024 10:09.37.753] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[06.03.2024 10:09.37.898] [LOG]   Create new newsfetcher for url: https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml - Interval: 300000
+[06.03.2024 10:09.37.905] [INFO]  updatenotification: Updater Class Loaded!
+[06.03.2024 10:09.37.905] [INFO]  updatenotification: Checking PM2 using...
+[06.03.2024 10:09.37.907] [INFO]  Checking git for module: MagicMirror
+[06.03.2024 10:09.37.955] [INFO]  updatenotification: You are not using pm2
+[06.03.2024 10:09.38.826] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+[06.03.2024 10:09.38.833] [INFO]  Newsfeed-Fetcher: Broadcasting 27 items.
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[06.03.2024 10:13.34.750] [LOG]   Starting MagicMirror: v2.26.0
+[06.03.2024 10:13.34.756] [LOG]   Loading config ...
+[06.03.2024 10:13.34.759] [DEBUG] config template file not exists, no envsubst
+[06.03.2024 10:13.34.764] [LOG]   Loading module helpers ...
+[06.03.2024 10:13.34.766] [LOG]   No helper found for module: alert.
+[06.03.2024 10:13.34.778] [LOG]   Initializing new module helper ...
+[06.03.2024 10:13.34.779] [LOG]   Module helper loaded: updatenotification
+[06.03.2024 10:13.34.780] [LOG]   No helper found for module: clock.
+[06.03.2024 10:13.34.923] [LOG]   Initializing new module helper ...
+[06.03.2024 10:13.34.924] [LOG]   Module helper loaded: calendar
+[06.03.2024 10:13.34.925] [LOG]   No helper found for module: compliments.
+[06.03.2024 10:13.34.926] [LOG]   No helper found for module: helloworld.
+[06.03.2024 10:13.34.926] [LOG]   No helper found for module: weather.
+[06.03.2024 10:13.35.053] [LOG]   Initializing new module helper ...
+[06.03.2024 10:13.35.053] [LOG]   Module helper loaded: newsfeed
+[06.03.2024 10:13.35.053] [LOG]   All module helpers loaded.
+[06.03.2024 10:13.35.062] [LOG]   Starting server on port 8080 ... 
+[06.03.2024 10:13.35.305] [LOG]   Server started ...
+[06.03.2024 10:13.35.307] [LOG]   Connecting socket for: updatenotification
+[06.03.2024 10:13.35.308] [LOG]   Starting module helper: updatenotification
+[06.03.2024 10:13.35.309] [LOG]   Connecting socket for: calendar
+[06.03.2024 10:13.35.309] [LOG]   Starting node helper for: calendar
+[06.03.2024 10:13.35.310] [LOG]   Connecting socket for: newsfeed
+[06.03.2024 10:13.35.311] [LOG]   Starting node helper for: newsfeed
+[06.03.2024 10:13.35.311] [LOG]   Sockets connected & modules started ...
+[06.03.2024 10:13.35.323] [LOG]   Launching application.
+[9755:0306/101336.075515:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.076562:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.077293:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.077988:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.078680:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.079389:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.079980:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.082594:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.083463:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.084277:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.085018:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.085568:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.085994:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9755:0306/101336.086478:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[06.03.2024 10:13.37.587] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[06.03.2024 10:13.37.785] [LOG]   Create new newsfetcher for url: https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml - Interval: 300000
+[06.03.2024 10:13.37.791] [INFO]  updatenotification: Updater Class Loaded!
+[06.03.2024 10:13.37.792] [INFO]  updatenotification: Checking PM2 using...
+[06.03.2024 10:13.37.794] [INFO]  Checking git for module: MagicMirror
+[06.03.2024 10:13.37.837] [INFO]  updatenotification: You are not using pm2
+[06.03.2024 10:13.38.642] [INFO]  Newsfeed-Fetcher: Broadcasting 27 items.
+[06.03.2024 10:13.38.763] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[06.03.2024 10:18.15.727] [LOG]   Starting MagicMirror: v2.26.0
+[06.03.2024 10:18.15.733] [LOG]   Loading config ...
+[06.03.2024 10:18.15.736] [DEBUG] config template file not exists, no envsubst
+[06.03.2024 10:18.15.742] [LOG]   Loading module helpers ...
+[06.03.2024 10:18.15.743] [LOG]   No helper found for module: alert.
+[06.03.2024 10:18.15.755] [LOG]   Initializing new module helper ...
+[06.03.2024 10:18.15.756] [LOG]   Module helper loaded: updatenotification
+[06.03.2024 10:18.15.757] [LOG]   No helper found for module: clock.
+[06.03.2024 10:18.15.902] [LOG]   Initializing new module helper ...
+[06.03.2024 10:18.15.903] [LOG]   Module helper loaded: calendar
+[06.03.2024 10:18.15.904] [LOG]   No helper found for module: compliments.
+[06.03.2024 10:18.15.905] [LOG]   No helper found for module: helloworld.
+[06.03.2024 10:18.15.905] [LOG]   No helper found for module: weather.
+[06.03.2024 10:18.16.024] [LOG]   Initializing new module helper ...
+[06.03.2024 10:18.16.024] [LOG]   Module helper loaded: newsfeed
+[06.03.2024 10:18.16.024] [LOG]   All module helpers loaded.
+[06.03.2024 10:18.16.043] [LOG]   Starting server on port 8080 ... 
+[06.03.2024 10:18.16.280] [LOG]   Server started ...
+[06.03.2024 10:18.16.282] [LOG]   Connecting socket for: updatenotification
+[06.03.2024 10:18.16.283] [LOG]   Starting module helper: updatenotification
+[06.03.2024 10:18.16.284] [LOG]   Connecting socket for: calendar
+[06.03.2024 10:18.16.284] [LOG]   Starting node helper for: calendar
+[06.03.2024 10:18.16.285] [LOG]   Connecting socket for: newsfeed
+[06.03.2024 10:18.16.285] [LOG]   Starting node helper for: newsfeed
+[06.03.2024 10:18.16.286] [LOG]   Sockets connected & modules started ...
+[06.03.2024 10:18.16.298] [LOG]   Launching application.
+[9937:0306/101816.914428:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.915652:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.916507:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.917308:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.918688:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.924921:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.927218:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.933740:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.949120:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.950330:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.952497:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.958516:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.962556:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[9937:0306/101816.967268:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[06.03.2024 10:18.18.620] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[06.03.2024 10:18.18.865] [LOG]   Create new newsfetcher for url: hhttps://www.lesoir.be/rss/2/cible_principale - Interval: 300000
+[06.03.2024 10:18.18.870] [INFO]  updatenotification: Updater Class Loaded!
+[06.03.2024 10:18.18.870] [INFO]  updatenotification: Checking PM2 using...
+[06.03.2024 10:18.18.872] [INFO]  Checking git for module: MagicMirror
+[06.03.2024 10:18.18.893] [ERROR] Newsfeed Error. Could not fetch newsfeed:  hhttps://www.lesoir.be/rss/2/cible_principale TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  cause: Error: unknown scheme
+      at makeNetworkError (node:internal/deps/undici/undici:6893:35)
+      at schemeFetch (node:internal/deps/undici/undici:11036:18)
+      at node:internal/deps/undici/undici:10909:26
+      at mainFetch (node:internal/deps/undici/undici:10926:11)
+      at fetching (node:internal/deps/undici/undici:10883:7)
+      at fetch2 (node:internal/deps/undici/undici:10761:20)
+      at Object.fetch (node:internal/deps/undici/undici:11574:18)
+      at fetch (node:internal/process/pre_execution:234:25)
+      at fetchNews (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:115:3)
+      at NewsfeedFetcher.startFetch (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:158:3)
+      at Class.createFetcher (/home/miroir/MagicMirror/modules/default/newsfeed/node_helper.js:72:11)
+      at Class.socketNotificationReceived (/home/miroir/MagicMirror/modules/default/newsfeed/node_helper.js:22:9)
+      at Socket.<anonymous> (/home/miroir/MagicMirror/js/node_helper.js:104:11)
+      at Socket.emit (node:events:514:28)
+      at Socket.emitUntyped (/home/miroir/MagicMirror/node_modules/socket.io/dist/typed-events.js:69:22)
+      at /home/miroir/MagicMirror/node_modules/socket.io/dist/socket.js:704:39
+}
+[06.03.2024 10:18.18.919] [INFO]  updatenotification: You are not using pm2
+[06.03.2024 10:18.19.598] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+[06.03.2024 10:23.18.902] [ERROR] Newsfeed Error. Could not fetch newsfeed:  hhttps://www.lesoir.be/rss/2/cible_principale TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11) {
+  cause: Error: unknown scheme
+      at makeNetworkError (node:internal/deps/undici/undici:6893:35)
+      at schemeFetch (node:internal/deps/undici/undici:11036:18)
+      at node:internal/deps/undici/undici:10909:26
+      at mainFetch (node:internal/deps/undici/undici:10926:11)
+      at fetching (node:internal/deps/undici/undici:10883:7)
+      at fetch2 (node:internal/deps/undici/undici:10761:20)
+      at Object.fetch (node:internal/deps/undici/undici:11574:18)
+      at fetch (node:internal/process/pre_execution:234:25)
+      at fetchNews (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:115:3)
+      at Timeout.<anonymous> (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:138:4)
+      at listOnTimeout (node:internal/timers:569:17)
+      at process.processTimers (node:internal/timers:512:7)
+}
+[06.03.2024 10:24.51.020] [LOG]   Shutting down server...
+[06.03.2024 10:24.51.024] [LOG]   Stopping module helper: updatenotification
+[06.03.2024 10:24.51.027] [LOG]   Stopping module helper: calendar
+[06.03.2024 10:24.51.029] [LOG]   Stopping module helper: newsfeed
+[06.03.2024 10:24.51.035] [LOG]   Node_helpers stopped ...
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[12.03.2024 09:15.31.260] [LOG]   Starting MagicMirror: v2.26.0
+[12.03.2024 09:15.31.265] [LOG]   Loading config ...
+[12.03.2024 09:15.31.271] [DEBUG] config template file not exists, no envsubst
+[12.03.2024 09:15.31.277] [LOG]   Loading module helpers ...
+[12.03.2024 09:15.31.279] [LOG]   No helper found for module: alert.
+[12.03.2024 09:15.31.301] [LOG]   Initializing new module helper ...
+[12.03.2024 09:15.31.302] [LOG]   Module helper loaded: updatenotification
+[12.03.2024 09:15.31.304] [LOG]   No helper found for module: clock.
+[12.03.2024 09:15.31.530] [LOG]   Initializing new module helper ...
+[12.03.2024 09:15.31.530] [LOG]   Module helper loaded: calendar
+[12.03.2024 09:15.31.532] [LOG]   No helper found for module: compliments.
+[12.03.2024 09:15.31.533] [LOG]   No helper found for module: helloworld.
+[12.03.2024 09:15.31.534] [LOG]   No helper found for module: weather.
+[12.03.2024 09:15.31.719] [LOG]   Initializing new module helper ...
+[12.03.2024 09:15.31.720] [LOG]   Module helper loaded: newsfeed
+[12.03.2024 09:15.31.720] [LOG]   All module helpers loaded.
+[12.03.2024 09:15.31.739] [LOG]   Starting server on port 8080 ... 
+[12.03.2024 09:15.33.433] [LOG]   Server started ...
+[12.03.2024 09:15.33.434] [LOG]   Connecting socket for: updatenotification
+[12.03.2024 09:15.33.434] [LOG]   Starting module helper: updatenotification
+[12.03.2024 09:15.33.435] [LOG]   Connecting socket for: calendar
+[12.03.2024 09:15.33.435] [LOG]   Starting node helper for: calendar
+[12.03.2024 09:15.33.436] [LOG]   Connecting socket for: newsfeed
+[12.03.2024 09:15.33.436] [LOG]   Starting node helper for: newsfeed
+[12.03.2024 09:15.33.437] [LOG]   Sockets connected & modules started ...
+[12.03.2024 09:15.33.598] [LOG]   Launching application.
+[2069:0312/091535.125187:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.125635:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.125821:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.126013:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.126174:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.126338:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.126499:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.128215:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.128452:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.128620:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.128782:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.128943:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.129134:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2069:0312/091535.129311:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[12.03.2024 09:15.37.067] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[12.03.2024 09:15.37.334] [LOG]   Create new newsfetcher for url: hhttps://www.lesoir.be/rss/2/cible_principale - Interval: 300000
+[12.03.2024 09:15.37.340] [INFO]  updatenotification: Updater Class Loaded!
+[12.03.2024 09:15.37.341] [INFO]  updatenotification: Checking PM2 using...
+[12.03.2024 09:15.37.342] [INFO]  Checking git for module: MagicMirror
+[12.03.2024 09:15.37.365] [ERROR] Newsfeed Error. Could not fetch newsfeed:  hhttps://www.lesoir.be/rss/2/cible_principale TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  cause: Error: unknown scheme
+      at makeNetworkError (node:internal/deps/undici/undici:6893:35)
+      at schemeFetch (node:internal/deps/undici/undici:11036:18)
+      at node:internal/deps/undici/undici:10909:26
+      at mainFetch (node:internal/deps/undici/undici:10926:11)
+      at fetching (node:internal/deps/undici/undici:10883:7)
+      at fetch2 (node:internal/deps/undici/undici:10761:20)
+      at Object.fetch (node:internal/deps/undici/undici:11574:18)
+      at fetch (node:internal/process/pre_execution:234:25)
+      at fetchNews (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:115:3)
+      at NewsfeedFetcher.startFetch (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:158:3)
+      at Class.createFetcher (/home/miroir/MagicMirror/modules/default/newsfeed/node_helper.js:72:11)
+      at Class.socketNotificationReceived (/home/miroir/MagicMirror/modules/default/newsfeed/node_helper.js:22:9)
+      at Socket.<anonymous> (/home/miroir/MagicMirror/js/node_helper.js:104:11)
+      at Socket.emit (node:events:514:28)
+      at Socket.emitUntyped (/home/miroir/MagicMirror/node_modules/socket.io/dist/typed-events.js:69:22)
+      at /home/miroir/MagicMirror/node_modules/socket.io/dist/socket.js:704:39
+}
+[12.03.2024 09:15.37.392] [INFO]  updatenotification: You are not using pm2
+[12.03.2024 09:15.38.180] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+[12.03.2024 09:20.37.380] [ERROR] Newsfeed Error. Could not fetch newsfeed:  hhttps://www.lesoir.be/rss/2/cible_principale TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11) {
+  cause: Error: unknown scheme
+      at makeNetworkError (node:internal/deps/undici/undici:6893:35)
+      at schemeFetch (node:internal/deps/undici/undici:11036:18)
+      at node:internal/deps/undici/undici:10909:26
+      at mainFetch (node:internal/deps/undici/undici:10926:11)
+      at fetching (node:internal/deps/undici/undici:10883:7)
+      at fetch2 (node:internal/deps/undici/undici:10761:20)
+      at Object.fetch (node:internal/deps/undici/undici:11574:18)
+      at fetch (node:internal/process/pre_execution:234:25)
+      at fetchNews (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:115:3)
+      at Timeout.<anonymous> (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:138:4)
+      at listOnTimeout (node:internal/timers:569:17)
+      at process.processTimers (node:internal/timers:512:7)
+}
+[12.03.2024 09:25.37.394] [ERROR] Newsfeed Error. Could not fetch newsfeed:  hhttps://www.lesoir.be/rss/2/cible_principale TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11) {
+  cause: Error: unknown scheme
+      at makeNetworkError (node:internal/deps/undici/undici:6893:35)
+      at schemeFetch (node:internal/deps/undici/undici:11036:18)
+      at node:internal/deps/undici/undici:10909:26
+      at mainFetch (node:internal/deps/undici/undici:10926:11)
+      at fetching (node:internal/deps/undici/undici:10883:7)
+      at fetch2 (node:internal/deps/undici/undici:10761:20)
+      at Object.fetch (node:internal/deps/undici/undici:11574:18)
+      at fetch (node:internal/process/pre_execution:234:25)
+      at fetchNews (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:115:3)
+      at Timeout.<anonymous> (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:138:4)
+      at listOnTimeout (node:internal/timers:569:17)
+      at process.processTimers (node:internal/timers:512:7)
+}
+[12.03.2024 09:30.37.400] [ERROR] Newsfeed Error. Could not fetch newsfeed:  hhttps://www.lesoir.be/rss/2/cible_principale TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11) {
+  cause: Error: unknown scheme
+      at makeNetworkError (node:internal/deps/undici/undici:6893:35)
+      at schemeFetch (node:internal/deps/undici/undici:11036:18)
+      at node:internal/deps/undici/undici:10909:26
+      at mainFetch (node:internal/deps/undici/undici:10926:11)
+      at fetching (node:internal/deps/undici/undici:10883:7)
+      at fetch2 (node:internal/deps/undici/undici:10761:20)
+      at Object.fetch (node:internal/deps/undici/undici:11574:18)
+      at fetch (node:internal/process/pre_execution:234:25)
+      at fetchNews (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:115:3)
+      at Timeout.<anonymous> (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:138:4)
+      at listOnTimeout (node:internal/timers:569:17)
+      at process.processTimers (node:internal/timers:512:7)
+}
+[12.03.2024 09:35.37.408] [ERROR] Newsfeed Error. Could not fetch newsfeed:  hhttps://www.lesoir.be/rss/2/cible_principale TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11) {
+  cause: Error: unknown scheme
+      at makeNetworkError (node:internal/deps/undici/undici:6893:35)
+      at schemeFetch (node:internal/deps/undici/undici:11036:18)
+      at node:internal/deps/undici/undici:10909:26
+      at mainFetch (node:internal/deps/undici/undici:10926:11)
+      at fetching (node:internal/deps/undici/undici:10883:7)
+      at fetch2 (node:internal/deps/undici/undici:10761:20)
+      at Object.fetch (node:internal/deps/undici/undici:11574:18)
+      at fetch (node:internal/process/pre_execution:234:25)
+      at fetchNews (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:115:3)
+      at Timeout.<anonymous> (/home/miroir/MagicMirror/modules/default/newsfeed/newsfeedfetcher.js:138:4)
+      at listOnTimeout (node:internal/timers:569:17)
+      at process.processTimers (node:internal/timers:512:7)
+}
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[12.03.2024 09:43.03.927] [LOG]   Starting MagicMirror: v2.26.0
+[12.03.2024 09:43.03.933] [LOG]   Loading config ...
+[12.03.2024 09:43.03.936] [DEBUG] config template file not exists, no envsubst
+[12.03.2024 09:43.03.941] [LOG]   Loading module helpers ...
+[12.03.2024 09:43.03.943] [LOG]   No helper found for module: alert.
+[12.03.2024 09:43.03.955] [LOG]   Initializing new module helper ...
+[12.03.2024 09:43.03.956] [LOG]   Module helper loaded: updatenotification
+[12.03.2024 09:43.03.957] [LOG]   No helper found for module: clock.
+[12.03.2024 09:43.04.101] [LOG]   Initializing new module helper ...
+[12.03.2024 09:43.04.102] [LOG]   Module helper loaded: calendar
+[12.03.2024 09:43.04.103] [LOG]   No helper found for module: helloworld.
+[12.03.2024 09:43.04.103] [LOG]   All module helpers loaded.
+[12.03.2024 09:43.04.112] [LOG]   Starting server on port 8080 ... 
+[12.03.2024 09:43.04.340] [LOG]   Server started ...
+[12.03.2024 09:43.04.343] [LOG]   Connecting socket for: updatenotification
+[12.03.2024 09:43.04.345] [LOG]   Starting module helper: updatenotification
+[12.03.2024 09:43.04.346] [LOG]   Connecting socket for: calendar
+[12.03.2024 09:43.04.347] [LOG]   Starting node helper for: calendar
+[12.03.2024 09:43.04.348] [LOG]   Sockets connected & modules started ...
+[12.03.2024 09:43.04.365] [LOG]   Launching application.
+[2354:0312/094305.240695:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.244325:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.245240:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.245857:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.246249:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.246575:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.246894:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.250722:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.251304:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.252352:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.253093:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.253558:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.254381:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2354:0312/094305.254825:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[12.03.2024 09:43.06.257] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[12.03.2024 09:43.06.383] [INFO]  updatenotification: Updater Class Loaded!
+[12.03.2024 09:43.06.384] [INFO]  updatenotification: Checking PM2 using...
+[12.03.2024 09:43.06.386] [INFO]  Checking git for module: MagicMirror
+[12.03.2024 09:43.06.422] [INFO]  updatenotification: You are not using pm2
+[12.03.2024 09:43.07.012] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[12.03.2024 09:47.42.277] [LOG]   Starting MagicMirror: v2.26.0
+[12.03.2024 09:47.42.283] [LOG]   Loading config ...
+[12.03.2024 09:47.42.286] [DEBUG] config template file not exists, no envsubst
+[12.03.2024 09:47.42.291] [LOG]   Loading module helpers ...
+[12.03.2024 09:47.42.293] [LOG]   No helper found for module: alert.
+[12.03.2024 09:47.42.305] [LOG]   Initializing new module helper ...
+[12.03.2024 09:47.42.306] [LOG]   Module helper loaded: updatenotification
+[12.03.2024 09:47.42.307] [LOG]   No helper found for module: clock.
+[12.03.2024 09:47.42.449] [LOG]   Initializing new module helper ...
+[12.03.2024 09:47.42.450] [LOG]   Module helper loaded: calendar
+[12.03.2024 09:47.42.451] [LOG]   No helper found for module: helloworld.
+[12.03.2024 09:47.42.451] [LOG]   All module helpers loaded.
+[12.03.2024 09:47.42.460] [LOG]   Starting server on port 8080 ... 
+[12.03.2024 09:47.42.682] [LOG]   Server started ...
+[12.03.2024 09:47.42.684] [LOG]   Connecting socket for: updatenotification
+[12.03.2024 09:47.42.685] [LOG]   Starting module helper: updatenotification
+[12.03.2024 09:47.42.685] [LOG]   Connecting socket for: calendar
+[12.03.2024 09:47.42.686] [LOG]   Starting node helper for: calendar
+[12.03.2024 09:47.42.687] [LOG]   Sockets connected & modules started ...
+[12.03.2024 09:47.42.703] [LOG]   Launching application.
+[2526:0312/094743.605030:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.608508:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.609164:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.609694:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.610286:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.610647:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.610934:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.613790:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.614251:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.614740:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.615493:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.615977:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.616321:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2526:0312/094743.616607:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[12.03.2024 09:47.44.566] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[12.03.2024 09:47.44.683] [INFO]  updatenotification: Updater Class Loaded!
+[12.03.2024 09:47.44.684] [INFO]  updatenotification: Checking PM2 using...
+[12.03.2024 09:47.44.686] [INFO]  Checking git for module: MagicMirror
+[12.03.2024 09:47.44.722] [INFO]  updatenotification: You are not using pm2
+[12.03.2024 09:47.45.343] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+[12.03.2024 09:48.49.013] [LOG]   Shutting down server...
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[12.03.2024 09:49.22.141] [LOG]   Starting MagicMirror: v2.26.0
+[12.03.2024 09:49.22.147] [LOG]   Loading config ...
+[12.03.2024 09:49.22.151] [DEBUG] config template file not exists, no envsubst
+[12.03.2024 09:49.22.156] [LOG]   Loading module helpers ...
+[12.03.2024 09:49.22.157] [LOG]   No helper found for module: alert.
+[12.03.2024 09:49.22.169] [LOG]   Initializing new module helper ...
+[12.03.2024 09:49.22.170] [LOG]   Module helper loaded: updatenotification
+[12.03.2024 09:49.22.171] [LOG]   No helper found for module: clock.
+[12.03.2024 09:49.22.315] [LOG]   Initializing new module helper ...
+[12.03.2024 09:49.22.316] [LOG]   Module helper loaded: calendar
+[12.03.2024 09:49.22.317] [LOG]   No helper found for module: helloworld.
+[12.03.2024 09:49.22.317] [LOG]   All module helpers loaded.
+[12.03.2024 09:49.22.326] [LOG]   Starting server on port 8080 ... 
+[12.03.2024 09:49.22.556] [LOG]   Server started ...
+[12.03.2024 09:49.22.558] [LOG]   Connecting socket for: updatenotification
+[12.03.2024 09:49.22.558] [LOG]   Starting module helper: updatenotification
+[12.03.2024 09:49.22.559] [LOG]   Connecting socket for: calendar
+[12.03.2024 09:49.22.560] [LOG]   Starting node helper for: calendar
+[12.03.2024 09:49.22.560] [LOG]   Sockets connected & modules started ...
+[12.03.2024 09:49.22.578] [LOG]   Launching application.
+[2686:0312/094923.426028:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.426730:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.429037:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.429517:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.429840:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.430090:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.430344:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.434404:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.435301:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.436718:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.438015:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.438923:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.440508:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2686:0312/094923.441328:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[12.03.2024 09:49.24.463] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[12.03.2024 09:49.24.600] [INFO]  updatenotification: Updater Class Loaded!
+[12.03.2024 09:49.24.600] [INFO]  updatenotification: Checking PM2 using...
+[12.03.2024 09:49.24.602] [INFO]  Checking git for module: MagicMirror
+[12.03.2024 09:49.24.637] [INFO]  updatenotification: You are not using pm2
+[12.03.2024 09:49.25.241] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[12.03.2024 10:02.23.052] [LOG]   Starting MagicMirror: v2.26.0
+[12.03.2024 10:02.23.058] [LOG]   Loading config ...
+[12.03.2024 10:02.23.062] [DEBUG] config template file not exists, no envsubst
+[12.03.2024 10:02.23.067] [LOG]   Loading module helpers ...
+[12.03.2024 10:02.23.068] [LOG]   No helper found for module: alert.
+[12.03.2024 10:02.23.080] [LOG]   Initializing new module helper ...
+[12.03.2024 10:02.23.081] [LOG]   Module helper loaded: updatenotification
+[12.03.2024 10:02.23.082] [LOG]   No helper found for module: clock.
+[12.03.2024 10:02.23.226] [LOG]   Initializing new module helper ...
+[12.03.2024 10:02.23.227] [LOG]   Module helper loaded: calendar
+[12.03.2024 10:02.23.228] [LOG]   No helper found for module: helloworld.
+[12.03.2024 10:02.23.228] [LOG]   All module helpers loaded.
+[12.03.2024 10:02.23.237] [LOG]   Starting server on port 8080 ... 
+[12.03.2024 10:02.23.473] [LOG]   Server started ...
+[12.03.2024 10:02.23.474] [LOG]   Connecting socket for: updatenotification
+[12.03.2024 10:02.23.476] [LOG]   Starting module helper: updatenotification
+[12.03.2024 10:02.23.476] [LOG]   Connecting socket for: calendar
+[12.03.2024 10:02.23.477] [LOG]   Starting node helper for: calendar
+[12.03.2024 10:02.23.478] [LOG]   Sockets connected & modules started ...
+[12.03.2024 10:02.23.505] [LOG]   Launching application.
+[2880:0312/100224.449347:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.450224:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.450653:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.454996:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.455546:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.456124:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.456607:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.460105:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.460574:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.462758:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.464341:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.464920:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.465281:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2880:0312/100224.465873:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[12.03.2024 10:02.25.473] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[12.03.2024 10:02.25.617] [INFO]  updatenotification: Updater Class Loaded!
+[12.03.2024 10:02.25.618] [INFO]  updatenotification: Checking PM2 using...
+[12.03.2024 10:02.25.620] [INFO]  Checking git for module: MagicMirror
+[12.03.2024 10:02.25.655] [INFO]  updatenotification: You are not using pm2
+[12.03.2024 10:02.26.261] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[12.03.2024 10:03.45.361] [LOG]   Starting MagicMirror: v2.26.0
+[12.03.2024 10:03.45.366] [LOG]   Loading config ...
+[12.03.2024 10:03.45.370] [DEBUG] config template file not exists, no envsubst
+[12.03.2024 10:03.45.375] [LOG]   Loading module helpers ...
+[12.03.2024 10:03.45.376] [LOG]   No helper found for module: alert.
+[12.03.2024 10:03.45.388] [LOG]   Initializing new module helper ...
+[12.03.2024 10:03.45.389] [LOG]   Module helper loaded: updatenotification
+[12.03.2024 10:03.45.390] [LOG]   No helper found for module: clock.
+[12.03.2024 10:03.45.540] [LOG]   Initializing new module helper ...
+[12.03.2024 10:03.45.540] [LOG]   Module helper loaded: calendar
+[12.03.2024 10:03.45.541] [LOG]   No helper found for module: helloworld.
+[12.03.2024 10:03.45.542] [LOG]   All module helpers loaded.
+[12.03.2024 10:03.45.551] [LOG]   Starting server on port 8080 ... 
+[12.03.2024 10:03.45.787] [LOG]   Server started ...
+[12.03.2024 10:03.45.788] [LOG]   Connecting socket for: updatenotification
+[12.03.2024 10:03.45.789] [LOG]   Starting module helper: updatenotification
+[12.03.2024 10:03.45.790] [LOG]   Connecting socket for: calendar
+[12.03.2024 10:03.45.790] [LOG]   Starting node helper for: calendar
+[12.03.2024 10:03.45.791] [LOG]   Sockets connected & modules started ...
+[12.03.2024 10:03.45.809] [LOG]   Launching application.
+[3041:0312/100346.730580:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.731153:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.731525:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.732693:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.733193:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.733541:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.736043:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.739025:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.739394:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.739727:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.739989:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.740218:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.740440:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3041:0312/100346.740653:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[12.03.2024 10:03.47.688] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[12.03.2024 10:03.47.824] [INFO]  updatenotification: Updater Class Loaded!
+[12.03.2024 10:03.47.825] [INFO]  updatenotification: Checking PM2 using...
+[12.03.2024 10:03.47.826] [INFO]  Checking git for module: MagicMirror
+[12.03.2024 10:03.47.861] [INFO]  updatenotification: You are not using pm2
+[12.03.2024 10:03.48.314] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[12.03.2024 10:12.01.834] [LOG]   Starting MagicMirror: v2.26.0
+[12.03.2024 10:12.01.840] [LOG]   Loading config ...
+[12.03.2024 10:12.01.843] [DEBUG] config template file not exists, no envsubst
+[12.03.2024 10:12.01.848] [LOG]   Loading module helpers ...
+[12.03.2024 10:12.01.850] [LOG]   No helper found for module: alert.
+[12.03.2024 10:12.01.862] [LOG]   Initializing new module helper ...
+[12.03.2024 10:12.01.862] [LOG]   Module helper loaded: updatenotification
+[12.03.2024 10:12.01.864] [LOG]   No helper found for module: clock.
+[12.03.2024 10:12.02.007] [LOG]   Initializing new module helper ...
+[12.03.2024 10:12.02.008] [LOG]   Module helper loaded: calendar
+[12.03.2024 10:12.02.009] [LOG]   No helper found for module: helloworld.
+[12.03.2024 10:12.02.009] [LOG]   All module helpers loaded.
+[12.03.2024 10:12.02.018] [LOG]   Starting server on port 8080 ... 
+[12.03.2024 10:12.02.250] [LOG]   Server started ...
+[12.03.2024 10:12.02.252] [LOG]   Connecting socket for: updatenotification
+[12.03.2024 10:12.02.253] [LOG]   Starting module helper: updatenotification
+[12.03.2024 10:12.02.254] [LOG]   Connecting socket for: calendar
+[12.03.2024 10:12.02.254] [LOG]   Starting node helper for: calendar
+[12.03.2024 10:12.02.255] [LOG]   Sockets connected & modules started ...
+[12.03.2024 10:12.02.272] [LOG]   Launching application.
+[3248:0312/101203.227931:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.228790:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.229300:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.229709:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.230607:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.230974:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.231312:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.233902:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.234406:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.234790:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.235066:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.235365:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.235902:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3248:0312/101203.236292:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[12.03.2024 10:12.04.254] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[12.03.2024 10:12.04.383] [INFO]  updatenotification: Updater Class Loaded!
+[12.03.2024 10:12.04.383] [INFO]  updatenotification: Checking PM2 using...
+[12.03.2024 10:12.04.385] [INFO]  Checking git for module: MagicMirror
+[12.03.2024 10:12.04.420] [INFO]  updatenotification: You are not using pm2
+[12.03.2024 10:12.05.013] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[12.03.2024 10:23.33.342] [LOG]   Starting MagicMirror: v2.26.0
+[12.03.2024 10:23.33.348] [LOG]   Loading config ...
+[12.03.2024 10:23.33.351] [DEBUG] config template file not exists, no envsubst
+[12.03.2024 10:23.33.356] [LOG]   Loading module helpers ...
+[12.03.2024 10:23.33.358] [LOG]   No helper found for module: alert.
+[12.03.2024 10:23.33.370] [LOG]   Initializing new module helper ...
+[12.03.2024 10:23.33.371] [LOG]   Module helper loaded: updatenotification
+[12.03.2024 10:23.33.372] [LOG]   No helper found for module: clock.
+[12.03.2024 10:23.33.516] [LOG]   Initializing new module helper ...
+[12.03.2024 10:23.33.517] [LOG]   Module helper loaded: calendar
+[12.03.2024 10:23.33.518] [LOG]   No helper found for module: helloworld.
+[12.03.2024 10:23.33.518] [LOG]   All module helpers loaded.
+[12.03.2024 10:23.33.527] [LOG]   Starting server on port 8080 ... 
+[12.03.2024 10:23.33.760] [LOG]   Server started ...
+[12.03.2024 10:23.33.762] [LOG]   Connecting socket for: updatenotification
+[12.03.2024 10:23.33.763] [LOG]   Starting module helper: updatenotification
+[12.03.2024 10:23.33.763] [LOG]   Connecting socket for: calendar
+[12.03.2024 10:23.33.764] [LOG]   Starting node helper for: calendar
+[12.03.2024 10:23.33.764] [LOG]   Sockets connected & modules started ...
+[12.03.2024 10:23.33.781] [LOG]   Launching application.
+[3450:0312/102334.668055:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.675205:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.675595:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.675997:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.676318:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.676573:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.676801:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.678482:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.678852:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.679121:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.679340:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.679544:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.679782:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[3450:0312/102334.680011:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[12.03.2024 10:23.35.799] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[12.03.2024 10:23.35.915] [INFO]  updatenotification: Updater Class Loaded!
+[12.03.2024 10:23.35.916] [INFO]  updatenotification: Checking PM2 using...
+[12.03.2024 10:23.35.918] [INFO]  Checking git for module: MagicMirror
+[12.03.2024 10:23.35.954] [INFO]  updatenotification: You are not using pm2
+[12.03.2024 10:23.36.684] [INFO]  Calendar-Fetcher: Broadcasting 10 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[04.04.2024 18:03.29.981] [LOG]   Starting MagicMirror: v2.26.0
+[04.04.2024 18:03.29.987] [LOG]   Loading config ...
+[04.04.2024 18:03.29.991] [DEBUG] config template file not exists, no envsubst
+[04.04.2024 18:03.29.998] [LOG]   Loading module helpers ...
+[04.04.2024 18:03.29.999] [LOG]   No helper found for module: alert.
+[04.04.2024 18:03.30.017] [LOG]   Initializing new module helper ...
+[04.04.2024 18:03.30.018] [LOG]   Module helper loaded: updatenotification
+[04.04.2024 18:03.30.019] [LOG]   No helper found for module: clock.
+[04.04.2024 18:03.30.269] [LOG]   Initializing new module helper ...
+[04.04.2024 18:03.30.270] [LOG]   Module helper loaded: calendar
+[04.04.2024 18:03.30.272] [LOG]   No helper found for module: helloworld.
+[04.04.2024 18:03.30.272] [LOG]   All module helpers loaded.
+[04.04.2024 18:03.30.281] [LOG]   Starting server on port 8080 ... 
+[04.04.2024 18:03.31.932] [LOG]   Server started ...
+[04.04.2024 18:03.31.933] [LOG]   Connecting socket for: updatenotification
+[04.04.2024 18:03.31.934] [LOG]   Starting module helper: updatenotification
+[04.04.2024 18:03.31.934] [LOG]   Connecting socket for: calendar
+[04.04.2024 18:03.31.935] [LOG]   Starting node helper for: calendar
+[04.04.2024 18:03.31.935] [LOG]   Sockets connected & modules started ...
+[04.04.2024 18:03.32.098] [LOG]   Launching application.
+[2228:0404/180333.548607:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.549026:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.549200:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.549373:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.549527:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.549686:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.549863:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.551813:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.552045:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.552206:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.552368:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.552530:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.552681:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2228:0404/180333.552831:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[04.04.2024 18:03.35.206] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[04.04.2024 18:03.35.448] [INFO]  updatenotification: Updater Class Loaded!
+[04.04.2024 18:03.35.449] [INFO]  updatenotification: Checking PM2 using...
+[04.04.2024 18:03.35.450] [INFO]  Checking git for module: MagicMirror
+[04.04.2024 18:03.35.505] [INFO]  updatenotification: You are not using pm2
+[04.04.2024 18:03.36.040] [INFO]  Calendar-Fetcher: Broadcasting 8 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+[04.04.2024 18:13.53.201] [ERROR] Failed to retrieve repo info for MagicMirror: Error: Command failed: cd /home/miroir/MagicMirror/ && git fetch -n --dry-run
+fatal : impossible d'accéder à 'https://github.com/MichMich/MagicMirror.git/' : Could not resolve host: github.com
+
+[04.04.2024 18:24.05.714] [ERROR] Failed to retrieve repo info for MagicMirror: Error: Command failed: cd /home/miroir/MagicMirror/ && git fetch -n --dry-run
+fatal : impossible d'accéder à 'https://github.com/MichMich/MagicMirror.git/' : Could not resolve host: github.com
+
+[04.04.2024 18:26.51.342] [LOG]   Use existing calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics
+[04.04.2024 18:26.51.343] [INFO]  Calendar-Fetcher: Broadcasting 8 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+[04.04.2024 18:26.51.361] [INFO]  updatenotification: Updater Class Loaded!
+[04.04.2024 18:26.51.362] [INFO]  updatenotification: Checking PM2 using...
+[04.04.2024 18:26.51.391] [INFO]  updatenotification: You are not using pm2
+[04.04.2024 18:27.00.415] [LOG]   Use existing calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics
+[04.04.2024 18:27.00.416] [INFO]  Calendar-Fetcher: Broadcasting 8 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+[04.04.2024 18:27.00.429] [INFO]  updatenotification: Updater Class Loaded!
+[04.04.2024 18:27.00.430] [INFO]  updatenotification: Checking PM2 using...
+[04.04.2024 18:27.00.455] [INFO]  updatenotification: You are not using pm2
+[04.04.2024 18:27.01.366] [ERROR] Calendar Error. Could not fetch calendar:  https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  cause: ConnectTimeoutError: Connect Timeout Error
+      at onConnectTimeout (node:internal/deps/undici/undici:8522:28)
+      at node:internal/deps/undici/undici:8480:50
+      at Immediate._onImmediate (node:internal/deps/undici/undici:8511:13)
+      at process.processImmediate (node:internal/timers:476:21) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+[04.04.2024 18:27.02.505] [LOG]   Shutting down server...
+[04.04.2024 18:27.02.506] [LOG]   Stopping module helper: updatenotification
+[04.04.2024 18:27.02.507] [LOG]   Stopping module helper: calendar
+[04.04.2024 18:27.02.508] [LOG]   Node_helpers stopped ...
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[04.04.2024 20:42.51.491] [LOG]   Starting MagicMirror: v2.26.0
+[04.04.2024 20:42.51.497] [LOG]   Loading config ...
+[04.04.2024 20:42.51.503] [DEBUG] config template file not exists, no envsubst
+[04.04.2024 20:42.51.509] [LOG]   Loading module helpers ...
+[04.04.2024 20:42.51.511] [LOG]   No helper found for module: alert.
+[04.04.2024 20:42.51.534] [LOG]   Initializing new module helper ...
+[04.04.2024 20:42.51.535] [LOG]   Module helper loaded: updatenotification
+[04.04.2024 20:42.51.538] [LOG]   No helper found for module: clock.
+[04.04.2024 20:42.51.775] [LOG]   Initializing new module helper ...
+[04.04.2024 20:42.51.776] [LOG]   Module helper loaded: calendar
+[04.04.2024 20:42.51.777] [LOG]   No helper found for module: helloworld.
+[04.04.2024 20:42.51.778] [LOG]   All module helpers loaded.
+[04.04.2024 20:42.51.787] [LOG]   Starting server on port 8080 ... 
+[04.04.2024 20:42.53.483] [LOG]   Server started ...
+[04.04.2024 20:42.53.484] [LOG]   Connecting socket for: updatenotification
+[04.04.2024 20:42.53.485] [LOG]   Starting module helper: updatenotification
+[04.04.2024 20:42.53.486] [LOG]   Connecting socket for: calendar
+[04.04.2024 20:42.53.486] [LOG]   Starting node helper for: calendar
+[04.04.2024 20:42.53.486] [LOG]   Sockets connected & modules started ...
+[04.04.2024 20:42.53.662] [LOG]   Launching application.
+[1984:0404/204255.165302:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.166184:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.166800:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.167306:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.167649:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.167951:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.168233:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.173419:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.173848:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.174662:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.176054:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.177585:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.179387:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[1984:0404/204255.180071:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[04.04.2024 20:42.56.816] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[04.04.2024 20:42.56.979] [INFO]  updatenotification: Updater Class Loaded!
+[04.04.2024 20:42.56.979] [INFO]  updatenotification: Checking PM2 using...
+[04.04.2024 20:42.56.981] [INFO]  Checking git for module: MagicMirror
+[04.04.2024 20:42.57.022] [INFO]  updatenotification: You are not using pm2
+[04.04.2024 20:42.57.924] [INFO]  Calendar-Fetcher: Broadcasting 8 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+/home/miroir/MagicMirror/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[04.04.2024 21:18.40.822] [LOG]   Starting MagicMirror: v2.26.0
+[04.04.2024 21:18.40.828] [LOG]   Loading config ...
+[04.04.2024 21:18.40.832] [DEBUG] config template file not exists, no envsubst
+[04.04.2024 21:18.40.838] [LOG]   Loading module helpers ...
+[04.04.2024 21:18.40.839] [LOG]   No helper found for module: helloworld.
+[04.04.2024 21:18.40.840] [LOG]   All module helpers loaded.
+[04.04.2024 21:18.40.849] [LOG]   Starting server on port 8081 ... 
+[04.04.2024 21:18.40.853] [WARN]  [33mYou're using a full whitelist configuration to allow for all IPs[39m
+[04.04.2024 21:18.40.866] [LOG]   Server started ...
+[04.04.2024 21:18.40.867] [LOG]   Sockets connected & modules started ...
+[04.04.2024 21:18.41.098] [LOG]   Launching application.
+[2410:0404/211841.955192:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.955764:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.956040:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.956285:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.956492:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.956845:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.957066:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.959019:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.959343:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.959826:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.964041:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.965586:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.966149:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2410:0404/211841.966697:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:88)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:458)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:344)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:266)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:521)
+
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[04.04.2024 21:22.57.914] [LOG]   Starting MagicMirror: v2.26.0
+[04.04.2024 21:22.57.920] [LOG]   Loading config ...
+[04.04.2024 21:22.57.923] [DEBUG] config template file not exists, no envsubst
+[04.04.2024 21:22.57.929] [LOG]   Loading module helpers ...
+[04.04.2024 21:22.57.930] [LOG]   No helper found for module: alert.
+[04.04.2024 21:22.57.942] [LOG]   Initializing new module helper ...
+[04.04.2024 21:22.57.943] [LOG]   Module helper loaded: updatenotification
+[04.04.2024 21:22.57.944] [LOG]   No helper found for module: clock.
+[04.04.2024 21:22.58.092] [LOG]   Initializing new module helper ...
+[04.04.2024 21:22.58.092] [LOG]   Module helper loaded: calendar
+[04.04.2024 21:22.58.093] [LOG]   No helper found for module: helloworld.
+[04.04.2024 21:22.58.094] [LOG]   All module helpers loaded.
+[04.04.2024 21:22.58.103] [LOG]   Starting server on port 8080 ... 
+[04.04.2024 21:22.58.335] [LOG]   Server started ...
+[04.04.2024 21:22.58.336] [LOG]   Connecting socket for: updatenotification
+[04.04.2024 21:22.58.337] [LOG]   Starting module helper: updatenotification
+[04.04.2024 21:22.58.338] [LOG]   Connecting socket for: calendar
+[04.04.2024 21:22.58.338] [LOG]   Starting node helper for: calendar
+[04.04.2024 21:22.58.339] [LOG]   Sockets connected & modules started ...
+[04.04.2024 21:22.58.358] [LOG]   Launching application.
+[2545:0404/212259.199703:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.200513:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.200999:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.201450:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.202766:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.204587:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.206468:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.211388:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.212806:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.213578:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.214052:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.214421:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.214953:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2545:0404/212259.215683:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[04.04.2024 21:23.00.178] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[04.04.2024 21:23.00.299] [INFO]  updatenotification: Updater Class Loaded!
+[04.04.2024 21:23.00.301] [INFO]  updatenotification: Checking PM2 using...
+[04.04.2024 21:23.00.302] [INFO]  Checking git for module: MagicMirror
+[04.04.2024 21:23.00.342] [INFO]  updatenotification: You are not using pm2
+[04.04.2024 21:23.02.017] [INFO]  Calendar-Fetcher: Broadcasting 8 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+[04.04.2024 21:23.29.983] [LOG]   Use existing calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics
+[04.04.2024 21:23.29.985] [INFO]  Calendar-Fetcher: Broadcasting 8 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+[04.04.2024 21:23.30.031] [INFO]  updatenotification: Updater Class Loaded!
+[04.04.2024 21:23.30.033] [INFO]  updatenotification: Checking PM2 using...
+[04.04.2024 21:23.30.067] [INFO]  updatenotification: You are not using pm2
+[04.04.2024 21:23.30.627] [INFO]  Calendar-Fetcher: Broadcasting 8 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+[04.04.2024 21:23.34.150] [LOG]   Use existing calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics
+[04.04.2024 21:23.34.152] [INFO]  Calendar-Fetcher: Broadcasting 8 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+[04.04.2024 21:23.34.233] [INFO]  updatenotification: Updater Class Loaded!
+[04.04.2024 21:23.34.234] [INFO]  updatenotification: Checking PM2 using...
+[04.04.2024 21:23.34.273] [INFO]  updatenotification: You are not using pm2
+[04.04.2024 21:23.34.974] [INFO]  Calendar-Fetcher: Broadcasting 8 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+/home/miroir/MagicMirror1/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[04.04.2024 21:24.53.896] [LOG]   Starting MagicMirror: v2.26.0
+[04.04.2024 21:24.53.902] [LOG]   Loading config ...
+[04.04.2024 21:24.53.905] [DEBUG] config template file not exists, no envsubst
+[04.04.2024 21:24.53.910] [LOG]   Loading module helpers ...
+[04.04.2024 21:24.53.912] [LOG]   No helper found for module: alert.
+[04.04.2024 21:24.53.924] [LOG]   Initializing new module helper ...
+[04.04.2024 21:24.53.925] [LOG]   Module helper loaded: updatenotification
+[04.04.2024 21:24.53.926] [LOG]   No helper found for module: clock.
+[04.04.2024 21:24.54.076] [LOG]   Initializing new module helper ...
+[04.04.2024 21:24.54.077] [LOG]   Module helper loaded: calendar
+[04.04.2024 21:24.54.078] [LOG]   No helper found for module: helloworld.
+[04.04.2024 21:24.54.078] [LOG]   All module helpers loaded.
+[04.04.2024 21:24.54.088] [LOG]   Starting server on port 8080 ... 
+[04.04.2024 21:24.54.312] [LOG]   Server started ...
+[04.04.2024 21:24.54.314] [LOG]   Connecting socket for: updatenotification
+[04.04.2024 21:24.54.315] [LOG]   Starting module helper: updatenotification
+[04.04.2024 21:24.54.316] [LOG]   Connecting socket for: calendar
+[04.04.2024 21:24.54.316] [LOG]   Starting node helper for: calendar
+[04.04.2024 21:24.54.317] [LOG]   Sockets connected & modules started ...
+[04.04.2024 21:24.54.344] [LOG]   Launching application.
+[2722:0404/212455.299854:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.301216:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.301859:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.302268:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.302665:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.303028:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.303367:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.307109:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.307619:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.307999:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.308392:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.308825:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.309235:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2722:0404/212455.309571:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[04.04.2024 21:24.56.245] [LOG]   Create new calendarfetcher for url: https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics - Interval: 604800000
+[04.04.2024 21:24.56.471] [INFO]  updatenotification: Updater Class Loaded!
+[04.04.2024 21:24.56.472] [INFO]  updatenotification: Checking PM2 using...
+[04.04.2024 21:24.56.473] [INFO]  Checking git for module: MagicMirror
+[04.04.2024 21:24.56.511] [INFO]  updatenotification: You are not using pm2
+[04.04.2024 21:24.56.975] [INFO]  Calendar-Fetcher: Broadcasting 8 events from https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics.
+/home/miroir/MagicMirror1/node_modules/electron/dist/electron exited with signal SIGINT
+/home/miroir/MagicMirror1/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[04.04.2024 21:32.15.819] [LOG]   Starting MagicMirror: v2.26.0
+[04.04.2024 21:32.15.825] [LOG]   Loading config ...
+[04.04.2024 21:32.15.828] [DEBUG] config template file not exists, no envsubst
+[04.04.2024 21:32.15.833] [LOG]   Loading module helpers ...
+[04.04.2024 21:32.15.835] [LOG]   No helper found for module: helloworld.
+[04.04.2024 21:32.15.836] [LOG]   All module helpers loaded.
+[04.04.2024 21:32.15.844] [LOG]   Starting server on port 8081 ... 
+[04.04.2024 21:32.15.849] [WARN]  [33mYou're using a full whitelist configuration to allow for all IPs[39m
+[04.04.2024 21:32.15.861] [LOG]   Server started ...
+[04.04.2024 21:32.15.862] [LOG]   Sockets connected & modules started ...
+[04.04.2024 21:32.16.085] [LOG]   Launching application.
+[2877:0404/213216.902797:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.903693:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.904229:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.904937:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.905293:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.905539:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.905788:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.908605:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.909044:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.909396:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.910050:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.910851:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.911194:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2877:0404/213216.911407:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+/home/miroir/MagicMirror1/node_modules/electron/dist/electron exited with signal SIGINT
+
+> magicmirror@2.26.0 start
+> DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js
+
+[04.04.2024 21:33.34.385] [LOG]   Starting MagicMirror: v2.26.0
+[04.04.2024 21:33.34.391] [LOG]   Loading config ...
+[04.04.2024 21:33.34.395] [DEBUG] config template file not exists, no envsubst
+[04.04.2024 21:33.34.400] [LOG]   Loading module helpers ...
+[04.04.2024 21:33.34.401] [LOG]   No helper found for module: helloworld.
+[04.04.2024 21:33.34.402] [LOG]   All module helpers loaded.
+[04.04.2024 21:33.34.411] [LOG]   Starting server on port 8081 ... 
+[04.04.2024 21:33.34.415] [WARN]  [33mYou're using a full whitelist configuration to allow for all IPs[39m
+[04.04.2024 21:33.34.428] [LOG]   Server started ...
+[04.04.2024 21:33.34.429] [LOG]   Sockets connected & modules started ...
+[04.04.2024 21:33.34.657] [LOG]   Launching application.
+[2997:0404/213335.513777:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.514398:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.515822:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.516279:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.516865:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.517325:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.517740:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.520221:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.520767:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.521115:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.521418:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.521693:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.522040:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+[2997:0404/213335.522487:ERROR:gbm_wrapper.cc(253)] Failed to export buffer to dma_buf: Aucun fichier ou dossier de ce type (2)
+/home/miroir/MagicMirror1/node_modules/electron/dist/electron exited with signal SIGINT
