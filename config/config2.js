@@ -1,6 +1,6 @@
 //ajout 2eme ecran (2)
 var config = {
-	electronOptions: { x: 1080, y: 0, screen: 0},
+	electronOptions: { x: 1080, y: 0},
 	address: "localhost",	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 							// - another specific IPv4/6 to listen on a specific interface
