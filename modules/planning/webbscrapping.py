@@ -8,6 +8,12 @@ from selenium.webdriver.support import expected_conditions as EC
 import re
 import time
 import json
+from selenium.webdriver.chrome.options import Options
+
+#nous allons utiliser un profil chrome pour ne pas devoir se connecter à chaque fois
+chrome_options = Options()
+chrome_options.add_argument("--user-data-dir=/home/MagicMirror/modules/planning/profilchrome")
+
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
 horaire = [52, 5] #formation, option
 semaine = 25
@@ -15,7 +21,7 @@ semaine = 25
  #pour interagir avec le site web 
 service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
 
-driver = webdriver.Chrome(service = service)
+driver = webdriver.Chrome(service = service, options=chrome_options)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
 
