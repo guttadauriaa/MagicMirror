@@ -16,7 +16,7 @@ semaine = 25
 
 
 #pour interagir avec le site web 
-service = Service(executable_path = "./geckodriver", options = options)
+service = Service(executable_path = "./geckodriver")
 
 driver = webdriver.Firefox(service = service)
 
