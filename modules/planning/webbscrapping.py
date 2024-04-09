@@ -1,3 +1,5 @@
+#!/path/to/your/venv/bin/python
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -12,7 +14,7 @@ horaire = [52, 5] #formation, option
 semaine = 25
 
 #pour interagir avec le site web 
-service = Service(executable_path = "chromedriver.exe")
+service = Service(executable_path = "/usr/bin/chromedriver")
 driver = webdriver.Chrome(service = service)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")

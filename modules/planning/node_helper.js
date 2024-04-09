@@ -6,8 +6,9 @@ module.exports = NodeHelper.create({
   },
   pythonScript: function () {
     var options = {
-      scriptPath: '/modules/planning/webbscrapping.py', // le chemin du script Python
-      args: ['argument1', 'argument2'] // Si votre script Python nécessite des arguments, vous pouvez les ajouter ici.
+        pythonPath: '/MirrorPyEn/', // le chemin de votre environnement virtuel Python avec selenium installé
+        scriptPath: '/MagicMirror/modules/planning/webbscrapping.py', // le chemin du script Python
+        args: ['argument1', 'argument2'] // Si votre script Python nécessite des arguments, vous pouvez les ajouter ici.
     };
     let pyshell = new PythonShell('webbscrapping.py', options);
     pyshell.on('message', (message) => {
