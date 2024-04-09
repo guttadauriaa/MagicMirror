@@ -1,7 +1,7 @@
 #!/path/to/your/venv/bin/python
 
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -14,9 +14,9 @@ horaire = [52, 5] #formation, option
 semaine = 25
 
 #pour interagir avec le site web 
-service = Service(executable_path = "./chromedriver")
+service = Service(executable_path = "./geckodriver")
 print('hello')
-driver = webdriver.Chrome(service = service)
+driver = webdriver.Firefox(service = service)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
 
