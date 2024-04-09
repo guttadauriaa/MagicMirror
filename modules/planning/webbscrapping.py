@@ -5,7 +5,7 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.firefox.service import Service
+
 import re
 import time
 import json
@@ -14,9 +14,7 @@ import json
 horaire = [52, 5] #formation, option
 semaine = 25
 
-options = FirefoxOptions ()
-[options. add_argument (opt) for opt in FF_OPTIONS]
-[options.set_preference(key,value) for key,value in SET_PREF.items()]
+
 #pour interagir avec le site web 
 service = Service(executable_path = "./geckodriver", options = options)
 
