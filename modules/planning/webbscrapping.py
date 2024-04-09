@@ -13,7 +13,7 @@ horaire = [52, 5] #formation, option
 semaine = 25
 
  #pour interagir avec le site web 
-service = Service(executable_path = "./chromedriver")
+service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
 
 driver = webdriver.Chrome(service = service)
 
