@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import re
 import time
+import json
 
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
 horaire = [52, 5] #formation, option
@@ -111,7 +112,7 @@ while True:
         break
 
 for cours in liste_cours:
-    print(cours)
+    print(json.dumps(cours))
 
 time.sleep(5)
 driver.quit()
