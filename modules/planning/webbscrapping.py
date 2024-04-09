@@ -15,6 +15,7 @@ semaine = 25
 
 #pour interagir avec le site web 
 service = Service(executable_path = "./chromedriver.exe")
+print(service)
 driver = webdriver.Chrome(service = service)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
