@@ -1,24 +1,21 @@
 #!home/MirrorPyEnv python3
 
 from selenium import webdriver
-from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 import re
 import time
 import json
-
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
 horaire = [52, 5] #formation, option
 semaine = 25
 
+ #pour interagir avec le site web 
+service = Service(executable_path = "./chromedriver")
 
-#pour interagir avec le site web 
-service = Service(executable_path = "./geckodriver")
-
-driver = webdriver.Firefox(service = service)
+driver = webdriver.Chrome(service = service)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
 
