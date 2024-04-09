@@ -1,4 +1,4 @@
-#!/path/to/your/venv/bin/python
+#!home/MirrorPyEnv/bin/python
 
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
@@ -15,7 +15,7 @@ semaine = 25
 
 #pour interagir avec le site web 
 service = Service(executable_path = "./geckodriver")
-print('hello')
+
 driver = webdriver.Firefox(service = service)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
