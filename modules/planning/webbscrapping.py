@@ -10,11 +10,7 @@ import time
 import json
 from selenium.webdriver.chrome.options import Options
 
-#nous allons utiliser un profil chrome pour ne pas devoir se connecter à chaque fois
-chrome_options = Options()
-chrome_options.add_argument("--user-data-dir=/home/MagicMirror/modules/planning/profilchrome")
-chrome_options.add_argument("--no-sandbox")
-chrome_options.add_argument("--disable-dev-shm-usage")
+
 
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
 horaire = [52, 5] #formation, option
