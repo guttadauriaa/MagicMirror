@@ -128,6 +128,7 @@ while True:
 
     except Exception as e:
         print(e)
+        print("execption")
         #plus de cours
         break
 
