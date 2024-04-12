@@ -73,13 +73,12 @@ let config = {
 			}
 		},
 		{
-			module: "helloworld",
-			position: "top_right",
-			header: "Météo",
+			module: "MMM-planning",
+			position: "top_right", // Cette valeur peut être n'importe quelle position valide.
 			config: {
-				text: "Météo"
+			  // Les options de configuration spécifiques à votre module vont ici.
 			}
-		},
+		  },
 		{
 			module: "helloworld",
 			position: "bottom_left",
