@@ -106,12 +106,13 @@ while True:
         print(correspondance_jour)
         left_value = int(match.group(1))  #Récupérer la valeur de l'attribut left
         jour = correspondance_jour[left_value]
-
+        print(jour)
 
         #on extrait les infos interressantes liées au cours sauf si le cours a été annulé
 
         local = list()
         if "ANNULÉ" not in cours.text:
+            print('pas annule')
             lignes = cours.text.splitlines()
             title = lignes[0]
             for ligne in lignes:
@@ -126,6 +127,7 @@ while True:
             liste_cours.append(info)
 
     except Exception as e:
+        print(e)
         #plus de cours
         break
 
