@@ -138,6 +138,8 @@ for cours in liste_cours:
 
 print("hello je suis hugo")
 
+#bonjour je suis un test
+
 time.sleep(5)
 driver.quit()
 
