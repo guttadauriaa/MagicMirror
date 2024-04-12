@@ -135,6 +135,9 @@ for cours in liste_cours:
     #print(json.dumps(cours))
     print(cours)
 
+
+print("hello je suis hugo")
+
 time.sleep(5)
 driver.quit()
 
