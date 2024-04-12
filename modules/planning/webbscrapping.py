@@ -125,8 +125,9 @@ while True:
         break
 
 for cours in liste_cours:
-    print(json.dumps(cours))
-
+    #print(json.dumps(cours))
+    print(cours)
+    
 time.sleep(5)
 driver.quit()
 
