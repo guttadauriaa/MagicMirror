@@ -137,11 +137,7 @@ for cours in liste_cours:
     print(cours)
 
 
-print("hello je suis hugo")
-
-#bonjour je suis un test
-
-time.sleep(5)
+#time.sleep(5)
 driver.quit()
 
 # display.stop()
