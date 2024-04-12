@@ -76,8 +76,6 @@ button_fullhoraire.click()
 #left. on va créer la tableau de correspondace des jours
 
 correspondance_jour ={}
-for i in range (7):
-    correspondance_jour[(-1+(i*169))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
 
 numero = 0
 liste_cours = list()
@@ -85,6 +83,7 @@ liste_cours = list()
 #pour que la page soit bien chargée
 time.sleep(1)
 
+lecture = False
 while True:
     try: 
         cours = WebDriverWait(driver, 5).until(
@@ -94,10 +93,17 @@ while True:
         numero += 1
 
         style_value = cours.get_attribute("style")
-        #print(style_value)
+        print(style_value)
 
         #on utilise une expression régulière pour rechercher la valeur de l'attribut left
         match = re.search(r'left:\s*(-?\d+)px;', style_value)
+
+        #pour cree le tableau de correspondance des jours
+        if not lecture:
+            match2 = re.search(r'width:\s*(-?\d+)px;', style_value)
+            for i in range (7):
+                correspondance_jour[(-1+(i*int(match2.group(1))))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
+            lecture = True
 
         left_value = int(match.group(1))  #Récupérer la valeur de l'attribut left
         jour = correspondance_jour[left_value]
