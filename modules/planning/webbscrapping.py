@@ -76,7 +76,8 @@ button_fullhoraire.click()
 #left. on va créer la tableau de correspondace des jours
 
 correspondance_jour ={}
-correspondance_jour[(-1+(i*135))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
+for i in range (7):
+    correspondance_jour[(-1+(i*135))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
 numero = 0
 liste_cours = list()
 
