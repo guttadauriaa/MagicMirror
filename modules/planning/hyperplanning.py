@@ -101,7 +101,7 @@ while True:
             match2 = re.search(r'width:\s*(-?\d+)px;', style_value)
             
             for i in range (7):
-                correspondance_jour[(-1+(i*int(match2.group(1))))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
+                correspondance_jour[(-1+(i*(1+int(match2.group(1)))))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
             lecture = True
         print(correspondance_jour)
         left_value = int(match.group(1))  #Récupérer la valeur de l'attribut left
