@@ -91,7 +91,7 @@ while True:
         numero += 1
 
         style_value = cours.get_attribute("style")
-        print(style_value)
+        #print(style_value)
 
         #on utilise une expression régulière pour rechercher la valeur de l'attribut left
         match = re.search(r'left:\s*(-?\d+)px;', style_value)
@@ -103,16 +103,16 @@ while True:
             for i in range (7):
                 correspondance_jour[(-1+(i*(1+int(match2.group(1)))))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
             lecture = True
-        print(correspondance_jour)
+        #print(correspondance_jour)
         left_value = int(match.group(1))  #Récupérer la valeur de l'attribut left
         jour = correspondance_jour[left_value]
-        print(jour)
+        #print(jour)
 
         #on extrait les infos interressantes liées au cours sauf si le cours a été annulé
 
         local = list()
         if "ANNULÉ" not in cours.text:
-            print('pas annule')
+            #print('pas annule')
             lignes = cours.text.splitlines()
             title = lignes[0]
             for ligne in lignes:
@@ -127,8 +127,8 @@ while True:
             liste_cours.append(info)
 
     except Exception as e:
-        print(e)
-        print("execption")
+        #print(e)
+        #print("execption")
         #plus de cours
         break
 
