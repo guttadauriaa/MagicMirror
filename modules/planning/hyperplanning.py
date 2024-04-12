@@ -17,8 +17,6 @@ from selenium.webdriver.chrome.options import Options
 # chrome_options = Options()
 # chrome_options.add_argument("--headless")
 
-
-
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
 horaire = [52, 5] #formation, option
 semaine = 25
