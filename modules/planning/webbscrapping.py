@@ -76,7 +76,7 @@ button_fullhoraire.click()
 #left. on va créer la tableau de correspondace des jours
 
 correspondance_jour ={}
-
+correspondance_jour[(-1+(i*135))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
 numero = 0
 liste_cours = list()
 
@@ -99,11 +99,11 @@ while True:
         match = re.search(r'left:\s*(-?\d+)px;', style_value)
 
         #pour cree le tableau de correspondance des jours
-        if not lecture:
-            match2 = re.search(r'width:\s*(-?\d+)px;', style_value)
-            for i in range (7):
-                correspondance_jour[(-1+(i*int(match2.group(1))))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
-            lecture = True
+        # if not lecture:
+        #     match2 = re.search(r'width:\s*(-?\d+)px;', style_value)
+        #     for i in range (7):
+        #         correspondance_jour[(-1+(i*int(match2.group(1))))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
+        #     lecture = True
 
         left_value = int(match.group(1))  #Récupérer la valeur de l'attribut left
         jour = correspondance_jour[left_value]
