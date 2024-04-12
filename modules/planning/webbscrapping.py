@@ -10,9 +10,9 @@ import time
 import json
 from selenium.webdriver.chrome.options import Options
 
-from pyvirtualdisplay import Display
-display = Display(visible=0, size=(800, 600))
-display.start()
+# from pyvirtualdisplay import Display
+# display = Display(visible=0, size=(800, 600))
+# display.start()
 #pour ne pas afficher la fenêtre du navigateur
 # chrome_options = Options()
 # chrome_options.add_argument("--headless")
@@ -127,8 +127,8 @@ while True:
 for cours in liste_cours:
     #print(json.dumps(cours))
     print(cours)
-    
+
 time.sleep(5)
 driver.quit()
 
-display.stop()
+# display.stop()
