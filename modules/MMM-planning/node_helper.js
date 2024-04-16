@@ -1,5 +1,6 @@
 var NodeHelper = require("node_helper");
 var {PythonShell} = require('python-shell');
+
 module.exports = NodeHelper.create({
   start: function () {
     this.pythonScript();
@@ -13,6 +14,7 @@ module.exports = NodeHelper.create({
     let pyshell = new PythonShell('hyperplanning.py', options);
     pyshell.on('message', (message) => {
       // message est une ligne de sortie du script Python
+      console.log(message)
       let cours = JSON.parse(message);
       this.sendSocketNotification('PYTHON_DATA', cours);
     });
