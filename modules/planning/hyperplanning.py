@@ -10,12 +10,14 @@ import time
 import json
 from selenium.webdriver.chrome.options import Options
 
+#pour exetuter le code à distance
 from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 800))
 display.start()
+
 #pour ne pas afficher la fenêtre du navigateur
-# chrome_options = Options()
-# chrome_options.add_argument("--headless")
+chrome_options = Options()
+chrome_options.add_argument("--headless")
 
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
 horaire = [52, 5] #formation, option
@@ -26,7 +28,7 @@ semaine = 25
 #à l'emplacement : /usr/lib/chromium-browser/chromedriver
 service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
 
-driver = webdriver.Chrome(service = service)
+driver = webdriver.Chrome(service = service, Options=chrome_options)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
 
@@ -131,7 +133,7 @@ while True:
             liste_cours.append(info)
 
     except Exception as e:
-        print("Une exception de type", type(e).__name__, "a été levée.")
+        #print("Une exception de type", type(e).__name__, "a été levée.")
         if type(e).__name__ == 'NoSuchElementException':
             break
         else:
