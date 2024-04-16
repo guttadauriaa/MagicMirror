@@ -21,7 +21,9 @@ from selenium.webdriver.chrome.options import Options
 horaire = [52, 5] #formation, option
 semaine = 25
 
- #pour interagir avec le site web 
+#pour interagir avec le site web 
+#il faut télécharger le chromedriver dispponible pour raspberry pi disponible sur internet au préalable. celui-ci à été stocker hors des fichier du projet
+#à l'emplacement : /usr/lib/chromium-browser/chromedriver
 service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
 
 driver = webdriver.Chrome(service = service)
@@ -71,7 +73,8 @@ button_fullhoraire.click()
 
 #après avoir analyser la page web, le seul moyen de connaitre le jour correspondant au cours est 
 #d'après sa position sur la page. on peut extraire cette caractéristique apd style dans l'attribut
-#left. on va créer la tableau de correspondace des jours
+#left. on va créer la tableau de correspondace des jours (on le définira une fois après avoir lu le premier cours
+#pour connaitre la taille des cellules de cours.)
 
 correspondance_jour ={}
 
@@ -141,5 +144,3 @@ for cours in liste_cours:
 driver.quit()
 
 # display.stop()
-
-#edit
