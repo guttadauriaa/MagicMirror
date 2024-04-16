@@ -73,16 +73,12 @@ let config = {
 			}
 		},
 		{
-			"index": 5,
-			"identifier": "module_5_MMM-planning",
-			"name": "MMM-planning",
-			"path": "modules/MMM-planning/",
-			"file": "MMM-planning.js",
-			"position": "top_right",
-			"header": "Hyperplanning",
-			"configDeepMerge": false,
-			"config": {},
-			"classes": "MMM-planning"
+			module: "MMM-planning",
+			position: "top_right",
+			header: "Hyperplanning",
+			config: {
+			  scriptPath: "/MagicMirror/modules/MMM-planning/hyperplanning.py"
+			}
 		  },
 		{
 			module: "helloworld",
