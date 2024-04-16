@@ -130,6 +130,7 @@ while True:
             liste_cours.append(info)
 
     except Exception as e:
+        print("Une exception de type", type(e).__name__, "a été levée.")
         #print(e)
         #print("execption")
         #plus de cours
