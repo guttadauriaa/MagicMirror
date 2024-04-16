@@ -138,8 +138,8 @@ while True:
         break
 
 for cours in liste_cours:
-    #print(json.dumps(cours))
-    print(cours)
+    print(json.dumps(cours))
+    #print(cours)
 
 
 #time.sleep(5)
