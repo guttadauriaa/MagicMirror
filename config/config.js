@@ -82,7 +82,7 @@ let config = {
 		  },
 		  {
 			module: "newsfeed",
-			position: "bottom_bar",
+			position: "bottom_left",
 			config: {
 				feeds: [
 					{
