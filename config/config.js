@@ -73,12 +73,16 @@ let config = {
 			}
 		},
 		{
-			module: "MMM-planning",
-			position: "top_right", // Cette valeur peut être n'importe quelle position valide.
-			header: "Hyperplanning",
-			config: {
-			  // Les options de configuration spécifiques à votre module vont ici.
-			}
+			"index": 5,
+			"identifier": "module_5_MMM-planning",
+			"name": "MMM-planning",
+			"path": "modules/MMM-planning/",
+			"file": "MMM-planning.js",
+			"position": "top_right",
+			"header": "Hyperplanning",
+			"configDeepMerge": false,
+			"config": {},
+			"classes": "MMM-planning"
 		  },
 		{
 			module: "helloworld",
