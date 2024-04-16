@@ -82,14 +82,15 @@ numero = 0
 liste_cours = list()
 
 #pour que la page soit bien chargée
-time.sleep(1)
+time.sleep(3)
 
 lecture = False
 while True:
     try: 
-        cours = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.ID, f"id_42_cours_{numero}"))
-        )
+        #cours = WebDriverWait(driver, 5).until(
+        #    EC.presence_of_element_located((By.ID, f"id_42_cours_{numero}"))
+        #)
+        cours = driver.find_element(By.ID, f"id_42_cours_{numero}")
 
         numero += 1
 
