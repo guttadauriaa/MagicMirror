@@ -78,7 +78,6 @@ let config = {
 			header: "Hyperplanning",
 			config: {
 			  // Les options de configuration spécifiques à votre module vont ici.
-			  text : "planning"
 			}
 		  },
 		{
