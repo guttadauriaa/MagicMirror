@@ -1,4 +1,4 @@
-#!home/MirrorPyEnv python3
+#!home/MirrorPyEnv/bin python3
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
