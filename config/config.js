@@ -87,7 +87,9 @@ let config = {
 				feeds: [
 					{
 						title: "Umons News",
-						url: "https://web.umons.ac.be/fr/feed/events-screens"
+						//url: "https://web.umons.ac.be/fr/feed/events-screens"
+						url: "https://web.umons.ac.be/fr/feed/screens"
+						
 					}
 				],
 				showSourceTitle: true,
