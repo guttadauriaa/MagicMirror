@@ -132,10 +132,12 @@ while True:
 
     except Exception as e:
         print("Une exception de type", type(e).__name__, "a été levée.")
-        #print(e)
-        #print("execption")
-        #plus de cours
-        break
+        if type(e).__name__ == 'NoSuchElementException':
+            break
+        else:
+            print(e)
+            #break 
+        
 
 for cours in liste_cours:
     #print(json.dumps(cours))
