@@ -80,12 +80,20 @@ let config = {
 			  scriptPath: "/MagicMirror/modules/MMM-planning/hyperplanning.py"
 			}
 		  },
-		{
-			module: "helloworld",
-			position: "bottom_left",
-			header: "Actualité",
+		  {
+			module: "newsfeed",
+			position: "bottom_bar",
 			config: {
-				text: "Actualité"
+				feeds: [
+					{
+						title: "Umons News",
+						url: "https://web.umons.ac.be/fr/feed/events-screens"
+					}
+				],
+				showSourceTitle: true,
+				showPublishDate: true,
+				broadcastNewsFeeds: true,
+				broadcastNewsUpdates: true
 			}
 		},
 		{
