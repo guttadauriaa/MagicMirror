@@ -11,7 +11,7 @@ import json
 from selenium.webdriver.chrome.options import Options
 
 from pyvirtualdisplay import Display
-display = Display(visible=0, size=(800, 600))
+display = Display(visible=0, size=(800, 800))
 display.start()
 #pour ne pas afficher la fenêtre du navigateur
 # chrome_options = Options()
