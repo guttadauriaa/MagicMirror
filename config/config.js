@@ -75,6 +75,7 @@ let config = {
 		{
 			module: "MMM-planning",
 			position: "top_right", // Cette valeur peut être n'importe quelle position valide.
+			header: "Hyperplanning",
 			config: {
 			  // Les options de configuration spécifiques à votre module vont ici.
 			}
