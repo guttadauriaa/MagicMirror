@@ -28,7 +28,7 @@ semaine = 25
 #à l'emplacement : /usr/lib/chromium-browser/chromedriver
 service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
 
-driver = webdriver.Chrome(service = service, Options=chrome_options)
+driver = webdriver.Chrome(service=service, options=chrome_options)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
 
