@@ -10,7 +10,7 @@
  * see https://docs.magicmirror.builders/configuration/introduction.html#enviromnent-variables
  */
 let config = {
-	electronOptions: {fullscreen: false, x: 1080,y : 0},  //1440X900 Xwayland3 (miroir droite)
+	electronOptions: {fullscreen: false, x: 1081,y : 0},  //1440X900 Xwayland3 (miroir droite)
 	address: "localhost",	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 							// - another specific IPv4/6 to listen on a specific interface
@@ -43,24 +43,24 @@ let config = {
 			module: "updatenotification",
 			position: "top_bar"
 		},
-		// {
-		// 	module: "clock",
-		// 	position: "top_left"
-		// },
-		// {
-		// 	module: "calendar",
-		// 	header: "Calendrier",
-		// 	position: "top_left",
-		// 	config: {
-		// 		calendars: [
-		// 			{
-		// 				fetchInterval: 7 * 24 * 60 * 60 * 1000,
-		// 				symbol: "calendar-check",
-		// 				url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
-		// 			}
-		// 		]
-		// 	}
-		// },
+		{
+			module: "clock",
+			position: "top_left"
+		},
+		{
+			module: "calendar",
+			header: "Calendrier",
+			position: "top_left",
+			config: {
+				calendars: [
+					{
+						fetchInterval: 7 * 24 * 60 * 60 * 1000,
+						symbol: "calendar-check",
+						url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
+					}
+				]
+			}
+		},
 		
 		// {
 		// 	module: "helloworld",
