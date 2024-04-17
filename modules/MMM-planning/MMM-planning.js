@@ -4,14 +4,17 @@ Module.register("MMM-planning",{
     text: "Hello World!"
   },
 
-  // Ajoutez cette ligne pour initialiser la propriété data.
-  data: null,
-
+  //s'execute à l'initialisation du module
   start: function() {
+    this.data = null;
+    this.updateDom();  // Force une mise à jour de l'affichage
     this.sendSocketNotification('START', {});
+
   },
 
+  //s'execute à chaque fois qu'il reçoit une notification
   socketNotificationReceived: function(notification, payload) {
+    Log.info('MMM-planning received a socket notification: ' + notification + ' - Payload: ' + payload);
     if (notification === 'PYTHON_DATA') {
       this.data = payload;
       this.updateDom();

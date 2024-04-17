@@ -72,31 +72,24 @@ let config = {
 				text: "Bonjour à tous, bienvenue à la faculté !"
 			}
 		},
+		
 		{
-			module: "MMM-planning",
-			position: "top_right",
-			header: "Hyperplanning",
-			config: {
-			  scriptPath: "/MagicMirror/modules/MMM-planning/hyperplanning.py"
-			}
-		  },
-		  {
-			module: "newsfeed",
-			position: "bottom_left",
-			config: {
-				feeds: [
-					{
-						title: "Umons News",
-						//url: "https://web.umons.ac.be/fr/feed/events-screens"
-						url: "https://web.umons.ac.be/fr/feed/screens"
-						
-					}
-				],
-				showSourceTitle: true,
-				showPublishDate: true,
-				broadcastNewsFeeds: true,
-				broadcastNewsUpdates: true
-			}
+		module: "newsfeed",
+		position: "bottom_left",
+		config: {
+			feeds: [
+				{
+					title: "Umons News",
+					//url: "https://web.umons.ac.be/fr/feed/events-screens"
+					url: "https://web.umons.ac.be/fr/feed/screens"
+					
+				}
+			],
+			showSourceTitle: true,
+			showPublishDate: true,
+			broadcastNewsFeeds: true,
+			broadcastNewsUpdates: true
+		}
 		},
 		{
 			module: "helloworld",
@@ -106,6 +99,14 @@ let config = {
 				text: "Menu du jour"
 			}
 		},
+		{
+			module: "MMM-planning",
+			position: "top_right",
+			header: "Hyperplanning",
+			config: {
+			  scriptPath: "/MagicMirror/modules/MMM-planning/hyperplanning.py"
+			}
+		  },
 		
 		
 	]
