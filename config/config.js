@@ -1,6 +1,4 @@
-/* MagicMirror² Config Sample
- *
- * By Michael Teeuw https://michaelteeuw.nl
+/* MagicMirror² 
  * MIT Licensed.
  *
  * For more information on how you can configure this file
@@ -12,7 +10,7 @@
  * see https://docs.magicmirror.builders/configuration/introduction.html#enviromnent-variables
  */
 let config = {
-	electronOptions: {fullscreen: true, x: 0,y : 0},
+	electronOptions: {fullscreen: false, x: 1080,y : 0},  //1440X900 Xwayland3 (miroir droite)
 	address: "localhost",	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 							// - another specific IPv4/6 to listen on a specific interface
@@ -45,68 +43,68 @@ let config = {
 			module: "updatenotification",
 			position: "top_bar"
 		},
-		{
-			module: "clock",
-			position: "top_left"
-		},
-		{
-			module: "calendar",
-			header: "Calendrier",
-			position: "top_left",
-			config: {
-				calendars: [
-					{
-						fetchInterval: 7 * 24 * 60 * 60 * 1000,
-						symbol: "calendar-check",
-						url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
-					}
-				]
-			}
-		},
+		// {
+		// 	module: "clock",
+		// 	position: "top_left"
+		// },
+		// {
+		// 	module: "calendar",
+		// 	header: "Calendrier",
+		// 	position: "top_left",
+		// 	config: {
+		// 		calendars: [
+		// 			{
+		// 				fetchInterval: 7 * 24 * 60 * 60 * 1000,
+		// 				symbol: "calendar-check",
+		// 				url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
+		// 			}
+		// 		]
+		// 	}
+		// },
 		
-		{
-			module: "helloworld",
-			position: "middle_center",
-			header: "Petit mot du jour",
-			config: {
-				text: "Bonjour à tous, bienvenue à la faculté !"
-			}
-		},
+		// {
+		// 	module: "helloworld",
+		// 	position: "middle_center",
+		// 	header: "Petit mot du jour",
+		// 	config: {
+		// 		text: "Bonjour à tous, bienvenue à la faculté !"
+		// 	}
+		// },
 		
-		{
-		module: "newsfeed",
-		position: "bottom_left",
-		config: {
-			feeds: [
-				{
-					title: "Umons News",
-					//url: "https://web.umons.ac.be/fr/feed/events-screens"
-					url: "https://web.umons.ac.be/fr/feed/screens"
+		// {
+		// module: "newsfeed",
+		// position: "bottom_left",
+		// config: {
+		// 	feeds: [
+		// 		{
+		// 			title: "Umons News",
+		// 			//url: "https://web.umons.ac.be/fr/feed/events-screens"
+		// 			url: "https://web.umons.ac.be/fr/feed/screens"
 					
-				}
-			],
-			showSourceTitle: true,
-			showPublishDate: true,
-			broadcastNewsFeeds: true,
-			broadcastNewsUpdates: true
-		}
-		},
-		{
-			module: "helloworld",
-			position: "bottom_right",
-			header: "Menu du jour",
-			config: {
-				text: "Menu du jour"
-			}
-		},
-		{
-			module: "MMM-planning",
-			position: "top_right",
-			header: "Hyperplanning",
-			config: {
-			  scriptPath: "/MagicMirror/modules/MMM-planning/hyperplanning.py"
-			}
-		  },
+		// 		}
+		// 	],
+		// 	showSourceTitle: true,
+		// 	showPublishDate: true,
+		// 	broadcastNewsFeeds: true,
+		// 	broadcastNewsUpdates: true
+		// }
+		// },
+		// {
+		// 	module: "helloworld",
+		// 	position: "bottom_right",
+		// 	header: "Menu du jour",
+		// 	config: {
+		// 		text: "Menu du jour"
+		// 	}
+		// },
+		// {
+		// 	module: "MMM-planning",
+		// 	position: "top_right",
+		// 	header: "Hyperplanning",
+		// 	config: {
+		// 	  scriptPath: "/MagicMirror/modules/MMM-planning/hyperplanning.py"
+		// 	}
+		//   },
 		
 		
 	]
