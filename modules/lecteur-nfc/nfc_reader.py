@@ -7,8 +7,16 @@ from mfrc522 import SimpleMFRC522
 reader = SimpleMFRC522()
 
 try:
-    id, text = reader.read()
-    print(id, text)
+    text = input ('New data: ')
+    print("Now place your tag to write")
+    reader.write (text)
+    print ("Written" )
 
 finally:
-    GPIO.cleanup()
+    try:
+        id, text = reader.read()
+        print(id, text)
+        
+
+    finally:
+        GPIO.cleanup()
