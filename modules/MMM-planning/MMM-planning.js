@@ -4,10 +4,9 @@ Module.register("MMM-planning",{
     text: "Hello World!"
   },
 
-  // Ajoutez cette ligne pour initialiser la propriété data.
-  data: null,
 
   start: function() {
+    this.data = null;
     this.sendSocketNotification('START', {});
   },
 
