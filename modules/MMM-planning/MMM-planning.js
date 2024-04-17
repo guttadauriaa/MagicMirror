@@ -4,12 +4,14 @@ Module.register("MMM-planning",{
     text: "Hello World!"
   },
 
-
+  //s'execute à l'initialisation du module
   start: function() {
     this.data = null;
     this.sendSocketNotification('START', {});
+    this.updateDom();  // Force une mise à jour de l'affichage
   },
 
+  //s'execute à chaque fois qu'il reçoit une notification
   socketNotificationReceived: function(notification, payload) {
     if (notification === 'PYTHON_DATA') {
       this.data = payload;
