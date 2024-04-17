@@ -9,42 +9,6 @@
  * which will be converted to `config.js` while starting. For more information
  * see https://docs.magicmirror.builders/configuration/introduction.html#enviromnent-variables
  */
-const { app, BrowserWindow } = require('electron');
-
-let mainWindow;
-
-function createWindow() {
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    fullscreen: false,
-    x: 1081,
-    y: 0
-  });
-
-  mainWindow.loadURL(`http://${config.address}:${config.port}`);
-
-  // Uncomment the following line to open DevTools for debugging
-  // mainWindow.webContents.openDevTools();
-
-  mainWindow.on('closed', function () {
-    mainWindow = null;
-  });
-}
-
-app.on('ready', createWindow);
-
-app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
-app.on('activate', function () {
-  if (mainWindow === null) {
-    createWindow();
-  }
-});
 let config = {
 	//electronOptions: {fullscreen: false, x: 1081,y : 0},  //1440X900 Xwayland3 (miroir droite)
 	electronOptions: {fullscreen:false, x: 0, y:1081},
