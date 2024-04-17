@@ -11,7 +11,7 @@
  */
 let config = {
 	//electronOptions: {fullscreen: false, x: 1081,y : 0},  //1440X900 Xwayland3 (miroir droite)
-	electronOptions: {fullscreen:true, x: 0, y:1081},
+	electronOptions: {fullscreen:false, x: 0, y:1081},
 	address: "localhost",	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 							// - another specific IPv4/6 to listen on a specific interface

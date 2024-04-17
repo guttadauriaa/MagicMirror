@@ -1,13 +1,13 @@
 //ajout 2eme ecran (2)
 let config = {
 	//electronOptions: {fullscreen: false, x: 0, y: 0}, //1080X1920 (miroir gauche) Xwayland4
-	electronOptions: {fullscreen:true, x:0, y:0},
+	electronOptions: {fullscreen:false, x:0, y:0},
 	address: "localhost",	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 							// - another specific IPv4/6 to listen on a specific interface
 							// - "0.0.0.0", "::" to listen on any interface
 							// Default, when address config is left out or empty, is "localhost"
-	port: 8082, 			//must be different than the oder config
+	port: 8081, 			//must be different than the oder config
 	basePath: "/",	// The URL path where MagicMirror² is hosted. If you are using a Reverse proxy
 									// you must set the sub path here. basePath must end with a /
 	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1"],	// Set [] to allow all IP addresses
