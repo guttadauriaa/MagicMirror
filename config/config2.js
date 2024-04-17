@@ -34,7 +34,7 @@ var config = {
 			position: "middle_center",
 			header: "Petit mot du jour",
 			config: {
-				text: "Bonjour à tous, bienvenue à la faculté !"
+				text: "Bonjour à tous, bienvenue à la faculté ! (ecran 2)"
 			}
 		},
 		
