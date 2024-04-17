@@ -1,12 +1,12 @@
 //ajout 2eme ecran (2)
 var config = {
-	electronOptions: {fullscreen: true, x: 1920, y: 0},
+	electronOptions: {fullscreen: true, x: 0, y: 0}, //maybe fullscreen = false can resolve a problem if there is one (same for the seconde config)
 	address: "localhost",	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 							// - another specific IPv4/6 to listen on a specific interface
 							// - "0.0.0.0", "::" to listen on any interface
 							// Default, when address config is left out or empty, is "localhost"
-	port: 8080,
+	port: 8081, 			//must be different than the oder config
 	basePath: "/",	// The URL path where MagicMirror² is hosted. If you are using a Reverse proxy
 									// you must set the sub path here. basePath must end with a /
 	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1"],	// Set [] to allow all IP addresses
