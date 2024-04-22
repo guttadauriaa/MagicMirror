@@ -66,7 +66,7 @@ try:
             data = q.get()
             if rec.AcceptWaveform(data):
                 parler = json.loads(rec.FinalResult())
-                #print (parler['text'])
+                print (parler['text'])
                 fonctionnalite.questions(parler['text'])
 
             if dump_fn is not None:
