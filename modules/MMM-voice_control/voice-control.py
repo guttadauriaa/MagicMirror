@@ -91,6 +91,7 @@ try:
             if recording:
                 if detect_speech(rec, data):
                     spoken_text = json.loads(rec.FinalResult())['text']
+                    print(spoken_text)
                     fonctionnalite.questions(spoken_text)
 
                 if args.filename:
