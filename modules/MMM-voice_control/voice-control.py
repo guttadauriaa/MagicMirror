@@ -85,7 +85,8 @@ try:
 
             if not recording:
                 if detect_speech(rec, data):
-                    print("Recording started")
+                    #print("Recording started")
+                    print('\n')
                     recording = True
 
             if recording:
@@ -99,7 +100,8 @@ try:
                         f.write(data)
 
             if recording and not detect_speech(rec, data):
-                print("Recording stopped")
+                #print("Recording stopped")
+                print('\n')
                 recording = False
 
 except KeyboardInterrupt:
