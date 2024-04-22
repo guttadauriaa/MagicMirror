@@ -57,7 +57,7 @@ try:
         args.samplerate = int(device_info["default_samplerate"])
         
     if args.model is None:
-        model = Model(lang="en-us")
+        model = Model(lang="fr")
     else:
         model = Model(lang=args.model)
 
