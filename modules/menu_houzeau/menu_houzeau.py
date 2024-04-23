@@ -6,6 +6,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import time 
+from pdf2image import convert_from_path
+import os
 
 
 #pour interagir avec le site web 
@@ -44,5 +46,25 @@ download_button.click()
 time.sleep(2)
 driver.quit() 
 
+#convertir le pdf en image
 
+#Chemin vers le répertoire de téléchargement
+download_dir = "/home/miroir/Téléchargements"
 
+# Récupérer la liste des fichiers dans le répertoire
+files = os.listdir(download_dir)
+
+# Trier les fichiers par date de modification
+files.sort(key=lambda x: os.path.getmtime(os.path.join(download_dir, x)))
+
+# Le dernier fichier de la liste est le dernier fichier téléchargé
+last_downloaded_file = files[-1]
+
+# Chemin complet vers le dernier fichier téléchargé
+pdf_path = os.path.join(download_dir, last_downloaded_file)
+
+# Convertir le PDF en PNG
+images = convert_from_path(pdf_path)
+
+# Enregistrer les images
+images[0].save(f"/home/miroir/MagicMirror/modules/menu_houzeau/menu.png", "PNG")
