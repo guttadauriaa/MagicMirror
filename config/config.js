@@ -66,7 +66,10 @@ let config = {
 			module: "test_module",
 			position: "middle_center",
 		},
-
+		{
+			module: "menu_houzeau",
+			position: "middle_center",
+		},
 		// {
 		// 	module: "helloworld",
 		// 	position: "middle_center",
