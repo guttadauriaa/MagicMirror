@@ -1,10 +1,5 @@
-import os
-import sys
 import speech_recognition as sr
 from fonctionnalite import Fonctionnalite
-
-# Redirection de la sortie standard d'erreur vers /dev/null pour ignorer les erreurs ALSA
-sys.stderr = open(os.devnull, 'w')
 
 fonctionnalite = Fonctionnalite()
 
