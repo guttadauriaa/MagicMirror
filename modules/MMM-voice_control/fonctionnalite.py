@@ -1,3 +1,5 @@
+import requests
+
 class Fonctionnalite:
     def questions(self, data):
 
@@ -21,5 +23,9 @@ class Fonctionnalite:
                 for local in liste_local:
                     print(local)
 
-        
+
+        url = "http://localhost:8080/test_module"
+        payload = {"texte": data}
+        requests.post(url, json=payload)
+
         #guide moi vers un locale == > vers quel local

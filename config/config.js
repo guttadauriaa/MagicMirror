@@ -111,7 +111,10 @@ let config = {
 		// 	}
 		//   },
 		
-		
+		{
+			module : "MMM-voice_control",
+			position: "top_center"
+		}
 	]
 };
 
