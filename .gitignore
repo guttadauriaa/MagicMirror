@@ -9,5 +9,3 @@ package.json
 vendor/
 modules/MMM-voice_control/model
 modules/MMM-voice_control/__pycache__
-package-lock.json
-package.json
