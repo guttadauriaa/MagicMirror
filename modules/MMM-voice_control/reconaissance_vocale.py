@@ -6,7 +6,7 @@ def reconnaissance_vocale():
 
     while True:  # Boucle infinie pour une vérification constante
         # Utiliser le microphone comme source audio
-        with sr.Microphone() as source:
+        with sr.Microphone(device_index=3) as source:
             print("Dites quelque chose...")
             # Réduire le bruit de fond pour améliorer la reconnaissance
             recognizer.adjust_for_ambient_noise(source)
