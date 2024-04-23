@@ -1,13 +1,9 @@
-
 import speech_recognition as sr
 from fonctionnalite import Fonctionnalite
-import subprocess
 import os
 
-# Supprimer les erreurs provenant de pyalsa et autres
-with open(os.devnull, 'w') as devnull:
-    # Exécuter votre code avec redirection de stderr vers /dev/null
-    subprocess.run(["votre_commande"], stderr=devnull)
+# Rediriger stderr vers /dev/null pour supprimer les erreurs
+stderr_null = open(os.devnull, 'w')
 
 # Instancier l'objet Fonctionnalite
 fonctionnalite = Fonctionnalite()
