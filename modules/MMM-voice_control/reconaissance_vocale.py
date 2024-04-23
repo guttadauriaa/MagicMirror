@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 
 import speech_recognition as sr
-import pyaudio
 from fonctionnalite import Fonctionnalite
+import subprocess
+import os
 
+# Supprimer les erreurs provenant de pyalsa et autres
+with open(os.devnull, 'w') as devnull:
+    # Exécuter votre code avec redirection de stderr vers /dev/null
+    subprocess.run(["votre_commande"], stderr=devnull)
+
+# Instancier l'objet Fonctionnalite
 fonctionnalite = Fonctionnalite()
 
 def reconnaissance_vocale():
