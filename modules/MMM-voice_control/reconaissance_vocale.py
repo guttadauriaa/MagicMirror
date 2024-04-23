@@ -1,12 +1,12 @@
 import speech_recognition as sr
-from fonctionnalite import Fonctionnalite
+import subprocess
 import os
+from fonctionnalite import Fonctionnalite
 
-# Rediriger stderr vers /dev/null pour supprimer les erreurs
-stderr_null = open(os.devnull, 'w')
-
-# Instancier l'objet Fonctionnalite
 fonctionnalite = Fonctionnalite()
+
+# Rediriger stderr vers /dev/null pour supprimer les erreurs ALSA
+stderr_null = open(os.devnull, 'w')
 
 def reconnaissance_vocale():
     # Créer un objet Recognizer
@@ -33,5 +33,6 @@ def reconnaissance_vocale():
             except sr.RequestError as e:
                 print("Erreur lors de la requête : ", e)
 
-# Appeler la fonction reconnaissance_vocale
-reconnaissance_vocale()
+# Appeler la fonction reconnaissance_vocale avec redirection de stderr vers /dev/null
+with stderr_null as devnull:
+    reconnaissance_vocale()
