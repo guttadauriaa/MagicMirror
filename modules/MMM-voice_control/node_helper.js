@@ -17,6 +17,7 @@ module.exports = NodeHelper.create({
                 }
 
                 // stdout est la sortie de votre script Python
+                console.log(stdout);
                 this.sendSocketNotification('DISPLAY_TEXT', stdout);
             });
 
