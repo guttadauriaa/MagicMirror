@@ -6,6 +6,7 @@ Module.register("menu_houzeau", {
     },
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'PYTHON_DATA_MENU_HOUZEAU') {
+            console.log("notification de menu_houzeau python");
             let wrapper = document.getElementById('menu_houzeau');
             if (wrapper) {
                 let html = "";
