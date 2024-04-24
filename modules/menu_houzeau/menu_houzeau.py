@@ -54,7 +54,7 @@ edit_button.click() """
 
 
 download_button = WebDriverWait(driver, 30).until(
-    EC.visibility_of_element_located((By.XPATH, "//button[@aria-label='Télécharger le document']"))
+    EC.visibility_of_element_located((By.XPATH, '//*[@id="main-layout"]/div[9]/div[2]/div[7]/button'))
 )
 download_button.click()
 time.sleep(2)
