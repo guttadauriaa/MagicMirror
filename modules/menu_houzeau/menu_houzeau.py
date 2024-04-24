@@ -9,11 +9,20 @@ from selenium.webdriver.support import expected_conditions as EC
 import time 
 from pdf2image import convert_from_path
 import os
+from selenium.webdriver.chrome.options import Options
 
+#pour exetuter le code à distance
+from pyvirtualdisplay import Display
+display = Display(visible=0, size=(800, 800))
+display.start()
+hbh
+#pour ne pas afficher la fenêtre du navigateur
+chrome_options = Options()
+chrome_options.add_argument("--headless")
 
 #pour interagir avec le site web 
 service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
-driver = webdriver.Chrome(service = service)
+driver = webdriver.Chrome(service = service, Options=chrome_options)
 
 # Charger la page Web
 url = "https://www.calameo.com/read/000265915972f1317661b?trackersource=library"
@@ -25,7 +34,7 @@ edit_button = WebDriverWait(driver, 5).until(
 )
 edit_button.click()
 
-menu = WebDriverWait(driver, 5).until(
+menu = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.XPATH, "/html/body/div/div[2]/div/div[1]/div/div[1]/div/div[1]/div/div/a"))
 )
 
