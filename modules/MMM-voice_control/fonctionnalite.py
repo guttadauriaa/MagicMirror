@@ -1,4 +1,5 @@
 import requests
+import json
 
 def send_text_to_node_helper(texte):
     url = "http://localhost:8080/MMM-voice_control"
@@ -29,4 +30,5 @@ class Fonctionnalite:
                 for local in liste_local:
                     print(local)
 
-        send_text_to_node_helper(data)
+        print(json.dumps(data))
+        #send_text_to_node_helper(data)
