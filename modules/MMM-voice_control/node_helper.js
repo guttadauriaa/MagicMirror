@@ -25,10 +25,6 @@ module.exports = NodeHelper.create({
                     this.sendSocketNotification('DISPLAY_TEXT', stdout);
                 }
             });
-            
-
-            //console.log("Received text from voice recognition:", payload);
-            //this.sendSocketNotification('DISPLAY_TEXT', payload);
         }
     }
 });

@@ -13,6 +13,10 @@ Module.register("MMM-voice_control", {
             this.sendSocketNotification('VOICE_TEXT', {});
         }
         if (notification === 'NO_DISPLAY') {
+            let wrapper = document.getElementById('MMM-voice_control');
+            if (wrapper) {
+                wrapper.innerHTML = "Parlez maintenant";
+            }
             this.sendSocketNotification('VOICE_TEXT', {});
         }
     },

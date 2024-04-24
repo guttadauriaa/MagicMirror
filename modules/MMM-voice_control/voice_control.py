@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 import speech_recognition as sr
 from fonctionnalite import Fonctionnalite
 import json
@@ -24,10 +27,12 @@ def reconnaissance_vocale():
             texte = recognizer.recognize_google(audio, language="fr-FR")
             #print("Vous avez dit :", texte)
             fonctionnalite.questions(texte)
+            
         except sr.UnknownValueError:
-            print(json.dumps("Je n'ai pas compris ce que vous avez dit."))
+            print(json.dumps("Je n'ai pas compris ce que vous avez dit."), ensure_ascii=False)
+
         except sr.RequestError as e:
-            print(json.dumps("Erreur lors de la requête : ", e))
+            print(json.dumps("Erreur lors de la requête : ", e), ensure_ascii=False)
 
 
 
