@@ -1,5 +1,6 @@
 Module.register("MMM-voice_control", {
     start: function() {
+        this.sendSocketNotification('VOICE_TEXT', {});
         console.log("Starting module: " + this.name);
     },
 
