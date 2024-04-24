@@ -82,5 +82,5 @@ if jourPre < jourToday and moisPre == moisToday or moisPre < moisToday:
     jourfinsemaine = int(last_downloaded_file[19:21])
     dicomois = {"janvier": 1, "février": 2, "mars": 3, "avril": 4, "mai": 5, "juin": 6, "juillet": 7, "août": 8, "septembre": 9, "octobre": 10, "novembre": 11, "décembre": 12}
     moisMenu = dicomois[last_downloaded_file[22:-9]]
-    with open("menu.txt", "w") as f:
+    with open("./modules/menu_houzeau/menu.txt", "w") as f:
         f.write(f"{jourfinsemaine}\n{moisMenu}")
