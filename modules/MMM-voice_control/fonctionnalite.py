@@ -21,14 +21,14 @@ class Fonctionnalite:
        
         for local in liste_local:
             if local.lower() in data.lower():
-                print("très bien voici comment se rendre à :", local)
+                print(json.dumps("très bien voici comment se rendre à :"), local)
                 break
 
         else:
             if 'auditoire' in data or 'local' in data:
-                print("Dans quel local souhaitez-vous aller ? ")
+                print(json.dumps("Dans quel local souhaitez-vous aller ? "))
                 for local in liste_local:
-                    print(local)
+                    print(json.dumps(local))
 
         print(json.dumps(data))
         #send_text_to_node_helper(data)
