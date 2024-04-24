@@ -11,10 +11,10 @@ Module.register("menu_houzeau", {
             if (wrapper) {
                 console.log("notification de menu_houzeau python 2");
                 let html = "";
-                html += 'executions du script menu_houzeau.py';
+                html += payload;
                 const imagePath = "./modules/menu_houzeau/menu.png";
                 
-                html += '<h1>Electron PDF.js Desktop PDF Viewer Example</h1>';
+                
                 html += `<img src="${imagePath}" alt="Your Image" style="width: 100%; height: 100%;" />`;
                 wrapper.innerHTML = html;
             }

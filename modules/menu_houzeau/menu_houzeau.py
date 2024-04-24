@@ -36,23 +36,7 @@ edit_button = WebDriverWait(driver, 5).until(
 )
 edit_button.click()
 
-# menu = WebDriverWait(driver, 10).until(
-#     EC.presence_of_element_located((By.XPATH, "/html/body/div/div[2]/div/div[1]/div/div[1]/div/div[1]/div/div/a"))
-# )
-
-#le lien vers le pdf du menu : menu.get_attribute("href")  https://www.calameo.com/read/000265915972f1317661b?trackersource=library
-#si le lien est tjrs le meme de semaine en semaine on peut directement commencer ici
-# url_menu = menu.get_attribute("href")
-# driver.get(url_menu)
-
-""" # Attendre que la page se charge complètement
-edit_button = WebDriverWait(driver, 5).until(
-    EC.presence_of_element_located((By.XPATH, "//*[@id=\"CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll\"]"))
-)
-edit_button.click() """
-
-
-
+# Attendre que le bouton de téléchargement soit visible
 download_button = WebDriverWait(driver, 30).until(
     EC.visibility_of_element_located((By.XPATH, '//*[@id="main-layout"]/div[9]/div[2]/div[7]/button'))
 )
