@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 import requests
 import json
 
@@ -17,11 +16,13 @@ class Fonctionnalite:
 
         for local in liste_local:
             if local.lower() in data.lower():
-                print(json.dumps("très bien voici comment se rendre à :"), local)
+                message = "très bien voici comment se rendre à :".encode().decode('unicode-escape')
+                print(json.dumps(message, local))
                 break
 
         else:
             if 'auditoire' in data or 'local' in data:
-                print(json.dumps("Dans quel local souhaitez-vous aller ? "))
+                message = "Dans quel local souhaitez-vous aller ? ".encode().decode('unicode-escape')
+                print(json.dumps(message))
                 for local in liste_local:
                     print(json.dumps(local))
