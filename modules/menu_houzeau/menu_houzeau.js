@@ -7,12 +7,12 @@ Module.register("menu_houzeau", {
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'PYTHON_DATA_MENU_HOUZEAU') {
             console.log("notification de menu_houzeau python");
-            let wrapper = document.createElement("div");;
+            let wrapper = document.getElementById('menu_houzeau');
             if (wrapper) {
                 console.log("notification de menu_houzeau python 2");
                 let html = "";
                 html += 'executions du script menu_houzeau.py';
-                const imagePath = "/modules/menu_houzeau/menu.png";
+                const imagePath = "./modules/menu_houzeau/menu.png";
                 
                 html += '<h1>Electron PDF.js Desktop PDF Viewer Example</h1>';
                 html += `<img src="${imagePath}" alt="Your Image" style="width: 100%; height: 100%;" />`;
@@ -36,7 +36,7 @@ Module.register("menu_houzeau", {
         // wrapper.appendChild(iframe);
 
         let wrapper = document.createElement("div");
-        // wrapper.id = "menu_houzeau";
+        wrapper.id = "menu_houzeau";
         // //wrapper.innerHTML = "Exécution du script, veuillez patienter...";
         // let html = "";
         // html += '<h1>Electron PDF.js Desktop PDF Viewer Example</h1>';
