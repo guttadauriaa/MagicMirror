@@ -8,7 +8,7 @@ module.exports = NodeHelper.create({
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'START_MENU_HOUZEAU') {
-            exec(`home/miroir/MirrorPyEnv/bin/python3 ./modules/menu_houzeau/menu_houzeau.py`, (error, stdout, stderr) => {
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/menu_houzeau/menu_houzeau.py`, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur d'exécution du script Python: ${error}`);
                     return;
