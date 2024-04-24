@@ -9,7 +9,7 @@ class Fonctionnalite:
 
     def questions(self, data):
 
-        print(json.dumps(data), ensure_ascii=False)
+        print(json.dumps(data))
 
         liste_local = ["Auditoire 3", "Auditoire 5" ,"IG lab" ,"Auditoire 12" ,
                        "Auditoire 11" ,"Labo physique",
@@ -17,11 +17,11 @@ class Fonctionnalite:
 
         for local in liste_local:
             if local.lower() in data.lower():
-                print(json.dumps("très bien voici comment se rendre à :"), local, ensure_ascii=False)
+                print(json.dumps("très bien voici comment se rendre à :"), local)
                 break
 
         else:
             if 'auditoire' in data or 'local' in data:
-                print(json.dumps("Dans quel local souhaitez-vous aller ? "), ensure_ascii=False)
+                print(json.dumps("Dans quel local souhaitez-vous aller ? "))
                 for local in liste_local:
                     print(json.dumps(local))
