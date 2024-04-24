@@ -10,7 +10,17 @@ Module.register("MMM-voice_control", {
             if (wrapper) {
                 wrapper.innerHTML = payload;
             }
-            this.sendSocketNotification('VOICE_TEXT', {});
+
+            // Attendre 3 secondes
+            setTimeout(() => {
+                this.sendSocketNotification('VOICE_TEXT', {});
+                // Attendre 2 secondes supplémentaires
+                setTimeout(() => {
+                    if (wrapper) {
+                        wrapper.innerHTML = "Parlez ...";
+                    }
+                }, 2000);
+            }, 3000);
         }
         if (notification === 'NO_DISPLAY') {
             let wrapper = document.getElementById('MMM-voice_control');
