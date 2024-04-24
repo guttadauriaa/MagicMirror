@@ -1,4 +1,4 @@
-#!home/MirrorPyEnv/bin python3
+#!home/miroir/MirrorPyEnv/bin/python3
 
 import json
 from selenium import webdriver
