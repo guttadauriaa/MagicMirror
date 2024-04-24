@@ -10,7 +10,7 @@ Module.register("MMM-voice_control", {
             if (wrapper) {
                 wrapper.innerHTML = payload;
             }
-            //this.sendSocketNotification('VOICE_TEXT', {});
+            this.sendSocketNotification('VOICE_TEXT', {});
         }
     },
 

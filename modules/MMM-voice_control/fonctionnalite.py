@@ -10,6 +10,8 @@ class Fonctionnalite:
 
     def questions(self, data):
 
+        print(json.dumps(data))
+
         liste_local = ["Auditoire 3", "Auditoire 5" ,"IG lab" ,"Auditoire 12" ,
                        "Auditoire 11" ,"Labo physique",
                        "Auditoire 21" ,"Auditoire 22" ,"Auditoire 23" ,"Auditoire 24" ,"Auditoire 25"]
@@ -30,5 +32,4 @@ class Fonctionnalite:
                 for local in liste_local:
                     print(json.dumps(local))
 
-        print(json.dumps(data))
         #send_text_to_node_helper(data)
