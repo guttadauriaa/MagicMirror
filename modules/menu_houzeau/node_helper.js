@@ -7,7 +7,7 @@ module.exports = NodeHelper.create({
     },
 
     socketNotificationReceived: function(notification, payload) {
-        if (notification === 'START_PYTHON_SCRIPT') {
+        if (notification === 'START_MENU_HOUZEAU') {
             exec(`python3 ./modules/menu_houzeau/menu_houzeau.py`, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur d'exécution du script Python: ${error}`);
@@ -15,7 +15,7 @@ module.exports = NodeHelper.create({
                 }
 
                 // stdout est la sortie de votre script Python
-                this.sendSocketNotification('PYTHON_DATA', stdout);
+                this.sendSocketNotification('PYTHON_DATA_MENU_HOUZEAU', stdout);
             });
         }
     }

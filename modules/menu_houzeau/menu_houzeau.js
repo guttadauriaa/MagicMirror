@@ -2,9 +2,10 @@ Module.register("menu_houzeau", {
     // Override the start function to initialize the module
     start: function() {
         // You can initialize variables here if needed
+        this.sendSocketNotification('START_MENU_HOUZEAU', {});
     },
     socketNotificationReceived: function(notification, payload) {
-        if (notification === 'PYTHON_DATA') {
+        if (notification === 'PYTHON_DATA_MENU_HOUZEAU') {
             let wrapper = document.getElementById('menu_houzeau');
             if (wrapper) {
                 let html = "";
