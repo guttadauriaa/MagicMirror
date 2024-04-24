@@ -1,5 +1,6 @@
 #!home/MirrorPyEnv/bin python3
 
+import json
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
@@ -68,3 +69,4 @@ images = convert_from_path(pdf_path)
 
 # Enregistrer les images
 images[0].save(f"/home/miroir/MagicMirror/modules/menu_houzeau/menu.png", "PNG")
+print(json.dumps(f"{last_downloaded_file} a été converti en image avec succès"))
