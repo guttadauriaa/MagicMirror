@@ -1,6 +1,12 @@
 import requests
 
+def send_text_to_node_helper(texte):
+    url = "http://localhost:8080/MMM-voice_control"
+    payload = {"texte": texte}
+    requests.post(url, json=payload)
+
 class Fonctionnalite:
+
     def questions(self, data):
 
         liste_local = ["Auditoire 3", "Auditoire 5" ,"IG lab" ,"Auditoire 12" ,
@@ -23,9 +29,4 @@ class Fonctionnalite:
                 for local in liste_local:
                     print(local)
 
-
-        url = "http://localhost:8080/MMM-voice_control"
-        payload = {"texte": data}
-        requests.post(url, json=payload)
-
-        #guide moi vers un locale == > vers quel local
+        send_text_to_node_helper(data)

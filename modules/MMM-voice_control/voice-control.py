@@ -28,4 +28,6 @@ def reconnaissance_vocale():
             except sr.RequestError as e:
                 print("Erreur lors de la requête : ", e)
 
+
+
 reconnaissance_vocale()
