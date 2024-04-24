@@ -7,7 +7,8 @@ import json
 class Fonctionnalite:
 
     def questions(self, data):
-
+        
+        texte = data.encode().decode('unicode-escape')
         print(json.dumps(data))
 
         liste_local = ["Auditoire 3", "Auditoire 5" ,"IG lab" ,"Auditoire 12" ,
@@ -17,7 +18,7 @@ class Fonctionnalite:
         for local in liste_local:
             if local.lower() in data.lower():
                 message = "très bien voici comment se rendre à :".encode().decode('unicode-escape')
-                print(json.dumps(message, local))
+                print(json.dumps(message), local)
                 break
 
         else:
