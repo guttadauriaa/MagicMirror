@@ -12,7 +12,7 @@ import os
 from selenium.webdriver.chrome.options import Options
 from datetime import date
 
-with open("menu.txt","r") as f:
+with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt","r") as f:
     jourPre = f.readline()
     moisPre = f.readline()
 
