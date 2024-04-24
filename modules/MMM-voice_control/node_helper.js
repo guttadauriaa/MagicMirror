@@ -1,4 +1,6 @@
 const NodeHelper = require("node_helper");
+const { exec } = require("child_process");
+
 
 module.exports = NodeHelper.create({
     start: function() {
