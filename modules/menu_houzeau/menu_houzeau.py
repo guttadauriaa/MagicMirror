@@ -51,8 +51,10 @@ edit_button = WebDriverWait(driver, 5).until(
 )
 edit_button.click() """
 
+
+#*[@id="main-layout"]/div[9]/div[2]/div[7]/button
 download_button = WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div/div[2]/div[3]/div[9]/div[2]/div[7]/button"))
+    EC.presence_of_element_located((By.XPATH, '*[@id="main-layout"]/div[9]/div[2]/div[7]/button'))
 )
 download_button.click()
 time.sleep(2)
