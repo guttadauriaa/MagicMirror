@@ -7,8 +7,9 @@ Module.register("menu_houzeau", {
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'PYTHON_DATA_MENU_HOUZEAU') {
             console.log("notification de menu_houzeau python");
-            let wrapper = document.getElementById('menu_houzeau');
+            let wrapper = document.createElement("div");;
             if (wrapper) {
+                console.log("notification de menu_houzeau python 2");
                 let html = "";
                 html += 'executions du script menu_houzeau.py';
                 const imagePath = "/modules/menu_houzeau/menu.png";
