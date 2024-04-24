@@ -10,6 +10,7 @@ module.exports = NodeHelper.create({
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'VOICE_TEXT') {
 
+            console.log("ici");
             exec(`python3 ./modules/MMM-voice_control/voice_control.py `, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur d'exécution du script Python: ${error}`);
