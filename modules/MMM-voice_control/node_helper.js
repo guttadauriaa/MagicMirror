@@ -6,7 +6,7 @@ module.exports = NodeHelper.create({
     },
 
     socketNotificationReceived: function(notification, payload) {
-        if (notification === 'RECEIVED_TEXT') {
+        if (notification === 'Start_voice_control') {
             console.log("Received text from voice recognition:", payload);
             // Envoyer la phrase détectée au module client
             this.sendSocketNotification('DISPLAY_TEXT', payload);

@@ -1,5 +1,6 @@
 Module.register("MMM-voice_control", {
     start: function() {
+        this.sendSocketNotification('Start_voice_control', {});
         console.log("Starting module: " + this.name);
     },
 
@@ -15,7 +16,7 @@ Module.register("MMM-voice_control", {
 
     getDom: function() {
         let wrapper = document.createElement("div");
-        wrapper.id = "test_module";
+        wrapper.id = "MMM-voice_control";
         wrapper.innerHTML = "En attente de phrases détectées...";
         return wrapper;
     }

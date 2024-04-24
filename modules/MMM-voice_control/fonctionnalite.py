@@ -24,7 +24,7 @@ class Fonctionnalite:
                     print(local)
 
 
-        url = "http://localhost:8080/test_module"
+        url = "http://localhost:8080/MMM-voice_control"
         payload = {"texte": data}
         requests.post(url, json=payload)
 
