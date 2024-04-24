@@ -12,6 +12,9 @@ Module.register("MMM-voice_control", {
             }
             this.sendSocketNotification('VOICE_TEXT', {});
         }
+        if (notification === 'NO_DISPLAY') {
+            this.sendSocketNotification('VOICE_TEXT', {});
+        }
     },
 
     getDom: function() {

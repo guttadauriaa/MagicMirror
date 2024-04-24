@@ -1,10 +1,6 @@
 import requests
 import json
 
-def send_text_to_node_helper(texte):
-    url = "http://localhost:8080/MMM-voice_control"
-    payload = {"texte": texte}
-    requests.post(url, json=payload)
 
 class Fonctionnalite:
 
@@ -16,11 +12,6 @@ class Fonctionnalite:
                        "Auditoire 11" ,"Labo physique",
                        "Auditoire 21" ,"Auditoire 22" ,"Auditoire 23" ,"Auditoire 24" ,"Auditoire 25"]
 
-        # liste_test = ["auditoire trois", "auditoire cinq", "ig lab", "auditoire douze", 
-        #               "auditoire onze", "labo physique", "auditoire vingt-quatre", 
-        #               "auditoire vingt et un", "auditoire vingt-deux", "auditoire vingt-trois", "auditoire vingt-cinq"]
-        
-       
         for local in liste_local:
             if local.lower() in data.lower():
                 print(json.dumps("très bien voici comment se rendre à :"), local)
@@ -31,5 +22,3 @@ class Fonctionnalite:
                 print(json.dumps("Dans quel local souhaitez-vous aller ? "))
                 for local in liste_local:
                     print(json.dumps(local))
-
-        #send_text_to_node_helper(data)
