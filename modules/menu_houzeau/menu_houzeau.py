@@ -13,8 +13,8 @@ from selenium.webdriver.chrome.options import Options
 from datetime import date
 
 with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt","r") as f:
-    jourPre = f.readline()
-    moisPre = f.readline()
+    jourPre = int(f.readline())
+    moisPre = int(f.readline())
 
 today = date.today()
 jourToday = today.day
