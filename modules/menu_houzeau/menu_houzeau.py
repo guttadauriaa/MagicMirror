@@ -76,7 +76,7 @@ if jourPre < jourToday and moisPre == moisToday or moisPre < moisToday:
     images = convert_from_path(pdf_path)
 
     # Enregistrer les images
-    images[0].save(f"/home/miroir/MagicMirror/modules/menu_houzeau/{last_downloaded_file[:-4]}.png", "PNG")
+    images[0].save(f"/home/miroir/MagicMirror/modules/menu_houzeau/menu.png", "PNG")
     print(json.dumps(f"{last_downloaded_file} a été converti en image avec succès"))
 
     jourfinsemaine = int(last_downloaded_file[19:21])
