@@ -10,11 +10,11 @@ Module.register("MMM-planning", {
       Log.info('MMM-planning received a socket notification: ' + notification + ' - Payload: ' + payload);
       if (notification === 'Planning' && this.NFCid) {
         this.data = payload;
-        this.updateDom();
+        //this.updateDom();
       }
       if (notification === 'NFC') {
         this.NFCid = payload;
-        this.updateDom();
+        //this.updateDom();
       }
     },
 
