@@ -1,4 +1,4 @@
-module.register("MMM-planning", {
+Module.register("MMM-planning", {
     start: function() {
       this.data = null;
       this.NFCid = null;
