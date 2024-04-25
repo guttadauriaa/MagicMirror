@@ -64,11 +64,11 @@ let config = {
 		// },
 		{
 			module: "MMM-planning",
-			position: "middle_top",
+			position: "top_center",
 		},
 		{
 			module: "menu_houzeau",
-			position: "middle_buttom",
+			position: "buttom_center",
 		},
 		// {
 		// 	module: "helloworld",
