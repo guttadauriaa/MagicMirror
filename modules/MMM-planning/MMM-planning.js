@@ -2,9 +2,7 @@ Module.register("MMM-planning", {
     start: function() {
       this.data = null;
       this.NFCid = null;
-      this.updateDom();  // Force une mise à jour de l'affichage
       this.sendSocketNotification('START_NFC', {});
-
     },
 
     //s'execute à chaque fois qu'il reçoit une notification
