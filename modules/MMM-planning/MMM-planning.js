@@ -1,7 +1,7 @@
 Module.register("MMM-planning", {
     start: function() {
-      this.data = '';
-      this.updateDom();
+      this.data = 'datavide';
+      console.log("Starting module: " + this.name + this.data);
       // this.NFCid = '';
       // this.sendSocketNotification('START_NFC', {});
     },
