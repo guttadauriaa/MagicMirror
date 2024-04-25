@@ -21,16 +21,17 @@ Module.register("MMM-planning", {
     // Override dom generator.
     getDom: function() {
       var wrapper = document.createElement("div");
-      if (this.data !== '' && this.NFCid !== '') {
-        // Si les données sont disponibles, affichez-les.
-        wrapper.innerHTML = this.data;
+      let html = '';
+      if (this.NFCid === '') {
+        wrapper.innerHTML = "Scannez votre carte d'étudiant -> ";
       } else if (this.data === '') {
-        // Sinon, affichez un message d'attente.
         wrapper.innerHTML = "Waiting for data...";
       } else {
-        // Sinon, affichez un message d'attente.
-        wrapper.innerHTML = "Scannez votre carte d'étudiant -> ";
+        //  html += this.data.toString(); 
+        html += this.NFCid.toString();
       }
+
+      wrapper.innerHTML = html;
       return wrapper;
     } 
 });
