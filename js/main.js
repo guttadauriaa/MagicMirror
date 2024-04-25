@@ -18,6 +18,7 @@ const MM = (function () {
 		const domCreationPromises = [];
 
 		modules.forEach(function (module) {
+			console.log("Object: ", module.data.position);
 			if (typeof module.data.position !== "string") {
 				return;
 			}
