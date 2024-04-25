@@ -1,25 +1,34 @@
-var NodeHelper = require("node_helper");
-var {PythonShell} = require('python-shell');
+const NodeHelper = require("node_helper");
+const { exec } = require("child_process");
 
 module.exports = NodeHelper.create({
-  start: function () {
-    this.pythonScript();
-  },
-  pythonScript: function () {
-    var options = {
-        pythonPath: '/home/miroir/MirrorPyEnv/bin/python3', // le chemin de votre environnement virtuel Python avec selenium installé
-        scriptPath: '/home/miroir/MagicMirror/modules/MMM-planning/', // le chemin du script Python
-        //args: ['argument1', 'argument2'] // Si votre script Python nécessite des arguments, vous pouvez les ajouter ici.
-    };
-    let pyshell = new PythonShell('hyperplanning.py', options);
-    pyshell.on('message', (message) => {
-      // message est une ligne de sortie du script Python
-      console.log(message)
-      let cours = JSON.parse(message);
-      this.sendSocketNotification('PYTHON_DATA', cours);
-    });
-    pyshell.end((err,code,signal) => {
-      if (err) throw err;
-    });
-  }
+    start: function() {
+        console.log("Starting node helper for: " + this.name);
+    },
+
+    socketNotificationReceived: function(notification, payload) {
+        if (notification === 'START_NFC') {
+          exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/nfc_reader.py`, (error, stdout, stderr) => {
+              if (error) {
+                  console.error(`Erreur d'exécution du script Python nfc: ${error}`);
+                  return;
+              }
+              console.log(stdout);
+              // stdout est la sortie de votre script Python
+              this.sendSocketNotification('NFC', stdout);
+          });
+      }
+      if (notification === 'START_PLANNING') {
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/hyperplanning.py`, (error, stdout, stderr) => {
+                if (error) {
+                    console.error(`Erreur d'exécution du script Python planning: ${error}`);
+                    return;
+                }
+
+                // stdout est la sortie de votre script Python
+                this.sendSocketNotification('Planning', stdout);
+            });
+        }
+        
+    }
 });
