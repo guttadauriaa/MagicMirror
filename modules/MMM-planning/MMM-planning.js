@@ -4,7 +4,7 @@ Module.register("MMM-planning", {
       this.NFCid = '';
       this.sendSocketNotification('START_NFC', {});
     },
-    // Override dom generator.
+    
     getDom: function() {
       var wrapper = document.createElement("div");
       let html = '';
@@ -17,7 +17,7 @@ Module.register("MMM-planning", {
         
       // }
 
-      wrapper.innerHTML = html;
+      wrapper.innerHTML = "Scannez votre carte d'étudiant -> ";
       return wrapper;
     },
     //s'execute à chaque fois qu'il reçoit une notification
