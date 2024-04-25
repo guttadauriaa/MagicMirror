@@ -8,14 +8,14 @@ Module.register("MMM-planning", {
     getDom: function() {
       var wrapper = document.createElement("div");
       let html = '';
-      if (this.NFCid === '') {
+      // if (this.NFCid === '') {
         html = "Scannez votre carte d'étudiant -> ";
-      } else if (this.data === '') {
-        html = "Waiting for data...";
-      } else {
-        html = this.data.toString(); 
+      // } else if (this.data === '') {
+      //   html = "Waiting for data...";
+      // } else {
+      //   html = this.data.toString(); 
         
-      }
+      // }
 
       wrapper.innerHTML = html;
       return wrapper;
