@@ -24,21 +24,16 @@ Module.register("MMM-planning", {
     // },
 
     getDom: function() {
-      console.log("dom1");
-      let wrapper = document.createElement("div");
-      console.log("dom2");
-      wrapper.id = "MMM-planning";
-      // let html = '';
-      // if (this.NFCid === '') {
-        // html = "Scannez votre carte d'étudiant -> ";
-      // } else if (this.data === '') {
-      //   html = "Waiting for data...";
-      // } else {
-      //   html = this.data.toString(); 
-        
-      // }
-
-      wrapper.innerHTML = "Scannez votre carte d'étudiant -> ";
-      return wrapper;
-    }
+      try {
+          console.log("dom1");
+          let wrapper = document.createElement("div");
+          console.log("dom2");
+          wrapper.id = "MMM-planning";
+  
+          wrapper.innerHTML = "Scannez votre carte d'étudiant -> ";
+          return wrapper;
+      } catch (error) {
+          console.error("Erreur dans getDom: ", error);
+      }
+  }
 });
