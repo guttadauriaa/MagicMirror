@@ -22,16 +22,16 @@ Module.register("MMM-planning", {
     },
     //s'execute à chaque fois qu'il reçoit une notification
     socketNotificationReceived: function(notification, payload) {
-      //let wrapper = document.getElementById('MMM-planning');
+      let wrapper = document.getElementById('MMM-planning');
       Log.info('MMM-planning received a socket notification: ' + notification + ' - Payload: ' + payload);
       if (notification === 'Planning' && this.NFCid !== '') {
         this.data = payload;
-        this.updateDom();
+        // this.updateDom();
       }
       if (notification === 'NFC') {
         this.NFCid = payload;
-        //wrapper.innerHTML = "Scannez votre carte d'étudiant -> " + this.NFCid;
-        this.updateDom();
+        wrapper.innerHTML = "EN attente des données" + this.NFCid;
+        // this.updateDom();
         console.log("maj dom",this.NFCid);
       }
     }
