@@ -24,7 +24,7 @@ Module.register("MMM-planning", {
     // },
 
     getDom: function() {
-      var wrapper = document.createElement("div");
+      let wrapper = document.createElement("div");
       console.log("dom");
       // let html = '';
       // if (this.NFCid === '') {
