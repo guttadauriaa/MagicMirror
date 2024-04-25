@@ -56,6 +56,7 @@ Module.register("test_module", {
     },
 
     getDom: function() {
+        console.log("dom1");
         let wrapper = document.createElement("div");
         wrapper.id = "test_module";
         wrapper.innerHTML = "Exécution du script Python, veuillez patienter...";
