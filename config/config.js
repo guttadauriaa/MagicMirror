@@ -62,13 +62,13 @@ let config = {
 		// 		]
 		// 	}
 		// },
-		// {
-		// 	module: "test_module",
-		// 	position: "middle_center",
-		// },
+		{
+			module: "MMM-planning",
+			position: "middle_top",
+		},
 		{
 			module: "menu_houzeau",
-			position: "middle_center",
+			position: "middle_buttom",
 		},
 		// {
 		// 	module: "helloworld",
