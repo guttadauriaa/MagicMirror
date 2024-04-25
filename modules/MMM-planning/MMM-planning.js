@@ -15,6 +15,7 @@ Module.register("MMM-planning", {
       if (notification === 'NFC') {
         this.NFCid = payload;
         this.updateDom();
+        console.log("maj dom",this.NFCid);
       }
     },
 
