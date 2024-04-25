@@ -1,6 +1,6 @@
 Module.register("MMM-planning", {
     start: function() {
-      this.data = '';
+      this.data = 0;
       this.NFCid = 0;
       // this.sendSocketNotification('START_NFC', {});
     },
