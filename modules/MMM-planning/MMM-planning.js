@@ -5,21 +5,7 @@ Module.register("MMM-planning", {
       this.sendSocketNotification('START_NFC', {});
     },
     
-    getDom: function() {
-      var wrapper = document.createElement("div");
-      let html = '';
-      // if (this.NFCid === '') {
-        html = "Scannez votre carte d'étudiant -> ";
-      // } else if (this.data === '') {
-      //   html = "Waiting for data...";
-      // } else {
-      //   html = this.data.toString(); 
-        
-      // }
-
-      wrapper.innerHTML = "Scannez votre carte d'étudiant -> ";
-      return wrapper;
-    },
+    
     //s'execute à chaque fois qu'il reçoit une notification
     socketNotificationReceived: function(notification, payload) {
       let wrapper = document.getElementById('MMM-planning');
@@ -34,5 +20,21 @@ Module.register("MMM-planning", {
         // this.updateDom();
         console.log("maj dom",this.NFCid);
       }
+    },
+
+    getDom: function() {
+      var wrapper = document.createElement("div");
+      // let html = '';
+      // if (this.NFCid === '') {
+        // html = "Scannez votre carte d'étudiant -> ";
+      // } else if (this.data === '') {
+      //   html = "Waiting for data...";
+      // } else {
+      //   html = this.data.toString(); 
+        
+      // }
+
+      wrapper.innerHTML = "Scannez votre carte d'étudiant -> ";
+      return wrapper;
     }
 });
