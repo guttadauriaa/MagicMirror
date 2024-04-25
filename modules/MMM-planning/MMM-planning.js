@@ -2,8 +2,8 @@ Module.register("MMM-planning", {
     start: function() {
       this.data = 'datavide';
       console.log("Starting module: " + this.name + this.data);
-      // this.NFCid = '';
-      // this.sendSocketNotification('START_NFC', {});
+      this.NFCid = '';
+      this.sendSocketNotification('START_NFC', {});
     },
     
     
@@ -24,8 +24,10 @@ Module.register("MMM-planning", {
     // },
 
     getDom: function() {
+      console.log("dom1");
       let wrapper = document.createElement("div");
-      console.log("dom");
+      console.log("dom2");
+      wrapper.id = "MMM-planning";
       // let html = '';
       // if (this.NFCid === '') {
         // html = "Scannez votre carte d'étudiant -> ";
