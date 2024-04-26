@@ -13,7 +13,7 @@ socketNotificationReceived: function(notification, payload) {
     wrapper.innerHTML = payload;
   }
   if (notification === 'NFC') {
-    this.NFCid = payload;
+    this.NFCid = payload.substring(0, 12);
     wrapper.innerHTML = "En attente des données";
     this.sendSocketNotification('START_PLANNING', {NFCid : this.NFCid});
   }
