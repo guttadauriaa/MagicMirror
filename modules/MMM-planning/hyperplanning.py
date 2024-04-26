@@ -13,15 +13,15 @@ import sys
 
 
 NFCid= sys.argv[1]
+horaire = [52, 5] #formation, option par defaut
 with open("./modules/MMM-planning/NFCtoH.txt", 'r') as f:
     for line in f:
         if NFCid in line:
             line = line.rstrip().split(" ")
-            Horaire[0] = int(line[1])
-            Horaire[1] = int(line[2])
+            horaire[0] = int(line[1])
+            horaire[1] = int(line[2])
             break
-        else:
-            Horaire = [52, 5] #formation, option par defaut
+        
 
 
 #pour exetuter le code à distance
