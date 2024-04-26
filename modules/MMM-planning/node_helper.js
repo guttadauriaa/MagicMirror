@@ -24,7 +24,7 @@ module.exports = NodeHelper.create({
                     console.error(`Erreur d'exécution du script Python planning: ${error}`);
                     return;
                 }
-
+                console.log(stdout);
                 // stdout est la sortie de votre script Python
                 this.sendSocketNotification('Planning', stdout);
             });
