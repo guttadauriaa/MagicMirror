@@ -13,7 +13,7 @@ import sys
 
 
 NFCid= sys.argv[1]
-with open("/home/miroir/MirrorPyEnv/MagicMirror/modules/MMM-planning/NFCtoH.txt", 'r') as f:
+with open("./modules/MMM-planning/NFCtoH.txt", 'r') as f:
     for line in f:
         if NFCid in line:
             line = line.rstrip().split(" ")
