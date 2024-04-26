@@ -19,7 +19,7 @@ module.exports = NodeHelper.create({
           });
       }
       if (notification === 'START_PLANNING') {
-            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/hyperplanning.py`, (error, stdout, stderr) => {
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/hyperplanning.py ${payload.NFCid}`, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur d'exécution du script Python planning: ${error}`);
                     return;

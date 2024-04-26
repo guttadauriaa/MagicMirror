@@ -9,6 +9,20 @@ import re
 import time
 import json
 from selenium.webdriver.chrome.options import Options
+import sys
+
+
+NFCid= sys.argv[1]
+with open("/home/miroir/MirrorPyEnv/MagicMirror/modules/MMM-planning/NFCtoH.txt", 'r') as f:
+    for line in f:
+        if NFCid in line:
+            line = line.rstrip().split(" ")
+            Horaire[0] = int(line[1])
+            Horaire[1] = int(line[2])
+            break
+        else:
+            Horaire = [52, 5] #formation, option par defaut
+
 
 #pour exetuter le code à distance
 from pyvirtualdisplay import Display
@@ -20,7 +34,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
-horaire = [52, 5] #formation, option
+#horaire = [52, 5] #formation, option
 semaine = 25
 
 #pour interagir avec le site web 
