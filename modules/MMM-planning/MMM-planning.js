@@ -1,6 +1,5 @@
 Module.register("MMM-planning", {
   start: function() {
-      this.data = null;
       this.NFCid = null;
       this.sendSocketNotification('START_NFC', {});
       console.log("Starting module: " + this.name);
@@ -10,8 +9,8 @@ socketNotificationReceived: function(notification, payload) {
   let wrapper = document.getElementById('MMM-planning');
   Log.info('MMM-planning received a socket notification: ' + notification + ' - Payload: ' + payload);
   if (notification === 'Planning') {
-    this.data = payload;
-    wrapper.innerHTML = data;
+  
+    wrapper.innerHTML = payload;
   }
   if (notification === 'NFC') {
     this.NFCid = payload;
