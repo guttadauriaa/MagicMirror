@@ -1,5 +1,6 @@
 Module.register("MMM-planning", {
   start: function() {
+      this.data = null;
       this.NFCid = null;
       this.sendSocketNotification('START_NFC', {});
       console.log("Starting module: " + this.name);
@@ -10,13 +11,12 @@ socketNotificationReceived: function(notification, payload) {
   Log.info('MMM-planning received a socket notification: ' + notification + ' - Payload: ' + payload);
   if (notification === 'Planning') {
     this.data = payload;
-    // this.updateDom();
+    wrapper.innerHTML = data;
   }
   if (notification === 'NFC') {
     this.NFCid = payload;
-    wrapper.innerHTML = "EN attente des données pour le badge" + this.NFCid;
-    // this.updateDom();
-    console.log("maj dom",this.NFCid);
+    wrapper.innerHTML = "En attente des données";
+    this.sendSocketNotification('START_PLANNING', {NFCid : this.NFCid});
   }
 },
 
@@ -24,7 +24,7 @@ socketNotificationReceived: function(notification, payload) {
       console.log("dom1");
       let wrapper = document.createElement("div");
       wrapper.id = "MMM-planning";
-      wrapper.innerHTML = "Exécution du script Python, veuillez patienter...";
+      wrapper.innerHTML = "Veillez scanner votre carte étudiante ->";
       return wrapper;
   }
 });
