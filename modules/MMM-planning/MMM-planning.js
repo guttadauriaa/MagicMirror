@@ -60,7 +60,7 @@ socketNotificationReceived: function(notification, payload) {
     }
     html += '</tr>';
 
-    for (let i = 0; i < heures.length; i++) {
+    for (let i = 0; i < heures.length-1; i++) {
         html += `<tr><td>${heures[i]}</td>`;
         for (let jour of jours) {
             for (let cours in liste_cours[jour]) {
