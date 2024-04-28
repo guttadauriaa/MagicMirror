@@ -174,7 +174,7 @@ while True:
             #break 
         
 
-print(json.dumps(cours.to_dict() for cours in liste_cours))
+print(json.dumps([cours.to_dict() for cours in liste_cours]))
 
 
 
