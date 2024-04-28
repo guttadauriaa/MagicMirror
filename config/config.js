@@ -64,7 +64,7 @@ let config = {
 		// },
 		{
 			module: "MMM-planning",
-			position: "middle_center",
+			position: "top_center",
 		},
 		// {
 		// 	module: "test_module",
