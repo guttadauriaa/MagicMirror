@@ -96,6 +96,24 @@ correspondance_jour ={}
 
 numero = 0
 liste_cours = list()
+class Cours:
+    def __init__(self, titre, local, jour, heure_debut, heure_fin):
+        self.titre = titre
+        self.local = local
+        self.jour = jour.split(' ')[0]
+        self.DateJour = jour.split(' ')[1]
+        self.heure_debut = heure_debut
+        self.heure_fin = heure_fin
+    
+    def to_dict(self):
+        return {
+            'Titre': self.titre,
+            'Local': self.local,
+            'Jour': self.jour,
+            'DateJour' : self.DateJour,
+            'HeureD': self.heure_debut,
+            'HeureF': self.heure_fin
+        }
 
 #pour que la page soit bien chargée
 time.sleep(3)
@@ -144,7 +162,8 @@ while True:
             #on va stocker les informations du cours dans une liste ou on explicite les valeurs suivantes:
             #nom du cours, local, date, heure début, heure fin, type de cours
             info = [title, local, jour, heure_debut, heure_fin]
-            liste_cours.append(info)
+            infoObj = Cours(title, local, jour, heure_debut, heure_fin)
+            liste_cours.append(infoObj)
 
     except Exception as e:
         #print("Une exception de type", type(e).__name__, "a été levée.")
