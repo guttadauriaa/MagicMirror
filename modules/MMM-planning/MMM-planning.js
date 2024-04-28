@@ -65,7 +65,7 @@ socketNotificationReceived: function(notification, payload) {
             for (let coursKey in liste_cours[jour]) {
                 let cours = liste_cours[jour][coursKey];
                 console.log(heures[i] + ' ' + cours + ' ' + heures[i+1])
-                if (compareHeures(heures[i],cours.HeureD) === -1 ||compareHeures(heures[i],cours.HeureD) === 0 && compareHeures(cours.HeureD,heures[i+1]) === -1) {
+                if ((compareHeures(heures[i],cours.HeureD) === -1 || compareHeures(heures[i],cours.HeureD) === 0) && compareHeures(cours.HeureD,heures[i+1]) === -1) {
                     html += `<td>${cours.Titre}<br>Salle: ${cours.Local}<br>${cours.HeureD} - ${cours.HeureF}</td>`;
                     delete liste_cours[cours.Jour][cours.HeureD];
                     break;
