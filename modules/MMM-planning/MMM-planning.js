@@ -45,7 +45,7 @@ socketNotificationReceived: function(notification, payload) {
             liste_cours[cours.Jour] = {};
             jours.push(cours.Jour);
         }
-        liste_cours[cours.Jour][cours.heureD] = cours;
+        liste_cours[cours.Jour][cours.HeureD] = cours;
     }
     console.log(liste_cours);
     console.log(liste_cours['Lun.']['08h15']);
@@ -63,7 +63,7 @@ socketNotificationReceived: function(notification, payload) {
         html += `<tr><td>${heures[i]}</td>`;
         for (let jour of jours) {
             for (let cours in liste_cours[jour]) {
-                console.log(heures[i] + ' ' + cours + ' ' + heures[i+1])
+                console.log(heures[i] + ' ' + iste_cours[jour][cours] + ' ' + heures[i+1])
                 if (compareHeures(heures[i],cours.HeureD) === -1 && compareHeures(cours.HeureD,heures[i+1]) === -1) {
                     html += `<td>${cours.Titre}<br>Salle: ${cours.Local}</td>Heure de début: ${cours.HeureD}</td>Heure de fin: ${cours.HeureF}</td>`;
                     liste_cours.splice(cours.Jour,cours.HeureD);
