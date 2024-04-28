@@ -46,10 +46,9 @@ socketNotificationReceived: function(notification, payload) {
             jours.push(cours.Jour);
         }
         liste_cours[cours.Jour][cours.heureD] = cours;
-        
-        
     }
-    //console.log(liste_cours['Lundi']['08h15']);
+    console.log(liste_cours);
+    console.log(liste_cours['Lun.']['08h15']);
 
     // Créer le tableau HTML
     let html = `<h>${this.NFCid}</h>`;
