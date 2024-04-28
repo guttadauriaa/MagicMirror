@@ -6,28 +6,50 @@ Module.register("MMM-planning", {
   },
 
 socketNotificationReceived: function(notification, payload) {
+  function compareHeures(h1, h2){
+    //renvoie -1 si h1 < h2 et h1 = h2, 1 si h1 > h2,
+    let h1h = parseInt(h1.substring(0,2));
+    let h1m = parseInt(h1.slice(-2));
+    let h2h = parseInt(h2.substring(0,2));
+    let h2m = parseInt(h2.slice(-2));
+    if (h1h < h2h) {
+        return -1;
+    } else if (h1h > h2h) {
+        return 1;
+    } else {
+        if (h1m < h2m) {
+            return -1;
+        } else if (h1m > h2m) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+  }
+
+
   let wrapper = document.getElementById('MMM-planning');
   Log.info('MMM-planning received a socket notification: ' + notification + ' - Payload: ' + payload);
   if (notification === 'Planning') {
     
     wrapper.innerHTML = payload;
-    let jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'];
-    let heures = ['8:15', '10:15', '10:30', '12:30', '14:00', '15:00', '16:00', '17:00', '18:00'];
+    let jours = [];
+    let heures = ['08:15', '10:15', '10:30', '12:30', '13:30', '15:30', '15:45', '17:45', '18:00', '19:00'];
     let data = JSON.parse(payload);
-    let coursParJourEtHeure = {};
+    let liste_cours = {}; //liste pour trier les cours par jour et heure
 
     // Regrouper les cours par jour et par heure
     for (let coursKey in data) {
         let cours = data[coursKey];
-        if (!coursParJourEtHeure[cours.Jour]) {
-            coursParJourEtHeure[cours.Jour] = {};
-            //remplir la liste de jour et heure ici
+        if (!liste_cours[cours.Jour]) {
+            liste_cours[cours.Jour] = {};
+            jours.push(cours.Jour);
         }
-        coursParJourEtHeure[cours.jour][cours.heure_debut] = cours;
+        liste_cours[cours.Jour][cours.heureD] = cours;
         
         
     }
-    console.log(coursParJourEtHeure['Lundi']['8:15']);
+    console.log(liste_cours['Lundi']['8:15']);
 
     // Créer le tableau HTML
     let html = `<h>${this.NFCid}</h>`;
@@ -41,12 +63,14 @@ socketNotificationReceived: function(notification, payload) {
     for (let i = 0; i < heures.length; i++) {
         html += `<tr><td>${heure}</td>`;
         for (let jour of jours) {
-            
-            if (coursParJourEtHeure[jour] && coursParJourEtHeure[jour][heure]) {
-                let cours = coursParJourEtHeure[jour][heure];
-                html += `<td>${cours.nom}<br>Professeur: ${cours.prof}<br>Salle: ${cours.salle}</td>`;
-            } else {
-                html += '<td></td>';
+            for (let cours in liste_cours[jour]) {
+                if (compareHeures(heures[i],cours.HeureD) === -1 && compareHeures(cours.HeureD,heures[i+1]) === -1) {
+                    html += `<td>${cours.Titre}<br>Salle: ${cours.Local}</td>Heure de début: ${cours.HeureD}</td>Heure de fin: ${cours.HeureF}</td>`;
+                    liste_cours.splice(cours.Jour,cours.HeureD);
+                    break;
+                } else {
+                    html += '<td></td>';
+                }
             }
         }
         html += '</tr>';
