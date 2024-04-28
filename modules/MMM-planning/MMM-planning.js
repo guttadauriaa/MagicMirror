@@ -29,10 +29,10 @@ socketNotificationReceived: function(notification, payload) {
 
 
   let wrapper = document.getElementById('MMM-planning');
-  Log.info('MMM-planning received a socket notification: ' + notification + ' - Payload: ' + payload);
+  Log.info('MMM-planning received a socket notification: ' + notification);
   if (notification === 'Planning') {
     
-    wrapper.innerHTML = payload;
+    //wrapper.innerHTML = payload;
     let jours = [];
     let heures = ['08:15', '10:15', '10:30', '12:30', '13:30', '15:30', '15:45', '17:45', '18:00', '19:00'];
     let data = JSON.parse(payload);
@@ -49,7 +49,7 @@ socketNotificationReceived: function(notification, payload) {
         
         
     }
-    console.log(liste_cours['Lundi']['8:15']);
+    console.log(liste_cours['Lundi']['8h15']);
 
     // Créer le tableau HTML
     let html = `<h>${this.NFCid}</h>`;
