@@ -61,7 +61,7 @@ socketNotificationReceived: function(notification, payload) {
     html += '</tr>';
 
     for (let i = 0; i < heures.length; i++) {
-        html += `<tr><td>${heure}</td>`;
+        html += `<tr><td>${heures[i]}</td>`;
         for (let jour of jours) {
             for (let cours in liste_cours[jour]) {
                 if (compareHeures(heures[i],cours.HeureD) === -1 && compareHeures(cours.HeureD,heures[i+1]) === -1) {
