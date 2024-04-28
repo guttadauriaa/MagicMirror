@@ -49,7 +49,7 @@ socketNotificationReceived: function(notification, payload) {
         
         
     }
-    console.log(liste_cours['Lundi']['8h15']);
+    //console.log(liste_cours['Lundi']['08h15']);
 
     // Créer le tableau HTML
     let html = `<h>${this.NFCid}</h>`;
