@@ -8,7 +8,7 @@ Module.register("test_module", {
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'PYTHON_DATA') {
             let wrapper = document.getElementById('test_module');
-            this.NFCid = '00000'
+            this.NFCid = '00000';
             if (wrapper) {
                 let jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'];
                 let heures = ['8:15', '10:15', '10:30', '12:30', '14:00', '15:00', '16:00', '17:00', '18:00'];
