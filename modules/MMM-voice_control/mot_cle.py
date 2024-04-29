@@ -49,5 +49,5 @@ time.sleep(1)
 thread2.start()
 
 while True:
-    if not thread1 or not thread2:
+    if not (thread1.is_alive() or thread2.is_alive()):
         sys.exit()
