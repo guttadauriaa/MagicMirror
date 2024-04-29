@@ -54,7 +54,7 @@ let config = {
 		{
 			module: "helloworld",
 			position: "top_right",
-			header: "Petit mot du jour",
+			//header: "Petit mot du jour",
 			config: {
 				text: "Bonjour à tous, bienvenue à la faculté !"
 			}
