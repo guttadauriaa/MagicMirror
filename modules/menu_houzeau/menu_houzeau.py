@@ -19,7 +19,7 @@ with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt","r") as f:
 today = date.today()
 jourToday = today.day
 moisToday = today.month
-print(jourPre, moisPre, jourToday, moisToday)
+#print(jourPre, moisPre, jourToday, moisToday)
 if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
     #charger un nouveau menu
 
@@ -52,8 +52,6 @@ if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
     download_button = WebDriverWait(driver, 30).until(
         EC.visibility_of_element_located((By.XPATH, '//*[@id="main-layout"]/div[9]/div[2]/div[7]/button'))
     )
-    print("bouton trouvé")
-    #time.sleep(1)
     download_button.click()
     time.sleep(2)
     driver.quit() 
@@ -80,7 +78,7 @@ if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
 
     # Enregistrer les images
     images[0].save(f"/home/miroir/MagicMirror/modules/menu_houzeau/menu.png", "PNG")
-    print(json.dumps(f"{last_downloaded_file} a été converti en image avec succès"))
+    #print(json.dumps(f"{last_downloaded_file} a été converti en image avec succès"))
 
     jourfinsemaine = int(last_downloaded_file.split(' ')[-3])
     dicomois = {"janvier": 1, "février": 2, "mars": 3, "avril": 4, "mai": 5, "juin": 6, "juillet": 7, "août": 8, "septembre": 9, "octobre": 10, "novembre": 11, "décembre": 12}
