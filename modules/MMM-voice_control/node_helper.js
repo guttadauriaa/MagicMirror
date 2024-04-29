@@ -31,16 +31,16 @@ module.exports = NodeHelper.create({
                     return;
                 }
                 
-                let unicodedText = stdout; // texte avec caractère unicode
-                let decodedText = unicodeChar.replace(/\\u[\dA-F]{4}/gi, (match) => {
-                    return String.fromCharCode(parseInt(match.substr(2), 16));
-                });
-                console.log(decodedChar);
+                // let unicodedText = stdout; // texte avec caractère unicode
+                // let decodedText = unicodeChar.replace(/\\u[\dA-F]{4}/gi, (match) => {
+                //     return String.fromCharCode(parseInt(match.substr(2), 16));
+                // });
+                // console.log(decodedChar);
 
-                console.log(decodedText)
+                // console.log(decodedText)
                 console.log("La sortie est :", stdout);
 
-                this.sendSocketNotification('DISPLAY_TEXT', decodedText);
+                this.sendSocketNotification('DISPLAY_TEXT', stdout);
             });
         }
     }
