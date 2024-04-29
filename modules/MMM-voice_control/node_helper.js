@@ -11,7 +11,7 @@ module.exports = NodeHelper.create({
         if (notification === 'KEYWORD') {
 
             console.log("lance keyword")
-            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/keyword.py `, (error, stdout, stderr) => {
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/mot_cle.py `, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur d'exécution du script Python: ${error}`);
                     //return;
