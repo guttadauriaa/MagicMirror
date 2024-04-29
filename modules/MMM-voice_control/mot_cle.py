@@ -28,7 +28,7 @@ def enregistrer():
                 #print("Vous avez dit :", texte)
                 
                 if "miroir" in texte:
-                    break
+                    return
 
 
             except sr.UnknownValueError:
