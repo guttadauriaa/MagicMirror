@@ -11,7 +11,7 @@
  */
 let config = {
 	//electronOptions: {fullscreen: false, x: 1081,y : 0},  //1440X900 Xwayland3 (miroir droite)
-	electronOptions: {fullscreen:true, x: 0, y:1081},
+	electronOptions: {fullscreen:true, x: 0, y:0},
 	address: "localhost",	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 							// - another specific IPv4/6 to listen on a specific interface
@@ -84,24 +84,24 @@ let config = {
 		// 	}
 		// },
 		
-		{
-		module: "newsfeed",
-		position: "bottom_left",
-		config: {
-			feeds: [
-				{
-					title: "Umons News",
-					//url: "https://web.umons.ac.be/fr/feed/events-screens"
-					url: "https://web.umons.ac.be/fr/feed/screens"
+		// {
+		// module: "newsfeed",
+		// position: "bottom_left",
+		// config: {
+		// 	feeds: [
+		// 		{
+		// 			title: "Umons News",
+		// 			//url: "https://web.umons.ac.be/fr/feed/events-screens"
+		// 			url: "https://web.umons.ac.be/fr/feed/screens"
 					
-				}
-			],
-			showSourceTitle: true,
-			showPublishDate: true,
-			broadcastNewsFeeds: true,
-			broadcastNewsUpdates: true
-		}
-		},
+		// 		}
+		// 	],
+		// 	showSourceTitle: true,
+		// 	showPublishDate: true,
+		// 	broadcastNewsFeeds: true,
+		// 	broadcastNewsUpdates: true
+		// }
+		// },
 		// {
 		// 	module: "helloworld",
 		// 	position: "bottom_right",
