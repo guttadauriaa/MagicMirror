@@ -18,11 +18,11 @@ module.exports = NodeHelper.create({
                 }
                 
                 if (stdout=="oui"){
-                    this.sendSocketNotification('KEYWORDRECEIVED', "Demandez moi ce que vous souhaitez")
+                    this.sendSocketNotification('KEYWORDRECEIVED', "Demandez moi ce que vous souhaitez");
                 }
                 else{
-                    this.sendSocketNotification("KEYWORD", {})
-                    console.log("pas de message")
+                    this.sendSocketNotification("KEYWORDNOT", {});
+                    console.log("pas de message");
                 }
                     
             });
