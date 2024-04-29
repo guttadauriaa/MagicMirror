@@ -35,7 +35,7 @@ chrome_options.add_argument("--headless")
 
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
 #horaire = [52, 5] #formation, option
-semaine = 25
+semaine = 28
 
 #pour interagir avec le site web 
 #il faut télécharger le chromedriver dispponible pour raspberry pi disponible sur internet au préalable. celui-ci à été stocker hors des fichier du projet
