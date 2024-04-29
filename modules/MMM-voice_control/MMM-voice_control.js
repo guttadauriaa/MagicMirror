@@ -9,7 +9,7 @@ Module.register("MMM-voice_control", {
         if (notification === 'KEYWORDRECEIVED') {
             let wrapper = document.getElementById('MMM-voice_control');
             if (wrapper) {
-                wrapper.innerHTML = payload;
+                wrapper.innerHTML = `<h1>${payload}</h1>`;
             }
             this.sendSocketNotification('VOICE_TEXT', {})
         }
@@ -27,7 +27,7 @@ Module.register("MMM-voice_control", {
                 // Attendre 2 secondes supplémentaires
                 setTimeout(() => {
                     if (wrapper) {
-                        wrapper.innerHTML = "Dites : \"miroir\" pour demander quelque chose";
+                        wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
                     }
                 }, 2000);
             }, 3000);
@@ -39,7 +39,7 @@ Module.register("MMM-voice_control", {
     getDom: function() {
         let wrapper = document.createElement("div");
         wrapper.id = "MMM-voice_control";
-        wrapper.innerHTML = "Dites : \"miroir\" pour demander quelque chose. èéà. l'";
+        wrapper.innerHTML = `</h1> Dites : "miroir " pour demander quelque chose. </h1>`;
         return wrapper;
     }
 });

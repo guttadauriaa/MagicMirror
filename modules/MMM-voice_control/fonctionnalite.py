@@ -16,12 +16,12 @@ class Fonctionnalite:
         for local in liste_local:
             if local.lower() in data.lower():
                 message = "très bien voici comment se rendre à :"
-                print(json.dumps(message), local)
+                print(message, local)
                 break
 
         else:
             if 'auditoire' in data or 'local' in data:
                 message = "Dans quel local souhaitez-vous aller ? "
-                print(json.dumps(message))
+                print(message)
                 for local in liste_local:
-                    print(json.dumps(local))
+                    print(local)
