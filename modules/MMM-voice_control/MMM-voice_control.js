@@ -13,6 +13,10 @@ Module.register("MMM-voice_control", {
             }
             this.sendSocketNotification('VOICE_TEXT', {})
         }
+        
+        if (notification === 'KEYWORDNOT') {
+            this.sendSocketNotification('KEYWORD', {});
+        }
 
         //s'exécute après avoir recu le mot clé
         if (notification === 'DISPLAY_TEXT') {
