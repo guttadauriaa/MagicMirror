@@ -35,8 +35,8 @@ if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
     #pour interagir avec le site web 
     service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
 
-    #driver = webdriver.Chrome(service=service)
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver = webdriver.Chrome(service=service)
+    #driver = webdriver.Chrome(service=service, options=chrome_options)
 
     # Charger la page Web
     url = "https://www.calameo.com/read/000265915972f1317661b?trackersource=library"
@@ -52,7 +52,8 @@ if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
     download_button = WebDriverWait(driver, 30).until(
         EC.visibility_of_element_located((By.XPATH, '//*[@id="main-layout"]/div[9]/div[2]/div[7]/button'))
     )
-    #print("bouton trouvé")
+    print("bouton trouvé")
+    #time.sleep(1)
     download_button.click()
     time.sleep(2)
     driver.quit() 
