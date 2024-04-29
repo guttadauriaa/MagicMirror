@@ -34,7 +34,7 @@ let config = {
 		},
 		{
 			module: "newsfeed",
-			position: "bottom_left",
+			position: "bottom_bar",
 			config: {
 				feeds: [
 					{
