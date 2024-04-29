@@ -83,6 +83,13 @@ socketNotificationReceived: function(notification, payload) {
     wrapper.innerHTML = html;
 
     this.sendSocketNotification('START_NFC', {});
+
+    setTimeout(() => {
+        if (wrapper) {
+      wrapper.innerHTML = "<h1>Veuillez scanner votre carte étudiante -> </h1>";
+        }
+    }, 20000);
+    
   }
   if (notification === 'NFC') {
     this.NFCid = payload.substring(0, 12);
