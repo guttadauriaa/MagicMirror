@@ -31,7 +31,7 @@ Module.register("MMM-voice_control", {
                 }, 2000);
             }, 3000);
 
-            this.sendSocketNotification('KEYWORDRECEIVED', {});
+            this.sendSocketNotification('KEYWORD', {});
         }
     },
 
