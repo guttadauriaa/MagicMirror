@@ -53,15 +53,15 @@ let config = {
 		
 		{
 			module: "helloworld",
-			position: "upper_third",
-			header: "Petit mot du jour",
+			position: "top_right",
+			//header: "Petit mot du jour",
 			config: {
 				text: "Bonjour à tous, bienvenue à la faculté !"
 			}
 		},
 		{
 			module: "menu_houzeau",
-			position: "bottom_right",
+			position: "lower_third",
 		},
 		
 	]
