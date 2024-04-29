@@ -2,7 +2,7 @@
 
 
 import speech_recognition as sr
-import sys
+#import sys
 import time
 import threading
 
@@ -27,8 +27,8 @@ def enregistrer():
                 texte = recognizer.recognize_google(audio, language="fr-FR")
                 #print("Vous avez dit :", texte)
                 
-                if "miroir" in texte+texte2:
-                    sys.exit()
+                if "miroir" in texte:
+                    return
 
 
             except sr.UnknownValueError:
