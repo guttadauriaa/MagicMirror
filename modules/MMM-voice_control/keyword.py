@@ -2,8 +2,6 @@
 
 
 import speech_recognition as sr
-from fonctionnalite import Fonctionnalite
-import json
 import sys
 
 # Créer un objet Recognizer
