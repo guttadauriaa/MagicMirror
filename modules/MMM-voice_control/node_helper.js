@@ -30,18 +30,14 @@ module.exports = NodeHelper.create({
                     console.error(`Erreur d'exécution du script Python: ${error}`);
                     return;
                 }
-                
-                var decodedOutput = JSON.parse(pythonOutput);
 
-                // Conversion en texte lisible
-                var readableText = decodeURIComponent(escape(decodedOutput));
-
-                // Affichage du texte
-                console.log(readableText);
+                var pythonOutput = stdout;
+                var decodedOutput = Buffer.from(pythonOutput, 'utf-8').toString('utf-8');
+                console.log(decodedOutput);
 
 
+                console.log("La sortie est :", stdout);
 
-                console.log("La sortie stdout n'est pas vide :", stdout);
                 this.sendSocketNotification('DISPLAY_TEXT', readableText);
             });
         }

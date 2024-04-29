@@ -17,7 +17,6 @@ class Fonctionnalite:
             if local.lower() in data.lower():
                 message = "très bien voici comment se rendre à :"
                 print(json.dumps(message), local)
-                print("jésus çà è test ")
                 break
 
         else:
