@@ -35,8 +35,8 @@ if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
     #pour interagir avec le site web 
     service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
 
-    #driver = webdriver.Chrome(service=service)
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver = webdriver.Chrome(service=service)
+    #driver = webdriver.Chrome(service=service, options=chrome_options)
 
     # Charger la page Web
     url = "https://www.calameo.com/read/000265915972f1317661b?trackersource=library"
@@ -52,6 +52,7 @@ if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
     download_button = WebDriverWait(driver, 30).until(
         EC.visibility_of_element_located((By.XPATH, '//*[@id="main-layout"]/div[9]/div[2]/div[7]/button'))
     )
+    print("bouton trouvé")
     download_button.click()
     time.sleep(2)
     driver.quit() 
@@ -83,5 +84,5 @@ if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
     jourfinsemaine = int(last_downloaded_file.split(' ')[-3])
     dicomois = {"janvier": 1, "février": 2, "mars": 3, "avril": 4, "mai": 5, "juin": 6, "juillet": 7, "août": 8, "septembre": 9, "octobre": 10, "novembre": 11, "décembre": 12}
     moisMenu = dicomois[last_downloaded_file.split(' ')[-2]]
-    with open("./modules/menu_houzeau/menu.txt", "w") as f:
+    with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt", "w") as f:
         f.write(f"{jourfinsemaine}\n{moisMenu}")
