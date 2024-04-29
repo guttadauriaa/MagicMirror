@@ -1,10 +1,20 @@
 Module.register("MMM-voice_control", {
     start: function() {
-        this.sendSocketNotification('VOICE_TEXT', {});
+        this.sendSocketNotification('KEYWORD', {});
         console.log("Starting module: " + this.name);
     },
 
     socketNotificationReceived: function(notification, payload) {
+        //pour demander le mot clé
+        if (notification === 'KEYWORDRECEIVED') {
+            let wrapper = document.getElementById('MMM-voice_control');
+            if (wrapper) {
+                wrapper.innerHTML = payload;
+            }
+            this.sendSocketNotification('VOICE_TEXT', {})
+        }
+
+        //s'exécute après avoir recu le mot clé
         if (notification === 'DISPLAY_TEXT') {
             let wrapper = document.getElementById('MMM-voice_control');
             if (wrapper) {
@@ -13,28 +23,22 @@ Module.register("MMM-voice_control", {
 
             // Attendre 3 secondes
             setTimeout(() => {
-                this.sendSocketNotification('VOICE_TEXT', {});
                 // Attendre 2 secondes supplémentaires
                 setTimeout(() => {
                     if (wrapper) {
-                        wrapper.innerHTML = "Parlez ...";
+                        wrapper.innerHTML = "Dites : \"miroir\" pour demander quelque chose";
                     }
                 }, 2000);
             }, 3000);
-        }
-        if (notification === 'NO_DISPLAY') {
-            let wrapper = document.getElementById('MMM-voice_control');
-            if (wrapper) {
-                wrapper.innerHTML = "Parlez maintenant";
-            }
-            this.sendSocketNotification('VOICE_TEXT', {});
+
+            this.sendSocketNotification('KEYWORD', {});
         }
     },
 
     getDom: function() {
         let wrapper = document.createElement("div");
         wrapper.id = "MMM-voice_control";
-        wrapper.innerHTML = "En attente de phrases détectées...";
+        wrapper.innerHTML = "Dites : \"miroir\" pour demander quelque chose";
         return wrapper;
     }
 });
