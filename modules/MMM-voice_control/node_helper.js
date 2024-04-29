@@ -20,6 +20,7 @@ module.exports = NodeHelper.create({
                 this.sendSocketNotification('KEYWORDRECEIVED', "Demandez moi ce que vous souhaitez")
             });
         }
+
         if (notification === 'VOICE_TEXT') {
 
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/voice_control.py `, (error, stdout, stderr) => {
@@ -29,9 +30,22 @@ module.exports = NodeHelper.create({
                     console.error(`Erreur d'exécution du script Python: ${error}`);
                     return;
                 }
-            
+                                // Chaîne de caractères renvoyée par le script Python
+                var pythonOutput = stdout;
+
+                // Décodage des caractères spéciaux
+                var decodedOutput = JSON.parse('"' + pythonOutput + '"');
+
+                // Conversion en texte lisible
+                var readableText = decodeURIComponent(escape(decodedOutput));
+
+                // Affichage du texte
+                console.log(readableText); // Résultat : "à l'auditoire 12"
+
+
+
                 console.log("La sortie stdout n'est pas vide :", stdout);
-                this.sendSocketNotification('DISPLAY_TEXT', stdout);
+                this.sendSocketNotification('DISPLAY_TEXT', readableText);
             });
         }
     }
