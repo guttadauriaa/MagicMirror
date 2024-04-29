@@ -7,7 +7,6 @@ class Fonctionnalite:
 
     def questions(self, data):
 
-        texte = data.encode().decode('unicode-escape')
         print(json.dumps(data))
 
         liste_local = ["Auditoire 3", "Auditoire 5" ,"IG lab" ,"Auditoire 12" ,
@@ -16,13 +15,14 @@ class Fonctionnalite:
 
         for local in liste_local:
             if local.lower() in data.lower():
-                message = "très bien voici comment se rendre à :".encode().decode('unicode-escape')
+                message = "très bien voici comment se rendre à :"
                 print(json.dumps(message), local)
+                print("jésus çà è test ")
                 break
 
         else:
             if 'auditoire' in data or 'local' in data:
-                message = "Dans quel local souhaitez-vous aller ? ".encode().decode('unicode-escape')
+                message = "Dans quel local souhaitez-vous aller ? "
                 print(json.dumps(message))
                 for local in liste_local:
                     print(json.dumps(local))
