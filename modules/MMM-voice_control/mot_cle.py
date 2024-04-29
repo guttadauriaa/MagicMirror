@@ -25,7 +25,7 @@ while True:  # Boucle infinie pour une vérification constante
             #print("Vous avez dit :", texte)
             
             if "miroir" in texte:
-                sys.exit()
+                print("oui")
 
 
         except sr.UnknownValueError:

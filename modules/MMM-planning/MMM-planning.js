@@ -81,10 +81,12 @@ socketNotificationReceived: function(notification, payload) {
     }
     html += '</table>';
     wrapper.innerHTML = html;
+
+    this.sendSocketNotification('START_NFC', {});
   }
   if (notification === 'NFC') {
     this.NFCid = payload.substring(0, 12);
-    wrapper.innerHTML = "En attente des données";
+    wrapper.innerHTML = "<h1>En attente des données</h1>";
     this.sendSocketNotification('START_PLANNING', {NFCid : this.NFCid});
   }
 },
@@ -93,7 +95,7 @@ socketNotificationReceived: function(notification, payload) {
       console.log("dom1");
       let wrapper = document.createElement("div");
       wrapper.id = "MMM-planning";
-      wrapper.innerHTML = "Veillez scanner votre carte étudiante ->";
+      wrapper.innerHTML = "<h1>Veuillez scanner votre carte étudiante -> </h1>";
       return wrapper;
   }
 });
