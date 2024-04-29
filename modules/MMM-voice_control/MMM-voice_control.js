@@ -24,22 +24,23 @@ Module.register("MMM-voice_control", {
 
             // Attendre 3 secondes
             setTimeout(() => {
+                this.sendSocketNotification('KEYWORD', {});
                 // Attendre 2 secondes supplémentaires
                 setTimeout(() => {
                     if (wrapper) {
                         wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
                     }
                 }, 2000);
-            }, 3000);
+            }, 5000);
 
-            this.sendSocketNotification('KEYWORD', {});
+            
         }
     },
 
     getDom: function() {
         let wrapper = document.createElement("div");
         wrapper.id = "MMM-voice_control";
-        wrapper.innerHTML = `</h1> Dites : "miroir " pour demander quelque chose. </h1>`;
+        wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
         return wrapper;
     }
 });
