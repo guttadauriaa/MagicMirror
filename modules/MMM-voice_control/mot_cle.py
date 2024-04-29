@@ -2,7 +2,7 @@
 
 
 import speech_recognition as sr
-#import sys
+import sys
 import time
 import threading
 
@@ -28,7 +28,7 @@ def enregistrer():
                 #print("Vous avez dit :", texte)
                 
                 if "miroir" in texte:
-                    return
+                    break
 
 
             except sr.UnknownValueError:
@@ -47,3 +47,7 @@ thread2 = threading.Thread(target=enregistrer)
 thread1.start()
 time.sleep(1)
 thread2.start()
+
+while True:
+    if not thread1 or not thread2:
+        sys.exit()
