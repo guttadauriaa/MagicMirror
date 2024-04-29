@@ -6,6 +6,8 @@ import sys
 import time
 import threading
 
+mot_miroir_detecte = False
+
 def enregistrer():
     # Créer un objet Recognizer
     recognizer = sr.Recognizer()
@@ -28,7 +30,7 @@ def enregistrer():
                 #print("Vous avez dit :", texte)
                 
                 if "miroir" in texte:
-                    return
+                    mot_miroir_detecte = True
 
 
             except sr.UnknownValueError:
@@ -49,5 +51,5 @@ time.sleep(1)
 thread2.start()
 
 while True:
-    if not (thread1.is_alive() or thread2.is_alive()):
+    if mot_miroir_detecte:
         sys.exit()
