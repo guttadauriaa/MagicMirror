@@ -18,7 +18,8 @@ Module.register("MMM-voice_control", {
         if (notification === 'DISPLAY_TEXT') {
             let wrapper = document.getElementById('MMM-voice_control');
             if (wrapper) {
-                wrapper.innerHTML = payload;
+                let html = "<h1> ${payload} </h1>"
+                wrapper.innerHTML = html;
             }
 
             // Attendre 3 secondes
