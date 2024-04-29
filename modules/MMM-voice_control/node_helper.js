@@ -16,15 +16,8 @@ module.exports = NodeHelper.create({
                     console.error(`Erreur d'exécution du script Python: ${error}`);
                     //return;
                 }
-                
-                if (stdout=="oui"){
-                    this.sendSocketNotification('KEYWORDRECEIVED', "Demandez moi ce que vous souhaitez");
-                }
-                else{
-                    this.sendSocketNotification("KEYWORDNOT", {});
-                    console.log("pas de message");
-                }
-                    
+            
+                this.sendSocketNotification('KEYWORDRECEIVED', "Demandez moi ce que vous souhaitez")
             });
         }
 
