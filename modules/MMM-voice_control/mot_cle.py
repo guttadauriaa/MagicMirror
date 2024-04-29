@@ -11,11 +11,11 @@ mot_miroir_detecte = False
 def enregistrer():
     # Créer un objet Recognizer
     recognizer = sr.Recognizer()
+    global mot_miroir_detecte
 
-    while True:  # Boucle infinie pour une vérification constante
+    while not mot_miroir_detecte:  # Boucle infinie pour une vérification constante
         # Utiliser le microphone comme source audio
         with sr.Microphone(device_index=3) as source:
-
             #print("Dites quelque chose...")
             # Réduire le bruit de fond pour améliorer la reconnaissance
             recognizer.adjust_for_ambient_noise(source)
@@ -51,5 +51,5 @@ time.sleep(1)
 thread2.start()
 
 while True:
-    if mot_miroir_detecte:
+    if mot_miroir_detecte :
         sys.exit()
