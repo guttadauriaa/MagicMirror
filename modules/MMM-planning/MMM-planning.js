@@ -51,7 +51,8 @@ socketNotificationReceived: function(notification, payload) {
     //console.log(liste_cours['lun.']['08h15']);
 
     // Créer le tableau HTML
-    let html = `<h>${this.NFCid}</h>`;
+    //let html = `<h>${this.NFCid}</h>`;
+    let html = `<h>Horaire</h>`;
     html += `<table>`;
     html += '<tr><th>Heure</th>';
     for (let jour of jours) {
@@ -88,7 +89,7 @@ socketNotificationReceived: function(notification, payload) {
         if (wrapper) {
       wrapper.innerHTML = "<h1>Veuillez scanner votre carte étudiante -> </h1>";
         }
-    }, 20000);
+    }, 60000);
     
   }
   if (notification === 'NFC') {
