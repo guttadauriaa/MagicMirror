@@ -30,17 +30,14 @@ module.exports = NodeHelper.create({
                     console.error(`Erreur d'exécution du script Python: ${error}`);
                     return;
                 }
-                                // Chaîne de caractères renvoyée par le script Python
-                var pythonOutput = stdout;
-
-                // Décodage des caractères spéciaux
-                var decodedOutput = JSON.parse('"' + pythonOutput + '"');
+                
+                var decodedOutput = JSON.parse(pythonOutput);
 
                 // Conversion en texte lisible
                 var readableText = decodeURIComponent(escape(decodedOutput));
 
                 // Affichage du texte
-                console.log(readableText); // Résultat : "à l'auditoire 12"
+                console.log(readableText);
 
 
 
