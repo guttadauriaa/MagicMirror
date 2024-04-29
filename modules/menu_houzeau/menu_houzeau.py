@@ -52,7 +52,7 @@ if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
     download_button = WebDriverWait(driver, 30).until(
         EC.visibility_of_element_located((By.XPATH, '//*[@id="main-layout"]/div[9]/div[2]/div[7]/button'))
     )
-    print("bouton trouvé")
+    #print("bouton trouvé")
     time.sleep(1)
     download_button.click()
     time.sleep(2)
