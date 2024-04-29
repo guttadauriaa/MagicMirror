@@ -7,7 +7,7 @@ class Fonctionnalite:
 
     def questions(self, data):
 
-        print(json.dumps(data))
+        print(data)
 
         liste_local = ["Auditoire 3", "Auditoire 5" ,"IG lab" ,"Auditoire 12" ,
                        "Auditoire 11" ,"Labo physique",
