@@ -22,9 +22,10 @@ Module.register("MMM-voice_control", {
                 wrapper.innerHTML = html;
             }
 
-            // Attendre 3 secondes
+            // Attendre 5 secondes
             setTimeout(() => {
                 this.sendSocketNotification('KEYWORD', {});
+                wrapper.innerHTML = `<h1>Attendez...</h1>`;
                 // Attendre 2 secondes supplémentaires
                 setTimeout(() => {
                     if (wrapper) {
