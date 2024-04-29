@@ -20,7 +20,7 @@ today = date.today()
 jourToday = today.day
 moisToday = today.month
 print(jourPre, moisPre, jourToday, moisToday)
-if jourPre < jourToday and moisPre == moisToday or moisPre < moisToday:
+if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
     #charger un nouveau menu
 
     #pour ne pas afficher la fenêtre du navigateur
