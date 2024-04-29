@@ -61,7 +61,7 @@ let config = {
 		},
 		{
 			module: "menu_houzeau",
-			position: "bottom_center",
+			position: "lower_third",
 		},
 		
 	]
