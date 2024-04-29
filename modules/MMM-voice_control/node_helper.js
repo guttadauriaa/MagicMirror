@@ -21,7 +21,7 @@ module.exports = NodeHelper.create({
                     this.sendSocketNotification('KEYWORDRECEIVED', "Demandez moi ce que vous souhaitez")
                 }
                 else{
-                    this.sendSocketNotification(KEYWORD, {})
+                    this.sendSocketNotification("KEYWORD", {})
                     console.log("pas de message")
                 }
                     

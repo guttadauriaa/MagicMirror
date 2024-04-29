@@ -16,7 +16,7 @@ while True:  # Boucle infinie pour une vérification constante
         recognizer.adjust_for_ambient_noise(source)
         
         # Enregistrer l'audio à partir du microphone
-        audio = recognizer.listen(source, timeout=2)
+        audio = recognizer.listen(source)
 
         #print("Analyse en cours...")
         try:
