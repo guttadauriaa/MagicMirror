@@ -29,7 +29,7 @@ with sr.Microphone(device_index=3) as source:
         fonctionnalite.questions(texte)
 
     except sr.UnknownValueError:
-        print(json.dumps("Je n'ai pas compris ce que vous avez dit."))
+        print("Je n'ai pas compris ce que vous avez dit.")
 
     except sr.RequestError as e:
         print(json.dumps("Erreur lors de la requête : ", e))
