@@ -38,7 +38,7 @@ Module.register("MMM-voice_control", {
     getDom: function() {
         let wrapper = document.createElement("div");
         wrapper.id = "MMM-voice_control";
-        wrapper.innerHTML = "Dites : \"miroir\" pour demander quelque chose";
+        wrapper.innerHTML = "Dites : \"miroir\" pour demander quelque chose. èéà. l'";
         return wrapper;
     }
 });

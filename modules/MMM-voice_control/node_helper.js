@@ -31,14 +31,9 @@ module.exports = NodeHelper.create({
                     return;
                 }
 
-                var pythonOutput = stdout;
-                var decodedOutput = Buffer.from(pythonOutput, 'utf-8').toString('utf-8');
-                console.log(decodedOutput);
-
-
                 console.log("La sortie est :", stdout);
 
-                this.sendSocketNotification('DISPLAY_TEXT', readableText);
+                this.sendSocketNotification('DISPLAY_TEXT', stdout);
             });
         }
     }
