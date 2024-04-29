@@ -71,11 +71,11 @@ for i, j in enumerate (horaire):
             driver.execute_script("arguments[0].scrollIntoView();", element)
             test +=1
 
-# on choisit la semaine
-button_semaine = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[3]_j_{semaine}"))
-    )
-button_semaine.click()
+# # on choisit la semaine
+# button_semaine = WebDriverWait(driver, 5).until(
+#         EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[3]_j_{semaine}"))
+#     )
+# button_semaine.click()
 
 # on active l'option pour voir l'horaire complet
 button_fullhoraire = WebDriverWait(driver, 5).until(

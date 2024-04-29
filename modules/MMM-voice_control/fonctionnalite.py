@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import requests
 import json
 
 
 class Fonctionnalite:
 
     def questions(self, data):
-        
+
         texte = data.encode().decode('unicode-escape')
         print(json.dumps(data))
 
