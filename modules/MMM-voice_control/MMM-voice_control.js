@@ -39,6 +39,7 @@ Module.register("MMM-voice_control", {
         }
 
         if (notification === 'SETUP_BADGE'){
+            console.log("modifiction du badge")
             wrapper.innerHTML = `<h1> Dites moi votre formation </h1>`;
         }
     },
