@@ -3,10 +3,10 @@ Module.register("MMM-navigation", {
     // Function to create the iframe element
     getDom: function() {
         let wrapper = document.createElement("div");
-        wrapper.id = "menu_houzeau";
+        wrapper.id = "MMM-navigation";
         let html = "";
         
-        const imagePath = "./modules/menu_houzeau/menu.png";
+        const imagePath = "./modules/map/Untitledtest.png";
         
         
         html += `<img src="${imagePath}" alt="Your Image" style="width: 60%; height: 60%;" />`;
