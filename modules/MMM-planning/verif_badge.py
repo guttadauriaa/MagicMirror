@@ -9,4 +9,5 @@ with open("./modules/MMM-planning/NFCtoH.txt", 'r') as f:
             test = True 
             break
 
-print(json.dumps(f"test : {test}"))
+print(json.dumps({"test": test}))
+
