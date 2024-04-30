@@ -21,7 +21,7 @@ module.exports = NodeHelper.create({
                 console.log("resultat = ", badge)
 
                 //verif si le badge existe
-                exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/verif_badge.py`, (error2, stdout2, stderr2) => {
+                exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/verif_badge.py ${badge}`, (error2, stdout2, stderr2) => {
                     if (error2) {
                         console.error(`Erreur d'exécution du script Python verif_badge: ${error2}`);
                         return;
