@@ -1,3 +1,4 @@
+import json
 import sys
 
 NFCid= sys.argv[1]
@@ -8,4 +9,4 @@ with open("./modules/MMM-planning/NFCtoH.txt", 'r') as f:
             test = True 
             break
 
-print(test)
+print(json.dumps(f"test : {test}"))
