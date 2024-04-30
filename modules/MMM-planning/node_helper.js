@@ -8,6 +8,7 @@ module.exports = NodeHelper.create({
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'START_NFC') {
+            console.log("start nfc reader")
             let badge; // Déclarer la variable à un niveau supérieur
     
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/nfc_reader.py`, (error, stdout, stderr) => {
