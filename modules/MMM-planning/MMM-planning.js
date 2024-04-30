@@ -99,7 +99,7 @@ socketNotificationReceived: function(notification, payload) {
     this.sendSocketNotification('START_PLANNING', {NFCid : this.NFCid});
   }
 
-  if (notification === 'NOT_NFT') {
+  if (notification === 'NOT_NFC') {
     console.log("pas de badge connu")
     this.NFCid = payload;
     wrapper.innerHTML = "<h1>pas de badge connu</h1>";
