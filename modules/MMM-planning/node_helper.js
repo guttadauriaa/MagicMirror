@@ -15,7 +15,6 @@ module.exports = NodeHelper.create({
                     console.error(`Erreur d'exécution du script Python nfc: ${error}`);
                     return;
                 }
-                console.log(stdout);
     
                 badge = stdout.substring(0, 12); // Assigner la valeur de stdout à la variable badge
                 console.log("resultat = ", badge)
