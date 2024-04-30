@@ -3,7 +3,6 @@
 
 import speech_recognition as sr
 from fonctionnalite import Fonctionnalite
-import json
 
 fonctionnalite = Fonctionnalite()
 
@@ -12,7 +11,7 @@ recognizer = sr.Recognizer()
 
 #while True:  # Boucle infinie pour une vérification constante
 # Utiliser le microphone comme source audio
-with sr.Microphone(device_index=3) as source:
+with sr.Microphone() as source:
 
     #print("Dites quelque chose...")
     # Réduire le bruit de fond pour améliorer la reconnaissance
@@ -32,4 +31,4 @@ with sr.Microphone(device_index=3) as source:
         print("Je n'ai pas compris ce que vous avez dit.")
 
     except sr.RequestError as e:
-        print(json.dumps("Erreur lors de la requête : ", e))
+        print("Erreur lors de la requête : ", e)
