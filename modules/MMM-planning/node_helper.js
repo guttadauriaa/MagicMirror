@@ -39,18 +39,7 @@ module.exports = NodeHelper.create({
         }
 
 
-        if (notification === 'STOP_VOICE_TEXT') {
-            console.log("demande d'arret du contole vocal")
-            // Vérifier si un processus de contrôle vocal est en cours
-            if (this.voiceControlProcess) {
-                // Si un processus est en cours, le tuer
-                this.voiceControlProcess.kill('SIGINT');
-                console.log("Arrêt du contrôle vocal");
-            }
-        }
-
-
-      if (notification === 'START_PLANNING') {
+        if (notification === 'START_PLANNING') {
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/hyperplanning.py ${payload.NFCid}`, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur d'exécution du script Python planning: ${error}`);
@@ -61,6 +50,6 @@ module.exports = NodeHelper.create({
                 this.sendSocketNotification('Planning', stdout);
             });
         }
-        
+            
     }
 });
