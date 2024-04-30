@@ -8,34 +8,33 @@ module.exports = NodeHelper.create({
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'START_NFC') {
-
-            let badge;
-
+            let badge; // Déclarer la variable à un niveau supérieur
+    
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/nfc_reader.py`, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur d'exécution du script Python nfc: ${error}`);
                     return;
-            }
-            console.log(stdout);
-
-            badge = stdout.substring(0, 12);
-            // stdout est la sortie de votre script Python
-            this.sendSocketNotification('NFC', badge);
+                }
+                console.log(stdout);
+    
+                badge = stdout.substring(0, 12); // Assigner la valeur de stdout à la variable badge
+                
+                // Appeler le deuxième script Python après que le premier soit terminé
+                exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/verif_badge.py`, (error2, stdout2, stderr2) => {
+                    if (error2) {
+                        console.error(`Erreur d'exécution du script Python verif_badge: ${error2}`);
+                        return;
+                    }
+                    console.log(stdout2);
+    
+                    if (stdout2.trim() === "True") { // Assurez-vous de supprimer les espaces blancs autour de la sortie
+                        this.sendSocketNotification('NFC', badge);
+                    }
+                    else
+                        this.sendSocketNotification('NOT_NFC', badge)
+                });
             });
-
-            // exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/verif_badge.py`, (error, stdout2, stderr) => {
-            //     if (error) {
-            //         console.error(`Erreur d'exécution du script Python nfc: ${error}`);
-            //         return;
-            // }
-            // console.log(stdout2);
-
-            // if (stdout2 == "True")
-            //     this.sendSocketNotification('NFC', badge);
-            // else
-            //     this.sendSocketNotification('NOT_NFT', badge);
-            // });
-      }
+        }
 
 
       if (notification === 'START_PLANNING') {
