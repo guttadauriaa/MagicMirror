@@ -97,6 +97,12 @@ socketNotificationReceived: function(notification, payload) {
     wrapper.innerHTML = "<h1>En attente des données</h1>";
     this.sendSocketNotification('START_PLANNING', {NFCid : this.NFCid});
   }
+
+  if (notification === 'NOT_NFT') {
+    this.NFCid = payload;
+    wrapper.innerHTML = "<h1>pas de badge connu</h1>";
+    //this.sendSocketNotification('START_PLANNING', {NFCid : this.NFCid});
+  }
 },
 
   getDom: function() {
