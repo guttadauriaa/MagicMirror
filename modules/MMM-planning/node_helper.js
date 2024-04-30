@@ -18,8 +18,9 @@ module.exports = NodeHelper.create({
                 console.log(stdout);
     
                 badge = stdout.substring(0, 12); // Assigner la valeur de stdout à la variable badge
-                
-                // Appeler le deuxième script Python après que le premier soit terminé
+                console.log("resultat = ", badge)
+
+                //verif si le badge existe
                 exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/verif_badge.py`, (error2, stdout2, stderr2) => {
                     if (error2) {
                         console.error(`Erreur d'exécution du script Python verif_badge: ${error2}`);
