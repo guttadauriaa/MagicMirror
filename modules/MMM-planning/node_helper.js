@@ -20,21 +20,21 @@ module.exports = NodeHelper.create({
 
             badge = stdout.substring(0, 12);
             // stdout est la sortie de votre script Python
-            //this.sendSocketNotification('NFC', stdout);
+            this.sendSocketNotification('NFC', badge);
             });
 
-            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/verif_badge.py`, (error, stdout2, stderr) => {
-                if (error) {
-                    console.error(`Erreur d'exécution du script Python nfc: ${error}`);
-                    return;
-            }
-            console.log(stdout2);
+            // exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/verif_badge.py`, (error, stdout2, stderr) => {
+            //     if (error) {
+            //         console.error(`Erreur d'exécution du script Python nfc: ${error}`);
+            //         return;
+            // }
+            // console.log(stdout2);
 
-            if (stdout2 == "True")
-                this.sendSocketNotification('NFC', badge);
-            else
-                this.sendSocketNotification('NOT_NFT', badge);
-            });
+            // if (stdout2 == "True")
+            //     this.sendSocketNotification('NFC', badge);
+            // else
+            //     this.sendSocketNotification('NOT_NFT', badge);
+            // });
       }
 
 
