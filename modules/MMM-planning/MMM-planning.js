@@ -30,6 +30,7 @@ socketNotificationReceived: function(notification, payload) {
 
   let wrapper = document.getElementById('MMM-planning');
   Log.info('MMM-planning received a socket notification: ' + notification);
+
   if (notification === 'Planning') {
     
     //wrapper.innerHTML = payload;
@@ -99,8 +100,11 @@ socketNotificationReceived: function(notification, payload) {
   }
 
   if (notification === 'NOT_NFT') {
+    console.log("pas de badge connu")
     this.NFCid = payload;
     wrapper.innerHTML = "<h1>pas de badge connu</h1>";
+    this.sendSocketNotification('START_NFC', {});
+
     //this.sendSocketNotification('START_PLANNING', {NFCid : this.NFCid});
   }
 },
