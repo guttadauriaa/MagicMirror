@@ -35,9 +35,11 @@ Module.register("MMM-voice_control", {
                         wrapper.innerHTML = `<h1> Demandez moi quelque chose </h1>`;
                     }
                 }, 2000);
-            }, 5000);
+            }, 5000);         
+        }
 
-            
+        if (notification === 'SETUP_BADGE'){
+            wrapper.innerHTML = `<h1> Dites moi votre formation </h1>`;
         }
     },
 
