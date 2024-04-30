@@ -28,10 +28,10 @@ module.exports = NodeHelper.create({
                     }
                     console.log(stdout2);
     
-                    if (stdout2.trim() === "True") { // Assurez-vous de supprimer les espaces blancs autour de la sortie
+                    if (stdout2.trim() === "True") { 
                         this.sendSocketNotification('NFC', badge);
                     }
-                    else{
+                    if (stdout2.trim() === "False"){
                         this.sendSocketNotification('NOT_NFC', badge) 
                     }
                 });
