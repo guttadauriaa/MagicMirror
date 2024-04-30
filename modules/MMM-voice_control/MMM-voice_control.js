@@ -6,13 +6,15 @@ Module.register("MMM-voice_control", {
 
     socketNotificationReceived: function(notification, payload) {
         //pour demander le mot clé
-        if (notification === 'KEYWORDRECEIVED') {
-            let wrapper = document.getElementById('MMM-voice_control');
-            if (wrapper) {
-                wrapper.innerHTML = `<h1>${payload}</h1>`;
-            }
-            this.sendSocketNotification('VOICE_TEXT', {})
-        }
+
+
+        // if (notification === 'KEYWORDRECEIVED') {
+        //     let wrapper = document.getElementById('MMM-voice_control');
+        //     if (wrapper) {
+        //         wrapper.innerHTML = `<h1>${payload}</h1>`;
+        //     }
+        //     this.sendSocketNotification('VOICE_TEXT', {})
+        // }
 
         //s'exécute après avoir recu le mot clé
         if (notification === 'DISPLAY_TEXT') {
