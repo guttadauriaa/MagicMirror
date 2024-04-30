@@ -45,6 +45,7 @@ module.exports = NodeHelper.create({
                 // Si un processus est en cours, le tuer
                 this.voiceControlProcess.kill('SIGINT');
                 console.log("Arrêt du contrôle vocal");
+                return;
             }
         }
     }
