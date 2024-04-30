@@ -32,8 +32,8 @@ module.exports = NodeHelper.create({
 
             if (stdout2 == "True")
                 this.sendSocketNotification('NFC', badge);
-            else
-                this.sendSocketNotification('NOT_NFT', badge);
+            //else
+                //this.sendSocketNotification('NOT_NFT', badge);
             });
       }
 
