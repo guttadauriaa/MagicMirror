@@ -29,19 +29,9 @@ module.exports = NodeHelper.create({
         if (notification === 'demande_formation'){
             console.log("choix formation", payload)
             this.sendSocketNotification('demande_formation', {payload});
-            
-        }
-    },
 
-    notificationReceived: function(notification, payload, sender) {
-        let wrapper = document.getElementById('MMM-voice_control');
-        if (sender) {
-            console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
-        } else {
-            console.log(this.name + " received a system notification: " + notification);
         }
-        
-        
+
         if (notification === 'STOP_VOICE_TEXT') {
             console.log("demande d'arret du contole vocal")
             // Vérifier si un processus de contrôle vocal est en cours
@@ -52,5 +42,6 @@ module.exports = NodeHelper.create({
                 return;
             }
         }
-    }
+    },
+
 });
