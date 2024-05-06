@@ -5,18 +5,7 @@ Module.register("MMM-voice_control", {
     },
 
     socketNotificationReceived: function(notification, payload) {
-        //pour demander le mot clé
-
-
-        // if (notification === 'KEYWORDRECEIVED') {
-        //     let wrapper = document.getElementById('MMM-voice_control');
-        //     if (wrapper) {
-        //         wrapper.innerHTML = `<h1>${payload}</h1>`;
-        //     }
-        //     this.sendSocketNotification('VOICE_TEXT', {})
-        // }
-
-        //s'exécute après avoir recu le mot clé
+       
         if (notification === 'DISPLAY_TEXT') {
             let wrapper = document.getElementById('MMM-voice_control');
             if (wrapper) {
@@ -39,7 +28,13 @@ Module.register("MMM-voice_control", {
         }
     },
 
-    notificationReceived: function(notification, payload) {
+    notificationReceived: function(notification, payload, sender) {
+        if (sender) {
+            console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
+        } else {
+            console.log(this.name + " received a system notification: " + notification);
+        }
+
 
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
