@@ -7,6 +7,7 @@ Module.register("MMM-NFC", {
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'NFC') {
+            console.log("badge connu", payload);
             this.NFCid = payload;
             wrapper.innerHTML = "<h1>En attente des données</h1>";
             this.sendNotification('START_PLANNING', {NFCid : this.NFCid});
@@ -19,6 +20,13 @@ Module.register("MMM-NFC", {
             this.sendNotification('START_NFC', {});
             this.sendNotification('STOP_VOICE_TEXT', {});
             this.sendNotification('SETUP_BADGE', {payload});
+        }
+    },
+
+    notificationReceived: function(notification, payload) {
+        if (notification === 'START_NFC'){
+            console.log("start nfc depuis autre module", payload)
+            this.sendSocketNotification('START_NFC', {});
         }
     },
 
