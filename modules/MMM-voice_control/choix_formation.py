@@ -52,13 +52,15 @@ while True:
             EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[1]_{i}"))
         )
         formation.append(course_element.text)
+        i += 1
 
     except Exception:
         # Si l'attente échoue, faire défiler la page jusqu'à un autre élément atteignable
         element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{10*test}")
         driver.execute_script("arguments[0].scrollIntoView();", element)
         test +=1
-    if time.time() - debut > 5:
+    #if time.time() - debut > 5:
+    if i == 262: #nombre de formations
         break
 
         
