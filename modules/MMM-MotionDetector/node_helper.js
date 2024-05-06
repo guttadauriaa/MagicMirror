@@ -1,5 +1,5 @@
 const NodeHelper = require("node_helper");
-const exec = require("child_process").exec;
+const exec = require("child_process");
 const Log = require("../../js/logger");
 
 module.exports = NodeHelper.create({
