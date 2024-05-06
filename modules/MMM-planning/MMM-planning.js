@@ -103,9 +103,15 @@ socketNotificationReceived: function(notification, payload) {
     console.log("pas de badge connu");
     this.NFCid = payload;
     wrapper.innerHTML = "<h1>pas de badge connu</h1>";
-    this.sendSocketNotification('START_NFC', {});
+
     this.sendNotification('STOP_VOICE_TEXT', {});
     this.sendNotification('SETUP_BADGE', {payload});
+    //timer 1 seconde
+    setTimeout(() => {
+      if (wrapper) {
+        this.sendSocketNotification('START_NFC', {});
+      }
+  }, 1000);
   }
 },
 
