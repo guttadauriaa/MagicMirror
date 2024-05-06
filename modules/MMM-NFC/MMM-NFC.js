@@ -7,6 +7,7 @@ Module.register("MMM-NFC", {
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'NFC') {
+            console.log("badge connu", payload);
             this.NFCid = payload;
             wrapper.innerHTML = "<h1>En attente des données</h1>";
             this.sendNotification('START_PLANNING', {NFCid : this.NFCid});
