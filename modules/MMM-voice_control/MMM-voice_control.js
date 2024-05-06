@@ -37,6 +37,9 @@ Module.register("MMM-voice_control", {
                 }, 2000);
             }, 5000);         
         }
+    },
+
+    notificationReceived: function(notification, payload) {
 
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)

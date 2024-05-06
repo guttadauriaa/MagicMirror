@@ -84,7 +84,7 @@ socketNotificationReceived: function(notification, payload) {
     html += '</table>';
     wrapper.innerHTML = html;
 
-    this.sendSocketNotification('START_NFC', {});
+    this.sendNotification('START_NFC', {});
 
     setTimeout(() => {
         if (wrapper) {

@@ -37,7 +37,10 @@ module.exports = NodeHelper.create({
                 this.sendSocketNotification('DISPLAY_TEXT', stdout);
             });
         }
+    },
 
+    notificationReceived: function(notification, payload) {
+        
         if (notification === 'STOP_VOICE_TEXT') {
             console.log("demande d'arret du contole vocal")
             // Vérifier si un processus de contrôle vocal est en cours

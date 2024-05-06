@@ -6,10 +6,11 @@ module.exports = NodeHelper.create({
         console.log("Starting node helper for: " + this.name);
     },
 
-    socketNotificationReceived: function(notification, payload) {
+    notificationReceived: function(notification, payload) {
 
 
         if (notification === 'START_PLANNING') {
+            console.log("start planning reader")
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/hyperplanning.py ${payload.NFCid}`, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur d'exécution du script Python planning: ${error}`);
@@ -22,4 +23,5 @@ module.exports = NodeHelper.create({
         }
             
     }
+    
 });
