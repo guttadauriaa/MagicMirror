@@ -1,7 +1,7 @@
 Module.register("MMM-NFC", {
     start: function() {
         this.NFCid = null;
-        this.sendNotification('START_NFC', {});
+        this.sendSocketNotification('START_NFC', {});
         console.log("Starting module: " + this.name);
     },
 
