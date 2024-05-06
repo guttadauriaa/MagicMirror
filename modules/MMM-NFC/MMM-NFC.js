@@ -22,6 +22,13 @@ Module.register("MMM-NFC", {
         }
     },
 
+    notificationReceived: function(notification, payload) {
+        if (notification === 'START_NFC'){
+            console.log("start nfc depuis autre module", payload)
+            this.sendSocketNotification('START_NFC', {});
+        }
+    },
+
     getDom: function() {
         console.log("dom1");
         let wrapper = document.createElement("div");
