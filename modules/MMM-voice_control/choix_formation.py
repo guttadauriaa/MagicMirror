@@ -55,17 +55,14 @@ while True:
     except Exception:
         # Si l'attente échoue, faire défiler la page jusqu'à un autre élément atteignable
         try:
-            element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[{i}]_{10*test}")
+            element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[1]_{10*test}")
             driver.execute_script("arguments[0].scrollIntoView();", element)
             test +=1
         except Exception:
             # Si l'élément n'existe pas, arrêter la boucle
             break
 
-print(formation)
-driver.quit()
 
-    
 
 #print(json.dumps([cours.to_dict() for cours in liste_cours]))
 print(formation)
