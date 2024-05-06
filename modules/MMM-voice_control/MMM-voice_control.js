@@ -39,8 +39,20 @@ Module.register("MMM-voice_control", {
 
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
-            wrapper.innerHTML = `<h1> Dites moi votre formation </h1>`;
-            this.sendSocketNotification('demande_formation', {payload});
+            
+            const fs = require('fs');
+
+            try {
+                const data = fs.readFileSync('formations.json', 'utf8');
+                const obj = JSON.parse(data);
+                console.log(obj);
+            } catch (err) {
+                console.error('Une erreur est survenue lors de la lecture du fichier', err);
+            }
+            
+            wrapper.innerHTML = `<h1> Dites le numéro de votre formation ou annuler pour arrêter $obj</h1>`;
+
+            this.sendSocketNotification('demande_formation', payload);
         }
 
         if (notification === 'STOP_VOICE_TEXT') {
