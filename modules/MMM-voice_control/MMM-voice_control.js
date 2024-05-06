@@ -29,6 +29,7 @@ Module.register("MMM-voice_control", {
     },
 
     notificationReceived: function(notification, payload, sender) {
+        let wrapper = document.getElementById('MMM-voice_control');
         if (sender) {
             console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
         } else {
@@ -38,7 +39,7 @@ Module.register("MMM-voice_control", {
 
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
-            //wrapper.innerHTML = `<h1> Dites moi votre formation </h1>`;
+            wrapper.innerHTML = `<h1> Dites moi votre formation </h1>`;
         }
     },
 
