@@ -28,8 +28,50 @@ module.exports = NodeHelper.create({
 
         if (notification === 'demande_formation'){
             console.log("choix formation", payload)
-            this.sendSocketNotification('demande_formation', {payload});
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/recup_formation.py `, (error, stdout, stderr) => {
 
+                console.log("lance voicecontrole")
+                if (error) {
+                    console.error(`Erreur d'exécution du script Python: ${error}`);
+                    return;
+                }
+                
+                console.log("La sortie est :", stdout);
+
+                if (stdout.trim() === "stop") { 
+                    this.sendSocketNotification('stopconfig', {});
+                }
+
+                if (stdout.trim() === "false") { 
+                    this.sendSocketNotification('pascompris', {});
+                }
+
+                else{
+                    this.sendSocketNotification('validation_formation', stdout);
+                }
+            });
+        }
+
+        if (notification === 'validation_formation'){
+            console.log("verification formation", payload)
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/valider.py `, (error, stdout, stderr) => {
+
+                console.log("lance voicecontrole")
+                if (error) {
+                    console.error(`Erreur d'exécution du script Python: ${error}`);
+                    return;
+                }
+                
+                console.log("La sortie est :", stdout);
+
+                if (stdout.trim() === "true") { 
+                    this.sendSocketNotification('valide', {});
+                }
+
+                if (stdout.trim() === "false") { 
+                    this.sendSocketNotification('faux', {});
+                }
+            });
         }
 
         if (notification === 'STOP_VOICE_TEXT') {

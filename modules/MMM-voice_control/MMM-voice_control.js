@@ -57,6 +57,49 @@ Module.register("MMM-voice_control", {
             this.sendSocketNotification('demande_formation', payload);
         }
 
+        if (notification === 'stopconfig'){ 
+            console.log("stop config")
+            this.sendSocketNotification('VOICE_TEXT', {});
+            wrapper.innerHTML = `<h1> Configuration bien annulée. Demandez moi quelque chose </h1>`;
+        }
+
+        if (notification === 'pascompris'){
+            console.log("pas compris")
+            let html = '';
+            html += `<h1> Je n'ai pas compris, veuillez réessayer. Si vous souhaitez annulé, dites "annuler" </h1>`;
+            html += obj;
+            wrapper.innerHTML = html;
+
+            this.sendSocketNotification('demande_formation', {});
+        }  
+
+        if (notification === 'validation_formation'){
+            console.log("validation formation", payload)
+            let html = '';
+            html += `<h1> Vous avez choisi la formation ${payload}. Si c'est correct, dites "valider" sinon dites "annuler" </h1>`;
+            wrapper.innerHTML = html;
+            this.sendSocketNotification('validation_formation', payload);
+            formation = payload;
+        }
+
+        //il faut ajouter les infos dasn le fichier total
+        if (notification === 'valide') {
+            console.log("formation valide")
+            let html = '';
+            html += `<h1> Formation validée. Demandez moi quelque chose </h1>`;
+            wrapper.innerHTML = html; 
+            this.sendSocketNotification('VOICE_TEXT', {});
+        }
+
+        if (notification === 'faux'){
+            console.log("faux chiffre")
+            let html = '';
+            html += `<h1> Annulation de la demande. dites moi le numéro correct </h1>`;
+            html += obj;
+            wrapper.innerHTML = html;
+            this.sendSocketNotification('demande_formation', {});
+        }
+
         if (notification === 'STOP_VOICE_TEXT') {
             console.log("demande d'arret du contole vocal")
             // Vérifier si un processus de contrôle vocal est en cours

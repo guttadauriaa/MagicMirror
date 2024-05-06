@@ -26,7 +26,7 @@ chrome_options.add_argument("--headless")
 #à l'emplacement : /usr/lib/chromium-browser/chromedriver
 service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
 
-driver = webdriver.Chrome(service=service)#, options=chrome_options)
+driver = webdriver.Chrome(service=service, options=chrome_options)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
 
@@ -63,14 +63,10 @@ while True:
             break
 
 
-
-#print(json.dumps([cours.to_dict() for cours in liste_cours]))
 with open("formations.txt", "w") as f:
     for i, j in enumerate(formation):
         f.write(f"{i} {j}") 
         print(f"{i} {j}")
         
-#time.sleep(5)
+        
 driver.quit()
-
-# display.stop()

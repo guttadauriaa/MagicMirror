@@ -28,5 +28,23 @@ class Fonctionnalite:
             else: 
                 print(data)
 
+    def formation(self, data):
+        for mot in data.split():
+            try:
+                if (mot.lower() == "annulé" or mot.lower() == "annuler"):
+                    print("stop")
+                    break
 
-        #test pour enregistrer un nouveau badge 
+                num = int(mot)
+                print(num)
+                break
+            except ValueError:
+                continue
+        else:
+            print("false")
+
+    def valide(self, data):
+        if 'valider' in data or 'valide' or 'oui' in data:
+            print("true")
+        else:
+            print("false")
