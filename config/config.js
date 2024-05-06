@@ -66,6 +66,10 @@ let config = {
 			module: "MMM-planning",
 			position: "upper_third",
 		},
+		{
+			module: "MMM-NFC",
+			position: "upper_third",
+		},
 		// {
 		// 	module: "test_module",
 		// 	position: "middle_center",
