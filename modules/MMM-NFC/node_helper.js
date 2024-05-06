@@ -6,10 +6,10 @@ module.exports = NodeHelper.create({
         console.log("Starting node helper for: " + this.name);
     },
 
-    socketNotificationReceived: function(notification, payload) {
+    notificationReceived: function(notification, payload) {
         if (notification === 'START_NFC') {
             console.log("start nfc reader")
-            let badge; // Déclarer la variable à un niveau supérieur
+            let badge;
     
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-NFC/nfc_reader.py`, (error, stdout, stderr) => {
                 if (error) {
