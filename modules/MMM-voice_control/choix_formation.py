@@ -46,7 +46,7 @@ test = 1
 while True:
     try:
         # Attendre que l'élément du cours soit présent sur la page
-        course_element = WebDriverWait(driver, 0.1).until(
+        course_element = WebDriverWait(driver, 0).until(
             EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[1]_{i}"))
         )
         formation.append(course_element.text)
