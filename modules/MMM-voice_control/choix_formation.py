@@ -65,7 +65,7 @@ while True:
 
 
 #print(json.dumps([cours.to_dict() for cours in liste_cours]))
-with open("formations.json", "w") as f:
+with open("formations.txt", "w") as f:
     for i, j in enumerate(formation):
         f.write(f"{i} {j}") 
     f.close()
