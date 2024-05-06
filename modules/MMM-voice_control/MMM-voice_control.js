@@ -40,6 +40,13 @@ Module.register("MMM-voice_control", {
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
             wrapper.innerHTML = `<h1> Dites moi votre formation </h1>`;
+            this.sendSocketNotification('demande_formation', {payload});
+        }
+
+        if (notification === 'STOP_VOICE_TEXT') {
+            console.log("demande d'arret du contole vocal")
+            // Vérifier si un processus de contrôle vocal est en cours
+            this.sendSocketNotification('STOP_VOICE_TEXT', {});
         }
     },
 
