@@ -60,7 +60,7 @@ while True:
         driver.execute_script("arguments[0].scrollIntoView();", element)
         test +=1
     #if time.time() - debut > 5:
-    if i == 262: #nombre de formations
+    if i == 200: #nombre de formations
         break
 
         
