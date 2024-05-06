@@ -9,18 +9,6 @@ module.exports = NodeHelper.create({
 
     
     socketNotificationReceived: function(notification, payload) {
-        // if (notification === 'KEYWORD') {
-
-        //     console.log("lance keyword")
-        //     exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/mot_cle.py `, (error, stdout, stderr) => {
-        //         if (error) {
-        //             console.error(`Erreur d'exécution du script Python: ${error}`);
-        //             //return;
-        //         }
-            
-        //         this.sendSocketNotification('KEYWORDRECEIVED', "Demandez moi ce que vous souhaitez")
-        //     });
-        // }
 
         if (notification === 'VOICE_TEXT') {
 
@@ -37,9 +25,22 @@ module.exports = NodeHelper.create({
                 this.sendSocketNotification('DISPLAY_TEXT', stdout);
             });
         }
+
+        if (notification === 'demande_formation'){
+            console.log("choix formation", payload)
+            this.sendSocketNotification('demande_formation', {payload});
+            
+        }
     },
 
-    notificationReceived: function(notification, payload) {
+    notificationReceived: function(notification, payload, sender) {
+        let wrapper = document.getElementById('MMM-voice_control');
+        if (sender) {
+            console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
+        } else {
+            console.log(this.name + " received a system notification: " + notification);
+        }
+        
         
         if (notification === 'STOP_VOICE_TEXT') {
             console.log("demande d'arret du contole vocal")
