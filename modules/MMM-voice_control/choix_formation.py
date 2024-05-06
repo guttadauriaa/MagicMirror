@@ -68,7 +68,8 @@ while True:
 with open("formations.txt", "w") as f:
     for i, j in enumerate(formation):
         f.write(f"{i} {j}") 
-    f.close()
+        print(f"{i} {j}")
+        
 #time.sleep(5)
 driver.quit()
 
