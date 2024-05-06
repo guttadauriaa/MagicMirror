@@ -49,8 +49,10 @@ Module.register("MMM-voice_control", {
             } catch (err) {
                 console.error('Une erreur est survenue lors de la lecture du fichier', err);
             }
-            
-            wrapper.innerHTML = `<h1> Dites le numéro de votre formation ou annuler pour arrêter $obj</h1>`;
+            let html = '';
+            html += `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1>`;
+            html += obj;
+            wrapper.innerHTML = html;
 
             this.sendSocketNotification('demande_formation', payload);
         }
