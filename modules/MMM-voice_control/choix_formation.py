@@ -65,7 +65,10 @@ while True:
 
 
 #print(json.dumps([cours.to_dict() for cours in liste_cours]))
-print(formation)
+with open("formations.json", "w") as f:
+    for i, j in enumerate(formation):
+        f.write(i, " ",j) 
+    f.close()
 #time.sleep(5)
 driver.quit()
 
