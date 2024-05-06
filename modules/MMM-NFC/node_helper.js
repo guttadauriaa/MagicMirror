@@ -6,7 +6,7 @@ module.exports = NodeHelper.create({
         console.log("Starting node helper for: " + this.name);
     },
 
-    notificationReceived: function(notification, payload) {
+    socketNotificationReceived: function(notification, payload) {
         if (notification === 'START_NFC') {
             console.log("start nfc reader")
             let badge;
