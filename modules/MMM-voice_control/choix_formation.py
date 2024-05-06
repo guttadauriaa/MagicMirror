@@ -55,7 +55,7 @@ while True:
     except Exception:
         # Si l'attente échoue, faire défiler la page jusqu'à un autre élément atteignable
         try:
-            element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{10*test}")
+            element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[{i}]_{10*test}")
             driver.execute_script("arguments[0].scrollIntoView();", element)
             test +=1
         except Exception:
