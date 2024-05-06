@@ -43,8 +43,6 @@ edit_button.click()
 i = 0
 test = 1
 
-debut = time.time()
-
 while True:
     try:
         # Attendre que l'élément du cours soit présent sur la page
@@ -56,14 +54,18 @@ while True:
 
     except Exception:
         # Si l'attente échoue, faire défiler la page jusqu'à un autre élément atteignable
-        element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{10*test}")
-        driver.execute_script("arguments[0].scrollIntoView();", element)
-        test +=1
-    #if time.time() - debut > 5:
-    if i == 200: #nombre de formations
-        break
+        try:
+            element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{10*test}")
+            driver.execute_script("arguments[0].scrollIntoView();", element)
+            test +=1
+        except Exception:
+            # Si l'élément n'existe pas, arrêter la boucle
+            break
 
-        
+print(formation)
+driver.quit()
+
+    
 
 #print(json.dumps([cours.to_dict() for cours in liste_cours]))
 print(formation)
