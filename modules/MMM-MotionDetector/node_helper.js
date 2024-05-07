@@ -35,7 +35,7 @@ module.exports = NodeHelper.create({
   deactivateMonitor: function () {
     this.isMonitorOn(function (result) {
       if (result) {
-        exec("tvcgencmd display_power 0", function (err, out, code) {
+        exec("vcgencmd display_power 0", function (err, out, code) {
           if (err) {
             Log.error("MMM-MotionDetector: error deactivating monitor: " + code);
           } else {
