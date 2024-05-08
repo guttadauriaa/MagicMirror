@@ -82,6 +82,7 @@ module.exports = NodeHelper.create({
                 }else if (stdout.includes("5") || stdout.includes("cinq")){
                     annee = "MA2";
                 }else{
+                    console.log("redemander annee");
                     this.sendSocketNotification('demande_annee', {redemander : true});
                 }
             });
