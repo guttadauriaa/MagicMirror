@@ -30,7 +30,7 @@ display = Display(visible=0, size=(800, 800))
 display.start()
 
 #pour ne pas afficher la fenêtre du navigateur
-firefox_options = FirefoxOptions()
+firefox_options = Options()
 firefox_options.add_argument("--headless")
 #firefox_options.add_argument('--shm-size=3g')
 
@@ -42,9 +42,9 @@ semaine = 28
 #pour interagir avec le site web 
 #il faut télécharger le firefoxdriver dispponible pour raspberry pi disponible sur internet au préalable. celui-ci à été stocker hors des fichier du projet
 #à l'emplacement : /usr/lib/chromium-browser/firefoxdriver
-service = Service(executable_path = "/usr/lib/chromium-browser/firefoxdriver")
+service = Service(executable_path = "/usr/lib/firefox/geckodriver-v0.34.0-linux-aarch64.tar.gz.asc")
 
-driver = webdriver.firefox(service=service, options=firefox_options)
+driver = webdriver.Firefox(service=service, options=firefox_options)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
 
