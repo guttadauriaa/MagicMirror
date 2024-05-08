@@ -11,8 +11,11 @@ import json
 from selenium.webdriver.chrome.options import Options
 import sys
 
-cours_id= sys.argv[0]
-
+if len(sys.argv) > 1:
+    cours_id = sys.argv[1]
+    print(f"ID du cours : {cours_id}")
+else:
+    cours_id = 3  # Remplacez "default_value" par la valeur que vous voulez utiliser par défaut
 
 #pour exetuter le code à distance
 from pyvirtualdisplay import Display
