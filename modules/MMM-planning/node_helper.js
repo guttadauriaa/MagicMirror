@@ -1,5 +1,6 @@
 const NodeHelper = require("node_helper");
 const { exec } = require("child_process");
+const { log } = require("console");
 
 module.exports = NodeHelper.create({
     start: function() {
@@ -52,6 +53,7 @@ module.exports = NodeHelper.create({
         }
 
         if (notification === 'DING') {
+            log.info("ding");
             var player = require('play-sound')(opts = {})
             player.play('./modules/MMM-planning/ding.mp3', function(err){
             if (err) throw err
