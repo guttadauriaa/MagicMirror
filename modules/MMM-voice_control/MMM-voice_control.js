@@ -41,15 +41,15 @@ Module.register("MMM-voice_control", {
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
             
-            const fs = require('fs');
+            // const fs = require('fs');
 
-            try {
-                const data = fs.readFileSync('formations.txt', 'utf8');
-                const obj = JSON.parse(data);
-                console.log(obj);
-            } catch (err) {
-                console.error('Une erreur est survenue lors de la lecture du fichier', err);
-            }
+            // try {
+            //     const data = fs.readFileSync('formations.txt', 'utf8');
+            //     const obj = JSON.parse(data);
+            //     console.log(obj);
+            // } catch (err) {
+            //     console.error('Une erreur est survenue lors de la lecture du fichier', err);
+            // }
             let html = '';
             html += `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1>`;
             //html += JSON.stringify(obj);
