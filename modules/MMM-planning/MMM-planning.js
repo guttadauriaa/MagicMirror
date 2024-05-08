@@ -105,7 +105,7 @@ socketNotificationReceived: function(notification, payload) {
   }
   if (notification === 'NFC') {
     this.NFCid = payload;
-    //this.sendSocketNotification('DING', {});
+    this.sendSocketNotification('DING', {});
     wrapper.innerHTML = "<h1>En attente des données</h1>";
     this.sendSocketNotification('START_PLANNING', {NFCid : this.NFCid});
   }
