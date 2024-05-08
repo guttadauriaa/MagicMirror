@@ -28,7 +28,7 @@ with sr.Microphone() as source:
         fonctionnalite.formation(texte)
 
     except sr.UnknownValueError:
-        print("Je n'ai pas compris ce que vous avez dit.")
+        print("false")
 
     except sr.RequestError as e:
         print("Erreur lors de la requête : ", e)

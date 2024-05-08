@@ -30,6 +30,8 @@ Module.register("MMM-voice_control", {
 
     notificationReceived: function(notification, payload, sender) {
         let wrapper = document.getElementById('MMM-voice_control');
+        let formation = '';
+        let badge = '';
 
         if (sender) {
             console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
@@ -40,6 +42,7 @@ Module.register("MMM-voice_control", {
 
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
+            badge = payload;
             
             // const fs = require('fs');
 
@@ -66,8 +69,8 @@ Module.register("MMM-voice_control", {
         if (notification === 'pascompris'){
             console.log("pas compris")
             let html = '';
-            html += `<h1> Je n'ai pas compris, veuillez réessayer. Si vous souhaitez annulé, dites "annuler" </h1>`;
-            html += obj;
+            html += `<h1> Je n'ai pas compris, veuillez réessayer. Si vous souhaitez annuler, dites "annuler" </h1>`;
+            //html += obj;
             wrapper.innerHTML = html;
 
             this.sendSocketNotification('demande_formation', {});

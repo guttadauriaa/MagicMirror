@@ -28,9 +28,10 @@ module.exports = NodeHelper.create({
 
         if (notification === 'demande_formation'){
             console.log("choix formation", payload)
+            console.log("lance voicecontrole pour formation")
+
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/choix_formation.py `, (error, stdout, stderr) => {
 
-                console.log("lance voicecontrole pour formation")
                 if (error) {
                     console.error(`Erreur d'exécution du script Python: ${error}`);
                     return;
@@ -39,14 +40,17 @@ module.exports = NodeHelper.create({
                 console.log("La sortie est :", stdout);
 
                 if (stdout.trim() === "stop") { 
+                    console.log("envoie stop")
                     this.sendSocketNotification('stopconfig', {});
                 }
 
                 if (stdout.trim() === "false") { 
+                    console.log("envoie pas compris")
                     this.sendSocketNotification('pascompris', {});
                 }
 
                 else{
+                    console.log("envoie de la formation")
                     this.sendSocketNotification('validation_formation', stdout);
                 }
             });
@@ -54,9 +58,10 @@ module.exports = NodeHelper.create({
 
         if (notification === 'validation_formation'){
             console.log("verification formation", payload)
+            console.log("lance voicecontrole pour validation")
+            
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/valider.py `, (error, stdout, stderr) => {
 
-                console.log("lance voicecontrole")
                 if (error) {
                     console.error(`Erreur d'exécution du script Python: ${error}`);
                     return;
