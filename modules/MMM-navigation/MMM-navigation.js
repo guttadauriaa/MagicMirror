@@ -10,7 +10,8 @@ Module.register("MMM-navigation", {
             console.log("Starting navigation");
             this.imagePath = `./modules/MMM-navigation/map/${payload}.png`;
             this.show();
-
+            this.updateDom();
+            
             // Cachez le module après 60 secondes
             setTimeout(() => {
                 this.hide();
