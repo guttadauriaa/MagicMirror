@@ -31,13 +31,14 @@ class Fonctionnalite:
     def formation(self, data):
         for mot in data.split():
             try:
-                if (mot.lower() == "annulé" or mot.lower() == "annuler"):
+                if (mot.lower() == "annulé" or mot.lower() == "annuler" or mot.lower() == "stop"):
                     print("stop")
                     break
 
                 num = int(mot)
                 print(num)
                 break
+            
             except ValueError:
                 continue
         else:
