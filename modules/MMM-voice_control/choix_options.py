@@ -11,7 +11,7 @@ import json
 from selenium.webdriver.chrome.options import Options
 import sys
 
-cours_id= sys.argv[1]
+cours_id= sys.argv[0]
 
 
 #pour exetuter le code à distance
