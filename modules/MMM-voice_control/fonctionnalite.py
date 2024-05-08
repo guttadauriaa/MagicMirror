@@ -16,7 +16,7 @@ class Fonctionnalite:
                        ("Secréteriat académique", "secretariat_academique"), ("Secrétariat des études", "secretariat_des_etudes"), ("Toilettes", "Toilettes")]
         
         for local in liste_local:
-            if local.lower() in data.lower():
+            if local[0].lower() in data.lower():
                 message = "très bien voici comment se rendre à :" + local[0]
                 #print(message, local[1])
                 result = {"message": message, "fichier": local[1]}
