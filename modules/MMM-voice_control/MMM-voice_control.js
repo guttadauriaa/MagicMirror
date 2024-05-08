@@ -165,7 +165,9 @@ Module.register("MMM-voice_control", {
             }
         }
         //il faut ajouter les infos dasn le fichier total
-        
+        if (notification === 'VOICE_TEXT_Stopped'){
+            this.voiceControlProcess = false;
+        }
     },
 
     notificationReceived: function(notification, payload, sender) {
@@ -182,16 +184,31 @@ Module.register("MMM-voice_control", {
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
             badge = payload.badge;
-            let html = '';
-            if (payload.redemander === true) {
-                html += `<p>Je n'ai pas compris, veuillez réessayer.</p>`;
-            }
-            html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
+            this.voiceControlProcess = true;
+            this.sendSocketNotification('STOP_VOICE_TEXT', {});
+            // Vérifier si un processus de contrôle vocal est en cours
             
-            html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
-            wrapper.innerHTML = html;
-            this.sendSocketNotification('demande_annee', {});
-            //ajouter le badge dans le fichier local
+            while (this.voiceControlProcess === true){
+                setTimeout(() => {
+                    if(this.voiceControlProcess === false){
+                        console.log("voiceControlProcess = false")
+                    }
+                }, 1000); 
+        }
+            if (this.voiceControlProcess === false){   
+                let html = '';
+                if (payload.redemander === true) {
+                    html += `<p>Je n'ai pas compris, veuillez réessayer.</p>`;
+                }
+                html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
+                
+                html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
+                wrapper.innerHTML = html;
+                this.sendSocketNotification('demande_annee', {});
+                //ajouter le badge dans le fichier local
+            }else{
+                console.log("voiceControlProcess = true")
+            }
         }
         
 

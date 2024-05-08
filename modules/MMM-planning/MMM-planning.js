@@ -115,7 +115,7 @@ socketNotificationReceived: function(notification, payload) {
     this.NFCid = payload;
     wrapper.innerHTML = "<h1>pas de badge connu</h1>";
 
-    this.sendNotification('STOP_VOICE_TEXT', {});
+  
     this.sendNotification('SETUP_BADGE', {badge : this.NFCid});
     //timer 1 seconde
     setTimeout(() => {
