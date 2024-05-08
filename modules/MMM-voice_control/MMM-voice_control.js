@@ -51,6 +51,11 @@ Module.register("MMM-voice_control", {
             
         }
 
+        if (notification === 'retour_des_formations'){
+            wrapper.innerHTML = `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1><p>${payload}</p>`;
+            this.sendSocketNotification('demande_formation', {});
+        }
+
 
         if (notification === 'VALIDATION'){
 
@@ -102,9 +107,6 @@ Module.register("MMM-voice_control", {
             this.sendSocketNotification('lecture_formations', {});
         }
         
-        if (notification === 'BADGE'){
-            wrapper.innerHTML = `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1><p>${payload}</p>`;
-        }
 
         if (notification === 'STOP_VOICE_TEXT') {
             console.log("demande d'arret du contole vocal")
