@@ -45,19 +45,21 @@ edit_button = WebDriverWait(driver, 5).until(
 )
 edit_button.click()
 
+
+#slectionner le cours
 test = 1
 while True:
     try:
         # Attendre que l'élément du cours soit présent sur la page
         course_element = WebDriverWait(driver, 0.1).until(
-            EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[{1}]_{j}"))
+            EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[{1}]_{cours_id}"))
         )
         course_element.click()
         break
 
     except Exception:
         # Si l'attente échoue, faire défiler la page jusqu'à un autre élément atteignable
-        element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{10*test}")
+        element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[{1}]_{10*test}")
         driver.execute_script("arguments[0].scrollIntoView();", element)
         test +=1
 
@@ -65,11 +67,12 @@ test = 1
 options = []
 i = 0
 
+#selectionner l'option
 while True:
     try:
         # Attendre que l'élément du cours soit présent sur la page
         course_element = WebDriverWait(driver, 0).until(
-            EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[1]_{i}"))
+            EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[2]_{i}"))
         )
         options.append(course_element.text)
         i += 1
@@ -77,7 +80,7 @@ while True:
     except Exception:
         # Si l'attente échoue, faire défiler la page jusqu'à un autre élément atteignable
         try:
-            element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[1]_{10*test}")
+            element = driver.find_element(By.ID, f"GInterface.Instances[1].Instances[2]_{10*test}")
             driver.execute_script("arguments[0].scrollIntoView();", element)
             test +=1
         except Exception:
