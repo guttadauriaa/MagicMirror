@@ -26,6 +26,21 @@ module.exports = NodeHelper.create({
             });
         }
 
+        if (notification === 'recup_option') {
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/choix_options.py ${payload}`, (error, stdout, stderr) => {
+
+                if (error) {
+                    console.error(`Erreur d'exécution du script Python: ${error}`);
+                    return;
+                }
+                
+                console.log("La sortie est :", stdout);
+
+                this.sendSocketNotification('retour_des_options', stdout);
+
+            });
+        }
+
         if (notification === 'lecture_formations'){
             const fs = require('fs');
         
@@ -41,8 +56,26 @@ module.exports = NodeHelper.create({
             });
         }
 
+        if (notification === 'demande_options'){
+            console.log("choix options")
+            console.log("lance voicecontrole pour formation")
+
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/choix_formation.py `, (error, stdout, stderr) => {
+
+                if (error) {
+                    console.error(`Erreur d'exécution du script Python: ${error}`);
+                    return;
+                }
+                
+                console.log("La sortie est :", stdout);
+
+                this.sendSocketNotification('CHOIX_OPTIONS', stdout.trim());
+
+            });
+        }
+
         if (notification === 'demande_formation'){
-            console.log("choix formation", payload)
+            console.log("choix formation")
             console.log("lance voicecontrole pour formation")
 
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/choix_formation.py `, (error, stdout, stderr) => {
@@ -72,8 +105,12 @@ module.exports = NodeHelper.create({
                 
                 console.log("La sortie est :", stdout);
 
-                this.sendSocketNotification('VALIDATION', stdout.trim());
-
+                if (payload === "formation"){ 
+                    this.sendSocketNotification('VALIDATION1', stdout.trim());
+                }
+                else {
+                    this.sendSocketNotification('VALIDATION2', stdout.trim());
+                }
             });
         }
 
