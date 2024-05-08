@@ -59,23 +59,46 @@ module.exports = NodeHelper.create({
                 
             });
         }
+        if (notification === 'demande_annee'){
+            console.log("choix annee")
+            console.log("lance voicecontrole pour annee")
 
-        if (notification === 'demande_options'){
-            console.log("choix options")
-            console.log("lance voicecontrole pour formation")
-
-            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/choix_formation.py `, (error, stdout, stderr) => {
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `, (error, stdout, stderr) => {
 
                 if (error) {
-                    console.error(`Erreur d'exécution du script Python: ${error}`);
+                    console.error(`Erreur d'exécution du script Python ecouter.py: ${error}`);
                     return;
                 }
                 
                 console.log("La sortie est :", stdout);
-
-                this.sendSocketNotification('CHOIX_OPTIONS', stdout.trim());
-
+                if (stdout.includes("1") || stdout.includes("un")){
+                    annee = "BAB1";
+                }else if (stdout.includes("2") || stdout.includes("deux")){
+                    annee = "BAB2";
+                }else if (stdout.includes("3") || stdout.includes("trois")){
+                    annee = "BAB3";
+                }else if (stdout.includes("4") || stdout.includes("quatre")){
+                    annee = "MA1";
+                }else if (stdout.includes("5") || stdout.includes("cinq")){
+                    annee = "MA2";
+                }else{
+                    this.sendSocketNotification('demande_annee', {redemander : true});
+                }
             });
+
+            const fs = require('fs');
+        
+            fs.readFile('formations.json', 'utf8', (err, data) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                const obj = JSON.parse(data);
+                console.log(obj);
+                formations = obj[annee];
+            });
+                this.sendSocketNotification('retour_des_formations', formations);
+
         }
 
         if (notification === 'demande_formation'){
@@ -95,6 +118,26 @@ module.exports = NodeHelper.create({
 
             });
         }
+
+        if (notification === 'demande_options'){
+            console.log("choix options")
+            console.log("lance voicecontrole pour formation")
+
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/choix_formation.py `, (error, stdout, stderr) => {
+
+                if (error) {
+                    console.error(`Erreur d'exécution du script Python: ${error}`);
+                    return;
+                }
+                
+                console.log("La sortie est :", stdout);
+
+                this.sendSocketNotification('CHOIX_OPTIONS', stdout.trim());
+
+            });
+        }
+
+        
 
         if (notification === 'validation_formation'){
             console.log("verification formation", payload)

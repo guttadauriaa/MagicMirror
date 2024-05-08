@@ -1,1 +1,262 @@
-0 .BAB1 - Architecture1 .BAB1 - Droit2 .BAB1 - Ing. de gestion3 .BAB1 - Ir. civil4 .BAB1 - Ir. civil (Ch)5 .BAB1 - Ir. civil architecte6 .BAB1 - Médecine7 .BAB1 - Sc. biologiques8 .BAB1 - Sc. biologiques (Ch)9 .BAB1 - Sc. biomédicales10 .BAB1 - Sc. biomédicales (remise à niveau)11 .BAB1 - Sc. chimiques12 .BAB1 - Sc. de gestion13 .BAB1 - Sc. de gestion (Ch)14 .BAB1 - Sc. éco. et de gestion15 .BAB1 - Sc. humaines et sociales16 .BAB1 - Sc. informatiques17 .BAB1 - Sc. mathématiques18 .BAB1 - Sc. pharmaceutiques19 .BAB1 - Sc. physiques20 .BAB1 - Sc. psycho. et de l'éduc., or. générale21 .BAB1 - Sc. psycho. et de l'éduc., or. générale (Ch)22 .BAB1 - Sc. psycho. et de l'éduc., or. logopédie23 .BAB1 - Traduction et interprétation24 .BAB1 – Sc. humaines et sociales (Ch)25 .BAB2 - Architecture26 .BAB2 - Droit27 .BAB2 - Ing. de gestion28 .BAB2 - Ir. civil29 .BAB2 - Ir. civil (Ch)30 .BAB2 - Ir. civil architecte31 .BAB2 - Médecine32 .BAB2 - Sc. biologiques33 .BAB2 - Sc. biologiques (Ch)34 .BAB2 - Sc. biomédicales35 .BAB2 - Sc. chimiques36 .BAB2 - Sc. de gestion37 .BAB2 - Sc. de gestion (Ch)38 .BAB2 - Sc. éco. et de gestion39 .BAB2 - Sc. humaines et sociales40 .BAB2 - Sc. informatiques41 .BAB2 - Sc. mathématiques42 .BAB2 - Sc. pharmaceutiques43 .BAB2 - Sc. physiques44 .BAB2 - Sc. psycho. et de l'éduc., or. générale45 .BAB2 - Sc. psycho. et de l'éduc., or. générale (Ch)46 .BAB2 - Sc. psycho. et de l'éduc., or. logopédie47 .BAB2 - Traduction et interprétation48 .BAB2 – Sc. humaines et sociales (Ch)49 .BAB3 - Architecture50 .BAB3 - Droit51 .BAB3 - Ing. de gestion52 .BAB3 - Ir. civil53 .BAB3 - Ir. civil (Ch)54 .BAB3 - Ir. civil architecte55 .BAB3 - Médecine56 .BAB3 - Sc. biologiques57 .BAB3 - Sc. biologiques (Ch)58 .BAB3 - Sc. biomédicales59 .BAB3 - Sc. chimiques60 .BAB3 - Sc. de gestion61 .BAB3 - Sc. de gestion (Ch)62 .BAB3 - Sc. éco. et de gestion63 .BAB3 - Sc. humaines et sociales64 .BAB3 - Sc. informatiques65 .BAB3 - Sc. mathématiques66 .BAB3 - Sc. pharmaceutiques67 .BAB3 - Sc. physiques68 .BAB3 - Sc. Psycho. et de l'éduc., or. générale69 .BAB3 - Sc. psycho. et de l'éduc., or. générale (Ch)70 .BAB3 - Sc. psycho. et de l'éduc., or. logopédie71 .BAB3 - Traduction et interprétation72 .BAB3 – Sc. humaines et sociales (Ch)73 .Bloc compl. MA - Orthopéda clinique74 .Bloc compl. MA - Politique éco. et sociale75 .Bloc compl. MA - Sc. de gestion76 .Bloc compl. MA - Sc. de gestion (Ch)77 .Bloc compl. MA - Sc. de l'éducation78 .Bloc compl. MA - Sc. de l'éducation (Ch)79 .Bloc compl. MA - Sc. informatiques80 .Bloc compl. MA - Sc. informatiques (Ch)81 .Bloc compl. MA - Sc. psychologiques82 .Bloc compl. MA - Transitions et innovations soc.83 .MA60 - Sc. biologiques84 .MA60 - Sc. chimiques85 .MA60 - Sc. de gestion86 .MA60 - Sc. de gestion (Ch)87 .MA60 - Sc. informatiques88 .MA60 - Sc. informatiques (Ch)89 .MA60 - Sc. mathématiques90 .MA60 - Sc. physiques91 .MAB1 - Alternance - Sc. informatiques, FS prof. (Ch)92 .MAB1 - Architecture, FS art de bâtir93 .MAB1 - Architecture, FS urbanisme94 .MAB1 - Biochimie et bio. mol. et cellulaire95 .MAB1 - Biochimie et bio. mol. et cellulaire (Ch)96 .MAB1 - Biologie des organismes et écologie97 .MAB1 - Ing. de gestion, FS98 .MAB1 - Interprétation99 .MAB1 - Ir. civil architecte, FS100 .MAB1 - Ir. civil chimie et SDM, FS101 .MAB1 - Ir. civil électricien, FS102 .MAB1 - Ir. civil énergie, FS Energy Production& Usage in Industr103 .MAB1 - Ir. civil énergie, FS Energy Usage in Cities& Communities104 .MAB1 - Ir. civil informatique et gestion (Ch)105 .MAB1 - Ir. civil informatique et gestion, FS AI106 .MAB1 - Ir. civil informatique et gestion, FS Cybersecurity107 .MAB1 - Ir. civil mécanicien, FS108 .MAB1 - Ir. civil mines et géologue, FS109 .MAB1 - Politique éco. et soc., FS coll. terr.110 .MAB1 - Politique éco. et soc., FS pol. éco. soc.111 .MAB1 - Politique éco. et soc., FS socio-pol.112 .MAB1 - Sc. biomédicales, FA113 .MAB1 - Sc. biomédicales, FS neuroscience114 .MAB1 - Sc. chimiques115 .MAB1 - Sc. de gestion, FD116 .MAB1 - Sc. de gestion, FS117 .MAB1 - Sc. de gestion, FS management (Ch)118 .MAB1 - Sc. de l'éducation, FS action sociale119 .MAB1 - Sc. de l'éducation, FS action sociale (Ch)120 .MAB1 - Sc. de l'éducation, FS enseignement121 .MAB1 - Sc. de l'éducation, FS enseignement (Ch)122 .MAB1 - Sc. de l'éducation, FS technologie123 .MAB1 - Sc. de l'éducation, FS technologie (Ch)124 .MAB1 - Sc. informatiques, FA125 .MAB1 - Sc. informatiques, FS126 .MAB1 - Sc. informatiques, FS AIDA127 .MAB1 - Sc. mathématiques, FA128 .MAB1 - Sc. mathématiques, FD129 .MAB1 - Sc. mathématiques, FS finance130 .MAB1 - Sc. mathématiques, FS informatique131 .MAB1 - Sc. pharmaceutiques132 .MAB1 - Sc. physiques, FA133 .MAB1 - Sc. physiques, FD134 .MAB1 - Sc. psychologiques, FA135 .MAB1 - Sc. psychologiques, FS136 .MAB1 - Sc. psychologiques, FS orthopédagogie clinique137 .MAB1 - Traduction, FA138 .MAB1 - Traduction, FD139 .MAB1 - Traduction, FS trad. interculturel140 .MAB1 - Traduction, FS trad. multidisciplinaire141 .MAB1 - Transitions et innovations soc.142 .MaB1 -Sc. infirmières143 .MAB1 en orthopédagogie clinique144 .MAB2 - Alternance - Sc. informatiques, FS prof. (Ch)145 .MAB2 - Architecture, FS art de bâtir146 .MAB2 - Architecture, FS urbanisme147 .MAB2 - Biochimie et bio. mol. et cellulaire (Ch)148 .MAB2 - Biochimie et bio. mol. et cellulaire, FA149 .MAB2 - Biochimie et bio. mol. et cellulaire, FD150 .MAB2 - Biochimie et bio. mol. et cellulaire, FS151 .MAB2 - Biologie des organismes et écologie, FA152 .MAB2 - Biologie des organismes et écologie, FD153 .MAB2 - Biologie des organismes et écologie, FS154 .MAB2 - Ing. de gestion, FS155 .MAB2 - Interprétation156 .MAB2 - Ir. civil architecte, FS157 .MAB2 - Ir. civil chimie et SDM, FS PEE158 .MAB2 - Ir. civil chimie et SDM, FS SGM159 .MAB2 - Ir. civil électricien, FS AI & SC160 .MAB2 - Ir. civil électricien, FS DS161 .MAB2 - Ir. civil électricien, FS EE & SG162 .MAB2 - Ir. civil informatique et gestion, FS AI163 .MAB2 - Ir. civil mécanicien, FS ConceptProduct164 .MAB2 - Ir. civil mécanicien, FS Génie165 .MAB2 - Ir. civil mécanicien, FS Mécatronique166 .MAB2 - Ir. civil mines et géologue, FS167 .MAB2 - Politique éco. et soc., FS coll. terr.168 .MAB2 - Politique éco. et soc., FS pol. éco. soc.169 .MAB2 - Politique éco. et soc., FS socio-pol.170 .MaB2 - Sc infirmières171 .MAB2 - Sc. biomédicales, FA172 .MAB2 - Sc. biomédicales, FS neuroscience173 .MAB2 - Sc. chimiques, FA174 .MAB2 - Sc. chimiques, FD175 .MAB2 - Sc. chimiques, FS entreprise176 .MAB2 - Sc. de gestion, FD177 .MAB2 - Sc. de gestion, FS178 .MAB2 - Sc. de gestion, FS management (Ch)179 .MAB2 - Sc. de l'éducation, FS action sociale180 .MAB2 - Sc. de l'éducation, FS action sociale (Ch)181 .MAB2 - Sc. de l'éducation, FS enseignement182 .MAB2 - Sc. de l'éducation, FS enseignement (Ch)183 .MAB2 - Sc. de l'éducation, FS technologie184 .MAB2 - Sc. de l'éducation, FS technologie (Ch)185 .MAB2 - Sc. informatiques, FA186 .MAB2 - Sc. informatiques, FS187 .MAB2 - Sc. informatiques, FS AIDA188 .MAB2 - Sc. mathématiques, FA189 .MAB2 - Sc. mathématiques, FD190 .MAB2 - Sc. pharmaceutiques191 .MAB2 - Sc. physiques, FA192 .MAB2 - Sc. physiques, FD193 .MAB2 - Sc. psychologiques, FA194 .MAB2 - Sc. psychologiques, FS195 .MAB2 - Sc. psychologiques, FS orthopédagogie clinique196 .MAB2 - Traduction, FD197 .MAB2 - Traduction, FS trad. interculturel198 .MAB2 - Traduction, FS trad. multidisciplinaire199 .MAB2 - Transitions et innovations soc.200 .MAB2 en orthopédagogie clinique201 .MS - Etudes de genres202 .MS - Gestion des risques et bien-être au travail203 .MS - Gestion totale de la qualité204 .MS - Linguistique appliquée205 .MS - Nanotechnologies206 .MS - Péda. univ. et de l’ens. sup.207 .MS - Public health methodology208 .MS - Sc. Langage209 .MS en formation d'enseignants210 .MS en management territorial et dév urbain211 AESS - Art de bâtir et urbanisme212 AESS - Langues, lettres et traductologie213 AESS - Sc. biologiques214 AESS - Sc. biomed. et pharma.215 AESS - Sc. chimiques216 AESS - Sc. de l'ingénieur et techno.217 AESS - Sc. éco. et de gestion218 AESS - Sc. Informatique219 AESS - Sc. mathématiques220 AESS - Sc. physiques221 AESS - Sc. politiques et sociales222 AESS - Sc. psycho. et de l'éduc.223 CAPAES (non porteurs)224 CAPAES (porteurs)225 CIU - DATA4BIM226 CIU - NUMEFA227 CIU - Philosophies de la santé mentale228 CU - Aspects avancés systèmes logiciels (Ch)229 CU - Bases en Management et Marketing230 CU - Basse vision231 CU - Biologie marine232 CU - Connaiss. juridiques pour traducteur/interprète juré233 CU - Conseiller en prévention I234 CU - Didactique du FLE235 CU - Enseignement explicite - Initiation236 CU - Entrepreneuriat237 CU - Entrepreneuriat et gestion entreprise238 CU - Fondements qualité239 CU - Gestion des ressources humaines240 CU - Gestion internationale241 CU - Intelligence articifielle242 CU - Interprétation en contexte juridique243 CU - Introduction aux systèmes logiciels244 CU - Management RH245 CU - Médiation (année 1)246 CU - Médiation civile (année 2)247 CU - Médiation et pouvoirs publics (année 2)248 CU - Médiation rel. de travail et sécurité sociale (année 2)249 CU - Médiations familiales (année 2)250 CU - Pédagogie ens. sup. univ.251 CU - Psychothérapie famil., conjug. et appr. syst. (année 1)252 CU - Psychothérapie famil., conjug. et appr. syst. (année 2)253 CU - Psychothérapie famil., conjug. et appr. syst. (année 3)254 CU - Psychothérapie famil., conjug. et appr. syst. (année 4)255 CU - Psychothérapie TCC (année 1)256 CU - Psychothérapie TCC (année 2)257 CU - Psychothérapie TCC (année 3)258 CU - Sc. animaux de laboratoire259 IFA - Cours isolés Charleroi (FWEG)260 IFA - Cours isolés Mons (FWEG)261 Mobilité IN - FWEG
+0:.BAB1 - Architecture
+1:.BAB1 - Droit
+2:.BAB1 - Ing. de gestion
+3:.BAB1 - Ir. civil
+4:.BAB1 - Ir. civil (Ch)
+5:.BAB1 - Ir. civil architecte
+6:.BAB1 - Médecine
+7:.BAB1 - Sc. biologiques
+8:.BAB1 - Sc. biologiques (Ch)
+9:.BAB1 - Sc. biomédicales
+10:.BAB1 - Sc. biomédicales (remise à niveau)
+11:.BAB1 - Sc. chimiques
+12:.BAB1 - Sc. de gestion
+13:.BAB1 - Sc. de gestion (Ch)
+14:.BAB1 - Sc. éco. et de gestion
+15:.BAB1 - Sc. humaines et sociales
+16:.BAB1 - Sc. informatiques
+17:.BAB1 - Sc. mathématiques
+18:.BAB1 - Sc. pharmaceutiques
+19:.BAB1 - Sc. physiques
+20:.BAB1 - Sc. psycho. et de l'éduc., or. générale
+21:.BAB1 - Sc. psycho. et de l'éduc., or. générale (Ch)
+22:.BAB1 - Sc. psycho. et de l'éduc., or. logopédie
+23:.BAB1 - Traduction et interprétation
+24:.BAB1 – Sc. humaines et sociales (Ch)
+25:.BAB2 - Architecture
+26:.BAB2 - Droit
+27:.BAB2 - Ing. de gestion
+28:.BAB2 - Ir. civil
+29:.BAB2 - Ir. civil (Ch)
+30:.BAB2 - Ir. civil architecte
+31:.BAB2 - Médecine
+32:.BAB2 - Sc. biologiques
+33:.BAB2 - Sc. biologiques (Ch)
+34:.BAB2 - Sc. biomédicales
+35:.BAB2 - Sc. chimiques
+36:.BAB2 - Sc. de gestion
+37:.BAB2 - Sc. de gestion (Ch)
+38:.BAB2 - Sc. éco. et de gestion
+39:.BAB2 - Sc. humaines et sociales
+40:.BAB2 - Sc. informatiques
+41:.BAB2 - Sc. mathématiques
+42:.BAB2 - Sc. pharmaceutiques
+43:.BAB2 - Sc. physiques
+44:.BAB2 - Sc. psycho. et de l'éduc., or. générale
+45:.BAB2 - Sc. psycho. et de l'éduc., or. générale (Ch)
+46:.BAB2 - Sc. psycho. et de l'éduc., or. logopédie
+47:.BAB2 - Traduction et interprétation
+48:.BAB2 – Sc. humaines et sociales (Ch)
+49:.BAB3 - Architecture
+50:.BAB3 - Droit
+51:.BAB3 - Ing. de gestion
+52:.BAB3 - Ir. civil
+53:.BAB3 - Ir. civil (Ch)
+54:.BAB3 - Ir. civil architecte
+55:.BAB3 - Médecine
+56:.BAB3 - Sc. biologiques
+57:.BAB3 - Sc. biologiques (Ch)
+58:.BAB3 - Sc. biomédicales
+59:.BAB3 - Sc. chimiques
+60:.BAB3 - Sc. de gestion
+61:.BAB3 - Sc. de gestion (Ch)
+62:.BAB3 - Sc. éco. et de gestion
+63:.BAB3 - Sc. humaines et sociales
+64:.BAB3 - Sc. informatiques
+65:.BAB3 - Sc. mathématiques
+66:.BAB3 - Sc. pharmaceutiques
+67:.BAB3 - Sc. physiques
+68:.BAB3 - Sc. Psycho. et de l'éduc., or. générale
+69:.BAB3 - Sc. psycho. et de l'éduc., or. générale (Ch)
+70:.BAB3 - Sc. psycho. et de l'éduc., or. logopédie
+71:.BAB3 - Traduction et interprétation
+72:.BAB3 – Sc. humaines et sociales (Ch)
+73:.Bloc compl. MA - Orthopéda clinique
+74:.Bloc compl. MA - Politique éco. et sociale
+75:.Bloc compl. MA - Sc. de gestion
+76:.Bloc compl. MA - Sc. de gestion (Ch)
+77:.Bloc compl. MA - Sc. de l'éducation
+78:.Bloc compl. MA - Sc. de l'éducation (Ch)
+79:.Bloc compl. MA - Sc. informatiques
+80:.Bloc compl. MA - Sc. informatiques (Ch)
+81:.Bloc compl. MA - Sc. psychologiques
+82:.Bloc compl. MA - Transitions et innovations soc.
+83:.MA60 - Sc. biologiques
+84:.MA60 - Sc. chimiques
+85:.MA60 - Sc. de gestion
+86:.MA60 - Sc. de gestion (Ch)
+87:.MA60 - Sc. informatiques
+88:.MA60 - Sc. informatiques (Ch)
+89:.MA60 - Sc. mathématiques
+90:.MA60 - Sc. physiques
+91:.MAB1 - Alternance - Sc. informatiques, FS prof. (Ch)
+92:.MAB1 - Architecture, FS art de bâtir
+93:.MAB1 - Architecture, FS urbanisme
+94:.MAB1 - Biochimie et bio. mol. et cellulaire
+95:.MAB1 - Biochimie et bio. mol. et cellulaire (Ch)
+96:.MAB1 - Biologie des organismes et écologie
+97:.MAB1 - Ing. de gestion, FS
+98:.MAB1 - Interprétation
+99:.MAB1 - Ir. civil architecte, FS
+100:.MAB1 - Ir. civil chimie et SDM, FS
+101:.MAB1 - Ir. civil électricien, FS
+102:.MAB1 - Ir. civil énergie, FS Energy Production& Usage in Industr
+103:.MAB1 - Ir. civil énergie, FS Energy Usage in Cities& Communities
+104:.MAB1 - Ir. civil informatique et gestion (Ch)
+105:.MAB1 - Ir. civil informatique et gestion, FS AI
+106:.MAB1 - Ir. civil informatique et gestion, FS Cybersecurity
+107:.MAB1 - Ir. civil mécanicien, FS
+108:.MAB1 - Ir. civil mines et géologue, FS
+109:.MAB1 - Politique éco. et soc., FS coll. terr.
+110:.MAB1 - Politique éco. et soc., FS pol. éco. soc.
+111:.MAB1 - Politique éco. et soc., FS socio-pol.
+112:.MAB1 - Sc. biomédicales, FA
+113:.MAB1 - Sc. biomédicales, FS neuroscience
+114:.MAB1 - Sc. chimiques
+115:.MAB1 - Sc. de gestion, FD
+116:.MAB1 - Sc. de gestion, FS
+117:.MAB1 - Sc. de gestion, FS management (Ch)
+118:.MAB1 - Sc. de l'éducation, FS action sociale
+119:.MAB1 - Sc. de l'éducation, FS action sociale (Ch)
+120:.MAB1 - Sc. de l'éducation, FS enseignement
+121:.MAB1 - Sc. de l'éducation, FS enseignement (Ch)
+122:.MAB1 - Sc. de l'éducation, FS technologie
+123:.MAB1 - Sc. de l'éducation, FS technologie (Ch)
+124:.MAB1 - Sc. informatiques, FA
+125:.MAB1 - Sc. informatiques, FS
+126:.MAB1 - Sc. informatiques, FS AIDA
+127:.MAB1 - Sc. mathématiques, FA
+128:.MAB1 - Sc. mathématiques, FD
+129:.MAB1 - Sc. mathématiques, FS finance
+130:.MAB1 - Sc. mathématiques, FS informatique
+131:.MAB1 - Sc. pharmaceutiques
+132:.MAB1 - Sc. physiques, FA
+133:.MAB1 - Sc. physiques, FD
+134:.MAB1 - Sc. psychologiques, FA
+135:.MAB1 - Sc. psychologiques, FS
+136:.MAB1 - Sc. psychologiques, FS orthopédagogie clinique
+137:.MAB1 - Traduction, FA
+138:.MAB1 - Traduction, FD
+139:.MAB1 - Traduction, FS trad. interculturel
+140:.MAB1 - Traduction, FS trad. multidisciplinaire
+141:.MAB1 - Transitions et innovations soc.
+142:.MaB1 -Sc. infirmières
+143:.MAB1 en orthopédagogie clinique
+144:.MAB2 - Alternance - Sc. informatiques, FS prof. (Ch)
+145:.MAB2 - Architecture, FS art de bâtir
+146:.MAB2 - Architecture, FS urbanisme
+147:.MAB2 - Biochimie et bio. mol. et cellulaire (Ch)
+148:.MAB2 - Biochimie et bio. mol. et cellulaire, FA
+149:.MAB2 - Biochimie et bio. mol. et cellulaire, FD
+150:.MAB2 - Biochimie et bio. mol. et cellulaire, FS
+151:.MAB2 - Biologie des organismes et écologie, FA
+152:.MAB2 - Biologie des organismes et écologie, FD
+153:.MAB2 - Biologie des organismes et écologie, FS
+154:.MAB2 - Ing. de gestion, FS
+155:.MAB2 - Interprétation
+156:.MAB2 - Ir. civil architecte, FS
+157:.MAB2 - Ir. civil chimie et SDM, FS PEE
+158:.MAB2 - Ir. civil chimie et SDM, FS SGM
+159:.MAB2 - Ir. civil électricien, FS AI & SC
+160:.MAB2 - Ir. civil électricien, FS DS
+161:.MAB2 - Ir. civil électricien, FS EE & SG
+162:.MAB2 - Ir. civil informatique et gestion, FS AI
+163:.MAB2 - Ir. civil mécanicien, FS ConceptProduct
+164:.MAB2 - Ir. civil mécanicien, FS Génie
+165:.MAB2 - Ir. civil mécanicien, FS Mécatronique
+166:.MAB2 - Ir. civil mines et géologue, FS
+167:.MAB2 - Politique éco. et soc., FS coll. terr.
+168:.MAB2 - Politique éco. et soc., FS pol. éco. soc.
+169:.MAB2 - Politique éco. et soc., FS socio-pol.
+170:.MaB2 - Sc infirmières
+171:.MAB2 - Sc. biomédicales, FA
+172:.MAB2 - Sc. biomédicales, FS neuroscience
+173:.MAB2 - Sc. chimiques, FA
+174:.MAB2 - Sc. chimiques, FD
+175:.MAB2 - Sc. chimiques, FS entreprise
+176:.MAB2 - Sc. de gestion, FD
+177:.MAB2 - Sc. de gestion, FS
+178:.MAB2 - Sc. de gestion, FS management (Ch)
+179:.MAB2 - Sc. de l'éducation, FS action sociale
+180:.MAB2 - Sc. de l'éducation, FS action sociale (Ch)
+181:.MAB2 - Sc. de l'éducation, FS enseignement
+182:.MAB2 - Sc. de l'éducation, FS enseignement (Ch)
+183:.MAB2 - Sc. de l'éducation, FS technologie
+184:.MAB2 - Sc. de l'éducation, FS technologie (Ch)
+185:.MAB2 - Sc. informatiques, FA
+186:.MAB2 - Sc. informatiques, FS
+187:.MAB2 - Sc. informatiques, FS AIDA
+188:.MAB2 - Sc. mathématiques, FA
+189:.MAB2 - Sc. mathématiques, FD
+190:.MAB2 - Sc. pharmaceutiques
+191:.MAB2 - Sc. physiques, FA
+192:.MAB2 - Sc. physiques, FD
+193:.MAB2 - Sc. psychologiques, FA
+194:.MAB2 - Sc. psychologiques, FS
+195:.MAB2 - Sc. psychologiques, FS orthopédagogie clinique
+196:.MAB2 - Traduction, FD
+197:.MAB2 - Traduction, FS trad. interculturel
+198:.MAB2 - Traduction, FS trad. multidisciplinaire
+199:.MAB2 - Transitions et innovations soc.
+200:.MAB2 en orthopédagogie clinique
+201:.MS - Etudes de genres
+202:.MS - Gestion des risques et bien-être au travail
+203:.MS - Gestion totale de la qualité
+204:.MS - Linguistique appliquée
+205:.MS - Nanotechnologies
+206:.MS - Péda. univ. et de l’ens. sup.
+207:.MS - Public health methodology
+208:.MS - Sc. Langage
+209:.MS en formation d'enseignants
+210:.MS en management territorial et dév urbain
+211:AESS - Art de bâtir et urbanisme
+212:AESS - Langues, lettres et traductologie
+213:AESS - Sc. biologiques
+214:AESS - Sc. biomed. et pharma.
+215:AESS - Sc. chimiques
+216:AESS - Sc. de l'ingénieur et techno.
+217:AESS - Sc. éco. et de gestion
+218:AESS - Sc. Informatique
+219:AESS - Sc. mathématiques
+220:AESS - Sc. physiques
+221:AESS - Sc. politiques et sociales
+222:AESS - Sc. psycho. et de l'éduc.
+223:CAPAES (non porteurs)
+224:CAPAES (porteurs)
+225:CIU - DATA4BIM
+226:CIU - NUMEFA
+227:CIU - Philosophies de la santé mentale
+228:CU - Aspects avancés systèmes logiciels (Ch)
+229:CU - Bases en Management et Marketing
+230:CU - Basse vision
+231:CU - Biologie marine
+232:CU - Connaiss. juridiques pour traducteur/interprète juré
+233:CU - Conseiller en prévention I
+234:CU - Didactique du FLE
+235:CU - Enseignement explicite - Initiation
+236:CU - Entrepreneuriat
+237:CU - Entrepreneuriat et gestion entreprise
+238:CU - Fondements qualité
+239:CU - Gestion des ressources humaines
+240:CU - Gestion internationale
+241:CU - Intelligence articifielle
+242:CU - Interprétation en contexte juridique
+243:CU - Introduction aux systèmes logiciels
+244:CU - Management RH
+245:CU - Médiation (année 1)
+246:CU - Médiation civile (année 2)
+247:CU - Médiation et pouvoirs publics (année 2)
+248:CU - Médiation rel. de travail et sécurité sociale (année 2)
+249:CU - Médiations familiales (année 2)
+250:CU - Pédagogie ens. sup. univ.
+251:CU - Psychothérapie famil., conjug. et appr. syst. (année 1)
+252:CU - Psychothérapie famil., conjug. et appr. syst. (année 2)
+253:CU - Psychothérapie famil., conjug. et appr. syst. (année 3)
+254:CU - Psychothérapie famil., conjug. et appr. syst. (année 4)
+255:CU - Psychothérapie TCC (année 1)
+256:CU - Psychothérapie TCC (année 2)
+257:CU - Psychothérapie TCC (année 3)
+258:CU - Sc. animaux de laboratoire
+259:IFA - Cours isolés Charleroi (FWEG)
+260:IFA - Cours isolés Mons (FWEG)
+261:Mobilité IN - FWEG

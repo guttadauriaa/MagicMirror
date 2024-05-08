@@ -16,12 +16,12 @@ Module.register("MMM-voice_control", {
             
             // Get the first line
             let firstLine = lines[0];
-        
+            
             if (wrapper) {
                 let html = `<h1>${firstLine}</h1>`;
                 wrapper.innerHTML = html;
             }
-
+            //si il y a 2 lignes cela veut que fonctionnalite.question a détecté une volonté de guidage vers un local dans le texte écouté
             if (lines[1]) {
                 let secondLine = lines[1];
                 console.log("secondLine", secondLine);
@@ -36,14 +36,20 @@ Module.register("MMM-voice_control", {
                 setTimeout(() => {
                     if (wrapper) {
                         //wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
-                        wrapper.innerHTML = `<h1> Demandez moi quelque chose </h1>`;
+                        wrapper.innerHTML = `<h1> Demandez moi quelque chose... </h1>`;
                     }
                 }, 2000);
             }, 5000);         
         }
-
+        
         if (notification === 'retour_des_formations'){
-            wrapper.innerHTML = `<h1> Dites le numéro de votre formation ou "annuler" pour arrêter</h1><p>${payload}</p>`;
+            let html = '';
+            html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
+            for (let formation of payload){
+                html += `<p>(${formation.id}) ${formation.formation}<br></p>`;
+            }
+            
+            wrapper.innerHTML = html;
             this.sendSocketNotification('demande_formation', {});
         }
 
@@ -175,9 +181,17 @@ Module.register("MMM-voice_control", {
 
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
-            badge = payload;
+            badge = payload.badge;
+            let html = '';
+            if (payload.redemander === true) {
+                html += `<p>Je n'ai pas compris, veuillez réessayer.</p>`;
+            }
+            html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
             
-            this.sendSocketNotification('lecture_formations', {});
+            html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
+            wrapper.innerHTML = html;
+            this.sendSocketNotification('demande_annee', {});
+            //ajouter le badge dans le fichier local
         }
         
 
@@ -192,7 +206,11 @@ Module.register("MMM-voice_control", {
         let wrapper = document.createElement("div");
         wrapper.id = "MMM-voice_control";
         //wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
-        wrapper.innerHTML = `<h1> Demandez moi quelque chose </h1>`;
+        let html = `<h1> Demandez moi quelque chose </h1>`;
+        html += '<p>Par exemple :</p>';
+        html += `<p> - "Comment aller à l'auditoire 12"</p>`;
+        html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
+        wrapper.innerHTML = html;
         return wrapper;
     }
 });
