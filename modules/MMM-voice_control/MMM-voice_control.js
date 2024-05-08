@@ -1,5 +1,6 @@
 Module.register("MMM-voice_control", {
     start: function() {
+        this.voiceControlProcess = true;
         this.sendSocketNotification('VOICE_TEXT', {});
         console.log("Starting module: " + this.name);
     },
@@ -30,15 +31,17 @@ Module.register("MMM-voice_control", {
 
             // Attendre 5 secondes
             setTimeout(() => {
-                this.sendSocketNotification('VOICE_TEXT', {});
-                wrapper.innerHTML = `<h1>Attendez...</h1>`;
-                // Attendre 2 secondes supplémentaires
-                setTimeout(() => {
-                    if (wrapper) {
-                        //wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
-                        wrapper.innerHTML = `<h1> Demandez moi quelque chose... </h1>`;
-                    }
-                }, 2000);
+                if (this.voiceControlProcess){
+                    this.sendSocketNotification('VOICE_TEXT', {});
+                    wrapper.innerHTML = `<h1>Attendez...</h1>`;
+                    // Attendre 2 secondes supplémentaires
+                    setTimeout(() => {
+                        if (wrapper) {
+                            //wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
+                            wrapper.innerHTML = `<h1> Demandez moi quelque chose... </h1>`;
+                        }
+                    }, 2000);
+                }
             }, 5000);         
         }
         
@@ -184,31 +187,33 @@ Module.register("MMM-voice_control", {
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
             badge = payload.badge;
-            this.voiceControlProcess = true;
-            this.sendSocketNotification('STOP_VOICE_TEXT', {});
+            this.voiceControlProcess = false;
+            //this.sendSocketNotification('STOP_VOICE_TEXT', {});
             // Vérifier si un processus de contrôle vocal est en cours
             
-            while (this.voiceControlProcess === true){
-                setTimeout(() => {
-                    if(this.voiceControlProcess === false){
-                        console.log("voiceControlProcess = false")
+            // while (this.voiceControlProcess === true){
+            //     setTimeout(() => {
+            //         if(this.voiceControlProcess === false){
+            //             console.log("voiceControlProcess = false")
+            //         }
+            //     }, 1000); 
+            // }
+            setTimeout(() => {
+                if (this.voiceControlProcess === false){   
+                    let html = '';
+                    if (payload.redemander === true) {
+                        html += `<p>Je n'ai pas compris, veuillez réessayer.</p>`;
                     }
-                }, 1000); 
-        }
-            if (this.voiceControlProcess === false){   
-                let html = '';
-                if (payload.redemander === true) {
-                    html += `<p>Je n'ai pas compris, veuillez réessayer.</p>`;
+                    html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
+                    
+                    html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
+                    wrapper.innerHTML = html;
+                    this.sendSocketNotification('demande_annee', {});
+                    //ajouter le badge dans le fichier local
+                }else{
+                    console.log("voiceControlProcess = true")
                 }
-                html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
-                
-                html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
-                wrapper.innerHTML = html;
-                this.sendSocketNotification('demande_annee', {});
-                //ajouter le badge dans le fichier local
-            }else{
-                console.log("voiceControlProcess = true")
-            }
+            }, 1000);
         }
         
 
