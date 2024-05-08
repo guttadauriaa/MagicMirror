@@ -94,11 +94,12 @@ module.exports = NodeHelper.create({
                     console.error(err);
                     return;
                 }
-            });
-            const obj = JSON.parse(data);
-            console.log(obj);
-            let formations = obj[annee];
+                const obj = JSON.parse(data);
+                console.log(obj);
+                let formations = obj[annee];
                 this.sendSocketNotification('retour_des_formations', formations);
+            });
+            
 
         }
 
