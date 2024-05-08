@@ -45,7 +45,11 @@ class Fonctionnalite:
             print("false")
 
     def valide(self, data):
-        if 'valider' in data or 'valide' or 'oui' in data:
+        if 'valider' in data or 'valide' in data or 'oui' in data:
             print("true")
-        else:
+
+        elif 'non' in data or 'annulé' in data or 'annuler' in data or 'stop' in data:
             print("false")
+
+        else:
+            print("not_ok")
