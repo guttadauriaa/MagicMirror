@@ -39,27 +39,29 @@ module.exports = NodeHelper.create({
                 
                 console.log("La sortie est :", stdout);
 
-                if (stdout.trim() === "stop") { 
-                    console.log("envoie stop")
-                    this.sendSocketNotification('stopconfig', {});
-                }
+                this.sendSocketNotification('CHOIX_FORMATION', stdout.trim());
 
-                if (stdout.trim() === "false") { 
-                    console.log("envoie pas compris")
-                    this.sendSocketNotification('pascompris', {});
-                }
+                // if (stdout.trim() === "stop") { 
+                //     console.log("envoie stop")
+                //     this.sendSocketNotification('stopconfig', {});
+                // }
 
-                else{
-                    console.log("envoie de la formation")
-                    this.sendSocketNotification('validation_formation', stdout);
-                }
+                // if (stdout.trim() === "false") { 
+                //     console.log("envoie pas compris")
+                //     this.sendSocketNotification('pascompris', {});
+                // }
+
+                // else{
+                //     console.log("envoie de la formation")
+                //     this.sendSocketNotification('validation_formation', stdout);
+                // }
             });
         }
 
         if (notification === 'validation_formation'){
             console.log("verification formation", payload)
             console.log("lance voicecontrole pour validation")
-            
+
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/valider.py `, (error, stdout, stderr) => {
 
                 if (error) {
@@ -69,13 +71,15 @@ module.exports = NodeHelper.create({
                 
                 console.log("La sortie est :", stdout);
 
-                if (stdout.trim() === "true") { 
-                    this.sendSocketNotification('valide', {});
-                }
+                this.sendSocketNotification('VALIDATION', stdout.trim());
 
-                if (stdout.trim() === "false") { 
-                    this.sendSocketNotification('faux', {});
-                }
+                // if (stdout.trim() === "true") { 
+                //     this.sendSocketNotification('valide', {});
+                // }
+
+                // if (stdout.trim() === "false") { 
+                //     this.sendSocketNotification('faux', {});
+                // }
             });
         }
 

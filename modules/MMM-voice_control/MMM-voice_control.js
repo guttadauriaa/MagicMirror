@@ -27,48 +27,48 @@ Module.register("MMM-voice_control", {
             }, 5000);         
         }
 
-        if (notification === 'stopconfig'){ 
-            console.log("stop config")
-            this.sendSocketNotification('VOICE_TEXT', {});
-            wrapper.innerHTML = `<h1> Configuration bien annulée. Demandez moi quelque chose </h1>`;
+        if (notification === 'CHOIX_FORMATION'){
+            console.log("choix formation", payload)
+            
+            if (payload === "stop") { 
+                this.sendSocketNotification('VOICE_TEXT', {});
+                wrapper.innerHTML = `<h1> Configuration bien annulée. Demandez moi quelque chose </h1>`;
+            }
+
+            if (payload === "false") { 
+                wrapper.innerHTML = `<h1> Je n'ai pas compris, veuillez réessayer. Si vous souhaitez annuler, dites "annuler" </h1>`;
+                this.sendSocketNotification('demande_formation', {});
+            }
+
+            else{
+                wrapper.innerHTML = `<h1> Vous avez choisi la formation ${payload}. Si c'est correct, dites "valider" sinon dites "annuler" </h1>`;
+                this.sendSocketNotification('validation_formation', payload);
+                formation = payload;
+            }
         }
 
-        if (notification === 'pascompris'){
-            console.log("pas compris")
-            let html = '';
-            html += `<h1> Je n'ai pas compris, veuillez réessayer. Si vous souhaitez annuler, dites "annuler" </h1>`;
-            //html += obj;
-            wrapper.innerHTML = html;
 
-            this.sendSocketNotification('demande_formation', {});
-        }  
+        if (notification === 'VALIDATION'){
 
-        if (notification === 'validation_formation'){
-            console.log("validation formation", payload)
-            let html = '';
-            html += `<h1> Vous avez choisi la formation ${payload}. Si c'est correct, dites "valider" sinon dites "annuler" </h1>`;
-            wrapper.innerHTML = html;
-            this.sendSocketNotification('validation_formation', payload);
-            formation = payload;
+            if (payload === "true") { 
+                console.log("formation valide")
+                let html = '';
+                html += `<h1> Formation validée. Demandez moi quelque chose </h1>`;
+                wrapper.innerHTML = html; 
+                this.sendSocketNotification('VOICE_TEXT', {});
+            }
+
+            if (payload === "false") { 
+                console.log("faux chiffre")
+                let html = '';
+                html += `<h1> Annulation de la demande. dites moi le numéro correct </h1>`;
+                //html += obj;
+                wrapper.innerHTML = html;
+                this.sendSocketNotification('demande_formation', {});
+            }
         }
-
         //il faut ajouter les infos dasn le fichier total
-        if (notification === 'valide') {
-            console.log("formation valide")
-            let html = '';
-            html += `<h1> Formation validée. Demandez moi quelque chose </h1>`;
-            wrapper.innerHTML = html; 
-            this.sendSocketNotification('VOICE_TEXT', {});
-        }
-
-        if (notification === 'faux'){
-            console.log("faux chiffre")
-            let html = '';
-            html += `<h1> Annulation de la demande. dites moi le numéro correct </h1>`;
-            html += obj;
-            wrapper.innerHTML = html;
-            this.sendSocketNotification('demande_formation', {});
-        }
+        
     },
 
     notificationReceived: function(notification, payload, sender) {
