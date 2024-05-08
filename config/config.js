@@ -118,10 +118,10 @@ let config = {
 		// 	  scriptPath: "/MagicMirror/modules/MMM-planning/hyperplanning.py"
 		// 	}
 		//   },
-		// {
-		// 	module: "MMM-navigation",
-		// 	position: "lower_third",
-		// },
+		{
+			module: "MMM-navigation",
+			position: "lower_third",
+		},
 		{
 			module : "MMM-voice_control",
 			position: "lower_third"
