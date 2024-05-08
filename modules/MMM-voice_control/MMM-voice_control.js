@@ -51,12 +51,11 @@ Module.register("MMM-voice_control", {
             }
             let html = '';
             html += `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1>`;
-            html += obj;
+            html += JSON.stringify(obj);
             wrapper.innerHTML = html;
 
             this.sendSocketNotification('demande_formation', payload);
         }
-
         if (notification === 'stopconfig'){ 
             console.log("stop config")
             this.sendSocketNotification('VOICE_TEXT', {});
