@@ -32,7 +32,7 @@ display.start()
 #pour ne pas afficher la fenêtre du navigateur
 chrome_options = Options()
 #chrome_options.add_argument("--headless")
-chrome_options.add_argument('--shm-size=2g')
+chrome_options.add_argument('--shm-size=3g')
 
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
 #horaire = [52, 5] #formation, option
