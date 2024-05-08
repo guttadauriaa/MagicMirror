@@ -41,20 +41,6 @@ module.exports = NodeHelper.create({
 
                 this.sendSocketNotification('CHOIX_FORMATION', stdout.trim());
 
-                // if (stdout.trim() === "stop") { 
-                //     console.log("envoie stop")
-                //     this.sendSocketNotification('stopconfig', {});
-                // }
-
-                // if (stdout.trim() === "false") { 
-                //     console.log("envoie pas compris")
-                //     this.sendSocketNotification('pascompris', {});
-                // }
-
-                // else{
-                //     console.log("envoie de la formation")
-                //     this.sendSocketNotification('validation_formation', stdout);
-                // }
             });
         }
 
@@ -73,13 +59,6 @@ module.exports = NodeHelper.create({
 
                 this.sendSocketNotification('VALIDATION', stdout.trim());
 
-                // if (stdout.trim() === "true") { 
-                //     this.sendSocketNotification('valide', {});
-                // }
-
-                // if (stdout.trim() === "false") { 
-                //     this.sendSocketNotification('faux', {});
-                // }
             });
         }
 

@@ -6,6 +6,7 @@ Module.register("MMM-voice_control", {
 
     socketNotificationReceived: function(notification, payload) {
         let wrapper = document.getElementById('MMM-voice_control');
+        let formation = '';
        
         if (notification === 'DISPLAY_TEXT') {
             if (wrapper) {
@@ -67,6 +68,16 @@ Module.register("MMM-voice_control", {
                 wrapper.innerHTML = html;
                 this.sendSocketNotification('demande_formation', {});
             }
+
+            else{
+                console.log("pas compris")
+                let html = '';
+
+                html += `<h1> Je n'ai pas compris, veuillez réessayer. Vous avez choisi la formation ${formation}. Si c'est correct, dites "valider" sinon dites "annuler" </h1>`;
+                //html += obj;
+                wrapper.innerHTML = html;
+                this.sendSocketNotification('validation_formation', {});
+            }
         }
         //il faut ajouter les infos dasn le fichier total
         
@@ -74,7 +85,6 @@ Module.register("MMM-voice_control", {
 
     notificationReceived: function(notification, payload, sender) {
         let wrapper = document.getElementById('MMM-voice_control');
-        let formation = '';
         let badge = '';
 
         if (sender) {
