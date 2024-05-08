@@ -28,45 +28,45 @@ let config = {
 
 	modules: [
 		
-		// {
-		// 	module: "clock",
-		// 	position: "top_left"
-		// },
-		// {
-		// 	module: "newsfeed",
-		// 	position: "bottom_bar",
-		// 	config: {
-		// 		feeds: [
-		// 			{
-		// 				title: "Umons News",
-		// 				//url: "https://web.umons.ac.be/fr/feed/events-screens"
-		// 				url: "https://web.umons.ac.be/fr/feed/screens"
-						
-		// 			}
-		// 		],
-		// 		showSourceTitle: true,
-		// 		showPublishDate: true,
-		// 		broadcastNewsFeeds: true,
-		// 		broadcastNewsUpdates: true
-		// 	}
-		// },
-		
-		// {
-		// 	module: "helloworld",
-		// 	position: "top_right",
-		// 	//header: "Petit mot du jour",
-		// 	config: {
-		// 		text: "Bonjour à tous, bienvenue à la faculté !"
-		// 	}
-		// },
-		// {
-		// 	module: "menu_houzeau",
-		// 	position: "middle_center",
-		// },
 		{
-			module: "MMM-navigation",
+			module: "clock",
+			position: "top_left"
+		},
+		{
+			module: "newsfeed",
+			position: "bottom_bar",
+			config: {
+				feeds: [
+					{
+						title: "Umons News",
+						//url: "https://web.umons.ac.be/fr/feed/events-screens"
+						url: "https://web.umons.ac.be/fr/feed/screens"
+						
+					}
+				],
+				showSourceTitle: true,
+				showPublishDate: true,
+				broadcastNewsFeeds: true,
+				broadcastNewsUpdates: true
+			}
+		},
+		
+		{
+			module: "helloworld",
+			position: "top_right",
+			//header: "Petit mot du jour",
+			config: {
+				text: "Bonjour à tous, bienvenue à la faculté !"
+			}
+		},
+		{
+			module: "menu_houzeau",
 			position: "middle_center",
 		},
+		// {
+		// 	module: "MMM-navigation",
+		// 	position: "middle_center",
+		// },
 		{
 			module: "MMM-MotionDetector",
 			position: "top_left", // Optional. This can be any of the regions. Displays debug informations.
