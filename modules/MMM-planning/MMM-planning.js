@@ -95,7 +95,7 @@ socketNotificationReceived: function(notification, payload) {
     wrapper.innerHTML = html;
 
     this.sendSocketNotification('START_NFC', {});
-
+    
     setTimeout(() => {
         if (wrapper) {
       wrapper.innerHTML = "<h1>Veuillez scanner votre carte étudiante -> </h1>";
@@ -105,6 +105,7 @@ socketNotificationReceived: function(notification, payload) {
   }
   if (notification === 'NFC') {
     this.NFCid = payload;
+    this.sendSocketNotification('DING', {});
     wrapper.innerHTML = "<h1>En attente des données</h1>";
     this.sendSocketNotification('START_PLANNING', {NFCid : this.NFCid});
   }
