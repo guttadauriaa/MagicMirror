@@ -55,9 +55,9 @@ module.exports = NodeHelper.create({
         if (notification === 'DING') {
             
             console.log("ding");
-            var player = require('play-sound')(opts = {})
+            var player = require('play-sound')(opts = {});
             player.play('./modules/MMM-planning/ding.mp3', function(err){
-            if (err) throw err
+            if (err) console.error(err);
             })
         }
             
