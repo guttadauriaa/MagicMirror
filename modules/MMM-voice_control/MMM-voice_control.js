@@ -41,7 +41,7 @@ Module.register("MMM-voice_control", {
                 this.sendSocketNotification('demande_formation', {});
             }
 
-            else{
+            else {
                 wrapper.innerHTML = `<h1> Vous avez choisi la formation ${payload}. Si c'est correct, dites "valider" sinon dites "annuler" </h1>`;
                 this.sendSocketNotification('validation_formation', payload);
                 formation = payload;
