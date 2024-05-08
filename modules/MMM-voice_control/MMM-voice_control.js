@@ -30,6 +30,7 @@ Module.register("MMM-voice_control", {
 
     notificationReceived: function(notification, payload, sender) {
         let wrapper = document.getElementById('MMM-voice_control');
+
         if (sender) {
             console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
         } else {
@@ -43,7 +44,7 @@ Module.register("MMM-voice_control", {
             const fs = require('fs');
 
             try {
-                const data = fs.readFileSync('formations.json', 'utf8');
+                const data = fs.readFileSync('formations.txt', 'utf8');
                 const obj = JSON.parse(data);
                 console.log(obj);
             } catch (err) {
@@ -51,7 +52,7 @@ Module.register("MMM-voice_control", {
             }
             let html = '';
             html += `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1>`;
-            html += JSON.stringify(obj);
+            //html += JSON.stringify(obj);
             wrapper.innerHTML = html;
 
             this.sendSocketNotification('demande_formation', payload);
