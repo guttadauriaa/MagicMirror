@@ -87,6 +87,14 @@ socketNotificationReceived: function(notification, payload) {
         html += '</tr>';
     }
     html += '</table>';
+
+    //jouer un son au moment de l'affichage du planning
+    var player = require('play-sound')(opts = {})
+    player.play('./modules/MMM-planning/ding.mp3', function(err){
+      if (err) throw err
+    })
+
+    //afficher le planning en html
     wrapper.innerHTML = html;
 
     this.sendSocketNotification('START_NFC', {});
