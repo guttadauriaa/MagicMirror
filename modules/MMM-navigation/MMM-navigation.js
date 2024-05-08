@@ -6,7 +6,7 @@ Module.register("MMM-navigation", {
         wrapper.id = "MMM-navigation";
         let html = "";
         
-        const imagePath = "./modules/MMM-navigation/map/test.png";
+        const imagePath = "./modules/MMM-navigation/map/12.png";
         
         
         html += `<img src="${imagePath}" alt="Your Image" style="width: 70%; height: 70%;" />`;
