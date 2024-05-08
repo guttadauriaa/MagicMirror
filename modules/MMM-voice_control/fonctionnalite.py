@@ -15,7 +15,7 @@ class Fonctionnalite:
         for local in liste_local:
             if local.lower() in data.lower():
                 message = "très bien voici comment se rendre à :"
-                print(message, local)
+                print(json.dumps({'message':message, 'local':local}))
                 break
 
         else:
