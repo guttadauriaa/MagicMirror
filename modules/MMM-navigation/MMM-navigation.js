@@ -5,7 +5,7 @@ Module.register("MMM-navigation", {
         this.hide();
     },
 
-    NotificationReceived: function(notification, payload, sender) {
+    notificationReceived: function(notification, payload, sender) {
         if (notification === "GUIDAGE") {
             console.log("Starting navigation");
             this.imagePath = `./modules/MMM-navigation/map/${payload}.png`;
