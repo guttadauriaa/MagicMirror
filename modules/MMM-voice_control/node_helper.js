@@ -28,7 +28,7 @@ module.exports = NodeHelper.create({
                 let firstLine = lines[0];
             
                 // Use firstLine instead of stdout
-                this.sendSocketNotification('DISPLAY_TEXT', firstLine);
+                this.sendNotification('GUIDAGE', firstLine);
 
                 if (lines[1]) {
                     let secondLine = lines[1];
