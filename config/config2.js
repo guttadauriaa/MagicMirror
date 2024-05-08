@@ -1,7 +1,7 @@
 //ajout 2eme ecran (2)
 let config = {
 	//electronOptions: {fullscreen: false, x: 0, y: 0}, //1080X1920 (miroir gauche) Xwayland4
-	electronOptions: {fullscreen:true, x:0, y:1081},
+	electronOptions: {fullscreen:true, x:1081},
 	address: "localhost",	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 							// - another specific IPv4/6 to listen on a specific interface
