@@ -34,6 +34,7 @@ socketNotificationReceived: function(notification, payload) {
   if (notification === 'Planning') {
     
     //wrapper.innerHTML = payload;
+    let joursref = ["lun.","mar.","mer.","jeu.","ven.","sam.","dim."];
     let jours = [];
     let heures = ['08:15', '10:15', '10:30', '12:30', '13:30', '15:30', '15:45', '17:45', '18:00', '19:00'];
     let data = JSON.parse(payload);
@@ -56,14 +57,17 @@ socketNotificationReceived: function(notification, payload) {
     let html = `<h>Horaire</h>`;
     html += `<table>`;
     html += '<tr><th>Heure</th>';
-    for (let jour of jours) {
+    for (let jour of joursref) {
+      if (jours.includes(jour)) {
         html += `<th>${jour}</th>`;
+      }
     }
     html += '</tr>';
 
     for (let i = 0; i < heures.length-1; i++) {
         html += `<tr><td>${heures[i]}</td>`;
-        for (let jour of jours) {
+        for (let jour of joursref) {
+          if (jours.includes(jour)) {
             let caseSuivante = false;
             for (let coursKey in liste_cours[jour]) {
                 let cours = liste_cours[jour][coursKey];
@@ -78,6 +82,7 @@ socketNotificationReceived: function(notification, payload) {
             if (!caseSuivante) {
               html += '<td></td>';
             }
+          }
         }
         html += '</tr>';
     }
