@@ -31,11 +31,13 @@ display.start()
 
 #pour ne pas afficher la fenêtre du navigateur
 chrome_options = Options()
-chrome_options.add_argument("--headless")
+#chrome_options.add_argument("--headless")
+chrome_options.add_argument('--shm-size=2g')
 
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
 #horaire = [52, 5] #formation, option
 semaine = 28
+
 
 #pour interagir avec le site web 
 #il faut télécharger le chromedriver dispponible pour raspberry pi disponible sur internet au préalable. celui-ci à été stocker hors des fichier du projet
@@ -60,7 +62,7 @@ for i, j in enumerate (horaire):
     while True:
         try:
             # Attendre que l'élément du cours soit présent sur la page
-            course_element = WebDriverWait(driver, 0.1).until(
+            course_element = WebDriverWait(driver, 1).until(
                 EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{j}"))
             )
             course_element.click()
