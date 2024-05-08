@@ -88,11 +88,7 @@ socketNotificationReceived: function(notification, payload) {
     }
     html += '</table>';
 
-    //jouer un son au moment de l'affichage du planning
-    var player = require('play-sound')(opts = {})
-    player.play('./modules/MMM-planning/ding.mp3', function(err){
-      if (err) throw err
-    })
+    this.sendNotification('DING', {});
 
     //afficher le planning en html
     wrapper.innerHTML = html;
