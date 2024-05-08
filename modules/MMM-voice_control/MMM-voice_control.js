@@ -36,16 +36,19 @@ Module.register("MMM-voice_control", {
                 this.sendSocketNotification('VOICE_TEXT', {});
             }
 
-            else if (payload === "false") { 
-                wrapper.innerHTML = `<h1> Je n'ai pas compris, veuillez réessayer. Si vous souhaitez annuler, dites "annuler" </h1>`;
-                this.sendSocketNotification('demande_formation', {});
-            }
-
             else {
-                wrapper.innerHTML = `<h1> Vous avez choisi la formation ${payload}. Si c'est correct, dites "valider" sinon dites "annuler" </h1>`;
-                this.sendSocketNotification('validation_formation', payload);
-                formation = payload;
+                if (payload === "false") { 
+                    wrapper.innerHTML = `<h1> Je n'ai pas compris, veuillez réessayer. Si vous souhaitez annuler, dites "annuler" </h1>`;
+                    this.sendSocketNotification('demande_formation', {});
+                }
+    
+                else {
+                    wrapper.innerHTML = `<h1> Vous avez choisi la formation ${payload}. Si c'est correct, dites "valider" sinon dites "annuler" </h1>`;
+                    this.sendSocketNotification('validation_formation', payload);
+                    formation = payload;
+                }
             }
+            
         }
 
 
