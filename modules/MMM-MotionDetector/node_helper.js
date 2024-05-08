@@ -18,7 +18,7 @@ module.exports = NodeHelper.create({
   activateMonitor: function () {
     this.isMonitorOn(function (result) {
       if (!result) {
-        exec("tvservice -p && chvt 6 && chvt 7", function (err, out, code) {
+        exec("vcgencmd display_power 1", function (err, out, code) {
           if (err) {
             Log.error("MMM-MotionDetector: error activating monitor: " + code);
           } else {
@@ -35,7 +35,7 @@ module.exports = NodeHelper.create({
   deactivateMonitor: function () {
     this.isMonitorOn(function (result) {
       if (result) {
-        exec("tvservice -o", function (err, out, code) {
+        exec("vcgencmd display_power 0", function (err, out, code) {
           if (err) {
             Log.error("MMM-MotionDetector: error deactivating monitor: " + code);
           } else {
