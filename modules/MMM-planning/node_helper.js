@@ -56,10 +56,9 @@ module.exports = NodeHelper.create({
             
             console.log("ding");
             var player = require('play-sound')(opts = {});
-            player.play('./modules/MMM-planning/ding.mp3', function(err){
-            if (err) console.error(err);
+            player.play('/home/miroir/MagicMirror/modules/MMM-planning/ding.mp3', function(err){
+            if (err) console.error("Erreur lors de la lecture du son :", err);
             })
         }
-            
     }
 });
