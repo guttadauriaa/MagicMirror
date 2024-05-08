@@ -87,7 +87,8 @@ socketNotificationReceived: function(notification, payload) {
         html += '</tr>';
     }
     html += '</table>';
-
+    
+    //jouer un son au moment de l'affichage du planning
     this.sendNotification('DING', {});
 
     //afficher le planning en html
