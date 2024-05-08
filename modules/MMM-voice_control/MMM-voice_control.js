@@ -32,11 +32,11 @@ Module.register("MMM-voice_control", {
             console.log("choix formation", payload)
             
             if (payload === "stop") { 
-                this.sendSocketNotification('VOICE_TEXT', {});
                 wrapper.innerHTML = `<h1> Configuration bien annulée. Demandez moi quelque chose </h1>`;
+                this.sendSocketNotification('VOICE_TEXT', {});
             }
 
-            if (payload === "false") { 
+            else if (payload === "false") { 
                 wrapper.innerHTML = `<h1> Je n'ai pas compris, veuillez réessayer. Si vous souhaitez annuler, dites "annuler" </h1>`;
                 this.sendSocketNotification('demande_formation', {});
             }
@@ -53,29 +53,27 @@ Module.register("MMM-voice_control", {
 
             if (payload === "true") { 
                 console.log("formation valide")
-                let html = '';
-                html += `<h1> Formation validée. Demandez moi quelque chose </h1>`;
-                wrapper.innerHTML = html; 
+                wrapper.innerHTML = `<h1> Formation validée. Demandez moi quelque chose </h1>`;
                 this.sendSocketNotification('VOICE_TEXT', {});
             }
 
             if (payload === "false") { 
                 console.log("faux chiffre")
-                let html = '';
+                //let html = '';
 
-                html += `<h1> Annulation de la demande. dites moi le numéro correct </h1>`;
+                //html += `<h1> Annulation de la demande. dites moi le numéro correct </h1>`;
                 //html += obj;
-                wrapper.innerHTML = html;
+                wrapper.innerHTML = `<h1> Annulation de la demande. dites moi le numéro correct ou dites "annuler" pour arrêter la configuration du badge</h1>`;
                 this.sendSocketNotification('demande_formation', {});
             }
 
-            else{
+            if (payload === "not_ok") {
                 console.log("pas compris")
-                let html = '';
+                //let html = '';
 
-                html += `<h1> Je n'ai pas compris, veuillez réessayer. Vous avez choisi la formation ${formation}. Si c'est correct, dites "valider" sinon dites "annuler" </h1>`;
+                //html += `<h1> Je n'ai pas compris, veuillez réessayer. Vous avez choisi la formation ${formation}. Si c'est correct, dites "valider" sinon dites "annuler" </h1>`;
                 //html += obj;
-                wrapper.innerHTML = html;
+                wrapper.innerHTML = `<h1> Je n'ai pas compris, veuillez réessayer. Vous avez choisi la formation ${formation}. Si c'est correct, dites "valider" sinon dites "annuler" </h1>`;
                 this.sendSocketNotification('validation_formation', {});
             }
         }
@@ -107,10 +105,10 @@ Module.register("MMM-voice_control", {
             // } catch (err) {
             //     console.error('Une erreur est survenue lors de la lecture du fichier', err);
             // }
-            let html = '';
-            html += `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1>`;
+            // let html = '';
+            // html += `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1>`;
             //html += JSON.stringify(obj);
-            wrapper.innerHTML = html;
+            wrapper.innerHTML = `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1>`;
 
             this.sendSocketNotification('demande_formation', payload);
         }
