@@ -28,7 +28,7 @@ with sr.Microphone() as source:
         fonctionnalite.valide(texte)
 
     except sr.UnknownValueError:
-        print("Je n'ai pas compris ce que vous avez dit.")
+        print("not_ok")
 
     except sr.RequestError as e:
         print("Erreur lors de la requête : ", e)
