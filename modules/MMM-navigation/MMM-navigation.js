@@ -5,12 +5,13 @@ Module.register("MMM-navigation", {
         this.hide();
     },
 
-    NotificationReceived: function(notification, payload, sender) {
+    notificationReceived: function(notification, payload, sender) {
         if (notification === "GUIDAGE") {
             console.log("Starting navigation");
             this.imagePath = `./modules/MMM-navigation/map/${payload}.png`;
             this.show();
-
+            this.updateDom();
+            
             // Cachez le module après 60 secondes
             setTimeout(() => {
                 this.hide();
