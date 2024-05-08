@@ -89,7 +89,7 @@ socketNotificationReceived: function(notification, payload) {
     html += '</table>';
 
     //jouer un son au moment de l'affichage du planning
-    this.sendSocketNotification('DING', {});
+    //this.sendSocketNotification('DING', {});
 
     //afficher le planning en html
     wrapper.innerHTML = html;
@@ -105,7 +105,7 @@ socketNotificationReceived: function(notification, payload) {
   }
   if (notification === 'NFC') {
     this.NFCid = payload;
-    this.sendSocketNotification('DING', {});
+    //this.sendSocketNotification('DING', {});
     wrapper.innerHTML = "<h1>En attente des données</h1>";
     this.sendSocketNotification('START_PLANNING', {NFCid : this.NFCid});
   }

@@ -10,9 +10,23 @@ Module.register("MMM-voice_control", {
         let options = '';
        
         if (notification === 'DISPLAY_TEXT') {
+
+            // Split stdout into lines
+            let lines = payload.split('\n');
+            
+            // Get the first line
+            let firstLine = lines[0];
+        
             if (wrapper) {
-                let html = `<h1>${payload}</h1>`;
+                let html = `<h1>${firstLine}</h1>`;
                 wrapper.innerHTML = html;
+            }
+
+            if (lines[1]) {
+                let secondLine = lines[1];
+                this.sendNotification('GUIDAGE', secondLine);
+                console.log("secondLine", secondLine);
+
             }
 
             // Attendre 5 secondes
