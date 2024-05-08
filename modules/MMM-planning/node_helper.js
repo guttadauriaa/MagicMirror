@@ -1,5 +1,6 @@
 const NodeHelper = require("node_helper");
 const { exec } = require("child_process");
+const { log } = require("console");
 
 module.exports = NodeHelper.create({
     start: function() {
@@ -49,6 +50,15 @@ module.exports = NodeHelper.create({
                 // stdout est la sortie de votre script Python
                 this.sendSocketNotification('Planning', stdout);
             });
+        }
+
+        if (notification === 'DING') {
+            
+            console.log("ding");
+            var player = require('play-sound')(opts = {})
+            player.play('./modules/MMM-planning/ding.mp3', function(err){
+            if (err) throw err
+            })
         }
             
     }
