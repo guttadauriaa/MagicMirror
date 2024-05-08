@@ -25,7 +25,7 @@ class Fonctionnalite:
         else:
             if 'auditoire' in data or 'local' in data:
                 message = "Dans quel local souhaitez-vous aller ? "
-                print(message)
+                print(message, end=" ")
                 for local in liste_local:
                     print(local[0], end=" - ")
 
