@@ -60,7 +60,7 @@ for i, j in enumerate (horaire):
     while True:
         try:
             # Attendre que l'élément du cours soit présent sur la page
-            course_element = WebDriverWait(driver, 0.1).until(
+            course_element = WebDriverWait(driver, 1).until(
                 EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{j}"))
             )
             course_element.click()
