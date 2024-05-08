@@ -23,6 +23,8 @@ module.exports = NodeHelper.create({
                 console.log("La sortie est :", stdout);
 
                 this.sendSocketNotification('DISPLAY_TEXT', stdout);
+
+                
             });
         }
 

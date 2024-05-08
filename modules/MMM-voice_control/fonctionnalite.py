@@ -7,15 +7,21 @@ class Fonctionnalite:
 
     def questions(self, data):
 
-        #test pour direction vers lacaux
-        liste_local = ["Auditoire 3", "Auditoire 5" ,"IG lab" ,"Auditoire 12" ,
-                       "Auditoire 11" ,"Labo physique",
-                       "Auditoire 21" ,"Auditoire 22" ,"Auditoire 23" ,"Auditoire 24" ,"Auditoire 25"]
-
+        #test pour direction vers lacaux avec le nom du fichier
+        liste_local = [("Auditoire 3", "03"), ("Auditoire 5", "05"), ("Auditoire 11", "11"), ("Auditoire 12", "12"), 
+                       ("Auditoire 21", "21"), ("Auditoire 22", "22"), ("Auditoire 23", "23"), ("Auditoire 24", "24"), ("Auditoire 25", "25"),    
+                       ("Auditoire 25 bis", "25bis"), ("Auditoire 26", "26"), 
+                       ("Labo physique", "lab_a"), ("Bibliothèque", "bibli"), ("bureau doyenne", "doyen")
+                       ("IG lab", "ig_lab"), ("Réfectoire", "refectoire"), ("Salle archi", "pc_archi"), ("salle des professeurs", "salle_des_profs"),
+                       ("Secréteriat académique", "secretariat_academique"), ("Secrétariat des études", "secretariat_des_etudes"), ("Toilettes", "Toilettes")]
+        
         for local in liste_local:
             if local.lower() in data.lower():
-                message = "très bien voici comment se rendre à :"
-                print(message, local)
+                message = "très bien voici comment se rendre à :" + local[0]
+                #print(message, local[1])
+                result = {"message": message, "fichier": local[1]}
+                json_result = json.dumps(result)
+                print(json_result)
                 break
 
         else:
@@ -23,7 +29,7 @@ class Fonctionnalite:
                 message = "Dans quel local souhaitez-vous aller ? "
                 print(message)
                 for local in liste_local:
-                    print(local)
+                    print(local[0])
 
             else: 
                 print(data)
