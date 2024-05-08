@@ -120,7 +120,7 @@ let config = {
 		//   },
 		{
 			module: "MMM-navigation",
-			position: "lower_third",
+			position: "middle_center",
 		},
 		// {
 		// 	module : "MMM-voice_control",
