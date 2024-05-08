@@ -21,21 +21,8 @@ module.exports = NodeHelper.create({
                 
                 console.log("La sortie est :", stdout);
             
-
-                // Split stdout into lines
-                let lines = stdout.split('\n');
-            
-                // Get the first line
-                let firstLine = lines[0];
-            
-                // Use firstLine instead of stdout
                 this.sendSocketNotification('DISPLAY_TEXT', stdout);
                 
-                if (lines[1]) {
-                    let secondLine = lines[1];
-                    this.sendNotification('GUIDAGE', secondLine);
-                    console.log("secondLine", secondLine);
-                }
             });
         }
 
