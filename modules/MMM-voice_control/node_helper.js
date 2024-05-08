@@ -14,6 +14,10 @@ module.exports = NodeHelper.create({
             console.log("lance voicecontrole")
             this.voiceControlProcess = exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/voice_control.py `, (error, stdout, stderr) => {
 
+                if (!this.voiceControlProcess) {
+                    return;
+                }
+                
                 if (error) {
                     console.error(`Erreur d'exécution du script Python: ${error}`);
                     return;
