@@ -23,10 +23,9 @@ Module.register("MMM-voice_control", {
             }
 
             if (lines[1]) {
+                console.log("secondLine", secondLine);
                 let secondLine = lines[1];
                 this.sendNotification('GUIDAGE', secondLine);
-                console.log("secondLine", secondLine);
-
             }
 
             // Attendre 5 secondes
