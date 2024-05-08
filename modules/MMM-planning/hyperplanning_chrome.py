@@ -1,14 +1,14 @@
 #!home/miroir/MirrorPyEnv/bin/python3
 
 from selenium import webdriver
-from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import re
 import time
 import json
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 import sys
 
 
@@ -30,9 +30,9 @@ display = Display(visible=0, size=(800, 800))
 display.start()
 
 #pour ne pas afficher la fenêtre du navigateur
-firefox_options = FirefoxOptions()
-firefox_options.add_argument("--headless")
-#firefox_options.add_argument('--shm-size=3g')
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+#chrome_options.add_argument('--shm-size=3g')
 
 # paramètre pour les horaires   => exemple avec BAB3 ir civil IG à la semaine 25
 #horaire = [52, 5] #formation, option
@@ -40,11 +40,11 @@ semaine = 28
 
 
 #pour interagir avec le site web 
-#il faut télécharger le firefoxdriver dispponible pour raspberry pi disponible sur internet au préalable. celui-ci à été stocker hors des fichier du projet
-#à l'emplacement : /usr/lib/chromium-browser/firefoxdriver
-service = Service(executable_path = "/usr/lib/chromium-browser/firefoxdriver")
+#il faut télécharger le chromedriver dispponible pour raspberry pi disponible sur internet au préalable. celui-ci à été stocker hors des fichier du projet
+#à l'emplacement : /usr/lib/chromium-browser/chromedriver
+service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
 
-driver = webdriver.firefox(service=service, options=firefox_options)
+driver = webdriver.Chrome(service=service, options=chrome_options)
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
 
