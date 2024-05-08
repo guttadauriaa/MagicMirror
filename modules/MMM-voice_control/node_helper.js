@@ -96,8 +96,8 @@ module.exports = NodeHelper.create({
                 }
                 const obj = JSON.parse(data);
                 console.log(obj);
-                let formations = obj[annee];
             });
+            let formations = obj[annee];
                 this.sendSocketNotification('retour_des_formations', formations);
 
         }
