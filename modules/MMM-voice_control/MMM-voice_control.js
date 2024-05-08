@@ -5,9 +5,9 @@ Module.register("MMM-voice_control", {
     },
 
     socketNotificationReceived: function(notification, payload) {
+        let wrapper = document.getElementById('MMM-voice_control');
        
         if (notification === 'DISPLAY_TEXT') {
-            let wrapper = document.getElementById('MMM-voice_control');
             if (wrapper) {
                 let html = `<h1>${payload}</h1>`;
                 wrapper.innerHTML = html;
@@ -61,6 +61,7 @@ Module.register("MMM-voice_control", {
             if (payload === "false") { 
                 console.log("faux chiffre")
                 let html = '';
+
                 html += `<h1> Annulation de la demande. dites moi le numéro correct </h1>`;
                 //html += obj;
                 wrapper.innerHTML = html;
