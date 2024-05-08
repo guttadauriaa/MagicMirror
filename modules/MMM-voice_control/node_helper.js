@@ -12,7 +12,6 @@ module.exports = NodeHelper.create({
 
         if (notification === 'VOICE_TEXT') {
 
-            console.log("lance voicecontrole")
             this.voiceControlProcess = exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/voice_control.py `, (error, stdout, stderr) => {
 
                 if (error) {
@@ -21,13 +20,21 @@ module.exports = NodeHelper.create({
                 }
                 
                 console.log("La sortie est :", stdout);
+            
+                // Split stdout into lines
+                let lines = stdout.split('\n');
+            
+                // Get the first line
+                let firstLine = lines[0];
+            
+                // Use firstLine instead of stdout
+                this.sendSocketNotification('DISPLAY_TEXT', firstLine);
 
-                if (stdout.message) {
-                    this.sendSocketNotification('STOP_VOICE_TEXT', {});
+                if (lines[1]) {
+                    let secondLine = lines[1];
+                    this.sendSocketNotification('DISPLAY_TEXT', secondLine);
+                    console.log("secondLine", secondLine);
                 }
-                this.sendSocketNotification('DISPLAY_TEXT', stdout.message);
-                
-                
             });
         }
 
