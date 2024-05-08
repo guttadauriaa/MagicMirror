@@ -50,6 +50,13 @@ module.exports = NodeHelper.create({
                 this.sendSocketNotification('Planning', stdout);
             });
         }
+
+        if (notification === 'DING') {
+            var player = require('play-sound')(opts = {})
+            player.play('./modules/MMM-planning/ding.mp3', function(err){
+            if (err) throw err
+            })
+        }
             
     }
 });
