@@ -30,6 +30,7 @@ Module.register("MMM-voice_control", {
 
     notificationReceived: function(notification, payload, sender) {
         let wrapper = document.getElementById('MMM-voice_control');
+
         if (sender) {
             console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
         } else {
@@ -40,18 +41,18 @@ Module.register("MMM-voice_control", {
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
             
-            const fs = require('fs');
+            // const fs = require('fs');
 
-            try {
-                const data = fs.readFileSync('formations.json', 'utf8');
-                const obj = JSON.parse(data);
-                console.log(obj);
-            } catch (err) {
-                console.error('Une erreur est survenue lors de la lecture du fichier', err);
-            }
+            // try {
+            //     const data = fs.readFileSync('formations.json', 'utf8');
+            //     const obj = JSON.parse(data);
+            //     console.log(obj);
+            // } catch (err) {
+            //     console.error('Une erreur est survenue lors de la lecture du fichier', err);
+            // }
             let html = '';
             html += `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1>`;
-            html += JSON.stringify(obj);
+            //html += JSON.stringify(obj);
             wrapper.innerHTML = html;
 
             this.sendSocketNotification('demande_formation', payload);
