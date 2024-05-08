@@ -1,14 +1,14 @@
 #!home/miroir/MirrorPyEnv/bin/python3
 
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import re
 import time
 import json
-from selenium.webdriver.chrome.options import Options
 import sys
 
 #pour exetuter le code à distance
@@ -17,16 +17,16 @@ display = Display(visible=0, size=(800, 800))
 display.start()
 
 #pour ne pas afficher la fenêtre du navigateur
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-
+firefox_options = Options()
+firefox_options.add_argument("--headless")
 
 #pour interagir avec le site web 
-#il faut télécharger le chromedriver dispponible pour raspberry pi disponible sur internet au préalable. celui-ci à été stocker hors des fichier du projet
-#à l'emplacement : /usr/lib/chromium-browser/chromedriver
-service = Service(executable_path = "/usr/lib/chromium-browser/chromedriver")
+#il faut télécharger le geckodriver disponible sur internet au préalable. celui-ci à été stocker hors des fichier du projet
+#à l'emplacement : "/usr/lib/firefox/geckodriver"
+service = Service(executable_path = "/usr/lib/firefox/geckodriver")
 
-driver = webdriver.Chrome(service=service, options=chrome_options)
+driver = webdriver.Firefox(service=service, options=firefox_options)
+
 
 driver.get("https://hplanning2023.umons.ac.be/invite")
 
