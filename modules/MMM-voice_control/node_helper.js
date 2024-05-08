@@ -26,6 +26,21 @@ module.exports = NodeHelper.create({
             });
         }
 
+        if (notification === 'lecture_formations'){
+            const fs = require('fs');
+        
+            fs.readFile('formations.txt', 'utf8', (err, data) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                console.log(data);
+                
+                this.sendSocketNotification('retour_des_formations', data);
+                
+            });
+        }
+
         if (notification === 'demande_formation'){
             console.log("choix formation", payload)
             console.log("lance voicecontrole pour formation")

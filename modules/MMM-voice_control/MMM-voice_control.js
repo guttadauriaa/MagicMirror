@@ -98,22 +98,13 @@ Module.register("MMM-voice_control", {
         if (notification === 'SETUP_BADGE'){
             console.log("modifiction du badge", payload)
             badge = payload;
-        
-            const fs = require('fs');
-        
-            fs.readFile('formations.txt', 'utf8', (err, data) => {
-                if (err) {
-                    console.error(err);
-                    return;
-                }
-                console.log(data);
-                // Déplacez cette ligne à l'intérieur de la fonction de rappel
-                wrapper.innerHTML = `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1><p>${data}</p>`;
-            });
-        
-            this.sendSocketNotification('demande_formation', payload);
+            
+            this.sendSocketNotification('lecture_formations', {});
         }
         
+        if (notification === 'BADGE'){
+            wrapper.innerHTML = `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1><p>${payload}</p>`;
+        }
 
         if (notification === 'STOP_VOICE_TEXT') {
             console.log("demande d'arret du contole vocal")
