@@ -89,7 +89,7 @@ socketNotificationReceived: function(notification, payload) {
     html += '</table>';
 
     //jouer un son au moment de l'affichage du planning
-    this.sendSocketNotification('DING', {});
+    //this.sendSocketNotification('DING', {});
 
     //afficher le planning en html
     wrapper.innerHTML = html;
