@@ -99,6 +99,16 @@ Module.register("MMM-voice_control", {
             console.log("modifiction du badge", payload)
             badge = payload;
 
+
+            const fs = require('fs');
+
+            fs.readFile('formations.txt', 'utf8', (err, data) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                console.log(data);
+            });
             // const fs = require('fs');
 
             // try {
@@ -111,7 +121,8 @@ Module.register("MMM-voice_control", {
             // let html = '';
             // html += `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1>`;
             //html += JSON.stringify(obj);
-            wrapper.innerHTML = `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1>`;
+            wrapper.innerHTML = `<h1> Dites le numéro de votre formation ou annuler pour arrêter</h1><p>${data}</p>`;
+
 
             this.sendSocketNotification('demande_formation', payload);
         }
