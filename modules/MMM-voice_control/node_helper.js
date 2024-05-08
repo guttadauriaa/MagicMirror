@@ -89,20 +89,14 @@ module.exports = NodeHelper.create({
 
             const fs = require('fs');
         
-            fs.readFile('formations.json', 'utf8', (err, data) => {
-                if (err) {
-                    console.error(err);
-                    return;
-                }
-                const obj = JSON.parse(data);
-                console.log(obj);
-                let formations = obj[annee];
-                this.sendSocketNotification('retour_des_formations', formations);
-            });
             
-
+            let data = fs.readFileSync('formations.json', 'utf8').trim();
+            let obj = JSON.parse(data);
+            let formations = obj[annee];
+            this.sendSocketNotification('retour_des_formations', formations);
         }
 
+        
         if (notification === 'demande_formation'){
             console.log("choix formation")
             console.log("lance voicecontrole pour formation")
