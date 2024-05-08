@@ -6,10 +6,10 @@ Module.register("MMM-navigation", {
         wrapper.id = "MMM-navigation";
         let html = "";
         
-        const imagePath = "./modules/MMM-navigation/map/12.png";
+        const imagePath = "./modules/MMM-navigation/map/23.png";
         
         
-        html += `<img src="${imagePath}" alt="Your Image" style="width: 70%; height: 70%;" />`;
+        html += `<img src="${imagePath}" alt="Your Image" style="width: 100%; height: 100%;" />`;
         wrapper.innerHTML = html;
        
         return wrapper; 
