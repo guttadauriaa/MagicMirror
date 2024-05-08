@@ -29,6 +29,31 @@ module.exports = NodeHelper.create({
                 
                 
             });
+
+            this.voiceControlProcess = exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/voice_control.py `, (error, stdout, stderr) => {
+
+                if (error) {
+                    console.error(`Erreur d'exécution du script Python: ${error}`);
+                    return;
+                }
+                
+                console.log("La sortie est :", stdout);
+            
+                // Split stdout into lines
+                let lines = stdout.split('\n');
+            
+                // Get the first line
+                let firstLine = lines[0];
+            
+                // Use firstLine instead of stdout
+                this.sendSocketNotification('DISPLAY_TEXT', firstLine);
+
+                if (lines[1]) {
+                    let secondLine = lines[1];
+                    this.sendSocketNotification('DISPLAY_TEXT', secondLine);
+                    console.log("secondLine", secondLine);
+                }
+            });
         }
 
         if (notification === 'recup_option') {
