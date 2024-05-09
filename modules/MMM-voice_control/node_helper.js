@@ -112,7 +112,7 @@ module.exports = NodeHelper.create({
             //     }
             // });
 
-            let formations = JSON.prase(fs.readFile('formations.json'));
+            let formations = JSON.parse(fs.readFile('formations.json'));
             console.log(formations);
             this.sendSocketNotification('retour_des_formations', formations);
 
