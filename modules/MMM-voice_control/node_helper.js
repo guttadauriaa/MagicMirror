@@ -88,7 +88,7 @@ module.exports = NodeHelper.create({
             });
 
             const fs = require('fs').promises;
-            fs.readFile('formations2.txt', 'utf8', (err, data) => {
+            fs.readFile('./modules/MMM-voice_control/formations2.txt', 'utf8', (err, data) => {
                 if (err) {
                     console.error(err);
                     return;
