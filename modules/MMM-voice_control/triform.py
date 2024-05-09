@@ -10,7 +10,7 @@ MA2 = []
 
 with open ('./modules/MMM-voice_control/formations_all.txt', 'r') as f :
     ligne = f.readline().rstrip().split(':')
-    id = int(ligne[0])
+    id = ligne[0]
     while ligne:
         if "BAB1" in ligne[1]:
             BAB1.append({'id': id, 'formation': ligne[1]})
@@ -24,7 +24,7 @@ with open ('./modules/MMM-voice_control/formations_all.txt', 'r') as f :
             MA2.append({'id': id, 'formation': ligne[1]})
         ligne = f.readline().rstrip().split(':')
         if ligne[0] != '':
-            id = int(ligne[0])
+            id = ligne[0]
         else:
             break
 # Créer un dictionnaire global pour stocker tous les dictionnaires
