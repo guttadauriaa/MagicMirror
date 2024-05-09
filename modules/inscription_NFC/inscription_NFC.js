@@ -4,10 +4,11 @@ Module.register("inscription_NFC", {
       console.log("Starting module: " + this.name);
   },
 
-  socketNotificationReceived: function(notification, payload) {
+  notificationReceived: function(notification, payload) {
     if (notification === 'SETUP_BADGE'){
       this.NFCid = payload.badge;
       this.show();
+      console.log('inscription_NFC received a notification: ' + notification + ' with payload: ' + payload.badge);
     }
   },
 
