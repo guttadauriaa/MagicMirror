@@ -200,22 +200,22 @@ Module.register("MMM-voice_control", {
             //         }
             //     }, 1000); 
             // }
-            setTimeout(() => {
-                if (this.voiceControlProcess === false && this.voiceControlProcessStopedChek === true){   
-                    let html = '';
-                    if (payload.redemander === true) {
-                        html += `<p>Je n'ai pas compris, veuillez réessayer.</p>`;
-                    }
-                    html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
-                    
-                    html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
-                    wrapper.innerHTML = html;
-                    this.sendSocketNotification('demande_annee', {});
-                    //ajouter le badge dans le fichier local
-                }else{
-                    console.log("voiceControlProcess = true")
-                }
-            }, 1000);
+            
+            while(this.voiceControlProcessStopedChek === false){
+                console.log("waiting for voiceControlProcessStopedChek")
+            }
+              
+            let html = '';
+            if (payload.redemander === true) {
+                html += `<p>Je n'ai pas compris, veuillez réessayer.</p>`;
+            }
+            html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
+            
+            html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
+            wrapper.innerHTML = html;
+            this.sendSocketNotification('demande_annee', {});
+            //ajouter le badge dans le fichier local
+                
         }
         
 
