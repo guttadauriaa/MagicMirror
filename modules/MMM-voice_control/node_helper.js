@@ -96,20 +96,26 @@ module.exports = NodeHelper.create({
             // this.sendSocketNotification('retour_des_formations', formations);
             // const fs = require('fs');
 
-            fs.readFile('formations.json', 'utf8', (err, data) => {
-                if (err) {
-                    console.error("Erreur de lecture du fichier JSON:", err);
-                    return;
-                }
+            // fs.readFileSync('formations.json', (err, data) => {
+            //     if (err) {
+            //         console.error("Erreur de lecture du fichier JSON:", err);
+            //         return;
+            //     }
 
-                try {
-                    let obj = JSON.parse(data);
-                    let formations = obj[annee];
-                    // Faites quelque chose avec les données
-                } catch (error) {
-                    console.error("Erreur lors de l'analyse JSON:", error);
-                }
-            });
+            //     try {
+            //         //let obj = JSON.parse(data);
+            //         let formations = data[annee];
+            //         this.sendSocketNotification('retour_des_formations', formations);
+
+            //     } catch (error) {
+            //         console.error("Erreur lors de l'analyse JSON:", error);
+            //     }
+            // });
+
+            let formations = JSON.prase(fs.readFile('formations.json'));
+            console.log(formations);
+            this.sendSocketNotification('retour_des_formations', formations);
+
         }
 
 
