@@ -87,9 +87,17 @@ module.exports = NodeHelper.create({
                 }
             });
 
-            const fs = require('fs');
-        
-            
+            const fs = require('fs').promises;
+            fs.readFile('formations2.txt', 'utf8', (err, data) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                let obj = JSON.parse(data);
+                console.log(obj.BAB1);
+                
+                this.sendSocketNotification('retour_des_formations', data);
+            });
             // let data = fs.readFileSync('formations.json', 'utf8').trim();
             // let obj = JSON.parse(data);
             // let formations = obj[annee];
@@ -111,11 +119,6 @@ module.exports = NodeHelper.create({
             //         console.error("Erreur lors de l'analyse JSON:", error);
             //     }
             // });
-
-            let formations = JSON.parse(fs.readFile('formations.json'));
-            console.log(formations);
-            this.sendSocketNotification('retour_des_formations', formations);
-
         }
 
 
