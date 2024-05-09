@@ -44,6 +44,8 @@ Module.register("MMM-voice_control", {
                     this.voiceControlProcessStopedChek = true;
                 }
             }, 5000);         
+        }else{
+            this.voiceControlProcessStopedChek = true;
         }
         
         if (notification === 'retour_des_formations'){
