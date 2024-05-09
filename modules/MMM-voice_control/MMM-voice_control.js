@@ -10,7 +10,7 @@ Module.register("MMM-voice_control", {
         let formation = '';
         let options = '';
        
-        if (notification === 'DISPLAY_TEXT') {
+        if (notification === 'DISPLAY_TEXT' && this.voiceControlProcess) {
 
             // Split stdout into lines
             let lines = payload.split('\n');
@@ -37,10 +37,11 @@ Module.register("MMM-voice_control", {
                     // Attendre 2 secondes supplémentaires
                     setTimeout(() => {
                         if (wrapper) {
-                            //wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
                             wrapper.innerHTML = `<h1> Demandez moi quelque chose... </h1>`;
                         }
                     }, 2000);
+                }else{
+                    this.voiceControlProcessStopedChek = true;
                 }
             }, 5000);         
         }
@@ -188,6 +189,7 @@ Module.register("MMM-voice_control", {
             console.log("modifiction du badge", payload)
             badge = payload.badge;
             this.voiceControlProcess = false;
+            this.voiceControlProcessStopedChek = false;
             //this.sendSocketNotification('STOP_VOICE_TEXT', {});
             // Vérifier si un processus de contrôle vocal est en cours
             
@@ -199,7 +201,7 @@ Module.register("MMM-voice_control", {
             //     }, 1000); 
             // }
             setTimeout(() => {
-                if (this.voiceControlProcess === false){   
+                if (this.voiceControlProcess === false && this.voiceControlProcessStopedChek === true){   
                     let html = '';
                     if (payload.redemander === true) {
                         html += `<p>Je n'ai pas compris, veuillez réessayer.</p>`;
