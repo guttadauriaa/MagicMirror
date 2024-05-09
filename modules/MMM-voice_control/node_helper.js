@@ -87,7 +87,7 @@ module.exports = NodeHelper.create({
                 }
             });
 
-            // const fs = require('fs');
+            const fs = require('fs');
         
             
             // let data = fs.readFileSync('formations.json', 'utf8').trim();
