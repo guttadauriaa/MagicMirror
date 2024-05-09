@@ -10,7 +10,7 @@ Module.register("MMM-voice_control", {
         let formation = '';
         let options = '';
        
-        if (notification === 'DISPLAY_TEXT' && this.voiceControlProcess) {
+        if (notification === 'DISPLAY_TEXT') {
 
             // Split stdout into lines
             let lines = payload.split('\n');
@@ -180,6 +180,11 @@ Module.register("MMM-voice_control", {
         let wrapper = document.getElementById('MMM-voice_control');
         let badge = '';
 
+        if(notification === 'HIDE_VOICE_CONTROL'){
+            console.log("HIDE_VOICE_CONTROL")
+            this.hide();
+            this.voiceControlProcess = false;
+        }
         if (sender) {
             console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
         } else {
@@ -187,7 +192,7 @@ Module.register("MMM-voice_control", {
         }
 
 
-        if (notification === 'SETUP_BADGE'){
+        if (notification === 'SETUP_BADGE_ancien'){
             console.log("modifiction du badge", payload)
             badge = payload.badge;
             this.voiceControlProcess = false;

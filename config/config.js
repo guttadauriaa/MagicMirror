@@ -125,7 +125,13 @@ let config = {
 		{
 			module : "MMM-voice_control",
 			position: "lower_third"
+		},
+		{
+			module : "inscription_NFC",
+			position: "lower_third",
+			hiddenOnStartup: true
 		}
+		
 	]
 };
 
