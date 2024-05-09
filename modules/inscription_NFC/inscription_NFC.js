@@ -13,7 +13,7 @@ Module.register("inscription_NFC", {
   },
 
   resume: function() {
-    this.sendNofitication("HIDE_VOICE_CONTROL", {});
+    this.sendNotification("HIDE_VOICE_CONTROL", {});
     let wrapper = document.getElementById('inscription_NFC');
 
     html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
