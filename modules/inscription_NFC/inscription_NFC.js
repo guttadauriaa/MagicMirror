@@ -13,7 +13,7 @@ Module.register("inscription_NFC", {
   },
 
   resume: function() {
-    this.sendNofiication("HIDE_VOICE_CONTROL", {});
+    this.sendNofication("HIDE_VOICE_CONTROL", {});
     let wrapper = document.getElementById('inscription_NFC');
 
     html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
@@ -23,10 +23,10 @@ Module.register("inscription_NFC", {
   },
   
   getDom: function() {
-      console.log("dom1");
+      
       let wrapper = document.createElement("div");
       wrapper.id = "inscription_NFC";
-      wrapper.innerHTML = "<h1>Veuillez scanner votre carte étudiante -> </h1>";
+      wrapper.innerHTML = "<h1>Inscription nouvel utilisateur</h1>";
       return wrapper;
   }
 });
