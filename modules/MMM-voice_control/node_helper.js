@@ -87,16 +87,32 @@ module.exports = NodeHelper.create({
                 }
             });
 
-            const fs = require('fs');
+            // const fs = require('fs');
         
             
-            let data = fs.readFileSync('formations.json', 'utf8').trim();
-            let obj = JSON.parse(data);
-            let formations = obj[annee];
-            this.sendSocketNotification('retour_des_formations', formations);
+            // let data = fs.readFileSync('formations.json', 'utf8').trim();
+            // let obj = JSON.parse(data);
+            // let formations = obj[annee];
+            // this.sendSocketNotification('retour_des_formations', formations);
+            // const fs = require('fs');
+
+            fs.readFile('formations.json', 'utf8', (err, data) => {
+                if (err) {
+                    console.error("Erreur de lecture du fichier JSON:", err);
+                    return;
+                }
+
+                try {
+                    let obj = JSON.parse(data);
+                    let formations = obj[annee];
+                    // Faites quelque chose avec les données
+                } catch (error) {
+                    console.error("Erreur lors de l'analyse JSON:", error);
+                }
+            });
         }
 
-        
+
         if (notification === 'demande_formation'){
             console.log("choix formation")
             console.log("lance voicecontrole pour formation")
