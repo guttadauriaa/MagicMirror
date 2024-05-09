@@ -87,38 +87,35 @@ module.exports = NodeHelper.create({
                 }
             });
 
-            const fs = require('fs').promises;
-            fs.readFile('./modules/MMM-voice_control/formations2.txt', 'utf8', (err, data) => {
-                if (err) {
-                    console.error(err);
-                    return;
-                }
-                let obj = JSON.parse(data);
-                console.log(obj.BAB1);
-                
-                this.sendSocketNotification('retour_des_formations', data);
-            });
-            // let data = fs.readFileSync('formations.json', 'utf8').trim();
-            // let obj = JSON.parse(data);
-            // let formations = obj[annee];
-            // this.sendSocketNotification('retour_des_formations', formations);
-            // const fs = require('fs');
-
-            // fs.readFileSync('formations.json', (err, data) => {
+            // const fs = require('fs').promises;
+            // fs.readFile('./modules/MMM-voice_control/formations2.txt', 'utf8', (err, data) => {
             //     if (err) {
-            //         console.error("Erreur de lecture du fichier JSON:", err);
+            //         console.error(err);
             //         return;
             //     }
-
-            //     try {
-            //         //let obj = JSON.parse(data);
-            //         let formations = data[annee];
-            //         this.sendSocketNotification('retour_des_formations', formations);
-
-            //     } catch (error) {
-            //         console.error("Erreur lors de l'analyse JSON:", error);
-            //     }
+            //     let obj = JSON.parse(data);
+            //     console.log(obj.BAB1);
+                
+            //     this.sendSocketNotification('retour_des_formations', data);
             // });
+            
+
+            fs.readFileSync('./modules/MMM-voice_control/formations2.txt', (err, data) => {
+                if (err) {
+                    console.error("Erreur de lecture du fichier JSON:", err);
+                    return;
+                }
+
+                try {
+                    let obj = JSON.parse(data);
+                    let formations = obj.BAB1;
+                    console.log(formations);
+                    this.sendSocketNotification('retour_des_formations', formations);
+
+                } catch (error) {
+                    console.error("Erreur lors de l'analyse JSON:", error);
+                }
+            });
         }
 
 
