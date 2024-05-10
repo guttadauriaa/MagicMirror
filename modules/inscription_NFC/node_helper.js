@@ -11,7 +11,7 @@ module.exports = NodeHelper.create({
         if (notification === 'demande_annee'){
             console.log("lance voicecontrole pour annee")
             let redemander = false;
-            
+            let annee = "pas choisie";
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `, (error, stdout, stderr) => {
 
                 if (error) {
