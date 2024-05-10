@@ -43,9 +43,10 @@ module.exports = NodeHelper.create({
                     this.sendSocketNotification('SETUP_BADGE', {redemander : true});
                 }
     
-                console.log(annee);
+                
     
                 const fs = require('fs');
+                console.log(annee);
                 fs.readFileSync('./modules/MMM-voice_control/formations2.txt', (err, data) => {
                     if (err) {
                         console.error("Erreur de lecture du fichier JSON:", err);
