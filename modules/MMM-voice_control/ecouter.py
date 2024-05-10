@@ -2,9 +2,7 @@
 
 
 import speech_recognition as sr
-from fonctionnalite import Fonctionnalite
 
-fonctionnalite = Fonctionnalite()
 
 # Créer un objet Recognizer
 recognizer = sr.Recognizer()
@@ -27,8 +25,9 @@ with sr.Microphone() as source:
         #print("Vous avez dit :", texte)
         print(texte)
 
-    except sr.UnknownValueError:
+    except sr.UnknownValueError as e:
         print("false ecouter.py")
+        print(e)
 
     except sr.RequestError as e:
         print("Erreur lors de la requête : ", e)
