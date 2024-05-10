@@ -37,7 +37,7 @@ module.exports = NodeHelper.create({
             });
             console.log(annee);
             if (redemander){
-                this.sendSocketNotification('demande_annee', {});
+                this.sendSocketNotification('SETUP_BADGE', {redemander : true});
             }
             
             const fs = require('fs');
