@@ -23,7 +23,9 @@ module.exports = NodeHelper.create({
                 if (stdout.includes("1") || stdout.includes("un")){
                     annee = "BAB1";
                 }else if (stdout.includes("2") || stdout.includes("deux")){
+                    console.log("2 ou deux trouvé");
                     annee = "BAB2";
+                    console.log(annee);
                 }else if (stdout.includes("3") || stdout.includes("trois")){
                     annee = "BAB3";
                 }else if (stdout.includes("4") || stdout.includes("quatre")){
