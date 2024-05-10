@@ -17,7 +17,12 @@ Module.register("inscription_NFC", {
       wrapper.innerHTML = html;
       this.sendSocketNotification('demande_annee', {});
     }
+    if (notification === 'retour_des_formations'){
+      html = `${payload}`;
+      wrapper.innerHTML = html;
+    }
   },
+
 
   resume: function() {
     this.sendNotification("HIDE_VOICE_CONTROL", {});
