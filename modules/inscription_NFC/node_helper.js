@@ -32,14 +32,16 @@ module.exports = NodeHelper.create({
                     annee = "MA2";
                 }else{
                     redemander = true;
-                    console.log("redemander annee");
+                    console.log("redemander annee send");
                 }
             });
-            console.log(annee);
+            
             if (redemander){
                 this.sendSocketNotification('SETUP_BADGE', {redemander : true});
             }
-            
+
+            console.log(annee);
+
             const fs = require('fs');
             fs.readFileSync('./modules/MMM-voice_control/formations2.txt', (err, data) => {
                 if (err) {

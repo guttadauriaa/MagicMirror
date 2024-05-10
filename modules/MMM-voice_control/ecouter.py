@@ -23,7 +23,7 @@ with sr.Microphone() as source:
         # Reconnaître la parole en utilisant le modèle français
         texte = recognizer.recognize_google(audio, language="fr-FR")
         #print("Vous avez dit :", texte)
-        print(texte)
+        print(texte, "ecouter.py")
 
     except sr.UnknownValueError as e:
         print("false ecouter.py", e)

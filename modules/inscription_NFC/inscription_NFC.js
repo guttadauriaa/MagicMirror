@@ -8,13 +8,15 @@ Module.register("inscription_NFC", {
     let wrapper = document.getElementById('inscription_NFC');
 
     if (notification === 'SETUP_BADGE'){
+      console.log(payload);
       if (payload.redemander){
+        console.log("redemander annee received");
         this.sendSocketNotification('demande_annee', {});
         setTimeout(() => {
           wrapper.innerHTML = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
         }, 2000);
       }
-      
+
       this.NFCid = payload.badge;
       this.show();
       console.log('inscription_NFC received a notification: ' + notification + ' with payload: ' + payload.badge);
