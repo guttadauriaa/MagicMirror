@@ -17,7 +17,7 @@ module.exports = NodeHelper.create({
                 if (error) {
                     console.error(`Erreur d'exécution du script Python ecouter.py: ${error}`); //erreur de type ALSA lorsqu'on veut arrêter le script
                     redemander = true;
-                    return;
+                    
                 }
                 
                 console.log("[demande_annee] La sortie est :", stdout);
