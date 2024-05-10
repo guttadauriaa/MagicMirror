@@ -24,7 +24,7 @@ with sr.Microphone() as source:
         texte = recognizer.recognize_google(audio, language="fr-FR")
         #print("Vous avez dit :", texte)
         print(texte, "ecouter.py")
-        exit()
+        
 
     except sr.UnknownValueError as e:
         print("false ecouter.py", e)
