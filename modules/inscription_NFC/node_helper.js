@@ -37,6 +37,7 @@ module.exports = NodeHelper.create({
             });
             
             if (redemander){
+                console.log("redemander annee send");
                 this.sendSocketNotification('SETUP_BADGE', {redemander : true});
             }
 
