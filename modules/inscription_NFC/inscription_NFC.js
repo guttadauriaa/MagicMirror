@@ -8,17 +8,27 @@ Module.register("inscription_NFC", {
     let wrapper = document.getElementById('inscription_NFC');
 
     if (notification === 'SETUP_BADGE'){
+      if (payload.redemander){
+        this.sendSocketNotification('demande_annee', {});
+        setTimeout(() => {
+          wrapper.innerHTML = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
+        }, 2000);
+      }
+      
       this.NFCid = payload.badge;
       this.show();
       console.log('inscription_NFC received a notification: ' + notification + ' with payload: ' + payload.badge);
-      html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
-            
-      html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
-      wrapper.innerHTML = html;
+      
       this.sendSocketNotification('demande_annee', {});
+      setTimeout(() => {
+        let html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
+        html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
+        wrapper.innerHTML = html;
+      }, 2000);
+      
     }
     if (notification === 'retour_des_formations'){
-      html = `${payload}`;
+      let html = `${payload}`;
       wrapper.innerHTML = html;
     }
   },

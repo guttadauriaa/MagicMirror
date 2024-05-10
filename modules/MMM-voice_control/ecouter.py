@@ -26,8 +26,7 @@ with sr.Microphone() as source:
         print(texte)
 
     except sr.UnknownValueError as e:
-        print("false ecouter.py")
-        print(e)
+        print("false ecouter.py", e)
 
     except sr.RequestError as e:
         print("Erreur lors de la requête : ", e)

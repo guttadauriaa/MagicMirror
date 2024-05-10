@@ -9,9 +9,9 @@ module.exports = NodeHelper.create({
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'demande_annee'){
-            console.log("choix annee")
             console.log("lance voicecontrole pour annee")
             let redemander = false;
+            
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `, (error, stdout, stderr) => {
 
                 if (error) {
@@ -37,7 +37,7 @@ module.exports = NodeHelper.create({
             });
             console.log(annee);
             if (redemander){
-                this.sendSocketNotification('demande_annee', {});
+                this.sendSocketNotification('SETUP_BADGE', {redemander : true});
             }
             
             const fs = require('fs');
