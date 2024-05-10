@@ -1,6 +1,7 @@
 Module.register("MMM-voice_control", {
     start: function() {
         this.voiceControlProcess = true;
+        // on lance dans le node helper une notif pour directement écouter les requêtes de l'utilisateur
         this.sendSocketNotification('VOICE_TEXT', {});
         console.log("Starting module: " + this.name);
     },
@@ -10,22 +11,23 @@ Module.register("MMM-voice_control", {
         let formation = '';
         let options = '';
        
+        // apres avoir écouté la requête de l'utilisateur, on affiche le texte écouté
         if (notification === 'DISPLAY_TEXT') {
 
-            // Split stdout into lines
+            // on sépare les lignes du texte écouté, si il y a deux lignes dans la sortie, alors l'utilisateur demande un guidage et la deuxième ligne contient le local
             let lines = payload.split('\n');
-            
-            // Get the first line
             let firstLine = lines[0];
             
             if (wrapper) {
                 let html = `<h1>${firstLine}</h1>`;
                 wrapper.innerHTML = html;
             }
+
             //si il y a 2 lignes cela veut que fonctionnalite.question a détecté une volonté de guidage vers un local dans le texte écouté
             if (lines[1]) {
                 let secondLine = lines[1];
                 console.log("secondLine", secondLine);
+                // on envoie une notification pour demander le guidage dans le module MMM-navigation
                 this.sendNotification('GUIDAGE', secondLine);
             }
 
@@ -48,17 +50,6 @@ Module.register("MMM-voice_control", {
             this.voiceControlProcessStopedChek = true;
         }
         
-        if (notification === 'retour_des_formations'){
-            let html = '';
-            html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
-            for (let formation of payload){
-                html += `<p>(${formation.id}) ${formation.formation}<br></p>`;
-            }
-            
-            wrapper.innerHTML = html;
-            this.sendSocketNotification('demande_formation', {});
-        }
-
 
         if (notification === 'retour_des_options'){
             wrapper.innerHTML = `<h1> Dites le numéro de votre options ou "annuler" pour arrêter</h1><p>${payload}</p>`;
@@ -176,22 +167,31 @@ Module.register("MMM-voice_control", {
         }
     },
 
+
+    // ensemble des notifications que le module peut recevoir depuis le système ou d'autres modules
     notificationReceived: function(notification, payload, sender) {
         let wrapper = document.getElementById('MMM-voice_control');
         let badge = '';
 
+        // si la notification est "HIDE_VOICE_CONTROL", on cache le module
         if(notification === 'HIDE_VOICE_CONTROL'){
             console.log("HIDE_VOICE_CONTROL")
             this.hide();
             this.voiceControlProcess = false;
         }
-        if (sender) {
-            console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
-        } else {
-            console.log(this.name + " received a system notification: " + notification);
+
+        if (notification === 'retour_des_formations'){
+            let html = '';
+            html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
+            for (let formation of payload){
+                html += `<p>(${formation.id}) ${formation.formation}<br></p>`;
+            }
+            
+            wrapper.innerHTML = html;
+            this.sendSocketNotification('demande_formation', {});
         }
 
-
+        //deplace dans le module inscription_NFC
         if (notification === 'SETUP_BADGE_ancien'){
             console.log("modifiction du badge", payload)
             badge = payload.badge;
@@ -225,7 +225,7 @@ Module.register("MMM-voice_control", {
                 
         }
         
-
+        // suppresion de cette fonctionnalité dans la derniere version
         if (notification === 'STOP_VOICE_TEXT') {
             console.log("demande d'arret du contole vocal")
             // Vérifier si un processus de contrôle vocal est en cours

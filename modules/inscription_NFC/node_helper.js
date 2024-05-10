@@ -8,10 +8,14 @@ module.exports = NodeHelper.create({
     },
 
     socketNotificationReceived: function(notification, payload) {
+
+        // on demande à l'utilisateur de choisir son année
         if (notification === 'demande_annee'){
             console.log("lance voicecontrole pour annee")
             let redemander = false;
             let annee = "pas choisie";
+
+            // execute le script Python ecouter.py pour écouter la réponse de l'utilisateur
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `,{ timeout: 5000 }, (error, stdout, stderr) => {
 
                 if (error) {
@@ -21,6 +25,7 @@ module.exports = NodeHelper.create({
                     
                 }
                 
+                // on verifie la réponse de l'utilisateur et on agit en fonction
                 console.log("[demande_annee] La sortie est :", stdout);
                 if (stdout.includes("1") || stdout.includes("un")){
                     annee = "BAB1";
@@ -44,7 +49,7 @@ module.exports = NodeHelper.create({
                 // }
     
                 
-    
+                
                 const fs = require('fs');
                 console.log(annee);
                 fs.readFileSync('./modules/MMM-voice_control/formations2.txt', (err, data) => {

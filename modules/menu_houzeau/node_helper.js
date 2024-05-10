@@ -7,6 +7,8 @@ module.exports = NodeHelper.create({
     },
 
     socketNotificationReceived: function(notification, payload) {
+
+        // notification pour lancer le script Python qui va chercher à afficher le menu houzeau
         if (notification === 'START_MENU_HOUZEAU') {
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/menu_houzeau/menu_houzeau.py`, (error, stdout, stderr) => {
                 if (error) {
@@ -14,7 +16,7 @@ module.exports = NodeHelper.create({
                     return;
                 }
 
-                // stdout est la sortie de votre script Python
+                // renvoie les données du script Python au module menu_houzeau.js
                 this.sendSocketNotification('PYTHON_DATA_MENU_HOUZEAU', stdout);
             });
         }

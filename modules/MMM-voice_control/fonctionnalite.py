@@ -2,9 +2,10 @@
 
 import json
 
-
+# class pour les fonctionnalités de l'assistant vocal 
 class Fonctionnalite:
 
+    # pour vérifier si l'utilisateur demande un guidage vers un local
     def questions(self, data):
 
         #test pour direction vers lacaux

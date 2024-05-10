@@ -7,19 +7,25 @@ Module.register("inscription_NFC", {
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
 
+    // quand la notification depuis le module MMM-planning est "SETUP_BADGE", on lance l'enregistrement d'un nouvel utilisateur
     if (notification === 'SETUP_BADGE'){
       console.log(payload);
+
       if (payload.redemander){
         console.log("redemander annee received");
         this.sendSocketNotification('demande_annee', {});
         setTimeout(() => {
           wrapper.innerHTML = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
         }, 2000);
-      }else{
+      }
+
+      //quand on a la valeur du nouveau badge à enregistrer
+      else{
         this.NFCid = payload.badge;
         this.show();
         console.log('inscription_NFC received a notification: ' + notification + ' with badge: ' + payload.badge);
         
+        // on envoie une notification au node_helper pour demander l'année d'étude de l'utilisateur
         this.sendSocketNotification('demande_annee', {});
         setTimeout(() => {
           let html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
@@ -28,6 +34,8 @@ Module.register("inscription_NFC", {
         }, 2000);
       }
     }
+
+    
     if (notification === 'retour_des_formations'){
       let html = `${payload}`;
       wrapper.innerHTML = html;
