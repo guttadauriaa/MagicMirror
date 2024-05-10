@@ -37,7 +37,7 @@ module.exports = NodeHelper.create({
             });
             console.log(annee);
             if (redemander){
-                this.sendSocketNotification('demander_annee', {});
+                this.sendSocketNotification('demande_annee', {});
             }
             
             const fs = require('fs');
