@@ -113,7 +113,7 @@ socketNotificationReceived: function(notification, payload) {
   if (notification === 'NOT_NFC') {
     console.log("pas de badge connu");
     this.NFCid = payload;
-    wrapper.innerHTML = "<h1>pas de badge connu</h1>";
+    wrapper.innerHTML = "<h1>Badge non reconnu</h1><h2>Inscrivez-vous à la voix en suivant les instructions si-dessous</h2>";
 
   
     this.sendNotification('SETUP_BADGE', {badge : this.NFCid});

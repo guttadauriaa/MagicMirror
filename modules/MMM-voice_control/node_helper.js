@@ -119,7 +119,7 @@ module.exports = NodeHelper.create({
         }
 
 
-        if (notification === 'demande_formation'){
+        if (notification === 'demande_formation_old'){
             console.log("choix formation")
             console.log("lance voicecontrole pour formation")
 
