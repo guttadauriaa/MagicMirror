@@ -61,6 +61,7 @@ module.exports = NodeHelper.create({
                         console.error("Erreur lors de l'analyse JSON:", error);
                     }
                 });
+                return;
             });
             
             
