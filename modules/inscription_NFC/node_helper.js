@@ -15,8 +15,9 @@ module.exports = NodeHelper.create({
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `,{ timeout: 5000 }, (error, stdout, stderr) => {
 
                 if (error) {
-                    console.error(`Erreur d'exécution du script Python ecouter.py: ${error}`); //erreur de type ALSA lorsqu'on veut arrêter le script
-                    redemander = true;
+                    //console.error(`Erreur d'exécution du script Python ecouter.py: ${error}`); //erreur de type ALSA lorsqu'on veut arrêter le script
+                    console.error(`Erreur d'exécution du script Python ecouter.py`);
+                    //redemander = true;
                     
                 }
                 
