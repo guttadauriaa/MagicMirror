@@ -23,7 +23,7 @@ module.exports = NodeHelper.create({
                     return;
                 }
                 
-                console.log("La sortie est :", stdout);
+                console.log("[voice_control] La sortie est :", stdout);
             
                 this.sendSocketNotification('DISPLAY_TEXT', stdout);
                 

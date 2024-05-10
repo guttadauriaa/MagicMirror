@@ -15,7 +15,8 @@ module.exports = NodeHelper.create({
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `,{ timeout: 5000 }, (error, stdout, stderr) => {
 
                 if (error) {
-                    console.error(`Erreur d'exécution du script Python ecouter.py: ${error}`);
+                    console.error(`Erreur d'exécution du script Python ecouter.py: ${error}`); //erreur de type ALSA lorsqu'on veut arrêter le script
+                    redemander = true;
                     return;
                 }
                 
@@ -36,32 +37,33 @@ module.exports = NodeHelper.create({
                     redemander = true;
                     console.log("redemander annee send");
                 }
+                if (redemander){
+                    console.log("redemander annee send2");
+                    this.sendSocketNotification('SETUP_BADGE', {redemander : true});
+                }
+    
+                console.log(annee);
+    
+                const fs = require('fs');
+                fs.readFileSync('./modules/MMM-voice_control/formations2.txt', (err, data) => {
+                    if (err) {
+                        console.error("Erreur de lecture du fichier JSON:", err);
+                        return;
+                    }
+    
+                    try {
+                        let obj = JSON.parse(data);
+                        let formations = obj.BAB1;
+                        console.log(formations);
+                        this.sendSocketNotification('retour_des_formations', formations);
+    
+                    } catch (error) {
+                        console.error("Erreur lors de l'analyse JSON:", error);
+                    }
+                });
             });
             
-            if (redemander){
-                console.log("redemander annee send2");
-                this.sendSocketNotification('SETUP_BADGE', {redemander : true});
-            }
-
-            console.log(annee);
-
-            const fs = require('fs');
-            fs.readFileSync('./modules/MMM-voice_control/formations2.txt', (err, data) => {
-                if (err) {
-                    console.error("Erreur de lecture du fichier JSON:", err);
-                    return;
-                }
-
-                try {
-                    let obj = JSON.parse(data);
-                    let formations = obj.BAB1;
-                    console.log(formations);
-                    this.sendSocketNotification('retour_des_formations', formations);
-
-                } catch (error) {
-                    console.error("Erreur lors de l'analyse JSON:", error);
-                }
-            });
+            
         }
         
     }
