@@ -35,6 +35,7 @@ module.exports = NodeHelper.create({
                     console.log("redemander annee");
                 }
             });
+            console.log(annee);
             if (redemander){
                 this.sendSocketNotification('demander_annee', {});
             }
