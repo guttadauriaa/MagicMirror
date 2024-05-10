@@ -36,12 +36,12 @@ module.exports = NodeHelper.create({
                     annee = "MA2";
                 }else{
                     redemander = true;
-                    console.log("redemander annee send");
+                    console.log("fin else");
                 }
-                if (redemander){
-                    console.log("redemander annee send2");
-                    this.sendSocketNotification('SETUP_BADGE', {redemander : true});
-                }
+                // if (redemander){
+                //     console.log("redemander annee send2");
+                //     this.sendSocketNotification('SETUP_BADGE', {redemander : true});
+                // }
     
                 
     
