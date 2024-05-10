@@ -12,7 +12,7 @@ module.exports = NodeHelper.create({
             console.log("lance voicecontrole pour annee")
             let redemander = false;
             let annee = "pas choisie";
-            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `, (error, stdout, stderr) => {
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `,{ timeout: 5000 }, (error, stdout, stderr) => {
 
                 if (error) {
                     console.error(`Erreur d'exécution du script Python ecouter.py: ${error}`);
@@ -39,7 +39,7 @@ module.exports = NodeHelper.create({
             });
             
             if (redemander){
-                console.log("redemander annee send");
+                console.log("redemander annee send2");
                 this.sendSocketNotification('SETUP_BADGE', {redemander : true});
             }
 
