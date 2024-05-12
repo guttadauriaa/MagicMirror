@@ -8,6 +8,7 @@ Module.register("inscription_NFC", {
     let wrapper = document.getElementById('inscription_NFC');
     console.log("inscription_NFC received a socket notification: " + notification);
     if (notification === 'retour_annee'){
+      let redemander = false;
       // on verifie la réponse de l'utilisateur et on agit en fonction
       console.log("[demande_annee] La sortie est :", payload.sortie);
       if (payload.sortie.includes("1") || payload.sortie.includes("un")){
