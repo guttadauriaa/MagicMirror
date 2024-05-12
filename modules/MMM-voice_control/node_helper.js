@@ -10,6 +10,7 @@ module.exports = NodeHelper.create({
     
     socketNotificationReceived: function(notification, payload) {
 
+        // on va executer le script Python voice_control.py pour lancer le controle vocal
         if (notification === 'VOICE_TEXT') {
             console.log("lance voicecontrole")
             this.voiceControlProcess = exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/voice_control.py `, (error, stdout, stderr) => {
