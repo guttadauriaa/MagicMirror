@@ -96,10 +96,12 @@ Module.register("inscription_NFC", {
 
   resume: function() {
     this.sendNotification("HIDE_VOICE_CONTROL", {});
+    console.log("demande arret voice control")
 
   },
   suspend: function() {
     this.sendNotification("SHOW_VOICE_CONTROL", {});
+    console.log("demande relancement voice control")
   },
   getDom: function() {
       
