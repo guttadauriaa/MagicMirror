@@ -1,12 +1,13 @@
 Module.register("inscription_NFC", {
   start: function() {
+    //on ne peut mettre qu'une seule variable avec this ici, donc utilisation de l'objet userDetails
     this.userDetails = {
       NFCid: null,
       annee: null,
       formation: null,
+      readytolisten: false
       // Ajoutez d'autres propriétés ici si nécessaire
     };
-    this.readytolisten = false;
     console.log("Starting module: " + this.name);
   },
 
@@ -84,9 +85,9 @@ Module.register("inscription_NFC", {
       console.log('inscription_NFC received a notification: ' + notification + ' with badge: ' + payload.badge);
       let points = '';
       // on envoie une notification au node_helper pour demander l'année d'étude de l'utilisateur
-      while (this.readytolisten === false){
-        console.log("attente de arret voice control");
+      while (this.userDetails.readytolisten === false){
         setTimeout(() => {
+          console.log("attente de arret voice control");
           wrapper.innerHTML = `<h1>(inscription) Attentez ${points} </h1>`;
         }, 500);
         points += '.';
@@ -102,7 +103,7 @@ Module.register("inscription_NFC", {
     }
 
     if (notification === 'VOICE_TEXT_Stopped'){
-      this.readytolisten = true;
+      this.userDetails.readytolisten = true;
     }
     
   },
