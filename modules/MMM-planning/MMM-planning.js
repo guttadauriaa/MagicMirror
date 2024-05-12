@@ -144,7 +144,7 @@ socketNotificationReceived: function(notification, payload) {
       let wrapper = document.createElement("div");
       wrapper.id = "MMM-planning";
       wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
-      wrapper.innerHTML = "<h1>Pour afficher votre horaire, veuillez scanner votre badge UMons -> </h1>";
+      wrapper.innerHTML = "<h1>Pour afficher votre horaire, scanner votre badge UMons -> </h1>";
       return wrapper;
   }
 });
