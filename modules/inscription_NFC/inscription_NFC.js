@@ -64,7 +64,7 @@ Module.register("inscription_NFC", {
       console.log('inscription_NFC received a notification: ' + notification + ' with badge: ' + payload.badge);
       
       // on envoie une notification au node_helper pour demander l'année d'étude de l'utilisateur
-      this.sendSocketNotification('demande_annee', {suivant : 'retour_annee'});
+      this.sendSocketNotification('ecouter', {suivant : 'retour_annee'});
       setTimeout(() => {
         let html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
         html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
