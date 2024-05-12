@@ -13,7 +13,10 @@ Module.register("MMM-voice_control", {
        
         // apres avoir écouté la requête de l'utilisateur, on affiche le texte écouté
         if (notification === 'DISPLAY_TEXT') {
-
+            if (!this.voiceControlProcess){
+                this.sendNotification('VOICE_TEXT_Stopped', {});
+                return;
+            }
             // on sépare les lignes du texte écouté, si il y a deux lignes dans la sortie, alors l'utilisateur demande un guidage et la deuxième ligne contient le local
             let lines = payload.split('\n');
             let firstLine = lines[0];
@@ -177,9 +180,9 @@ Module.register("MMM-voice_control", {
         if(notification === 'HIDE_VOICE_CONTROL'){
             console.log("HIDE_VOICE_CONTROL")
             this.hide();
-            // this.voiceControlProcess = false;
-            // this.sendSocketNotification('STOP_VOICE_TEXT', {});
-            // this.sendSocketNotification('STOP_VOICE_TEXT2', {});
+            this.voiceControlProcess = false;
+            this.sendSocketNotification('STOP_VOICE_TEXT', {});
+            this.sendSocketNotification('STOP_VOICE_TEXT2', {});
             
         }
         if (notification === 'SHOW_VOICE_CONTROL'){
