@@ -122,10 +122,10 @@ let config = {
 			module: "MMM-navigation",
 			position: "lower_third",
 		},
-		{
-			module : "MMM-voice_control",
-			position: "lower_third"
-		},
+		// {
+		// 	module : "MMM-voice_control",
+		// 	position: "lower_third"
+		// },
 		{
 			module : "inscription_NFC",
 			position: "lower_third",
