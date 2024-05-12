@@ -5,6 +5,7 @@ const { exec } = require("child_process");
 module.exports = NodeHelper.create({
     start: function() {
         console.log("Starting node helper for: " + this.name);
+        this.voiceControlProcess = true;
     },
 
     
