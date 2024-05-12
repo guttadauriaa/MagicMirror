@@ -34,6 +34,7 @@ Module.register("MMM-voice_control", {
             // Attendre 5 secondes
             setTimeout(() => {
                 if (this.voiceControlProcess){
+                    this.voiceControlProcess = false;
                     this.sendSocketNotification('VOICE_TEXT', {});
                     wrapper.innerHTML = `<h1>Attendez...</h1>`;
                     // Attendre 2 secondes supplémentaires
@@ -46,8 +47,6 @@ Module.register("MMM-voice_control", {
                             wrapper.innerHTML = html;
                         }
                     }, 2000);
-                }else{
-                    this.voiceControlProcessStopedChek = true;
                 }
             }, 5000);         
         }else{
@@ -182,6 +181,7 @@ Module.register("MMM-voice_control", {
             console.log("HIDE_VOICE_CONTROL")
             this.hide();
             this.voiceControlProcess = false;
+            this.sendSocketNotification('STOP_VOICE_TEXT', {});
         }
 
         if (notification === 'retour_des_formations'){
@@ -232,6 +232,7 @@ Module.register("MMM-voice_control", {
         // suppresion de cette fonctionnalité dans la derniere version
         if (notification === 'STOP_VOICE_TEXT') {
             console.log("demande d'arret du contole vocal")
+            this.voiceControlProcess = false;
             // Vérifier si un processus de contrôle vocal est en cours
             this.sendSocketNotification('STOP_VOICE_TEXT', {});
         }

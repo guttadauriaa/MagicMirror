@@ -9,7 +9,12 @@ module.exports = NodeHelper.create({
 
     
     socketNotificationReceived: function(notification, payload) {
-
+        if (notification === 'STOP_VOICE_TEXT') {
+            this.isActive = false;
+        }
+        if (!this.voiceControlProcess) {
+            return;
+        }
         // on va executer le script Python voice_control.py pour lancer le controle vocal
         if (notification === 'VOICE_TEXT') {
             console.log("lance voicecontrole")
