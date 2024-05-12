@@ -8,6 +8,7 @@ module.exports = NodeHelper.create({
     },
 
     socketNotificationReceived: function(notification, payload) {
+        console.log("node_hepler inscription_NFC received a socket notification: " + notification);
         if (notification === "ecouter"){
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `,{ timeout: 5000 }, (error, stdout, stderr) => {
                 if (error) {
