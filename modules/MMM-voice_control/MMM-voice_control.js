@@ -40,8 +40,8 @@ Module.register("MMM-voice_control", {
                     setTimeout(() => {
                         if (wrapper) {
                             let html = `<h1> Demandez moi quelque chose </h1>`;
-                            html += '<p>Par exemple :</p>';
-                            html += `<p> - "Comment aller à l'auditoire 12"</p>`;
+                            html += '<h2>Par exemple :</h2>';
+                            html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
                             //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
                             wrapper.innerHTML = html;
                         }
@@ -242,8 +242,8 @@ Module.register("MMM-voice_control", {
         wrapper.id = "MMM-voice_control";
         //wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
         let html = `<h1> Demandez moi quelque chose </h1>`;
-        html += '<p>Par exemple :</p>';
-        html += `<p> - "Comment aller à l'auditoire 12"</p>`;
+        html += '<h2>Par exemple :</h2>';
+        html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
         //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
         wrapper.innerHTML = html;
         return wrapper;
