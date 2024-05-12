@@ -8,18 +8,18 @@ Module.register("inscription_NFC", {
     console.log("inscription_NFC received a socket notification: " + notification);
     if (notification === 'retour_annee'){
       // on verifie la réponse de l'utilisateur et on agit en fonction
-      console.log("[demande_annee] La sortie est :", stdout);
-      if (stdout.includes("1") || stdout.includes("un")){
+      console.log("[demande_annee] La sortie est :", payload.sortie);
+      if (payload.sortie.includes("1") || payload.sortie.includes("un")){
           annee = "BAB1";
-      }else if (stdout.includes("2") || stdout.includes("deux")){
+      }else if (payload.sortie.includes("2") || payload.sortie.includes("deux")){
           console.log("2 ou deux trouvé");
           annee = "BAB2";
           console.log(annee);
-      }else if (stdout.includes("3") || stdout.includes("trois")){
+      }else if (payload.sortie.includes("3") || payload.sortie.includes("trois")){
           annee = "BAB3";
-      }else if (stdout.includes("4") || stdout.includes("quatre")){
+      }else if (payload.sortie.includes("4") || payload.sortie.includes("quatre")){
           annee = "MA1";
-      }else if (stdout.includes("5") || stdout.includes("cinq")){
+      }else if (payload.sortie.includes("5") || payload.sortie.includes("cinq")){
           annee = "MA2";
       }else{
           console.log("redemander annee send");
