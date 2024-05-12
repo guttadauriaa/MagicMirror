@@ -106,7 +106,8 @@ socketNotificationReceived: function(notification, payload) {
     // timer 60 secondes pour remettre le message de scan et retirer le planning
     setTimeout(() => {
         if (wrapper) {
-      wrapper.innerHTML = "<h1>Veuillez scanner votre carte étudiante -> </h1>";
+          wrapper.style.marginTop = "-10cm";
+          wrapper.innerHTML = "<h1>Veuillez scanner votre carte étudiante -> </h1>";
         }
     }, 60000);
     
