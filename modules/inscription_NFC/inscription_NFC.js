@@ -87,7 +87,7 @@ Module.register("inscription_NFC", {
       while (this.readytolisten === false){
         console.log("attente de arret voice control");
         setTimeout(() => {
-          wrapper.innerHTML = `<h1>Attentez ${points} </h1>`;
+          wrapper.innerHTML = `<h1>(inscription) Attentez ${points} </h1>`;
         }, 500);
         points += '.';
       }
