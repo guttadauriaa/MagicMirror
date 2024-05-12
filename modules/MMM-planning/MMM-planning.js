@@ -124,7 +124,7 @@ socketNotificationReceived: function(notification, payload) {
   if (notification === 'NOT_NFC') {
     console.log("pas de badge connu");
     this.NFCid = payload;
-    wrapper.innerHTML = "<h1>Badge non reconnu</h1><h2>Inscrivez-vous à la voix en suivant les instructions si-dessous</h2>";
+    wrapper.innerHTML = "<h1>Badge non reconnu</h1><h2>Inscrivez-vous à la voix en suivant les instructions ci-dessous</h2>";
 
 		// on envoie une notification au module MMM-inscription_NFC pour lancer configurer le badge
     this.sendNotification('SETUP_BADGE', {badge : this.NFCid});

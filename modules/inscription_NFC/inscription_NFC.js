@@ -1,7 +1,12 @@
 Module.register("inscription_NFC", {
   start: function() {
-      this.NFCid = null;
-      console.log("Starting module: " + this.name);
+    this.userDetails = {
+      NFCid: null,
+      annee: null,
+      formation: null,
+      // Ajoutez d'autres propriétés ici si nécessaire
+    };
+    console.log("Starting module: " + this.name);
   },
 
   socketNotificationReceived: function(notification, payload) {
@@ -37,14 +42,15 @@ Module.register("inscription_NFC", {
       if (redemander === false){
         let html = `Vous avez choisi : ${payload.annee}`;
         wrapper.innerHTML = html;
-        this.sendSocketNotification('demande_formation', {suivant : "retour_formation", annee : payload.annee});
+        this.userDetails.annee = annee; 
+        this.sendSocketNotification('lecture_fichier_formation', {suivant : "retour_formation", annee : payload.annee});
       }
     }
 
     if (notification === 'retour_des_formations'){
       let html = '';
-      html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
-      for (let formation of payload){
+      html = `<h1> Dites le numéro de votre formation pour l'année ${payload.annee} ou "annuler" pour arrêter</h1>`;
+      for (let formation of payload.formations){
           html += `<p>(${formation.id}) ${formation.formation}<br></p>`;
       }
       
@@ -61,7 +67,7 @@ Module.register("inscription_NFC", {
       console.log(payload);
 
       //quand on a la valeur du nouveau badge à enregistrer
-      this.NFCid = payload.badge;
+      this.userDetails.NFCid = payload.badge;
       this.show(); //affichage du module donc execution de resume() 
       console.log('inscription_NFC received a notification: ' + notification + ' with badge: ' + payload.badge);
       
