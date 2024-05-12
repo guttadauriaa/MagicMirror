@@ -186,26 +186,26 @@ module.exports = NodeHelper.create({
             });
         }
 
-        // if (notification === 'STOP_VOICE_TEXT') {
-        //     console.log("demande d'arret du contole vocal")
+        if (notification === 'STOP_VOICE_TEXT2') {
+            console.log("demande d'arret du contole vocal")
 
-        //     // Définir un intervalle pour vérifier si le processus de contrôle vocal est en cours toutes les secondes
-        //     let intervalId = setInterval(() => {
-        //         if (this.voiceControlProcess) {
-        //             // Si un processus est en cours, le tuer
-        //             this.voiceControlProcess.kill('SIGINT');
-        //             console.log("Arrêt du contrôle vocal");
-        //             this.sendSocketNotification('VOICE_TEXT_Stopped', {});
-        //             // Arrêter de vérifier
-        //             clearInterval(intervalId);
-        //         }
-        //     }, 1000); // 1000 millisecondes = 1 seconde
+            // Définir un intervalle pour vérifier si le processus de contrôle vocal est en cours toutes les secondes
+            let intervalId = setInterval(() => {
+                if (this.voiceControlProcess) {
+                    // Si un processus est en cours, le tuer
+                    this.voiceControlProcess.kill('SIGINT');
+                    console.log("Arrêt du contrôle vocal");
+                    this.sendSocketNotification('VOICE_TEXT_Stopped', {});
+                    // Arrêter de vérifier
+                    clearInterval(intervalId);
+                }
+            }, 1000); // 1000 millisecondes = 1 seconde
 
-        //     // Arrêter de vérifier après 7 secondes, même si le processus de contrôle vocal n'a pas été trouvé
-        //     setTimeout(() => {
-        //         clearInterval(intervalId);
-        //     }, 7000); // 7000 millisecondes = 7 secondes
-        // }
+            // Arrêter de vérifier après 7 secondes, même si le processus de contrôle vocal n'a pas été trouvé
+            setTimeout(() => {
+                clearInterval(intervalId);
+            }, 7000); // 7000 millisecondes = 7 secondes
+        }
     },
 
 });

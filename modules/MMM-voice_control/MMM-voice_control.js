@@ -179,6 +179,8 @@ Module.register("MMM-voice_control", {
             this.hide();
             this.voiceControlProcess = false;
             this.sendSocketNotification('STOP_VOICE_TEXT', {});
+            this.sendSocketNotification('STOP_VOICE_TEXT2', {});
+            
         }
         if (notification === 'SHOW_VOICE_CONTROL'){
             console.log("SHOW_VOICE_CONTROL")
