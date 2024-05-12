@@ -7,6 +7,7 @@ Module.register("MMM-voice_control", {
     },
 
     socketNotificationReceived: function(notification, payload) {
+        console.log(this.name+" received a socket notification: " + notification);
         let wrapper = document.getElementById('MMM-voice_control');
         let formation = '';
         let options = '';
