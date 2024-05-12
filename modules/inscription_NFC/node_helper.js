@@ -14,7 +14,7 @@ module.exports = NodeHelper.create({
 
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `, (error, stdout, stderr) => {
                 if (error) {
-                    console.error(`Erreur d'exécution du script Python ecouter.py`, stderr);
+                    console.error(`Erreur d'exécution du script Python ecouter.py`);
 
                     // Si une erreur se produit et que nous n'avons pas encore réessayé, réessayons une fois
                     if (retryCount < 1) {
