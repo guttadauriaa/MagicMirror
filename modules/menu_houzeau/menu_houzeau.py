@@ -81,8 +81,8 @@ if (jourPre < jourToday and moisPre == moisToday) or moisPre < moisToday:
     #print(json.dumps(f"{last_downloaded_file} a été converti en image avec succès"))
     listemots = [mots for mots in last_downloaded_file.split(' ') if mots != '']
 
-    jourfinsemaine = int(listemots[-3])
+    jourfinsemaine = int(listemots[-4])
     dicomois = {"janvier": 1, "février": 2, "mars": 3, "avril": 4, "mai": 5, "juin": 6, "juillet": 7, "août": 8, "septembre": 9, "octobre": 10, "novembre": 11, "décembre": 12}
-    moisMenu = dicomois[listemots[-2]]
+    moisMenu = dicomois[listemots[-3]]
     with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt", "w") as f:
         f.write(f"{jourfinsemaine}\n{moisMenu}")
