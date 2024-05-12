@@ -89,7 +89,7 @@ Module.register("inscription_NFC", {
 
 
   resume: function() {
-    his.sendNotification("HIDE_VOICE_CONTROL", {});
+    this.sendNotification("HIDE_VOICE_CONTROL", {});
 
   },
   
