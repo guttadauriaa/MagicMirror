@@ -5,6 +5,7 @@ Module.register("inscription_NFC", {
   },
 
   socketNotificationReceived: function(notification, payload) {
+    let wrapper = document.getElementById('inscription_NFC');
     console.log("inscription_NFC received a socket notification: " + notification);
     if (notification === 'retour_annee'){
       // on verifie la réponse de l'utilisateur et on agit en fonction
