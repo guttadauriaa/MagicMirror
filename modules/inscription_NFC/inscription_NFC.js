@@ -103,6 +103,7 @@ Module.register("inscription_NFC", {
     }
 
     if (notification === 'VOICE_TEXT_Stopped'){
+      console.log("[inscription_NFC] "+notification);
       this.userDetails.readytolisten = true;
     }
     

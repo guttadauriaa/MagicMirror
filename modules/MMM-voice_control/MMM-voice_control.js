@@ -7,16 +7,14 @@ Module.register("MMM-voice_control", {
     },
 
     socketNotificationReceived: function(notification, payload) {
+        console.log(this.name+" received a socket notification: " + notification);
         let wrapper = document.getElementById('MMM-voice_control');
         let formation = '';
         let options = '';
        
         // apres avoir écouté la requête de l'utilisateur, on affiche le texte écouté
         if (notification === 'DISPLAY_TEXT') {
-            if (!this.voiceControlProcess){
-                this.sendNotification('VOICE_TEXT_Stopped', {});
-                return;
-            }
+            
             // on sépare les lignes du texte écouté, si il y a deux lignes dans la sortie, alors l'utilisateur demande un guidage et la deuxième ligne contient le local
             let lines = payload.split('\n');
             let firstLine = lines[0];
@@ -51,6 +49,10 @@ Module.register("MMM-voice_control", {
                     }, 2000);
                 }, 5000);    
             }     
+            if (!this.voiceControlProcess){
+                this.sendNotification('VOICE_TEXT_Stopped', {});
+                return;
+            }
         }
         
 
