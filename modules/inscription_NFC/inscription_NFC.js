@@ -6,6 +6,7 @@ Module.register("inscription_NFC", {
       formation: null,
       // Ajoutez d'autres propriétés ici si nécessaire
     };
+    this.readytolisten = false;
     console.log("Starting module: " + this.name);
   },
 
@@ -62,13 +63,13 @@ Module.register("inscription_NFC", {
       
       wrapper.innerHTML = html;
       this.sendSocketNotification('demande_formation', {});
-  }
-  if (notification === 'DISPLAY_TEXT'){
-    console.log("DISPLAY_TEXT");
-    let html = payload;
-    html += 'inscritpion';
-    wrapper.innerHTML = html;
-  }
+    }
+
+    if (notification === 'retour_des_formations'){
+      let html = `${payload}`;
+      wrapper.innerHTML = html;
+    }
+  
   },
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
@@ -81,9 +82,17 @@ Module.register("inscription_NFC", {
       this.userDetails.NFCid = payload.badge;
       this.show(); //affichage du module donc execution de resume() 
       console.log('inscription_NFC received a notification: ' + notification + ' with badge: ' + payload.badge);
-      
+      let points = '';
       // on envoie une notification au node_helper pour demander l'année d'étude de l'utilisateur
-      //this.sendSocketNotification('ecouter', {suivant : 'retour_annee'});
+      while (this.readytolisten === false){
+        console.log("attente de arret voice control");
+        setTimeout(() => {
+          wrapper.innerHTML = `<h1>Attentez ${points} </h1>`;
+        }, 500);
+        points += '.';
+      }
+
+      this.sendSocketNotification('ecouter', {suivant : 'retour_annee'});
       setTimeout(() => {
         let html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
         html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
@@ -92,10 +101,10 @@ Module.register("inscription_NFC", {
       
     }
 
-    if (notification === 'retour_des_formations'){
-      let html = `${payload}`;
-      wrapper.innerHTML = html;
+    if (notification === 'VOICE_TEXT_Stopped'){
+      this.readytolisten = true;
     }
+    
   },
 
 
