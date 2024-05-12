@@ -141,7 +141,7 @@ socketNotificationReceived: function(notification, payload) {
       console.log("dom1");
       let wrapper = document.createElement("div");
       wrapper.id = "MMM-planning";
-      wrapper.style.marginTop = "2cm"; // Ajouter une marge supérieure de 2cm
+      wrapper.style.marginTop = "20cm"; // Ajouter une marge supérieure de 2cm
       wrapper.innerHTML = "<h1>Veuillez scanner votre carte étudiante -> </h1>";
       return wrapper;
   }
