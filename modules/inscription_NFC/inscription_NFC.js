@@ -63,7 +63,12 @@ Module.register("inscription_NFC", {
       wrapper.innerHTML = html;
       this.sendSocketNotification('demande_formation', {});
   }
-
+  if (notification === 'DISPLAY_TEXT'){
+    console.log("DISPLAY_TEXT");
+    let html = payload;
+    html += 'inscritpion';
+    wrapper.innerHTML = html;
+  }
   },
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
