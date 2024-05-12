@@ -36,23 +36,17 @@ module.exports = NodeHelper.create({
 
         if (notification === 'lecture_fichier_formations'){
             const fs = require('fs');
-            console.log(annee);
-            fs.readFileSync('./modules/MMM-voice_control/formations.json', (err, data) => {
-                if (err) {
-                    console.error("Erreur de lecture du fichier JSON:", err);
-                    return;
-                }
-                try {
-                    let obj = JSON.parse(data);
-                    let formations = obj.BAB1;
-                    console.log(formations);
-                    this.sendSocketNotification('retour_des_formations', formations);
-
-                } catch (error) {
-                    console.error("Erreur lors de l'analyse JSON:", error);
-                }
-                this.sendSocketNotification('retour_des_formations', {redemander : false, annee : annee});
-            });
+            console.log(payload.annee);
+            try {
+                let data = fs.readFileSync('./modules/MMM-voice_control/formations.json', 'utf8');
+                let obj = JSON.parse(data);
+                let formations = obj.BAB1;
+                console.log(formations);
+                this.sendSocketNotification('retour_des_formations', formations);
+            } catch (err) {
+                console.error("Erreur de lecture du fichier JSON:", err);
+            }
+            
         }
         
     }
