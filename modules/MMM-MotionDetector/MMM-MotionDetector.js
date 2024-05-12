@@ -47,6 +47,7 @@ Module.register("MMM-MotionDetector", {
   },
 
   start: function () {
+    this.hide();
     Log.info("MMM-MotionDetector: starting up");
 
     this.data.header = "MMM-MotionDetector";
