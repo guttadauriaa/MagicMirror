@@ -107,7 +107,7 @@ socketNotificationReceived: function(notification, payload) {
     setTimeout(() => {
         if (wrapper) {
           wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
-      wrapper.innerHTML = "<h1>Pour afficher votre horaire, veuillez scanner votre badge UMons -> </h1>";
+      wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
         }
     }, 60000);
     
