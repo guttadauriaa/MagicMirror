@@ -26,7 +26,7 @@ module.exports = NodeHelper.create({
                 }
                 
                 if (error) {
-                    console.error(`Erreur d'exécution du script Python: ${error}`);
+                    console.error(`Erreur d'exécution du script Python: normal`);
                     return;
                 }
                 
