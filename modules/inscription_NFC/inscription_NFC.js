@@ -49,7 +49,7 @@ Module.register("inscription_NFC", {
         let html = `Vous avez choisi : ${annee}`;
         wrapper.innerHTML = html;
         this.userDetails.annee = annee; 
-        this.sendSocketNotification('lecture_fichier_formation', {suivant : "retour_formation", annee : annee});
+        this.sendSocketNotification('lecture_fichier_formations', {suivant : "retour_formation", annee : annee});
       }
     }
 
