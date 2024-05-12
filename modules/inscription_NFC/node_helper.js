@@ -10,13 +10,26 @@ module.exports = NodeHelper.create({
     socketNotificationReceived: function(notification, payload) {
         console.log("node_hepler inscription_NFC received a socket notification: " + notification);
         if (notification === "ecouter"){
-            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `,{ timeout: 5000 }, (error, stdout, stderr) => {
+            let retryCount = 0;
+
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `, (error, stdout, stderr) => {
                 if (error) {
-                    //console.error(`Erreur d'exécution du script Python ecouter.py: ${error}`); //erreur de type ALSA lorsqu'on veut arrêter le script
-                    console.error(`Erreur d'exécution du script Python ecouter.py`);
+                    console.error(`Erreur d'exécution du script Python ecouter.py`, stderr);
+
+                    // Si une erreur se produit et que nous n'avons pas encore réessayé, réessayons une fois
+                    if (retryCount < 1) {
+                        retryCount++;
+                        exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `, (error, stdout, stderr) => {
+                            if (error) {
+                                console.error(`Erreur d'exécution du script Python ecouter.py lors de la deuxième tentative`);
+                            }
+                            this.sendSocketNotification(payload.suivant, {sortie :stdout});
+                        });
+                    }
+                } else {
+                    this.sendSocketNotification(payload.suivant, {sortie :stdout});
                 }
-                this.sendSocketNotification(payload.suivant, {sortie :stdout});
-            });  
+            });
         }
 
         
