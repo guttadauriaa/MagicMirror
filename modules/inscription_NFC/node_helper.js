@@ -8,70 +8,37 @@ module.exports = NodeHelper.create({
     },
 
     socketNotificationReceived: function(notification, payload) {
-
-        // on demande à l'utilisateur de choisir son année
-        if (notification === 'demande_annee'){
-            console.log("lance voicecontrole pour annee")
-            let redemander = false;
-            let annee = "pas choisie";
-
-            // execute le script Python ecouter.py pour écouter la réponse de l'utilisateur
+        if (notification === "ecouter"){
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `,{ timeout: 5000 }, (error, stdout, stderr) => {
-
                 if (error) {
                     //console.error(`Erreur d'exécution du script Python ecouter.py: ${error}`); //erreur de type ALSA lorsqu'on veut arrêter le script
                     console.error(`Erreur d'exécution du script Python ecouter.py`);
-                    //redemander = true;
-                    
                 }
-                
-                // on verifie la réponse de l'utilisateur et on agit en fonction
-                console.log("[demande_annee] La sortie est :", stdout);
-                if (stdout.includes("1") || stdout.includes("un")){
-                    annee = "BAB1";
-                }else if (stdout.includes("2") || stdout.includes("deux")){
-                    console.log("2 ou deux trouvé");
-                    annee = "BAB2";
-                    console.log(annee);
-                }else if (stdout.includes("3") || stdout.includes("trois")){
-                    annee = "BAB3";
-                }else if (stdout.includes("4") || stdout.includes("quatre")){
-                    annee = "MA1";
-                }else if (stdout.includes("5") || stdout.includes("cinq")){
-                    annee = "MA2";
-                }else{
-                    redemander = true;
-                    console.log("fin else");
+                this.sendSocketNotification(payload.suivant, {sortie :stdout});
+            });  
+        }
+
+        
+
+        if (notification === 'lecture_fichier_formations'){
+            const fs = require('fs');
+            console.log(annee);
+            fs.readFileSync('./modules/MMM-voice_control/formations.json', (err, data) => {
+                if (err) {
+                    console.error("Erreur de lecture du fichier JSON:", err);
+                    return;
                 }
-                // if (redemander){
-                //     console.log("redemander annee send2");
-                //     this.sendSocketNotification('SETUP_BADGE', {redemander : true});
-                // }
-    
-                
-                
-                const fs = require('fs');
-                console.log(annee);
-                fs.readFileSync('./modules/MMM-voice_control/formations2.txt', (err, data) => {
-                    if (err) {
-                        console.error("Erreur de lecture du fichier JSON:", err);
-                        return;
-                    }
-    
-                    try {
-                        let obj = JSON.parse(data);
-                        let formations = obj.BAB1;
-                        console.log(formations);
-                        this.sendSocketNotification('retour_des_formations', formations);
-    
-                    } catch (error) {
-                        console.error("Erreur lors de l'analyse JSON:", error);
-                    }
-                });
-                
+                try {
+                    let obj = JSON.parse(data);
+                    let formations = obj.BAB1;
+                    console.log(formations);
+                    this.sendSocketNotification('retour_des_formations', formations);
+
+                } catch (error) {
+                    console.error("Erreur lors de l'analyse JSON:", error);
+                }
+                this.sendSocketNotification('retour_des_formations', {redemander : false, annee : annee});
             });
-            
-            
         }
         
     }
