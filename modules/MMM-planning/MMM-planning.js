@@ -33,6 +33,7 @@ socketNotificationReceived: function(notification, payload) {
 
 
   let wrapper = document.getElementById('MMM-planning');
+  wrapper.style.marginTop = "-15cm";
   Log.info('MMM-planning received a socket notification: ' + notification);
 
   // quand la notification depuis le node_helper est "Planning", on affiche le planning avec l'horaire des cours recu par le payload
