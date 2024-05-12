@@ -32,9 +32,8 @@ Module.register("MMM-voice_control", {
             }
 
             // Attendre 5 secondes
-            setTimeout(() => {
-                if (this.voiceControlProcess){
-                    this.voiceControlProcess = false;
+            if (this.voiceControlProcess){
+                setTimeout(() => {
                     this.sendSocketNotification('VOICE_TEXT', {});
                     wrapper.innerHTML = `<h1>Attendez...</h1>`;
                     // Attendre 2 secondes supplémentaires
@@ -47,10 +46,8 @@ Module.register("MMM-voice_control", {
                             wrapper.innerHTML = html;
                         }
                     }, 2000);
-                }
-            }, 5000);         
-        }else{
-            this.voiceControlProcessStopedChek = true;
+                }, 5000);    
+            }     
         }
         
 
@@ -183,6 +180,12 @@ Module.register("MMM-voice_control", {
             this.voiceControlProcess = false;
             this.sendSocketNotification('STOP_VOICE_TEXT', {});
         }
+        if (notification === 'SHOW_VOICE_CONTROL'){
+            console.log("SHOW_VOICE_CONTROL")
+            this.show();
+            this.voiceControlProcess = true;
+            this.sendSocketNotification('VOICE_TEXT', {});
+        }
 
         if (notification === 'retour_des_formations'){
             let html = '';
@@ -193,48 +196,6 @@ Module.register("MMM-voice_control", {
             
             wrapper.innerHTML = html;
             this.sendSocketNotification('demande_formation', {});
-        }
-
-        //deplace dans le module inscription_NFC
-        if (notification === 'SETUP_BADGE_ancien'){
-            console.log("modifiction du badge", payload)
-            badge = payload.badge;
-            this.voiceControlProcess = false;
-            this.voiceControlProcessStopedChek = false;
-            //this.sendSocketNotification('STOP_VOICE_TEXT', {});
-            // Vérifier si un processus de contrôle vocal est en cours
-            
-            // while (this.voiceControlProcess === true){
-            //     setTimeout(() => {
-            //         if(this.voiceControlProcess === false){
-            //             console.log("voiceControlProcess = false")
-            //         }
-            //     }, 1000); 
-            // }
-            
-            while(this.voiceControlProcessStopedChek === false){
-                console.log("waiting for voiceControlProcessStopedChek")
-            }
-              
-            let html = '';
-            if (payload.redemander === true) {
-                html += `<p>Je n'ai pas compris, veuillez réessayer.</p>`;
-            }
-            html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
-            
-            html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
-            wrapper.innerHTML = html;
-            this.sendSocketNotification('demande_annee', {});
-            //ajouter le badge dans le fichier local
-                
-        }
-        
-        // suppresion de cette fonctionnalité dans la derniere version
-        if (notification === 'STOP_VOICE_TEXT') {
-            console.log("demande d'arret du contole vocal")
-            this.voiceControlProcess = false;
-            // Vérifier si un processus de contrôle vocal est en cours
-            this.sendSocketNotification('STOP_VOICE_TEXT', {});
         }
     },
 

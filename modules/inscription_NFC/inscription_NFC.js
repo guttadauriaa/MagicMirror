@@ -12,6 +12,8 @@ Module.register("inscription_NFC", {
   socketNotificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
     console.log("inscription_NFC received a socket notification: " + notification);
+    
+    
     if (notification === 'retour_annee'){
       let redemander = false;
       // on verifie la réponse de l'utilisateur et on agit en fonction
@@ -28,6 +30,10 @@ Module.register("inscription_NFC", {
           annee = "MA1";
       }else if (payload.sortie.includes("5") || payload.sortie.includes("cinq")){
           annee = "MA2";
+      }else if (payload.sortie.includes("annuler")){
+          console.log("annuler trouvé");
+          this.hide();
+      
       }else{
           console.log("redemander annee send");
           redemander = true;
@@ -40,10 +46,10 @@ Module.register("inscription_NFC", {
         }, 2000);
       }
       if (redemander === false){
-        let html = `Vous avez choisi : ${payload.annee}`;
+        let html = `Vous avez choisi : ${annee}`;
         wrapper.innerHTML = html;
         this.userDetails.annee = annee; 
-        this.sendSocketNotification('lecture_fichier_formation', {suivant : "retour_formation", annee : payload.annee});
+        this.sendSocketNotification('lecture_fichier_formation', {suivant : "retour_formation", annee : annee});
       }
     }
 
@@ -92,7 +98,9 @@ Module.register("inscription_NFC", {
     this.sendNotification("HIDE_VOICE_CONTROL", {});
 
   },
-  
+  suspend: function() {
+    this.sendNotification("SHOW_VOICE_CONTROL", {});
+  },
   getDom: function() {
       
       let wrapper = document.createElement("div");
