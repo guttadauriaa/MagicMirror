@@ -178,9 +178,9 @@ while True:
         else:
             print(e)
             #break 
-        
-
-print(json.dumps({cours : [cours.to_dict() for cours in liste_cours], "Formation": nom_de_la_formation}))
+listejson = [cours.to_dict() for cours in liste_cours]
+text = '{"cours" : '+listejson+', "Formation": '+nom_de_la_formation+'}'
+print(json.dumps(text))
 
 
 
