@@ -1,10 +1,16 @@
 Module.register("MMM-voice_control", {
+    delfaults: {
+        running : false,
+        nfc_detecte : false
+    },
+
     start: function() {
         this.voiceControlProcess = true;
         // on lance dans le node helper une notif pour directement écouter les requêtes de l'utilisateur
         //this.sendSocketNotification('VOICE_TEXT', {});
         console.log("Starting module: " + this.name);
     },
+
 
     socketNotificationReceived: function(notification, payload) {
         console.log(this.name+" received a socket notification: " + notification);
@@ -31,6 +37,10 @@ Module.register("MMM-voice_control", {
                 // on envoie une notification pour demander le guidage dans le module MMM-navigation
                 this.sendNotification('GUIDAGE', secondLine);
             }
+            setTimeout(() => {
+                let html = "<h1>Secouez votre main haut dessus de l'heure pour activer le contrôle vocal</h1>";
+                wrapper.innerHTML = html;
+            }, 5000);
 
             // Attendre 5 secondes
             if (this.voiceControlProcess && false){
@@ -204,23 +214,38 @@ Module.register("MMM-voice_control", {
             wrapper.innerHTML = html;
             this.sendSocketNotification('demande_formation', {});
         }
+        if (notification === 'NFC_DETECTE'){
+            nfc_detecte = true;
+            setTimeout(() => {
+                nfc_detecte = false;
+            }, 3000);
+        }
         if (notification === 'MOTION_DETECTED' ){
-            this.sendSocketNotification('VOICE_TEXT', {});
-            wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
-            if (wrapper) {
-                let html = `<h1> Demandez moi quelque chose </h1>`;
-                html += '<h2>Par exemple :</h2>';
-                html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
-                //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
-                wrapper.innerHTML = html;
-            }
+            setTimeout(() => {
+                if (nfc_detecte){
+                    setTimeout(() => {
+                        nfc_detecte = false;
+                    }, 3000);
+                }else{
+                    this.sendSocketNotification('VOICE_TEXT', {});
+                    wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
+                    if (wrapper) {
+                        let html = `<h1> Demandez moi quelque chose </h1>`;
+                        html += '<h2>Par exemple :</h2>';
+                        html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
+                        //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
+                        wrapper.innerHTML = html;
+                    }
+                }
+            }, 1000);
+            
         }
     },
 
     getDom: function() {
         let wrapper = document.createElement("div");
         wrapper.id = "MMM-voice_control";
-        let html = "Secouez votre main haut dessus de l'heure pour activer le contrôle vocal";
+        let html = "<h1>Secouez votre main haut dessus de l'heure pour activer le contrôle vocal</h1>";
         wrapper.innerHTML = html;
         return wrapper;
     }

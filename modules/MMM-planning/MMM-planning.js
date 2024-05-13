@@ -135,6 +135,7 @@ socketNotificationReceived: function(notification, payload) {
   // quand la notification depuis le node_helper est "NFC", alors le badge est connu dans la base de données
 	// on envoie une notification pour lancer le script Python qui va chercher le planning correspondant au badge NFC
   if (notification === 'NFC') {
+    this.sendNotification('NFC_DETECTE');
     this.NFCid = payload;
     //this.sendSocketNotification('DING', {});
     wrapper.innerHTML = "<h1>En attente des données</h1>";
@@ -143,6 +144,7 @@ socketNotificationReceived: function(notification, payload) {
 
 	// quand la notification depuis le node_helper est "NOT_NFC", alors le badge n'est pas connu dans la base de données et on demande à l'utilisateur de s'inscrire
   if (notification === 'NOT_NFC') {
+    this.sendNotification('NFC_DETECTE');
     console.log("pas de badge connu");
     this.NFCid = payload;
     wrapper.innerHTML = "<h1>Badge non reconnu</h1><h2>Inscrivez-vous à la voix en suivant les instructions ci-dessous</h2>";
