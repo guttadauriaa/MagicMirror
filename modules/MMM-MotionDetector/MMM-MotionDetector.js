@@ -89,7 +89,7 @@ Module.register("MMM-MotionDetector", {
         if (hasMotion) {
           Log.info("MMM-MotionDetector: Motion detected, score " + score);
           this.sendSocketNotification("MOTION_DETECTED", { score: score });
-          if (score > 2000){
+          if (score > 1300){
             this.sendNotification("MOTION_DETECTED", { score: score });
           }
           
