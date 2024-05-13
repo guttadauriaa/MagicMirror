@@ -67,8 +67,8 @@ for i, j in enumerate (horaire):
             course_element = WebDriverWait(driver, 1).until(
                 EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{j}"))
             )
-            if i == 0:
-                nom_de_la_formation = course_element.text
+
+            nom_de_la_formation += course_element.text+" - "
             course_element.click()
             break
         except Exception:
@@ -181,7 +181,10 @@ while True:
 
 
 listejson = [cours.to_dict() for cours in liste_cours]
-data = {"cours": listejson, "Formation": nom_de_la_formation}
+data = {
+    "cours": listejson,
+    "Formation": nom_de_la_formation
+}
 print(json.dumps(data))
 
 
