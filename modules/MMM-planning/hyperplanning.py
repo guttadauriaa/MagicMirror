@@ -14,6 +14,8 @@ import sys
 
 NFCid= sys.argv[1]
 horaire = [52, 5] #formation, option par defaut
+nom_de_la_formation = ""
+
 with open("./modules/MMM-planning/NFCtoH.txt", 'r') as f:
     for line in f:
         if NFCid in line:
@@ -65,6 +67,8 @@ for i, j in enumerate (horaire):
             course_element = WebDriverWait(driver, 1).until(
                 EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{j}"))
             )
+            if i == 0:
+                nom_de_la_formation = course_element.text
             course_element.click()
             break
         except Exception:
@@ -73,7 +77,7 @@ for i, j in enumerate (horaire):
             driver.execute_script("arguments[0].scrollIntoView();", element)
             test +=1
 
-# # on choisit la semaine
+# # on choisit la semaine ==> ici on laisse la semaine par défaut donc on modifie pas
 # button_semaine = WebDriverWait(driver, 5).until(
 #         EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[3]_j_{semaine}"))
 #     )
@@ -118,7 +122,7 @@ class Cours:
         }
 
 #pour que la page soit bien chargée
-time.sleep(3)
+time.sleep(2)
 
 lecture = False
 while True:
@@ -176,7 +180,7 @@ while True:
             #break 
         
 
-print(json.dumps([cours.to_dict() for cours in liste_cours]))
+print(json.dumps({cours : [cours.to_dict() for cours in liste_cours], "Formation": nom_de_la_formation}))
 
 
 
