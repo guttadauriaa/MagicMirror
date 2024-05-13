@@ -61,7 +61,7 @@ let config = {
 		},
 		{
 			module: "menu_houzeau",
-			position: "middle_center",
+			position: "middle_right",
 		},
 		// {
 		// 	module: "MMM-navigation",
