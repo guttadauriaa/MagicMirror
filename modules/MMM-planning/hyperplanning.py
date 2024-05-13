@@ -181,7 +181,10 @@ while True:
 
 
 listejson = [cours.to_dict() for cours in liste_cours]
-data = {"cours": listejson, "Formation": nom_de_la_formation}
+data = {
+    "cours": listejson,
+    "Formation": nom_de_la_formation
+}
 print(json.dumps(data))
 
 
