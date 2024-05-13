@@ -2,7 +2,7 @@ Module.register("MMM-voice_control", {
     start: function() {
         this.voiceControlProcess = true;
         // on lance dans le node helper une notif pour directement écouter les requêtes de l'utilisateur
-        this.sendSocketNotification('VOICE_TEXT', {});
+        //this.sendSocketNotification('VOICE_TEXT', {});
         console.log("Starting module: " + this.name);
     },
 
@@ -33,7 +33,7 @@ Module.register("MMM-voice_control", {
             }
 
             // Attendre 5 secondes
-            if (this.voiceControlProcess){
+            if (this.voiceControlProcess && false){
                 setTimeout(() => {
                     this.sendSocketNotification('VOICE_TEXT', {});
                     wrapper.innerHTML = `<h1>Attendez...</h1>`;
@@ -191,7 +191,7 @@ Module.register("MMM-voice_control", {
             console.log("SHOW_VOICE_CONTROL")
             this.show();
             this.voiceControlProcess = true;
-            this.sendSocketNotification('VOICE_TEXT', {});
+            //this.sendSocketNotification('VOICE_TEXT', {});
         }
 
         if (notification === 'retour_des_formations'){
@@ -203,6 +203,10 @@ Module.register("MMM-voice_control", {
             
             wrapper.innerHTML = html;
             this.sendSocketNotification('demande_formation', {});
+        }
+        if (notification === 'MOTION_DETECTED'){
+            console.log(this.name + "MOTION_DETECTED")
+            this.sendSocketNotification('VOICE_TEXT', {});
         }
     },
 
