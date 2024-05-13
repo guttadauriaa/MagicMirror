@@ -101,22 +101,32 @@ socketNotificationReceived: function(notification, payload) {
 
     //afficher le planning en html
     wrapper.innerHTML = html;
+
+    // timer 60 secondes pour remettre le message de scan et retirer le planning
+    setTimeout(() => {
+      if (wrapper) {
+        wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
+        wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
+      }
+  }, 60000);
   }
   catch (e) {
     console.error(e);
     wrapper.innerHTML = "<h1>Erreur lors de la récupération du planning</h1>";
+
+    // timer 10 secondes pour remettre le message de scan et retirer le planning
+    setTimeout(() => {
+      if (wrapper) {
+        wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
+        wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
+      }
+  }, 10000);
   }
+  
   finally {
     // on rappelle le node_helper pour scanner un nouveau badge
     this.sendSocketNotification('START_NFC', {});
     
-    // timer 60 secondes pour remettre le message de scan et retirer le planning
-    setTimeout(() => {
-        if (wrapper) {
-          wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
-          wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
-        }
-    }, 60000);
   }
   }
 
