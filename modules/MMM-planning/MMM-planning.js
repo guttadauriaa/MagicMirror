@@ -33,7 +33,7 @@ socketNotificationReceived: function(notification, payload) {
 
 
   let wrapper = document.getElementById('MMM-planning');
-  wrapper.style.marginTop = "-15cm";
+  wrapper.style.marginTop = "-10cm";
   Log.info('MMM-planning received a socket notification: ' + notification);
 
   // quand la notification depuis le node_helper est "Planning", on affiche le planning avec l'horaire des cours recu par le payload
@@ -114,7 +114,7 @@ socketNotificationReceived: function(notification, payload) {
     setTimeout(() => {
         if (wrapper) {
           wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
-      wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
+          wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
         }
     }, 60000);
   }
