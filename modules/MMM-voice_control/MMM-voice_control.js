@@ -40,7 +40,7 @@ Module.register("MMM-voice_control", {
                 this.sendNotification('GUIDAGE', secondLine);
             }
             setTimeout(() => {
-                let html = "<h1>Secouez votre main haut dessus de l'heure pour activer le contrôle vocal</h1>";
+                let html = "<h1>Secouez votre main au-dessus de l'heure pour activer le contrôle vocal</h1>";
                 wrapper.innerHTML = html;
                 this.running = false;
             }, 5000);
@@ -234,14 +234,17 @@ Module.register("MMM-voice_control", {
                 }else if (!this.running){
                     this.running = true;
                     this.sendSocketNotification('VOICE_TEXT', {});
-                    wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
-                    if (wrapper) {
-                        let html = `<h1> Demandez moi quelque chose </h1>`;
-                        html += '<h2>Par exemple :</h2>';
-                        html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
-                        //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
-                        wrapper.innerHTML = html;
-                    }
+                    wrapper.innerHTML = `<h1>Lancement commande vocale</h1>`;
+                    setTimeout(() => {   
+                        wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
+                        if (wrapper) {
+                            let html = `<h1> Demandez moi quelque chose </h1>`;
+                            html += '<h2>Par exemple :</h2>';
+                            html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
+                            //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
+                            wrapper.innerHTML = html;
+                        }
+                    },2000);
                 }
             }, 1000);
             
@@ -251,7 +254,7 @@ Module.register("MMM-voice_control", {
     getDom: function() {
         let wrapper = document.createElement("div");
         wrapper.id = "MMM-voice_control";
-        let html = "<h1>Secouez votre main haut dessus de l'heure pour activer le contrôle vocal</h1>";
+        let html = "<h1>Secouez votre main au-dessus de l'heure pour activer le contrôle vocal</h1>";
         wrapper.innerHTML = html;
         return wrapper;
     }
