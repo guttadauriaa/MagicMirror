@@ -42,6 +42,7 @@ Module.register("MMM-voice_control", {
             setTimeout(() => {
                 let html = "<h1>Secouez votre main haut dessus de l'heure pour activer le contrôle vocal</h1>";
                 wrapper.innerHTML = html;
+                this.running = false;
             }, 5000);
 
             // Attendre 5 secondes
@@ -225,8 +226,6 @@ Module.register("MMM-voice_control", {
             }, 5000);
         }
         if (notification === 'MOTION_DETECTED' ){
-            
-
             setTimeout(() => {
                 if (nfc_detecte){
                     setTimeout(() => {
