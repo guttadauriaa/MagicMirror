@@ -15,16 +15,6 @@ Module.register("inscription_NFC", {
     let wrapper = document.getElementById('inscription_NFC');
     console.log("inscription_NFC received a socket notification: " + notification);
     
-    function waitUntilReady() {
-      if (!this.userDetails.readytolisten) {
-          setTimeout(() => {
-              console.log("attente de arret voice control");
-              wrapper.innerHTML = `<h1>(inscription) Attentez ${points} </h1>`;
-              points += '.';
-              waitUntilReady();
-          }, 1000);
-      }
-    }
     
     if (notification === 'retour_annee'){
       let redemander = false;
@@ -84,6 +74,18 @@ Module.register("inscription_NFC", {
   },
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
+
+    function waitUntilReady() {
+      if (!this.userDetails.readytolisten) {
+          setTimeout(() => {
+              console.log("attente de arret voice control");
+              wrapper.innerHTML = `<h1>(inscription) Attentez ${points} </h1>`;
+              points += '.';
+              waitUntilReady();
+          }, 1000);
+      }
+    }
+    
 
     // quand la notification depuis le module MMM-planning est "SETUP_BADGE", on lance l'enregistrement d'un nouvel utilisateur
     if (notification === 'SETUP_BADGE'){
