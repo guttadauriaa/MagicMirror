@@ -25,7 +25,8 @@ Module.register("menu_houzeau", {
     
     getDom: function() {
         let wrapper = document.createElement("div");
-        wrapper.style.marginLeft = "10cm";
+        wrapper.style.marginLeft = "3cm";
+        wrapper.style.marginRight = "-3cm";
         wrapper.id = "menu_houzeau";
         wrapper.innerHTML = 'pas encore executé';
         return wrapper; 
