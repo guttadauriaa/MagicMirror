@@ -61,7 +61,7 @@ let config = {
 		},
 		{
 			module: "menu_houzeau",
-			position: "top_right",
+			position: "middle_center",
 		},
 		// {
 		// 	module: "MMM-navigation",
@@ -70,7 +70,6 @@ let config = {
 		{
 			module: "MMM-MotionDetector",
 			position: "top_left", // Optional. This can be any of the regions. Displays debug informations.
-			hiddenOnStartup: true,
 			config: {
 			  // The config property is optional.
 			  // See 'Configuration options' for more information.
