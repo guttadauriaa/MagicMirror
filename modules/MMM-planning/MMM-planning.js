@@ -64,7 +64,7 @@ socketNotificationReceived: function(notification, payload) {
 
     // Créer le tableau HTML
     //let html = `<h>${this.NFCid}</h>`;
-    let html = `<h>Horaire de la formation : ${formation}</h>`;
+    let html = `<h>Horaire de : ${formation}</h>`;
     html += `<table>`;
     html += '<tr><th>Heure</th>';
     for (let jour of joursref) {
