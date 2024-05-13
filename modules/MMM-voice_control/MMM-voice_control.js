@@ -204,7 +204,7 @@ Module.register("MMM-voice_control", {
             wrapper.innerHTML = html;
             this.sendSocketNotification('demande_formation', {});
         }
-        if (notification === 'MOTION_DETECTED' && payload.score > 1000){
+        if (notification === 'MOTION_DETECTED' ){
             this.sendSocketNotification('VOICE_TEXT', {});
             wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
             if (wrapper) {
