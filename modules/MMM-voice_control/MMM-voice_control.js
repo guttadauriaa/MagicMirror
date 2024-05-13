@@ -221,11 +221,14 @@ Module.register("MMM-voice_control", {
         }
         if (notification === 'NFC_DETECTE'){
             this.nfc_detecte = true;
+            console.log("nfc_detecte = "+this.nfc_detecte);
             setTimeout(() => {
                 this.nfc_detecte = false;
+            console.log("nfc_detecte = "+this.nfc_detecte);
             }, 5000);
         }
         if (notification === 'MOTION_DETECTED' ){
+            console.log("nfc_detecte (avtout) = "+this.nfc_detecte);
             setTimeout(() => {
                 if (nfc_detecte){
                     setTimeout(() => {
