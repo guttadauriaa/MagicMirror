@@ -7,13 +7,14 @@ Module.register("MMM-voice_control", {
     },
 
     socketNotificationReceived: function(notification, payload) {
+        console.log(this.name+" received a socket notification: " + notification);
         let wrapper = document.getElementById('MMM-voice_control');
         let formation = '';
         let options = '';
        
         // apres avoir écouté la requête de l'utilisateur, on affiche le texte écouté
         if (notification === 'DISPLAY_TEXT') {
-
+            
             // on sépare les lignes du texte écouté, si il y a deux lignes dans la sortie, alors l'utilisateur demande un guidage et la deuxième ligne contient le local
             let lines = payload.split('\n');
             let firstLine = lines[0];
@@ -32,22 +33,26 @@ Module.register("MMM-voice_control", {
             }
 
             // Attendre 5 secondes
-            setTimeout(() => {
-                if (this.voiceControlProcess){
+            if (this.voiceControlProcess){
+                setTimeout(() => {
                     this.sendSocketNotification('VOICE_TEXT', {});
                     wrapper.innerHTML = `<h1>Attendez...</h1>`;
                     // Attendre 2 secondes supplémentaires
                     setTimeout(() => {
                         if (wrapper) {
-                            wrapper.innerHTML = `<h1> Demandez moi quelque chose... </h1>`;
+                            let html = `<h1> Demandez moi quelque chose </h1>`;
+                            html += '<h2>Par exemple :</h2>';
+                            html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
+                            //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
+                            wrapper.innerHTML = html;
                         }
                     }, 2000);
-                }else{
-                    this.voiceControlProcessStopedChek = true;
-                }
-            }, 5000);         
-        }else{
-            this.voiceControlProcessStopedChek = true;
+                }, 5000);    
+            }     
+            if (!this.voiceControlProcess){
+                this.sendNotification('VOICE_TEXT_Stopped', {});
+                return;
+            }
         }
         
 
@@ -178,6 +183,15 @@ Module.register("MMM-voice_control", {
             console.log("HIDE_VOICE_CONTROL")
             this.hide();
             this.voiceControlProcess = false;
+            this.sendSocketNotification('STOP_VOICE_TEXT', {});
+            this.sendSocketNotification('STOP_VOICE_TEXT2', {});
+            
+        }
+        if (notification === 'SHOW_VOICE_CONTROL'){
+            console.log("SHOW_VOICE_CONTROL")
+            this.show();
+            this.voiceControlProcess = true;
+            this.sendSocketNotification('VOICE_TEXT', {});
         }
 
         if (notification === 'retour_des_formations'){
@@ -190,47 +204,6 @@ Module.register("MMM-voice_control", {
             wrapper.innerHTML = html;
             this.sendSocketNotification('demande_formation', {});
         }
-
-        //deplace dans le module inscription_NFC
-        if (notification === 'SETUP_BADGE_ancien'){
-            console.log("modifiction du badge", payload)
-            badge = payload.badge;
-            this.voiceControlProcess = false;
-            this.voiceControlProcessStopedChek = false;
-            //this.sendSocketNotification('STOP_VOICE_TEXT', {});
-            // Vérifier si un processus de contrôle vocal est en cours
-            
-            // while (this.voiceControlProcess === true){
-            //     setTimeout(() => {
-            //         if(this.voiceControlProcess === false){
-            //             console.log("voiceControlProcess = false")
-            //         }
-            //     }, 1000); 
-            // }
-            
-            while(this.voiceControlProcessStopedChek === false){
-                console.log("waiting for voiceControlProcessStopedChek")
-            }
-              
-            let html = '';
-            if (payload.redemander === true) {
-                html += `<p>Je n'ai pas compris, veuillez réessayer.</p>`;
-            }
-            html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
-            
-            html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
-            wrapper.innerHTML = html;
-            this.sendSocketNotification('demande_annee', {});
-            //ajouter le badge dans le fichier local
-                
-        }
-        
-        // suppresion de cette fonctionnalité dans la derniere version
-        if (notification === 'STOP_VOICE_TEXT') {
-            console.log("demande d'arret du contole vocal")
-            // Vérifier si un processus de contrôle vocal est en cours
-            this.sendSocketNotification('STOP_VOICE_TEXT', {});
-        }
     },
 
     getDom: function() {
@@ -238,9 +211,9 @@ Module.register("MMM-voice_control", {
         wrapper.id = "MMM-voice_control";
         //wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
         let html = `<h1> Demandez moi quelque chose </h1>`;
-        html += '<p>Par exemple :</p>';
-        html += `<p> - "Comment aller à l'auditoire 12"</p>`;
-        html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
+        html += '<h2>Par exemple :</h2>';
+        html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
+        //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
         wrapper.innerHTML = html;
         return wrapper;
     }

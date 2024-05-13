@@ -5,11 +5,17 @@ const { exec } = require("child_process");
 module.exports = NodeHelper.create({
     start: function() {
         console.log("Starting node helper for: " + this.name);
+        this.voiceControlProcess = true;
     },
 
     
     socketNotificationReceived: function(notification, payload) {
-
+        if (notification === 'STOP_VOICE_TEXT') {
+            this.isActive = false;
+        }
+        if (!this.voiceControlProcess) {
+            return;
+        }
         // on va executer le script Python voice_control.py pour lancer le controle vocal
         if (notification === 'VOICE_TEXT') {
             console.log("lance voicecontrole")
@@ -20,7 +26,7 @@ module.exports = NodeHelper.create({
                 }
                 
                 if (error) {
-                    console.error(`Erreur d'exécution du script Python: ${error}`);
+                    console.error(`Erreur d'exécution du script Python: normal`);
                     return;
                 }
                 
@@ -180,26 +186,26 @@ module.exports = NodeHelper.create({
             });
         }
 
-        // if (notification === 'STOP_VOICE_TEXT') {
-        //     console.log("demande d'arret du contole vocal")
+        if (notification === 'STOP_VOICE_TEXT2') {
+            console.log("demande d'arret du contole vocal")
 
-        //     // Définir un intervalle pour vérifier si le processus de contrôle vocal est en cours toutes les secondes
-        //     let intervalId = setInterval(() => {
-        //         if (this.voiceControlProcess) {
-        //             // Si un processus est en cours, le tuer
-        //             this.voiceControlProcess.kill('SIGINT');
-        //             console.log("Arrêt du contrôle vocal");
-        //             this.sendSocketNotification('VOICE_TEXT_Stopped', {});
-        //             // Arrêter de vérifier
-        //             clearInterval(intervalId);
-        //         }
-        //     }, 1000); // 1000 millisecondes = 1 seconde
+            // Définir un intervalle pour vérifier si le processus de contrôle vocal est en cours toutes les secondes
+            let intervalId = setInterval(() => {
+                if (this.voiceControlProcess) {
+                    // Si un processus est en cours, le tuer
+                    this.voiceControlProcess.kill('SIGINT');
+                    console.log("Arrêt du contrôle vocal");
+                    this.sendSocketNotification('VOICE_TEXT_Stopped', {});
+                    // Arrêter de vérifier
+                    clearInterval(intervalId);
+                }
+            }, 1000); // 1000 millisecondes = 1 seconde
 
-        //     // Arrêter de vérifier après 7 secondes, même si le processus de contrôle vocal n'a pas été trouvé
-        //     setTimeout(() => {
-        //         clearInterval(intervalId);
-        //     }, 7000); // 7000 millisecondes = 7 secondes
-        // }
+            // Arrêter de vérifier après 7 secondes, même si le processus de contrôle vocal n'a pas été trouvé
+            setTimeout(() => {
+                clearInterval(intervalId);
+            }, 7000); // 7000 millisecondes = 7 secondes
+        }
     },
 
 });

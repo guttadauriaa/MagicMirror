@@ -33,6 +33,7 @@ socketNotificationReceived: function(notification, payload) {
 
 
   let wrapper = document.getElementById('MMM-planning');
+  wrapper.style.marginTop = "-15cm";
   Log.info('MMM-planning received a socket notification: ' + notification);
 
   // quand la notification depuis le node_helper est "Planning", on affiche le planning avec l'horaire des cours recu par le payload
@@ -105,7 +106,8 @@ socketNotificationReceived: function(notification, payload) {
     // timer 60 secondes pour remettre le message de scan et retirer le planning
     setTimeout(() => {
         if (wrapper) {
-      wrapper.innerHTML = "<h1>Veuillez scanner votre carte étudiante -> </h1>";
+          wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
+      wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
         }
     }, 60000);
     
@@ -124,7 +126,7 @@ socketNotificationReceived: function(notification, payload) {
   if (notification === 'NOT_NFC') {
     console.log("pas de badge connu");
     this.NFCid = payload;
-    wrapper.innerHTML = "<h1>Badge non reconnu</h1><h2>Inscrivez-vous à la voix en suivant les instructions si-dessous</h2>";
+    wrapper.innerHTML = "<h1>Badge non reconnu</h1><h2>Inscrivez-vous à la voix en suivant les instructions ci-dessous</h2>";
 
 		// on envoie une notification au module MMM-inscription_NFC pour lancer configurer le badge
     this.sendNotification('SETUP_BADGE', {badge : this.NFCid});
@@ -141,7 +143,8 @@ socketNotificationReceived: function(notification, payload) {
       console.log("dom1");
       let wrapper = document.createElement("div");
       wrapper.id = "MMM-planning";
-      wrapper.innerHTML = "<h1>Veuillez scanner votre carte étudiante -> </h1>";
+      wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
+      wrapper.innerHTML = "<h1>Pour afficher votre horaire, scanner votre badge UMons -> </h1>";
       return wrapper;
   }
 });
