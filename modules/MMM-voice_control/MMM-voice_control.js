@@ -28,7 +28,7 @@ Module.register("MMM-voice_control", {
             let firstLine = lines[0];
             
             if (wrapper) {
-                let html = `<h1>${firstLine}</h1>`;
+                let html = `<h1>${firstLine}</h1><br>`;
                 wrapper.innerHTML = html;
             }
 
