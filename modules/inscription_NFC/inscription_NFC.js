@@ -15,6 +15,16 @@ Module.register("inscription_NFC", {
     let wrapper = document.getElementById('inscription_NFC');
     console.log("inscription_NFC received a socket notification: " + notification);
     
+    function waitUntilReady() {
+      if (!this.userDetails.readytolisten) {
+          setTimeout(() => {
+              console.log("attente de arret voice control");
+              wrapper.innerHTML = `<h1>(inscription) Attentez ${points} </h1>`;
+              points += '.';
+              waitUntilReady();
+          }, 1000);
+      }
+    }
     
     if (notification === 'retour_annee'){
       let redemander = false;
@@ -85,13 +95,7 @@ Module.register("inscription_NFC", {
       console.log('inscription_NFC received a notification: ' + notification + ' with badge: ' + payload.badge);
       let points = '';
       // on envoie une notification au node_helper pour demander l'année d'étude de l'utilisateur
-      while (this.userDetails.readytolisten === false){
-        setTimeout(() => {
-          console.log("attente de arret voice control");
-          wrapper.innerHTML = `<h1>(inscription) Attentez ${points} </h1>`;
-        }, 500);
-        points += '.';
-      }
+      waitUntilReady();
 
       this.sendSocketNotification('ecouter', {suivant : 'retour_annee'});
       setTimeout(() => {
@@ -108,6 +112,8 @@ Module.register("inscription_NFC", {
     }
     
   },
+  
+
 
 
   resume: function() {
