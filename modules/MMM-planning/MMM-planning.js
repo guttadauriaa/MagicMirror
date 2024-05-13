@@ -33,12 +33,14 @@ socketNotificationReceived: function(notification, payload) {
 
 
   let wrapper = document.getElementById('MMM-planning');
-  wrapper.style.marginTop = "-15cm";
+  wrapper.style.marginTop = "-10cm";
   Log.info('MMM-planning received a socket notification: ' + notification);
 
   // quand la notification depuis le node_helper est "Planning", on affiche le planning avec l'horaire des cours recu par le payload
   if (notification === 'Planning') {
     
+    try{
+
     //on définit les affichages des jours et des heures
     let joursref = ["lun.","mar.","mer.","jeu.","ven.","sam.","dim."];
     let jours = [];
@@ -99,7 +101,12 @@ socketNotificationReceived: function(notification, payload) {
 
     //afficher le planning en html
     wrapper.innerHTML = html;
-
+  }
+  catch (e) {
+    console.error(e);
+    wrapper.innerHTML = "<h1>Erreur lors de la récupération du planning</h1>";
+  }
+  finally {
     // on rappelle le node_helper pour scanner un nouveau badge
     this.sendSocketNotification('START_NFC', {});
     
@@ -107,10 +114,10 @@ socketNotificationReceived: function(notification, payload) {
     setTimeout(() => {
         if (wrapper) {
           wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
-      wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
+          wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
         }
     }, 60000);
-    
+  }
   }
 
   // quand la notification depuis le node_helper est "NFC", alors le badge est connu dans la base de données
