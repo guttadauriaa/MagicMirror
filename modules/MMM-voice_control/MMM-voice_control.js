@@ -230,7 +230,7 @@ Module.register("MMM-voice_control", {
         if (notification === 'MOTION_DETECTED' ){
             console.log("nfc_detecte (avtout) = "+this.nfc_detecte);
             setTimeout(() => {
-                if (nfc_detecte){
+                if (this.nfc_detecte){
                     setTimeout(() => {
                         this.nfc_detecte = false;
                     }, 7000);
