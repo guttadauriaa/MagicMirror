@@ -16,7 +16,6 @@ Module.register("MMM-voice_control", {
         let wrapper = document.getElementById('MMM-voice_control');
         let formation = '';
         let options = '';
-        let nfc_detecte = false;
        
         // apres avoir écouté la requête de l'utilisateur, on affiche le texte écouté
         if (notification === 'DISPLAY_TEXT') {
@@ -188,6 +187,8 @@ Module.register("MMM-voice_control", {
         let wrapper = document.getElementById('MMM-voice_control');
         let badge = '';
         console.log(this.name + " notification: " + notification);
+
+        let nfc_detecte = false;
         // si la notification est "HIDE_VOICE_CONTROL", on cache le module
         if(notification === 'HIDE_VOICE_CONTROL'){
             console.log("HIDE_VOICE_CONTROL")
