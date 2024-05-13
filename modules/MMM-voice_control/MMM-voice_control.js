@@ -1,7 +1,6 @@
 Module.register("MMM-voice_control", {
     delfaults: {
         running : false,
-        nfc_detecte : false
     },
 
     start: function() {
@@ -17,6 +16,7 @@ Module.register("MMM-voice_control", {
         let wrapper = document.getElementById('MMM-voice_control');
         let formation = '';
         let options = '';
+        let nfc_detecte = false;
        
         // apres avoir écouté la requête de l'utilisateur, on affiche le texte écouté
         if (notification === 'DISPLAY_TEXT') {
