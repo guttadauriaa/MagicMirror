@@ -178,6 +178,8 @@ while True:
         else:
             print(e)
             #break 
+
+
 listejson = [cours.to_dict() for cours in liste_cours]
 data = {
     "cours": listejson,

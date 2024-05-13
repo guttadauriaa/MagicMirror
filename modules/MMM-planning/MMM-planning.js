@@ -48,7 +48,7 @@ socketNotificationReceived: function(notification, payload) {
     let data1 = JSON.parse(payload);
     let data = data1.cours;
     let liste_cours = {}; //liste pour trier les cours par jour et heure
-    let formation = data1.formation;
+    let formation = data1.Formation;
 
     // Regrouper les cours par jour et par heure
     for (let coursKey in data) {
