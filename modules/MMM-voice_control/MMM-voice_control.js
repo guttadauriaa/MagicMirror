@@ -1,9 +1,10 @@
 Module.register("MMM-voice_control", {
     delfaults: {
-        running : false,
+        
         
     },
     nfc_detecte : false,
+    running : false,
 
     start: function() {
         this.voiceControlProcess = true;
@@ -221,15 +222,17 @@ Module.register("MMM-voice_control", {
             this.nfc_detecte = true;
             setTimeout(() => {
                 this.nfc_detecte = false;
-            }, 3000);
+            }, 5000);
         }
         if (notification === 'MOTION_DETECTED' ){
+            this.running = true;
+
             setTimeout(() => {
                 if (nfc_detecte){
                     setTimeout(() => {
                         this.nfc_detecte = false;
-                    }, 3000);
-                }else{
+                    }, 5000);
+                }else if (!this.running){
                     this.sendSocketNotification('VOICE_TEXT', {});
                     wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
                     if (wrapper) {
