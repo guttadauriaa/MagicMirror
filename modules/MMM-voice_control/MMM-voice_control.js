@@ -230,7 +230,7 @@ Module.register("MMM-voice_control", {
                 if (nfc_detecte){
                     setTimeout(() => {
                         this.nfc_detecte = false;
-                    }, 5000);
+                    }, 7000);
                 }else if (!this.running){
                     this.running = true;
                     this.sendSocketNotification('VOICE_TEXT', {});
@@ -246,7 +246,7 @@ Module.register("MMM-voice_control", {
                         }
                     },2000);
                 }
-            }, 1000);
+            }, 2000);
             
         }
     },
