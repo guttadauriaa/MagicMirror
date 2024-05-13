@@ -177,7 +177,7 @@ Module.register("MMM-voice_control", {
     notificationReceived: function(notification, payload, sender) {
         let wrapper = document.getElementById('MMM-voice_control');
         let badge = '';
-
+        console.log(this.name + " notification: " + notification);
         // si la notification est "HIDE_VOICE_CONTROL", on cache le module
         if(notification === 'HIDE_VOICE_CONTROL'){
             console.log("HIDE_VOICE_CONTROL")
@@ -204,20 +204,23 @@ Module.register("MMM-voice_control", {
             wrapper.innerHTML = html;
             this.sendSocketNotification('demande_formation', {});
         }
-        if (notification === 'MOTION_DETECTED'){
-            console.log(this.name + "MOTION_DETECTED")
+        if (notification === 'MOTION_DETECTED' && payload.score > 1000){
             this.sendSocketNotification('VOICE_TEXT', {});
+            wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
+            if (wrapper) {
+                let html = `<h1> Demandez moi quelque chose </h1>`;
+                html += '<h2>Par exemple :</h2>';
+                html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
+                //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
+                wrapper.innerHTML = html;
+            }
         }
     },
 
     getDom: function() {
         let wrapper = document.createElement("div");
         wrapper.id = "MMM-voice_control";
-        //wrapper.innerHTML = `<h1> Dites : "miroir" pour demander quelque chose </h1>`;
-        let html = `<h1> Demandez moi quelque chose </h1>`;
-        html += '<h2>Par exemple :</h2>';
-        html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
-        //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
+        let html = "Secouez votre main haut dessus de l'heure pour activer le contrôle vocal";
         wrapper.innerHTML = html;
         return wrapper;
     }
