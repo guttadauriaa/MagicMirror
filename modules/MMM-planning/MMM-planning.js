@@ -45,8 +45,10 @@ socketNotificationReceived: function(notification, payload) {
     let joursref = ["lun.","mar.","mer.","jeu.","ven.","sam.","dim."];
     let jours = [];
     let heures = ['08:15', '10:15', '10:30', '12:30', '13:30', '15:30', '15:45', '17:45', '18:00', '19:00'];
-    let data = JSON.parse(payload);
+    let data1 = JSON.parse(payload);
+    let data = data1.cours;
     let liste_cours = {}; //liste pour trier les cours par jour et heure
+    let formation = data1.formation;
 
     // Regrouper les cours par jour et par heure
     for (let coursKey in data) {
@@ -62,7 +64,7 @@ socketNotificationReceived: function(notification, payload) {
 
     // Créer le tableau HTML
     //let html = `<h>${this.NFCid}</h>`;
-    let html = `<h>Horaire</h>`;
+    let html = `<h>Horaire de la formation : ${formation}</h>`;
     html += `<table>`;
     html += '<tr><th>Heure</th>';
     for (let jour of joursref) {
@@ -122,7 +124,7 @@ socketNotificationReceived: function(notification, payload) {
       }
   }, 10000);
   }
-  
+
   finally {
     // on rappelle le node_helper pour scanner un nouveau badge
     this.sendSocketNotification('START_NFC', {});
