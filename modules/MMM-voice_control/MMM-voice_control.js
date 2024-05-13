@@ -189,6 +189,8 @@ Module.register("MMM-voice_control", {
         let wrapper = document.getElementById('MMM-voice_control');
         let badge = '';
         console.log(this.name + " notification: " + notification);
+
+        let nfc_detecte = false;
         // si la notification est "HIDE_VOICE_CONTROL", on cache le module
         if(notification === 'HIDE_VOICE_CONTROL'){
             console.log("HIDE_VOICE_CONTROL")
