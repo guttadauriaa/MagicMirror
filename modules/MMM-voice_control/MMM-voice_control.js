@@ -32,13 +32,16 @@ Module.register("MMM-voice_control", {
                 wrapper.innerHTML = html;
             }
 
+            //pour afficher plus longtemps le texte si il affiche l'ensemble des locaux
+            if ("Bibliothèque" in payload){
+                x = 150000;
+            }
             //si il y a 2 lignes cela veut que fonctionnalite.question a détecté une volonté de guidage vers un local dans le texte écouté
             if (lines[1]) {
                 let secondLine = lines[1];
                 console.log("secondLine", secondLine);
                 // on envoie une notification pour demander le guidage dans le module MMM-navigation
                 this.sendNotification('GUIDAGE', secondLine);
-                x = 15000;
             }
             setTimeout(() => {
                 let html = "<h1>Secouez votre main au-dessus de l'heure pour activer le contrôle vocal</h1>";
