@@ -38,7 +38,7 @@ Module.register("MMM-voice_control", {
                 
                     html += `<div style="display: flex; flex-wrap: wrap;">`;
                     for (let i = 1; i < lines1.length; i++){
-                        html += `<p style="flex-basis: 50%; font-size: 30px; style="margin:0; padding:0;">${lines1[i]}</p>`;
+                        html += `<p style="flex-basis: 50%; font-size: 20px;">${lines1[i]}</p>`;
                     }
                     html += `</div>`;
                 }   
