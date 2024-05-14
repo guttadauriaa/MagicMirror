@@ -29,7 +29,6 @@ class Fonctionnalite:
             if 'liste' in data or 'auditoire' in data or 'local' in data or 'locaux' in data:
                 message = "Dans quel local souhaitez-vous aller ? "
                 print(message, end="=")
-                print("Secouez votre main au-dessus de l'heure pour réactiver le contrôle vocal", end="=")
                 for local in liste_local:
                     if local[0] == "Toilettes":
                         print(local[0])
