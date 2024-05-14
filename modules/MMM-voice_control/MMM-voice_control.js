@@ -236,6 +236,12 @@ Module.register("MMM-voice_control", {
             console.log("nfc_detecte = "+this.nfc_detecte);
             }, 6000);
         }
+        if (notification === 'SETUP_BADGE'){
+            this.nfc_detecte = true;
+        }
+        if (notification === 'SETUP_BADGE_end'){
+            this.nfc_detecte = false;
+        }
         if (notification === 'MOTION_DETECTED' ){
             console.log("nfc_detecte (avtout) = "+this.nfc_detecte);
             setTimeout(() => {
@@ -251,7 +257,7 @@ Module.register("MMM-voice_control", {
                     for (let i = 0; i < 5; i++){
                         setTimeout(() => {
                             points += '.';
-                            if (points === '........'){
+                            if (points === '...'){
                                 points = '.';
                             }
                             wrapper.innerHTML = `<h1>Patientez<br>${points}</h1>`;
