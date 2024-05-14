@@ -209,15 +209,15 @@ Module.register("MMM-voice_control", {
         if(notification === 'HIDE_VOICE_CONTROL'){
             console.log("HIDE_VOICE_CONTROL")
             this.hide();
-            this.voiceControlProcess = false;
-            this.sendSocketNotification('STOP_VOICE_TEXT', {});
-            this.sendSocketNotification('STOP_VOICE_TEXT2', {});
+            //this.voiceControlProcess = false;
+            //this.sendSocketNotification('STOP_VOICE_TEXT', {});
+            //this.sendSocketNotification('STOP_VOICE_TEXT2', {});
             
         }
         if (notification === 'SHOW_VOICE_CONTROL'){
             console.log("SHOW_VOICE_CONTROL")
             this.show();
-            this.voiceControlProcess = true;
+            //this.voiceControlProcess = true;
             //this.sendSocketNotification('VOICE_TEXT', {});
         }
 
