@@ -26,6 +26,7 @@ Module.register("MMM-voice_control", {
             // on sépare les lignes du texte écouté, si il y a deux lignes dans la sortie, alors l'utilisateur demande un guidage et la deuxième ligne contient le local
             let lines = payload.split('\n');
             let firstLine = lines[0];
+            console.log(lines);
             
             if (wrapper) {
                 let html = `<h1>${firstLine}</h1><br>`;
@@ -43,6 +44,7 @@ Module.register("MMM-voice_control", {
                 // on envoie une notification pour demander le guidage dans le module MMM-navigation
                 this.sendNotification('GUIDAGE', secondLine);
             }
+            
             setTimeout(() => {
                 let html = "<h1>Secouez votre main au-dessus de l'heure pour activer le contrôle vocal</h1>";
                 wrapper.innerHTML = html;
