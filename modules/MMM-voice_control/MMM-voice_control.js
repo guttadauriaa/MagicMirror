@@ -37,7 +37,7 @@ Module.register("MMM-voice_control", {
                 x = 15000;
             }
             //si il y a 2 lignes cela veut que fonctionnalite.question a détecté une volonté de guidage vers un local dans le texte écouté
-            if (lines[1]) {
+            if (lines[1] && !lines[2]) {
                 let secondLine = lines[1];
                 console.log("secondLine", secondLine);
                 // on envoie une notification pour demander le guidage dans le module MMM-navigation
