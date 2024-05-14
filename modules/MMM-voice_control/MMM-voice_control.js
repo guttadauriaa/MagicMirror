@@ -245,13 +245,12 @@ Module.register("MMM-voice_control", {
                     wrapper.innerHTML = `<h1>Patientez</h1>`;
                     for (let i = 0; i < 10; i++){
                         setTimeout(() => {
-                            wrapper.innerHTML = `<h1>Patientez${points}</h1>`;
                             points += '.';
                             if (points === '...'){
                                 points = '';
                             }
-                        },10);
-                        
+                            wrapper.innerHTML = `<h1>Patientez${points}</h1>`;
+                        },i * 100);
                     }
                     setTimeout(() => {   
                         wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
