@@ -247,15 +247,19 @@ Module.register("MMM-voice_control", {
             this.nfc_detecte = true;
             console.log("nfc_detecte = "+this.nfc_detecte);
             setTimeout(() => {
-                this.nfc_detecte = false;
-            console.log("nfc_detecte = "+this.nfc_detecte);
+                if (!this.keep_nfc_detecte){
+                    this.nfc_detecte = false;
+                    console.log("nfc_detecte = "+this.nfc_detecte);
+                }
             }, 6000);
         }
         if (notification === 'SETUP_BADGE'){
             this.nfc_detecte = true;
+            this.keep_nfc_detecte = true;
         }
         if (notification === 'SETUP_BADGE_end'){
             this.nfc_detecte = false;
+            this.keep_nfc_detecte = false;
         }
         if (notification === 'MOTION_DETECTED' ){
             console.log("nfc_detecte (avtout) = "+this.nfc_detecte);
@@ -269,7 +273,7 @@ Module.register("MMM-voice_control", {
                     this.sendSocketNotification('VOICE_TEXT', {});
                     let points = '';
                     wrapper.innerHTML = `<h1>Patientez<br>.</h1>`;
-                    for (let i = 0; i < 5; i++){
+                    for (let i = 0; i < 3; i++){
                         setTimeout(() => {
                             points += '.';
                             if (points === '...'){
