@@ -22,7 +22,7 @@ Module.register("MMM-voice_control", {
        
         // apres avoir écouté la requête de l'utilisateur, on affiche le texte écouté
         if (notification === 'DISPLAY_TEXT') {
-            
+            let x = 5000;
             // on sépare les lignes du texte écouté, si il y a deux lignes dans la sortie, alors l'utilisateur demande un guidage et la deuxième ligne contient le local
             let lines = payload.split('\n');
             let firstLine = lines[0];
@@ -38,12 +38,13 @@ Module.register("MMM-voice_control", {
                 console.log("secondLine", secondLine);
                 // on envoie une notification pour demander le guidage dans le module MMM-navigation
                 this.sendNotification('GUIDAGE', secondLine);
+                x = 15000;
             }
             setTimeout(() => {
                 let html = "<h1>Secouez votre main au-dessus de l'heure pour activer le contrôle vocal</h1>";
                 wrapper.innerHTML = html;
                 this.running = false;
-            }, 5000);
+            }, x);
 
             // Attendre 5 secondes
             if (this.voiceControlProcess && false){
