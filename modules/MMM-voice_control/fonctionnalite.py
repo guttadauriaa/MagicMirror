@@ -33,7 +33,8 @@ class Fonctionnalite:
                 for local in liste_local:
                     if local[0] == "Toilettes":
                         print(local[0])
-                    print(local[0], end="=")
+                    else:
+                        print(local[0], end="=")
 
             else: 
                 print(data)
