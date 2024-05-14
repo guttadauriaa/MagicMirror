@@ -75,14 +75,17 @@ Module.register("inscription_NFC", {
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
 
-    function waitUntilReady() {
-      if (!this.userDetails.readytolisten) {
+    function waiting() {
+      let points = '';
+      wrapper.innerHTML = `<h1>Patientez<br>.</h1>`;
+      for (let i = 0; i < 5; i++){
           setTimeout(() => {
-              console.log("attente de arret voice control");
-              wrapper.innerHTML = `<h1>(inscription) Attentez ${points} </h1>`;
               points += '.';
-              waitUntilReady();
-          }, 1000);
+              if (points === '...'){
+                  points = '.';
+              }
+              wrapper.innerHTML = `<h1>Patientez<br>${points}</h1>`;
+          },i * 400);
       }
     }
     
@@ -95,10 +98,10 @@ Module.register("inscription_NFC", {
       this.userDetails.NFCid = payload.badge;
       this.show(); //affichage du module donc execution de resume() 
       console.log('inscription_NFC received a notification: ' + notification + ' with badge: ' + payload.badge);
-      let points = '';
-      // on envoie une notification au node_helper pour demander l'année d'étude de l'utilisateur
-      waitUntilReady();
 
+      waiting();
+
+      // on envoie une notification au node_helper pour demander l'année d'étude de l'utilisateur
       this.sendSocketNotification('ecouter', {suivant : 'retour_annee'});
       setTimeout(() => {
         let html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
@@ -128,7 +131,6 @@ Module.register("inscription_NFC", {
     console.log("demande relancement voice control")
   },
   getDom: function() {
-      
       let wrapper = document.createElement("div");
       wrapper.id = "inscription_NFC";
       wrapper.innerHTML = "<h1>Inscription nouvel utilisateur</h1>";
