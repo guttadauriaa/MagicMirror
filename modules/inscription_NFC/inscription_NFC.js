@@ -5,12 +5,11 @@ Module.register("inscription_NFC", {
       NFCid: null,
       annee: null,
       formation: null,
-      readytolisten: false
       // Ajoutez d'autres propriétés ici si nécessaire
     };
     console.log("Starting module: " + this.name);
   },
-
+  
   socketNotificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
     console.log("inscription_NFC received a socket notification: " + notification);
@@ -74,6 +73,7 @@ Module.register("inscription_NFC", {
   },
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
+    console.log(this.name + ' notification :' + notification + ' with badge: ' + payload.badge);
 
     function waiting() {
       let points = '';
@@ -97,7 +97,6 @@ Module.register("inscription_NFC", {
       //quand on a la valeur du nouveau badge à enregistrer
       this.userDetails.NFCid = payload.badge;
       this.show(); //affichage du module donc execution de resume() 
-      console.log('inscription_NFC received a notification: ' + notification + ' with badge: ' + payload.badge);
 
       waiting();
 
@@ -109,11 +108,6 @@ Module.register("inscription_NFC", {
         wrapper.innerHTML = html;
       }, 2000);
       
-    }
-
-    if (notification === 'VOICE_TEXT_Stopped'){
-      console.log("[inscription_NFC] "+notification);
-      this.userDetails.readytolisten = true;
     }
     
   },
