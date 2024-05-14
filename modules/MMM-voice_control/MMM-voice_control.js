@@ -285,7 +285,7 @@ Module.register("MMM-voice_control", {
                             //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
                             wrapper.innerHTML = html;
                         }
-                    },2000);
+                    },1500);
                 }
             }, 2000);
             
