@@ -33,13 +33,18 @@ Module.register("MMM-voice_control", {
                 let lines1 = firstLine.split('=');
                 let html = '';
                 html += `<h1>${lines1[0]}</h1><br>`;
-                html += `<h3>Pour réactiver le contrôle vocal secouez votre main au-dessus de l'heure</h3>`;
+                if (lines1[1]){
+                    html += `<h2>Pour réactiver le contrôle vocal secouez votre main au-dessus de l'heure</h2>`;
+                
+                    html += `<div style="display: flex; flex-wrap: wrap;">`;
+                    html += `<p style="flex-basis: 50%; font-size: 20px;">`;
 
-                html += `<div style="display: flex; flex-wrap: wrap;">`;
-                for (let i = 1; i < lines1.length; i++){
-                    html += `<p style="flex-basis: 50%; font-size: 20px;">${lines1[i]}</p>`;
-                }
-                html += `</div>`;
+                    for (let i = 1; i < lines1.length; i++){
+                        html += `${lines1[i]} `;
+                    }
+                    html += `</p>`;
+                    html += `</div>`;
+                }   
                 wrapper.innerHTML = html;
                 // for (let i = 1; i < lines1.length; i++){
                 //     //html += `<h1>${lines1[i]}</h1><br>`;
