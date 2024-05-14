@@ -35,7 +35,7 @@ Module.register("MMM-voice_control", {
                 html += `<h1>${lines1[0]}</h1><br>`;
                 for (let i = 1; i < lines1.length; i++){
                     //html += `<h1>${lines1[i]}</h1><br>`;
-                    html += `<p style="margin:0; padding:0;">${lines1[i]}</p>`;
+                    html += `<h3>${lines1[i]}</h3>`;
                     console.log(lines1[i]);
                 }
                 wrapper.innerHTML = html;
