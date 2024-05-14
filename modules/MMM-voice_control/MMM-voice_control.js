@@ -243,14 +243,14 @@ Module.register("MMM-voice_control", {
                     this.sendSocketNotification('VOICE_TEXT', {});
                     let points = '';
                     wrapper.innerHTML = `<h1>Patientez<br>.</h1>`;
-                    for (let i = 0; i < 10; i++){
+                    for (let i = 0; i < 5; i++){
                         setTimeout(() => {
                             points += '.';
                             if (points === '........'){
-                                points = '';
+                                points = '.';
                             }
                             wrapper.innerHTML = `<h1>Patientez<br>${points}</h1>`;
-                        },i * 200);
+                        },i * 400);
                     }
                     setTimeout(() => {   
                         wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
