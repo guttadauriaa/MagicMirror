@@ -33,12 +33,22 @@ Module.register("MMM-voice_control", {
                 let lines1 = firstLine.split('=');
                 let html = '';
                 html += `<h1>${lines1[0]}</h1><br>`;
-                for (let i = 1; i < lines1.length; i++){
-                    //html += `<h1>${lines1[i]}</h1><br>`;
-                    html += `<h3>${lines1[i]}</h3>`;
-                    console.log(lines1[i]);
+                html += `<h3>${lines1[1]}</h3><br>`;
+
+
+                html += `<div style="display: flex; flex-wrap: wrap;">`;
+                html += `<h1 style="flex-basis: 50%;">${lines1[0]}</h1><br>`;
+                for (let i = 2; i < lines1.length; i++){
+                    html += `<h3 style="flex-basis: 50%;">${lines1[i]}</h3>`;
                 }
-                wrapper.innerHTML = html;
+                html += `</div>`;
+                // wrapper.innerHTML = html;
+                // for (let i = 1; i < lines1.length; i++){
+                //     //html += `<h1>${lines1[i]}</h1><br>`;
+                //     html += `<h3>${lines1[i]}</h3>`;
+                //     console.log(lines1[i]);
+                // }
+                // wrapper.innerHTML = html;
             }
 
             //pour afficher plus longtemps le texte si il affiche l'ensemble des locaux
