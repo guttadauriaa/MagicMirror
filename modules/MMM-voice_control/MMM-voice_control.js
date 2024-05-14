@@ -42,7 +42,7 @@ Module.register("MMM-voice_control", {
                     html += `<h3 style="flex-basis: 50%;">${lines1[i]}</h3>`;
                 }
                 html += `</div>`;
-                // wrapper.innerHTML = html;
+                wrapper.innerHTML = html;
                 // for (let i = 1; i < lines1.length; i++){
                 //     //html += `<h1>${lines1[i]}</h1><br>`;
                 //     html += `<h3>${lines1[i]}</h3>`;
