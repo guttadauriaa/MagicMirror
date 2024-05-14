@@ -73,7 +73,7 @@ Module.register("inscription_NFC", {
   },
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
-    console.log(this.name + ' notification :' + notification + ' with badge: ' + payload.badge);
+    console.log(this.name + ' notification :' + notification);
 
     function waiting() {
       let points = '';
