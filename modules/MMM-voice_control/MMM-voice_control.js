@@ -32,8 +32,11 @@ Module.register("MMM-voice_control", {
                 //dans le cas où il sort la liste des locaux on les sépare sur plusieurs lignes
                 let lines1 = firstLine.split('=');
                 let html = '';
-                for (let i = 0; i < lines1.length; i++){
-                    html += `<h1>${lines[i]}</h1><br>`;
+                html += `<h1>${lines1[0]}</h1><br>`;
+                for (let i = 1; i < lines1.length; i++){
+                    //html += `<h1>${lines1[i]}</h1><br>`;
+                    html += `<p style="margin:0; padding:0;">${lines1[i]}</p>`;
+                    console.log(lines1[i]);
                 }
                 wrapper.innerHTML = html;
             }
