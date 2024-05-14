@@ -8,7 +8,7 @@ module.exports = NodeHelper.create({
     },
 
     socketNotificationReceived: function(notification, payload) {
-        console.log("node_hepler inscription_NFC received a socket notification: " + notification);
+        console.log("node_hepler inscription_NFC received: " + notification + ' '+ payload.suivant);
         if (notification === "ecouter"){
             let retryCount = 0;
 
@@ -27,6 +27,7 @@ module.exports = NodeHelper.create({
                         });
                     }
                 } else {
+                    console.log("[ecouter] La sortie est :", stdout);
                     this.sendSocketNotification(payload.suivant, {sortie :stdout});
                 }
             });
