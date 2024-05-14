@@ -38,7 +38,7 @@ socketNotificationReceived: function(notification, payload) {
 
   // quand la notification depuis le node_helper est "Planning", on affiche le planning avec l'horaire des cours recu par le payload
   if (notification === 'Planning') {
-    
+    console.log(payload);
     try{
 
       //on définit les affichages des jours et des heures
