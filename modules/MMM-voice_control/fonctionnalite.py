@@ -24,11 +24,12 @@ class Fonctionnalite:
                 break
 
         else:
-            if 'auditoire' in data or 'local' in data:
+            if 'liste' in data or 'auditoire' in data or 'local' in data or 'locaux' in data:
                 message = "Dans quel local souhaitez-vous aller ? "
                 print(message, end=" ")
                 for local in liste_local:
                     print(local[0], end=" - ")
+                print("Secouez votre main au-dessus de l'heure pour réactiver le contrôle vocal")
 
             else: 
                 print(data)
