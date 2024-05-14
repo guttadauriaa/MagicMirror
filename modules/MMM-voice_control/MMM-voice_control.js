@@ -238,7 +238,18 @@ Module.register("MMM-voice_control", {
                 }else if (!this.running){
                     this.running = true;
                     this.sendSocketNotification('VOICE_TEXT', {});
-                    wrapper.innerHTML = `<h1>Lancement commande vocale</h1>`;
+                    let points = '';
+                    wrapper.innerHTML = `<h1>Patientez</h1>`;
+                    for (let i = 0; i < 10; i++){
+                        setTimeout(() => {
+                            wrapper.innerHTML = `<h1>Patientez${points}</h1>`;
+                            points += '.';
+                            if (points === '...'){
+                                points = '';
+                            }
+                        },200);
+                        
+                    }
                     setTimeout(() => {   
                         wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
                         if (wrapper) {
