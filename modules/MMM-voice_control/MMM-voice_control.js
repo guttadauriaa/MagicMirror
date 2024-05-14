@@ -43,6 +43,11 @@ Module.register("MMM-voice_control", {
                 // on envoie une notification pour demander le guidage dans le module MMM-navigation
                 this.sendNotification('GUIDAGE', secondLine);
             }
+            else if (lines[1] && lines[2]){
+                for (let i = 1; i < lines.length; i++){
+                    html += `<h1>${lines[i]}</h1><br>`;
+                }
+            }
             setTimeout(() => {
                 let html = "<h1>Secouez votre main au-dessus de l'heure pour activer le contrôle vocal</h1>";
                 wrapper.innerHTML = html;
