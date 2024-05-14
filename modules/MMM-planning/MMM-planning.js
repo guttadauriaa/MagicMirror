@@ -39,98 +39,98 @@ socketNotificationReceived: function(notification, payload) {
   // quand la notification depuis le node_helper est "Planning", on affiche le planning avec l'horaire des cours recu par le payload
   if (notification === 'Planning') {
     
-    //try{
+    try{
 
-    //on définit les affichages des jours et des heures
-    let joursref = ["lun.","mar.","mer.","jeu.","ven.","sam.","dim."];
-    let jours = [];
-    let heures = ['08:15', '10:15', '10:30', '12:30', '13:30', '15:30', '15:45', '17:45', '18:00', '19:00'];
-    let data1 = JSON.parse(payload);
-    let data = data1.cours;
-    let liste_cours = {}; //liste pour trier les cours par jour et heure
-    let formation = data1.Formation;
+      //on définit les affichages des jours et des heures
+      let joursref = ["lun.","mar.","mer.","jeu.","ven.","sam.","dim."];
+      let jours = [];
+      let heures = ['08:15', '10:15', '10:30', '12:30', '13:30', '15:30', '15:45', '17:45', '18:00', '19:00'];
+      let data1 = JSON.parse(payload);
+      let data = data1.cours;
+      let liste_cours = {}; //liste pour trier les cours par jour et heure
+      let formation = data1.Formation;
 
-    // Regrouper les cours par jour et par heure
-    for (let coursKey in data) {
-        let cours = data[coursKey];
-        if (!liste_cours[cours.Jour]) {
-            liste_cours[cours.Jour] = {};
-            jours.push(cours.Jour);
-        }
-        liste_cours[cours.Jour][cours.HeureD] = cours;
-    }
-    console.log(liste_cours);
-    //console.log(liste_cours['lun.']['08h15']);
-
-    // Créer le tableau HTML
-    //let html = `<h>${this.NFCid}</h>`;
-    let html = `<h>Horaire de : ${formation}</h>`;
-    html += `<table>`;
-    html += '<tr><th>Heure</th>';
-    for (let jour of joursref) {
-      if (jours.includes(jour)) {
-        html += `<th>${jour}</th>`;
+      // Regrouper les cours par jour et par heure
+      for (let coursKey in data) {
+          let cours = data[coursKey];
+          if (!liste_cours[cours.Jour]) {
+              liste_cours[cours.Jour] = {};
+              jours.push(cours.Jour);
+          }
+          liste_cours[cours.Jour][cours.HeureD] = cours;
       }
-    }
-    html += '</tr>';
+      console.log(liste_cours);
+      //console.log(liste_cours['lun.']['08h15']);
 
-    for (let i = 0; i < heures.length-1; i++) {
-        html += `<tr><td>${heures[i]}</td>`;
-        for (let jour of joursref) {
-          if (jours.includes(jour)) {
-            let caseSuivante = false;
-            for (let coursKey in liste_cours[jour]) {
-              let cours = liste_cours[jour][coursKey];
-              console.log(heures[i] + ' ' + cours + ' ' + heures[i+1])
-              if ((compareHeures(heures[i],cours.HeureD) === -1 || compareHeures(heures[i],cours.HeureD) === 0) && compareHeures(cours.HeureD,heures[i+1]) === -1) {
-                  html += `<td>${cours.Titre}<br>${cours.Local}<br>${cours.HeureD} - ${cours.HeureF}</td>`;
-                  delete liste_cours[cours.Jour][cours.HeureD];
-                  caseSuivante = true;
-                  break;
+      // Créer le tableau HTML
+      //let html = `<h>${this.NFCid}</h>`;
+      let html = `<h>Horaire de : ${formation}</h>`;
+      html += `<table>`;
+      html += '<tr><th>Heure</th>';
+      for (let jour of joursref) {
+        if (jours.includes(jour)) {
+          html += `<th>${jour}</th>`;
+        }
+      }
+      html += '</tr>';
+
+      for (let i = 0; i < heures.length-1; i++) {
+          html += `<tr><td>${heures[i]}</td>`;
+          for (let jour of joursref) {
+            if (jours.includes(jour)) {
+              let caseSuivante = false;
+              for (let coursKey in liste_cours[jour]) {
+                let cours = liste_cours[jour][coursKey];
+                console.log(heures[i] + ' ' + cours + ' ' + heures[i+1])
+                if ((compareHeures(heures[i],cours.HeureD) === -1 || compareHeures(heures[i],cours.HeureD) === 0) && compareHeures(cours.HeureD,heures[i+1]) === -1) {
+                    html += `<td>${cours.Titre}<br>${cours.Local}<br>${cours.HeureD} - ${cours.HeureF}</td>`;
+                    delete liste_cours[cours.Jour][cours.HeureD];
+                    caseSuivante = true;
+                    break;
+                }
+                  
               }
-                
-            }
-            if (!caseSuivante) {
-              html += '<td></td>';
+              if (!caseSuivante) {
+                html += '<td></td>';
+              }
             }
           }
-        }
-        html += '</tr>';
-    }
-    html += '</table>';
-
-    //jouer un son au moment de l'affichage du planning
-    //this.sendSocketNotification('DING', {});
-
-    //afficher le planning en html
-    wrapper.innerHTML = html;
-
-    // timer 60 secondes pour remettre le message de scan et retirer le planning
-    setTimeout(() => {
-      if (wrapper) {
-        wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
-        wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
+          html += '</tr>';
       }
-  }, 60000);
-  // }
-  // catch (e) {
-  //   console.error(e);
-  //   wrapper.innerHTML = "<h1>Erreur lors de la récupération du planning</h1>";
+      html += '</table>';
 
-  //   // timer 10 secondes pour remettre le message de scan et retirer le planning
-  //   setTimeout(() => {
-  //     if (wrapper) {
-  //       wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
-  //       wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
-  //     }
-  // }, 10000);
-  //}
+      //jouer un son au moment de l'affichage du planning
+      //this.sendSocketNotification('DING', {});
 
-  //finally {
-    // on rappelle le node_helper pour scanner un nouveau badge
-    this.sendSocketNotification('START_NFC', {});
-    
-  //}
+      //afficher le planning en html
+      wrapper.innerHTML = html;
+
+      // timer 60 secondes pour remettre le message de scan et retirer le planning
+      setTimeout(() => {
+        if (wrapper) {
+          wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
+          wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
+        }
+      }, 60000);
+    }
+    catch (e) {
+      console.error(e);
+      wrapper.innerHTML = "<h1>Erreur lors de la récupération du planning</h1>";
+
+      // timer 10 secondes pour remettre le message de scan et retirer le planning
+      setTimeout(() => {
+        if (wrapper) {
+          wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
+          wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
+        }
+      }, 10000);
+    }
+
+    finally {
+      // on rappelle le node_helper pour scanner un nouveau badge
+      this.sendSocketNotification('START_NFC', {});
+      
+    }
   }
 
   // quand la notification depuis le node_helper est "NFC", alors le badge est connu dans la base de données
