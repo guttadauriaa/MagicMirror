@@ -39,7 +39,7 @@ socketNotificationReceived: function(notification, payload) {
   // quand la notification depuis le node_helper est "Planning", on affiche le planning avec l'horaire des cours recu par le payload
   if (notification === 'Planning') {
     
-    try{
+    //try{
 
     //on définit les affichages des jours et des heures
     let joursref = ["lun.","mar.","mer.","jeu.","ven.","sam.","dim."];
@@ -80,16 +80,15 @@ socketNotificationReceived: function(notification, payload) {
           if (jours.includes(jour)) {
             let caseSuivante = false;
             for (let coursKey in liste_cours[jour]) {
-                if (coursKey['Titre'] != "1"){
-                  let cours = liste_cours[jour][coursKey];
-                  console.log(heures[i] + ' ' + cours + ' ' + heures[i+1])
-                  if ((compareHeures(heures[i],cours.HeureD) === -1 || compareHeures(heures[i],cours.HeureD) === 0) && compareHeures(cours.HeureD,heures[i+1]) === -1) {
-                      html += `<td>${cours.Titre}<br>${cours.Local}<br>${cours.HeureD} - ${cours.HeureF}</td>`;
-                      delete liste_cours[cours.Jour][cours.HeureD];
-                      caseSuivante = true;
-                      break;
-                  }
-                }
+              let cours = liste_cours[jour][coursKey];
+              console.log(heures[i] + ' ' + cours + ' ' + heures[i+1])
+              if ((compareHeures(heures[i],cours.HeureD) === -1 || compareHeures(heures[i],cours.HeureD) === 0) && compareHeures(cours.HeureD,heures[i+1]) === -1) {
+                  html += `<td>${cours.Titre}<br>${cours.Local}<br>${cours.HeureD} - ${cours.HeureF}</td>`;
+                  delete liste_cours[cours.Jour][cours.HeureD];
+                  caseSuivante = true;
+                  break;
+              }
+                
             }
             if (!caseSuivante) {
               html += '<td></td>';
@@ -113,25 +112,25 @@ socketNotificationReceived: function(notification, payload) {
         wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
       }
   }, 60000);
-  }
-  catch (e) {
-    console.error(e);
-    wrapper.innerHTML = "<h1>Erreur lors de la récupération du planning</h1>";
+  // }
+  // catch (e) {
+  //   console.error(e);
+  //   wrapper.innerHTML = "<h1>Erreur lors de la récupération du planning</h1>";
 
-    // timer 10 secondes pour remettre le message de scan et retirer le planning
-    setTimeout(() => {
-      if (wrapper) {
-        wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
-        wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
-      }
-  }, 10000);
-  }
+  //   // timer 10 secondes pour remettre le message de scan et retirer le planning
+  //   setTimeout(() => {
+  //     if (wrapper) {
+  //       wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
+  //       wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
+  //     }
+  // }, 10000);
+  //}
 
-  finally {
+  //finally {
     // on rappelle le node_helper pour scanner un nouveau badge
     this.sendSocketNotification('START_NFC', {});
     
-  }
+  //}
   }
 
   // quand la notification depuis le node_helper est "NFC", alors le badge est connu dans la base de données
