@@ -12,8 +12,8 @@ class Fonctionnalite:
         liste_local = [("Auditoire 3", "03"), ("Auditoire 5", "05"), ("Auditoire 11", "11"), ("Auditoire 12", "12"), 
                        ("Auditoire 21", "21"), ("Auditoire 22", "22"), ("Auditoire 23", "23"), ("Auditoire 24", "24"), ("Auditoire 25", "25"),    
                        ("Auditoire 25 bis", "25bis"), ("Auditoire 26", "26"), 
-                       ("Labo physique", "lab_a"), ("Bibliothèque", "bibli"), ("bureau doyenne", "doyen"),
-                       ("IG lab", "ig_lab"), ("Réfectoire", "refectoire"), ("Salle archi", "pc_archi"), ("salle des professeurs", "salle_des_profs"),
+                       ("Labo physique", "lab_a"), ("Bibliothèque", "bibli"), ("Bureau doyenne", "doyen"),
+                       ("IG lab", "ig_lab"), ("Réfectoire", "refectoire"), ("Salle archi", "pc_archi"), ("Salle des professeurs", "salle_des_profs"),
                        ("Secréteriat académique", "secretariat_academique"), ("Secrétariat des études", "secretariat_des_etudes"), ("Toilettes", "Toilettes")]
         
         for local in liste_local:
@@ -24,11 +24,12 @@ class Fonctionnalite:
                 break
 
         else:
-            if 'auditoire' in data or 'local' in data:
+            if 'liste' in data or 'auditoire' in data or 'local' in data or 'locaux' in data:
                 message = "Dans quel local souhaitez-vous aller ? "
-                print(message, end=" ")
+                print(message)
                 for local in liste_local:
-                    print(local[0], end=" - ")
+                    print(local[0])
+                print("Secouez votre main au-dessus de l'heure pour réactiver le contrôle vocal")
 
             else: 
                 print(data)
