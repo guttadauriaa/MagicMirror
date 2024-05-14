@@ -33,7 +33,7 @@ Module.register("MMM-voice_control", {
             }
 
             //pour afficher plus longtemps le texte si il affiche l'ensemble des locaux
-            if ("Bibliothèque" in payload){
+            if (payload.includes("Bibliothèque")){
                 x = 150000;
             }
             //si il y a 2 lignes cela veut que fonctionnalite.question a détecté une volonté de guidage vers un local dans le texte écouté
@@ -242,15 +242,15 @@ Module.register("MMM-voice_control", {
                     this.running = true;
                     this.sendSocketNotification('VOICE_TEXT', {});
                     let points = '';
-                    wrapper.innerHTML = `<h1>Patientez</h1>`;
+                    wrapper.innerHTML = `<h1>Patientez<br></h1>`;
                     for (let i = 0; i < 10; i++){
                         setTimeout(() => {
                             points += '.';
                             if (points === '...'){
                                 points = '';
                             }
-                            wrapper.innerHTML = `<h1>Patientez${points}</h1>`;
-                        },i * 100);
+                            wrapper.innerHTML = `<h1>Patientez<br>${points}</h1>`;
+                        },i * 200);
                     }
                     setTimeout(() => {   
                         wrapper.innerHTML = `<h1>Demande de contrôle vocal</h1>`;
