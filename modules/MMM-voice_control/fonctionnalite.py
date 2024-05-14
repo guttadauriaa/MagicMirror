@@ -16,6 +16,7 @@ class Fonctionnalite:
                        ("IG lab", "ig_lab"), ("Réfectoire", "refectoire"), ("Salle archi", "pc_archi"), ("Salle des professeurs", "salle_des_profs"),
                        ("Secréteriat académique", "secretariat_academique"), ("Secrétariat des études", "secretariat_des_etudes"), ("Toilettes", "Toilettes")]
         
+        #on test d'abors si l'utilisateur demande un guidage vers un local spécifique
         for local in liste_local:
             if local[0].lower() in data.lower():
                 message = "très bien voici comment se rendre à : "+local[0]
@@ -23,13 +24,16 @@ class Fonctionnalite:
                 print(local[1])
                 break
 
+        #sinon on test si l'utilisateur demande un guidage vers un auditoire => on affiche la liste des auditoires
         else:
             if 'liste' in data or 'auditoire' in data or 'local' in data or 'locaux' in data:
                 message = "Dans quel local souhaitez-vous aller ? "
                 print(message, end="=")
+                print("Secouez votre main au-dessus de l'heure pour réactiver le contrôle vocal", end="=")
                 for local in liste_local:
+                    if local[0] == "Toilettes":
+                        print(local[0])
                     print(local[0], end="=")
-                print("Secouez votre main au-dessus de l'heure pour réactiver le contrôle vocal")
 
             else: 
                 print(data)
