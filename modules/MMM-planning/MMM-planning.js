@@ -80,13 +80,15 @@ socketNotificationReceived: function(notification, payload) {
           if (jours.includes(jour)) {
             let caseSuivante = false;
             for (let coursKey in liste_cours[jour]) {
-                let cours = liste_cours[jour][coursKey];
-                console.log(heures[i] + ' ' + cours + ' ' + heures[i+1])
-                if ((compareHeures(heures[i],cours.HeureD) === -1 || compareHeures(heures[i],cours.HeureD) === 0) && compareHeures(cours.HeureD,heures[i+1]) === -1) {
-                    html += `<td>${cours.Titre}<br>${cours.Local}<br>${cours.HeureD} - ${cours.HeureF}</td>`;
-                    delete liste_cours[cours.Jour][cours.HeureD];
-                    caseSuivante = true;
-                    break;
+                if (coursKey['Titre'] != "1"){
+                  let cours = liste_cours[jour][coursKey];
+                  console.log(heures[i] + ' ' + cours + ' ' + heures[i+1])
+                  if ((compareHeures(heures[i],cours.HeureD) === -1 || compareHeures(heures[i],cours.HeureD) === 0) && compareHeures(cours.HeureD,heures[i+1]) === -1) {
+                      html += `<td>${cours.Titre}<br>${cours.Local}<br>${cours.HeureD} - ${cours.HeureF}</td>`;
+                      delete liste_cours[cours.Jour][cours.HeureD];
+                      caseSuivante = true;
+                      break;
+                  }
                 }
             }
             if (!caseSuivante) {

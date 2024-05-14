@@ -75,7 +75,7 @@ Module.register("inscription_NFC", {
     function waiting() {
       let points = '';
       wrapper.innerHTML = `<h1>Patientez<br>.</h1>`;
-      for (let i = 0; i < 5; i++){
+      for (let i = 0; i < 3; i++){
           setTimeout(() => {
               points += '.';
               if (points === '...'){
