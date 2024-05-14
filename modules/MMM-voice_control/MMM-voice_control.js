@@ -33,11 +33,11 @@ Module.register("MMM-voice_control", {
                 let lines1 = firstLine.split('=');
                 let html = '';
                 html += `<h1>${lines1[0]}</h1><br>`;
-
+                html += `<h3>Pour réactiver le contrôle vocal secouez votre main au-dessus de l'heure</h3>`;
 
                 html += `<div style="display: flex; flex-wrap: wrap;">`;
                 for (let i = 1; i < lines1.length; i++){
-                    html += `<h3 style="flex-basis: 50%;">${lines1[i]}</h3>`;
+                    html += `<p style="flex-basis: 50%; font-size: 20px;">${lines1[i]}</p>`;
                 }
                 html += `</div>`;
                 wrapper.innerHTML = html;
@@ -282,6 +282,7 @@ Module.register("MMM-voice_control", {
                             let html = `<h1> Demandez moi quelque chose </h1>`;
                             html += '<h2>Par exemple :</h2>';
                             html += `<h2> - "Comment aller à l'auditoire 12"</h2>`;
+                            html += `<h2> - "Donne moi la liste des locaux"</h2>`;
                             //html += `<p> - "Quels sont mes cours aujourd'hui"</p>`;
                             wrapper.innerHTML = html;
                         }
