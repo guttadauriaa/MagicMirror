@@ -65,10 +65,7 @@ Module.register("inscription_NFC", {
       this.sendSocketNotification('demande_formation', {});
     }
 
-    if (notification === 'retour_des_formations'){
-      let html = `${payload}`;
-      wrapper.innerHTML = html;
-    }
+    
   
   },
   notificationReceived: function(notification, payload) {
