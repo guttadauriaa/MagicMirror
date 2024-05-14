@@ -242,11 +242,11 @@ Module.register("MMM-voice_control", {
                     this.running = true;
                     this.sendSocketNotification('VOICE_TEXT', {});
                     let points = '';
-                    wrapper.innerHTML = `<h1>Patientez<br></h1>`;
+                    wrapper.innerHTML = `<h1>Patientez<br>.</h1>`;
                     for (let i = 0; i < 10; i++){
                         setTimeout(() => {
                             points += '.';
-                            if (points === '...'){
+                            if (points === '........'){
                                 points = '';
                             }
                             wrapper.innerHTML = `<h1>Patientez<br>${points}</h1>`;
