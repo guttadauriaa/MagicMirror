@@ -33,8 +33,8 @@ Module.register("MMM-voice_control", {
                 let lines1 = firstLine.split('=');
                 let html = '';
                 for (let i = 0; i < lines1.length; i++){
-                    html += `<h1>${lines[i]}</h1><br>`;
-                    console.log(lines[i]);
+                    html += `<h1>${lines1[i]}</h1><br>`;
+                    console.log(lines1[i]);
                 }
                 wrapper.innerHTML = html;
             }
