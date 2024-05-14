@@ -247,7 +247,7 @@ Module.register("MMM-voice_control", {
                             if (points === '...'){
                                 points = '';
                             }
-                        },200);
+                        },10);
                         
                     }
                     setTimeout(() => {   
