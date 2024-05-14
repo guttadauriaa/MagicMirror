@@ -45,7 +45,13 @@ socketNotificationReceived: function(notification, payload) {
       let joursref = ["lun.","mar.","mer.","jeu.","ven.","sam.","dim."];
       let jours = [];
       let heures = ['08:15', '10:15', '10:30', '12:30', '13:30', '15:30', '15:45', '17:45', '18:00', '19:00'];
-      let data1 = JSON.parse(payload);
+      let data1;
+      if (typeof payload === 'object') {
+          data1 = payload;
+      } else {
+          data1 = JSON.parse(payload);
+      }
+      // let data1 = JSON.parse(payload);
       let data = data1.cours;
       let liste_cours = {}; //liste pour trier les cours par jour et heure
       let formation = data1.Formation;
