@@ -33,7 +33,7 @@ Module.register("MMM-voice_control", {
             }
 
             //pour afficher plus longtemps le texte si il affiche l'ensemble des locaux
-            if ("Bibliothèque" in payload){
+            if (payload.includes("Bibliothèque")){
                 x = 150000;
             }
             //si il y a 2 lignes cela veut que fonctionnalite.question a détecté une volonté de guidage vers un local dans le texte écouté
