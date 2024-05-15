@@ -169,7 +169,8 @@ while True:
             #nom du cours, local, date, heure début, heure fin, type de cours
             info = [title, local, jour, heure_debut, heure_fin]
             infoObj = Cours(title, local, jour, heure_debut, heure_fin)
-            liste_cours.append(infoObj)
+            if infoObj.titre != "1":
+                liste_cours.append(infoObj)
 
     except Exception as e:
         #print("Une exception de type", type(e).__name__, "a été levée.")
