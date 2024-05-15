@@ -33,6 +33,14 @@ module.exports = NodeHelper.create({
                 console.log("[voice_control] La sortie est :", stdout);
             
                 this.sendSocketNotification('DISPLAY_TEXT', stdout);
+                if (stdout.includes("éteindre")) {
+                    exec("sudo shutdown -h now", (error, stdout, stderr) => {
+                        if (error) {
+                            console.error(`Erreur d'exécution de la commande d'arrêt: ${error}`);
+                            return;
+                        }
+                    });
+                }
                 
             });
         }
