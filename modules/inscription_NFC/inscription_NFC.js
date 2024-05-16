@@ -181,11 +181,17 @@ Module.register("inscription_NFC", {
           let html = `Vous avez choisi : ${this.userDetails.option}`;
           wrapper.innerHTML = html;
         }
+        //enregistrement de l'utilisateur dans la base de données
+        let newUser = {
+          NFCid: this.userDetails.NFCid,
+          formationid: this.userDetails.formationid,
+          optionid: this.userDetails.optionid
+        };
+        this.sendSocketNotification('enregistrer_newUser', {newUser : newUser});
         
       }
-    
-    
     }
+    
   },
 
 
