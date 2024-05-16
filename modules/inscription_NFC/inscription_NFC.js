@@ -132,6 +132,8 @@ Module.register("inscription_NFC", {
       this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
     }
   },
+
+  
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
     console.log(this.name + ' notification :' + notification);

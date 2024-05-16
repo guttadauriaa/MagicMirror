@@ -105,7 +105,7 @@ options2 = []
 for i in range(len(options)):
     options2.append({'id': i, 'formation': options[i]})
 
-options = ['IG', 'Meca', 'Chimie', 'Elec']
+options = {'options' :['IG', 'Meca', 'Chimie', 'Elec']}
 print(json.dumps(options))
 
 #time.sleep(5)
