@@ -176,8 +176,8 @@ while True:
         #print("Une exception de type", type(e).__name__, "a été levée.")
         if type(e).__name__ == 'NoSuchElementException':
             break
-        else:
-            print(e)
+        #else:
+            #print(e)
             #break 
 
 
