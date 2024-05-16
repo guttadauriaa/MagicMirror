@@ -120,6 +120,7 @@ Module.register("inscription_NFC", {
         }, 2000);
       }
     }
+    
     if (notification === 'choix_options'){
       console.log("[retour_options] La sortie est :", payload.options);
       

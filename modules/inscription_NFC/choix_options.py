@@ -103,9 +103,9 @@ while True:
 #pour tester
 options2 = []
 for i in range(len(options)):
-    options2.append({'id': i, 'formation': options[i]})
+    options2.append({'id': i, 'val': options[i]})
 
-options = {'options' :['IG', 'Meca', 'Chimie', 'Elec']}
+options = {'options' :{'id':0,'val':'IG'}}
 print(json.dumps(options))
 
 #time.sleep(5)
