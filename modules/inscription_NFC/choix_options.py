@@ -106,7 +106,7 @@ while True:
 options2 = []
 for i in range(len(options)):
     options2.append({'id': i, 'option': options[i]})
-
+options2 = {'options': options2}
 print(json.dumps(options2))
 
 #time.sleep(5)
