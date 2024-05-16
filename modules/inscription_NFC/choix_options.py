@@ -97,7 +97,7 @@ while True:
 
 # for i in range(len(options)):
 #     print(f"{i} {options[i]}") 
-
+options = ['IG', 'Meca', 'Chimie', 'Elec']
 print(json.dumps(options))
 
 #time.sleep(5)
