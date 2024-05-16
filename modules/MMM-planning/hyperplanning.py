@@ -67,7 +67,7 @@ for i, j in enumerate (horaire):
             course_element = WebDriverWait(driver, 1).until(
                 EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{j}"))
             )
-
+            time.sleep(0.05)
             nom_de_la_formation += course_element.text+" - "
             course_element.click()
             break
