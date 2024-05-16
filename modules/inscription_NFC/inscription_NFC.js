@@ -125,10 +125,10 @@ Module.register("inscription_NFC", {
     }
 
     if (notification === 'choix_options'){
-      console.log("[retour_options] La sortie est :", payload.options);
+      console.log("[retour_options] La sortie est :", payload);
       
       let html = `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
-      for (let option of payload.options){
+      for (let option of payload){
           html += `<p>(${option.id}) ${option.option}<br></p>`;
       }
       wrapper.innerHTML = html;
