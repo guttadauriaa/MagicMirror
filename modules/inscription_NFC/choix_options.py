@@ -95,10 +95,18 @@ while True:
 #         f.write(f"{i} {j}") 
 #         print(f"{i} {j}")
 
+#fonctionne pas tjrs vide
+# for i in range(len(options)):
+#     print(f"{i} {options[i]}") 
+
+
+#pour tester
+options2 = []
 for i in range(len(options)):
-    print(f"{i} {options[i]}") 
-# options = ['IG', 'Meca', 'Chimie', 'Elec']
-# print(json.dumps(options))
+    options2.append({'id': i, 'formation': options[i]})
+
+options = ['IG', 'Meca', 'Chimie', 'Elec']
+print(json.dumps(options))
 
 #time.sleep(5)
 driver.quit()
