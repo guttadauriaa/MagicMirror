@@ -116,6 +116,7 @@ Module.register("inscription_NFC", {
         }else{
           console.error("Erreur de récupération de la formation dans le tableau des formations");
           let html = `Vous avez choisi : ${this.userDetails.formationid}`;
+          html += `<h2> Patientez, nous récupérons les options disponibles pour cette formation ...</h2>`;
           wrapper.innerHTML = html;
         }
         setTimeout(() => {
