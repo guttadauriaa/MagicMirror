@@ -31,7 +31,7 @@ module.exports = NodeHelper.create({
                 let obj = JSON.parse(data);
                 let formations = obj[payload.annee];
                 console.log(formations);
-                this.sendSocketNotification('retour_des_formations', {annee : payload.annee, formations : formations});
+                this.sendSocketNotification('choix_formations', {annee : payload.annee, formations : formations});
             } catch (err) {
                 console.error("Erreur de lecture du fichier JSON:", err);
             }
