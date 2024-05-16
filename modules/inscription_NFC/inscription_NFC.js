@@ -77,6 +77,8 @@ Module.register("inscription_NFC", {
       console.log(minIndexValue);
       let maxIndexValue = this.userDetails.formations[this.userDetails.formations.length - 1].id;
       for (let i = minIndexValue; i <= maxIndexValue; i++ ){
+        console.log("index",i);
+        console.log("payload.sortie",payload.sortie);
           if (payload.sortie.includes(i.toString())){
               formation = i;
               redemander = false;
