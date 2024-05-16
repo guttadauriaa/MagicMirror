@@ -116,7 +116,7 @@ Module.register("inscription_NFC", {
           wrapper.innerHTML = html;
         }
         setTimeout(() => {
-          this.sendSocketNotification('lecture_options',{formationid : this.userDetails.formation} );
+          this.sendSocketNotification('lecture_options',{formationid : this.userDetails.formationid} );
         }, 2000);
       }
     }
