@@ -5,6 +5,7 @@ Module.register("inscription_NFC", {
       NFCid: null,
       annee: null,
       formation: null,
+      formationid: null,
       formations: null
       // Ajoutez d'autres propriétés ici si nécessaire
     };
@@ -103,14 +104,31 @@ Module.register("inscription_NFC", {
           }, 2000);
             
       }else{
-        let html = `Vous avez choisi : ${formation}`;
-        wrapper.innerHTML = html;
-        this.userDetails.formation = formation;
-        this.sendSocketNotification('lecture_fichier_options', this.userDetails.formation);
+        this.userDetails.formationid = formation;
+        let formationObject = this.userDetails.formations.find(f => f.id === formation);
+        if (formationObject) {
+          this.userDetails.formation = formationObject.formation;
+          let html = `Vous avez choisi : ${this.userDetails.formationid} - ${this.userDetails.formation}`;
+          wrapper.innerHTML = html;
+          setTimeout(() => {
+            this.sendSocketNotification('lecture_options',{formationid : this.userDetails.formation} );
+          }, 2000);
+        }else{
+          console.error("Erreur de récupération de la formation dans le tableau des formations");
+        }
       }
     }
-    
-  
+    if (notification === 'choix_options'){
+      console.log("[retour_options] La sortie est :", payload);
+      let options = JSON.parse(payload);
+      console.log(options);
+      let html = `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
+      for (let option of options){
+          html += `<p>(${option.id}) ${option.option}<br></p>`;
+      }
+      wrapper.innerHTML = html;
+      this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
+    }
   },
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
