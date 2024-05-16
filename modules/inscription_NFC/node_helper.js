@@ -29,7 +29,7 @@ module.exports = NodeHelper.create({
             try {
                 let data = fs.readFileSync('./modules/MMM-voice_control/formations.json', 'utf8');
                 let obj = JSON.parse(data);
-                let formations = obj.BAB1;
+                let formations = obj["BAB2"];
                 console.log(formations);
                 this.sendSocketNotification('retour_des_formations', {annee : payload.annee, formations : formations});
             } catch (err) {

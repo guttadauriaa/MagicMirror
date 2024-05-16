@@ -123,7 +123,7 @@ module.exports = NodeHelper.create({
 
                 try {
                     let obj = JSON.parse(data);
-                    let formations = obj["BAB2"];
+                    let formations = obj.BAB1;
                     console.log(formations);
                     this.sendSocketNotification('retour_des_formations', formations);
 
