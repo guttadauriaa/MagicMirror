@@ -39,6 +39,7 @@ module.exports = NodeHelper.create({
         }
 
         if (notification === 'lecture_options') {
+            console.log("payload.formationid: ", payload.formationid);
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/inscription_NFC/choix_options.py ${payload.formationid}`, (error, stdout, stderr) => {
 
                 if (error) {
@@ -48,7 +49,7 @@ module.exports = NodeHelper.create({
                 
                 console.log("La sortie est :", stdout);
                 let obj = JSON.parse(stdout);
-                this.sendSocketNotification('choix_options', stdout);
+                this.sendSocketNotification('choix_options', obj);
 
             });
         }
