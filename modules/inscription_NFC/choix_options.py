@@ -13,7 +13,7 @@ import sys
 
 if len(sys.argv) > 1:
     cours_id = sys.argv[1]
-    print(f"ID du cours : {cours_id}")
+    #print(f"ID du cours : {cours_id}")
 else:
     cours_id = 3  # Remplacez "default_value" par la valeur que vous voulez utiliser par défaut
 
