@@ -31,7 +31,7 @@ module.exports = NodeHelper.create({
                         console.error(`Erreur d'exécution du script Python verif_badge: ${error2}`);
                         return;
                     }
-                    console.log(stdout2);
+                    console.log("verif_badge.py", stdout2);
     
                     // si le badge existe, on envoie une notification NFC au module MMM-planning
                     if (stdout2.trim() === "True") { 
