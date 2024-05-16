@@ -5,6 +5,7 @@ Module.register("inscription_NFC", {
       NFCid: null,
       annee: null,
       formation: null,
+      formations: null
       // Ajoutez d'autres propriétés ici si nécessaire
     };
     console.log("Starting module: " + this.name);
@@ -50,11 +51,12 @@ Module.register("inscription_NFC", {
         let html = `Vous avez choisi : ${annee}`;
         wrapper.innerHTML = html;
         this.userDetails.annee = annee; 
-        this.sendSocketNotification('lecture_fichier_formations', {suivant : "retour_formation", annee : annee});
+        this.sendSocketNotification('lecture_fichier_formations', {annee : annee});
       }
     }
 
-    if (notification === 'retour_des_formations'){
+    if (notification === 'choix_formations'){
+      this.userDetails.formations = payload.formations;
       let html = '';
       html = `<h1> Dites le numéro de votre formation pour l'année ${payload.annee} ou "annuler" pour arrêter</h1>`;
       for (let formation of payload.formations){
@@ -62,9 +64,42 @@ Module.register("inscription_NFC", {
       }
       
       wrapper.innerHTML = html;
-      this.sendSocketNotification('demande_formation', {});
+      this.sendSocketNotification('ecouter', {suivant : "retour_formation"});
+
     }
 
+    if (notification === 'retour_formation'){
+      let redemander = false;
+      console.log("[demande_formation] La sortie est :", payload.sortie);
+      let formation = null;
+      //min et max index formations de cette année 
+      let minIndexValue = this.userDetails.formations[0].id;
+      console.log(minIndexValue);
+      let maxIndexValue = this.userDetails.formations[this.userDetails.formations.length - 1].id;
+      for (let i = minIndexValue; i <= maxIndexValue; i++ ){
+          if (payload.sortie.includes(i.toString())){
+              formation = i;
+          }else{
+              console.log("redemander formation send");
+              redemander = true;
+              this.sendSocketNotification('ecouter', {suivant : 'retour_formation'});
+              setTimeout(() => {
+                let html = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
+                html += `<h1> Dites le numéro de votre formation pour l'année ${this.userDetails.annee} ou "annuler" pour arrêter</h1>`;
+                for (let formation of this.userDetails.formations){
+                    html += `<p>(${formation.id}) ${formation.formation}<br></p>`;
+                }
+                wrapper.innerHTML = html;
+              }, 2000);
+          }
+      }
+      if (redemander === false){
+        let html = `Vous avez choisi : ${formation}`;
+        wrapper.innerHTML = html;
+        this.userDetails.formation = formation;
+        this.sendSocketNotification('inscription', this.userDetails);
+      }
+    }
     
   
   },
@@ -100,10 +135,10 @@ Module.register("inscription_NFC", {
       // on envoie une notification au node_helper pour demander l'année d'étude de l'utilisateur
       this.sendSocketNotification('ecouter', {suivant : 'retour_annee'});
       setTimeout(() => {
-        let html = `<h1> Dites le numéro de votre année d'étude ou "annuler" pour arrêter</h1>`;
+        let html = `<h1> Dites "formation" suivie du numéro associé à votre année d'étude ou "annuler" pour arrêter</h1>`;
         html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
         wrapper.innerHTML = html;
-      }, 1500);
+      }, 1700);
       
     }
     
