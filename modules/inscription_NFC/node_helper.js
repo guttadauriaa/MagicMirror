@@ -53,6 +53,14 @@ module.exports = NodeHelper.create({
 
             });
         }
+        if (notification === 'enregistrer_newUser'){
+            const fs = require('fs');
+
+            fs.appendFile('./modules/MMM-planning/NFCtoH.txt', `${payload.newUser.NFCid} ${payload.newUser.formationid} ${payload.newUser.optionid}\n`, function (err) {
+                if (err) throw err;
+                console.log('Sauvegardé!');
+            });
+        }
         
     }
 });

@@ -105,10 +105,9 @@ while True:
 #pour tester
 options2 = []
 for i in range(len(options)):
-    options2.append({'id': i, 'formation': options[i]})
+    options2.append({'id': i, 'option': options[i]})
 
 print(json.dumps(options2))
-
 
 #time.sleep(5)
 driver.quit()

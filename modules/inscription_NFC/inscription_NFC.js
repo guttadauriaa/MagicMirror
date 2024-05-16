@@ -6,7 +6,10 @@ Module.register("inscription_NFC", {
       annee: null,
       formation: null,
       formationid: null,
-      formations: null
+      formations: null,
+      option: null,
+      optionid: null,
+      options: null
       // Ajoutez d'autres propriétés ici si nécessaire
     };
     console.log("Starting module: " + this.name);
@@ -113,6 +116,7 @@ Module.register("inscription_NFC", {
         }else{
           console.error("Erreur de récupération de la formation dans le tableau des formations");
           let html = `Vous avez choisi : ${this.userDetails.formationid}`;
+          html += `<h2> Patientez, nous récupérons les options disponibles pour cette formation ...</h2>`;
           wrapper.innerHTML = html;
         }
         setTimeout(() => {
@@ -120,20 +124,78 @@ Module.register("inscription_NFC", {
         }, 2000);
       }
     }
+
     if (notification === 'choix_options'){
-      console.log("[retour_options] La sortie est :", payload);
-      let options = JSON.parse(payload);
-      console.log(options);
+      console.log("[retour_options] La sortie est :", payload.options);
+      
       let html = `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
-      for (let option of options){
+      for (let option of payload.options){
           html += `<p>(${option.id}) ${option.option}<br></p>`;
       }
       wrapper.innerHTML = html;
       this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
     }
+
+    if (notification === 'retour_option'){
+      let redemander = false;
+      console.log("[demande_option] La sortie est :", payload.sortie);
+      let option = null;
+      //min et max index formations de cette année 
+      let minIndexValue = payload.options[0].id;
+      console.log(minIndexValue);
+      let maxIndexValue = payload.options[payload.options.length - 1].id;
+      console.log(maxIndexValue);
+      for (let i = minIndexValue; i <= maxIndexValue; i++ ){
+        console.log("index",i);
+        let index = i.toString();
+        console.log("payload.sortie",payload.sortie);
+          if (payload.sortie.includes(index)){
+              option = i;
+              redemander = false;
+              break;
+          }else{
+              redemander = true;
+          }
+      }
+      if (redemander === true){
+          console.log("redemander option send");
+          redemander = true;
+          this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
+          setTimeout(() => {
+            let html = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
+            html += `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
+            for (let opt of payload.options){
+                html += `<p>(${opt.id}) ${opt.option}<br></p>`;
+            }
+            wrapper.innerHTML = html;
+          }, 2000);
+            
+      }else{
+        this.userDetails.optionid = option;
+        let optionObject = this.userDetails.options.find(f => f.id === option.toString());
+        if (optionObject) {
+          this.userDetails.option = optionObject.option;
+          let html = `Vous avez choisi : ${this.userDetails.optionid} - ${this.userDetails.option}`;
+          wrapper.innerHTML = html;
+        }else{
+          console.error("Erreur de récupération de l'option dans le tableau des options");
+          let html = `Vous avez choisi : ${this.userDetails.option}`;
+          wrapper.innerHTML = html;
+        }
+        //enregistrement de l'utilisateur dans la base de données
+        let newUser = {
+          NFCid: this.userDetails.NFCid,
+          formationid: this.userDetails.formationid,
+          optionid: this.userDetails.optionid
+        };
+        this.sendSocketNotification('enregistrer_newUser', {newUser : newUser});
+        
+      }
+    }
+    
   },
 
-  
+
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
     console.log(this.name + ' notification :' + notification);
