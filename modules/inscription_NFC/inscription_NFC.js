@@ -79,25 +79,29 @@ Module.register("inscription_NFC", {
       for (let i = minIndexValue; i <= maxIndexValue; i++ ){
           if (payload.sortie.includes(i.toString())){
               formation = i;
+              redemander = false;
           }else{
-              console.log("redemander formation send");
               redemander = true;
-              this.sendSocketNotification('ecouter', {suivant : 'retour_formation'});
-              setTimeout(() => {
-                let html = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
-                html += `<h1> Dites le numéro de votre formation pour l'année ${this.userDetails.annee} ou "annuler" pour arrêter</h1>`;
-                for (let formation of this.userDetails.formations){
-                    html += `<p>(${formation.id}) ${formation.formation}<br></p>`;
-                }
-                wrapper.innerHTML = html;
-              }, 2000);
           }
       }
-      if (redemander === false){
+      if (redemander === true){
+          console.log("redemander formation send");
+          redemander = true;
+          this.sendSocketNotification('ecouter', {suivant : 'retour_formation'});
+          setTimeout(() => {
+            let html = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
+            html += `<h1> Dites le numéro de votre formation pour l'année ${this.userDetails.annee} ou "annuler" pour arrêter</h1>`;
+            for (let formation of this.userDetails.formations){
+                html += `<p>(${formation.id}) ${formation.formation}<br></p>`;
+            }
+            wrapper.innerHTML = html;
+          }, 2000);
+            
+      }else{
         let html = `Vous avez choisi : ${formation}`;
         wrapper.innerHTML = html;
         this.userDetails.formation = formation;
-        this.sendSocketNotification('inscription', this.userDetails);
+        this.sendSocketNotification('lecture_fichier_options', this.userDetails.formation);
       }
     }
     
