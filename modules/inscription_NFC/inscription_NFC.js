@@ -122,13 +122,67 @@ Module.register("inscription_NFC", {
     }
     if (notification === 'choix_options'){
       console.log("[retour_options] La sortie est :", payload.options);
-      console.log(options);
+      
       let html = `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
-      for (let option of options){
+      for (let option of payload.options){
           html += `<p>(${option.id}) ${option.option}<br></p>`;
       }
       wrapper.innerHTML = html;
       this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
+    }
+
+    if (notification === 'retour_option'){
+      let redemander = false;
+      console.log("[demande_option] La sortie est :", payload.sortie);
+      let option = null;
+      //min et max index formations de cette année 
+      let minIndexValue = payload.options[0].id;
+      console.log(minIndexValue);
+      let maxIndexValue = payload.options[payload.options.length - 1].id;
+      console.log(maxIndexValue);
+      for (let i = minIndexValue; i <= maxIndexValue; i++ ){
+        console.log("index",i);
+        let index = i.toString();
+        console.log("payload.sortie",payload.sortie);
+          if (payload.sortie.includes(index)){
+              option = i;
+              redemander = false;
+              break;
+          }else{
+              redemander = true;
+          }
+      }
+      if (redemander === true){
+          console.log("redemander option send");
+          redemander = true;
+          this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
+          setTimeout(() => {
+            let html = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
+            html += `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
+            for (let opt of payload.options){
+                html += `<p>(${opt.id}) ${opt.option}<br></p>`;
+            }
+            wrapper.innerHTML = html;
+          }, 2000);
+            
+      }else{
+        this.userDetails.option = option;
+        let optionObject = payload.options.find(f => f.id === option.toString());
+        if (optionObject) {
+          this.userDetails.option = optionObject.option;
+          let html = `Vous avez choisi : ${this.userDetails.option}`;
+          wrapper.innerHTML = html;
+        }else{
+          console.error("Erreur de récupération de l'option dans le tableau des options");
+          let html = `Vous avez choisi : ${this.userDetails.option}`;
+          wrapper.innerHTML = html;
+        }
+        setTimeout(() => {
+          this.sendSocketNotification('enregistrer_utilisateur', this.userDetails);
+        }, 2000);
+      }
+    
+    
     }
   },
 
