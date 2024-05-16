@@ -6,7 +6,10 @@ Module.register("inscription_NFC", {
       annee: null,
       formation: null,
       formationid: null,
-      formations: null
+      formations: null,
+      option: null,
+      optionid: null,
+      options: null
       // Ajoutez d'autres propriétés ici si nécessaire
     };
     console.log("Starting module: " + this.name);
@@ -120,6 +123,7 @@ Module.register("inscription_NFC", {
         }, 2000);
       }
     }
+
     if (notification === 'choix_options'){
       console.log("[retour_options] La sortie est :", payload.options);
       
@@ -166,24 +170,28 @@ Module.register("inscription_NFC", {
           }, 2000);
             
       }else{
-        this.userDetails.option = option;
-        let optionObject = payload.options.find(f => f.id === option.toString());
+        this.userDetails.optionid = option;
+        let optionObject = this.userDetails.options.find(f => f.id === option.toString());
         if (optionObject) {
           this.userDetails.option = optionObject.option;
-          let html = `Vous avez choisi : ${this.userDetails.option}`;
+          let html = `Vous avez choisi : ${this.userDetails.optionid} - ${this.userDetails.option}`;
           wrapper.innerHTML = html;
         }else{
           console.error("Erreur de récupération de l'option dans le tableau des options");
           let html = `Vous avez choisi : ${this.userDetails.option}`;
           wrapper.innerHTML = html;
         }
-        setTimeout(() => {
-          this.sendSocketNotification('enregistrer_utilisateur', this.userDetails);
-        }, 2000);
+        //enregistrement de l'utilisateur dans la base de données
+        let newUser = {
+          NFCid: this.userDetails.NFCid,
+          formationid: this.userDetails.formationid,
+          optionid: this.userDetails.optionid
+        };
+        this.sendSocketNotification('enregistrer_newUser', {newUser : newUser});
+        
       }
-    
-    
     }
+    
   },
 
 
