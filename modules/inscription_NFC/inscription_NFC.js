@@ -121,8 +121,7 @@ Module.register("inscription_NFC", {
       }
     }
     if (notification === 'choix_options'){
-      console.log("[retour_options] La sortie est :", payload);
-      let options = JSON.parse(payload);
+      console.log("[retour_options] La sortie est :", payload.options);
       console.log(options);
       let html = `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
       for (let option of options){
@@ -133,7 +132,7 @@ Module.register("inscription_NFC", {
     }
   },
 
-  
+
   notificationReceived: function(notification, payload) {
     let wrapper = document.getElementById('inscription_NFC');
     console.log(this.name + ' notification :' + notification);

@@ -48,8 +48,8 @@ module.exports = NodeHelper.create({
                 }
                 
                 console.log("La sortie est :", stdout);
-                //let obj = JSON.parse(stdout);
-                this.sendSocketNotification('choix_options', {options : stdout});
+                let obj = JSON.parse(stdout);
+                this.sendSocketNotification('choix_options', {options : obj.options});
 
             });
         }
