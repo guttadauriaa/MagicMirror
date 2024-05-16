@@ -105,7 +105,7 @@ options2 = []
 for i in range(len(options)):
     options2.append({'id': i, 'option': options[i]})
 
-options = {'options' :{'id':0,'option':'IG'}}
+#options = {'options' :[{'id':0,'option':'IG'}]}
 print(json.dumps(options))
 
 #time.sleep(5)
