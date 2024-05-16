@@ -66,15 +66,26 @@ while True:
         driver.execute_script("arguments[0].scrollIntoView();", element)
         test +=1
 
+
+time.sleep(0.05)
+
+#pour pouvoir choisir le cours/option voulu => on attend jusqu'à ce que la page soit chargée et on sélectionne
+edit_button = WebDriverWait(driver, 5).until(
+    EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[2].bouton_Edit"))
+)
+edit_button.click()
+
 test = 1
 options = []
 i = 0
 
+print("options")
 #selectionner l'option
+
 while True:
     try:
         # Attendre que l'élément du cours soit présent sur la page
-        course_element = WebDriverWait(driver, 0).until(
+        course_element = WebDriverWait(driver, 0.1).until(
             EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[2]_{i}"))
         )
         options.append(course_element.text)
@@ -90,23 +101,13 @@ while True:
             # Si l'élément n'existe pas, arrêter la boucle
             break
 
-# with open("formations.txt", "w") as f:
-#     for i, j in enumerate(formation):
-#         f.write(f"{i} {j}") 
-#         print(f"{i} {j}")
-
-#fonctionne pas tjrs vide
-# for i in range(len(options)):
-#     print(f"{i} {options[i]}") 
-
 
 #pour tester
 options2 = []
 for i in range(len(options)):
     options2.append({'id': i, 'option': options[i]})
 
-#options = {'options' :[{'id':0,'option':'IG'}]}
-print(json.dumps(options))
+print(json.dumps(options2))
 
 #time.sleep(5)
 driver.quit()
