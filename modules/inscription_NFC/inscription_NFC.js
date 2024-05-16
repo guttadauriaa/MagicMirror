@@ -76,6 +76,7 @@ Module.register("inscription_NFC", {
       let minIndexValue = this.userDetails.formations[0].id;
       console.log(minIndexValue);
       let maxIndexValue = this.userDetails.formations[this.userDetails.formations.length - 1].id;
+      console.log(maxIndexValue);
       for (let i = minIndexValue; i <= maxIndexValue; i++ ){
         console.log("index",i);
         let index = i.toString();
@@ -95,8 +96,8 @@ Module.register("inscription_NFC", {
           setTimeout(() => {
             let html = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
             html += `<h1> Dites le numéro de votre formation pour l'année ${this.userDetails.annee} ou "annuler" pour arrêter</h1>`;
-            for (let formation of this.userDetails.formations){
-                html += `<p>(${formation.id}) ${formation.formation}<br></p>`;
+            for (let form of this.userDetails.formations){
+                html += `<p>(${form.id}) ${form.formation}<br></p>`;
             }
             wrapper.innerHTML = html;
           }, 2000);
