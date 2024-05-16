@@ -105,17 +105,19 @@ Module.register("inscription_NFC", {
             
       }else{
         this.userDetails.formationid = formation;
-        let formationObject = this.userDetails.formations.find(f => f.id === formation);
+        let formationObject = this.userDetails.formations.find(f => f.id === formation.toString());
         if (formationObject) {
           this.userDetails.formation = formationObject.formation;
           let html = `Vous avez choisi : ${this.userDetails.formationid} - ${this.userDetails.formation}`;
           wrapper.innerHTML = html;
-          setTimeout(() => {
-            this.sendSocketNotification('lecture_options',{formationid : this.userDetails.formation} );
-          }, 2000);
         }else{
           console.error("Erreur de récupération de la formation dans le tableau des formations");
+          let html = `Vous avez choisi : ${this.userDetails.formationid}`;
+          wrapper.innerHTML = html;
         }
+        setTimeout(() => {
+          this.sendSocketNotification('lecture_options',{formationid : this.userDetails.formation} );
+        }, 2000);
       }
     }
     if (notification === 'choix_options'){
