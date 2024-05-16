@@ -10,7 +10,7 @@ module.exports = NodeHelper.create({
     socketNotificationReceived: function(notification, payload) {
         console.log("node_hepler inscription_NFC received: " + notification + ' '+ payload.suivant);
         if (notification === "ecouter"){
-            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-voice_control/ecouter.py `, (error, stdout, stderr) => {
+            exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/inscription_NFC/ecouter.py `, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur d'exécution du script Python ecouter.py`);
                 }
@@ -27,7 +27,7 @@ module.exports = NodeHelper.create({
             const fs = require('fs');
             console.log(payload.annee);
             try {
-                let data = fs.readFileSync('./modules/MMM-voice_control/formations.json', 'utf8');
+                let data = fs.readFileSync('./modules/inscription_NFC/formations.json', 'utf8');
                 let obj = JSON.parse(data);
                 let formations = obj[payload.annee];
                 console.log(formations);
