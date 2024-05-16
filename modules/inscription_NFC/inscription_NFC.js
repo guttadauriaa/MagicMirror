@@ -73,11 +73,11 @@ Module.register("inscription_NFC", {
       console.log("[demande_formation] La sortie est :", payload.sortie);
       let formation = null;
       //min et max index formations de cette année 
-      let minIndexValue = this.userDetails.formations[0];
+      let minIndexValue = this.userDetails.formations[0].id;
       console.log(minIndexValue);
-      let maxIndexValue = this.userDetails.formations[this.userDetails.formations.length - 1];
+      let maxIndexValue = this.userDetails.formations[this.userDetails.formations.length - 1].id;
       for (let i = minIndexValue; i <= maxIndexValue; i++ ){
-          if (f.includes(i.toString())){
+          if (payload.sortie.includes(i.toString())){
               formation = i;
           }else{
               console.log("redemander formation send");
@@ -138,7 +138,7 @@ Module.register("inscription_NFC", {
         let html = `<h1> Dites "formation" suivie du numéro associé à votre année d'étude ou "annuler" pour arrêter</h1>`;
         html += `<p>(1) BAB1<br>(2) BAB2<br>(3) BAB3<br>(4) MA1<br>(5) MA2</p>`;
         wrapper.innerHTML = html;
-      }, 1500);
+      }, 1700);
       
     }
     
