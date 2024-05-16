@@ -79,7 +79,7 @@ test = 1
 options = []
 i = 0
 
-print("options")
+#print("options")
 #selectionner l'option
 
 while True:
@@ -105,8 +105,8 @@ while True:
 #pour tester
 options2 = []
 for i in range(len(options)):
-    options2.append({'id': i, 'option': options[i]})
-options3 = {'options': options2}
+    options2.append({"id": i, "option": options[i]})
+options3 = {"options": options2}
 print(json.dumps(options3))
 
 #time.sleep(5)
