@@ -208,6 +208,9 @@ Module.register("inscription_NFC", {
         
       }
     }
+    if (notification === 'annuler'){
+      this.hide();
+    }
     
   },
 
