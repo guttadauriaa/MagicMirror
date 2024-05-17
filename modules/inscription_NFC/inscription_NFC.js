@@ -63,10 +63,12 @@ Module.register("inscription_NFC", {
       this.userDetails.formations = payload.formations;
       let html = '';
       html = `<h1> Dites le numéro de votre formation pour l'année ${payload.annee} ou "annuler" pour arrêter</h1>`;
+      html += `<div style="column-count: 2;">`;
+      
       for (let formation of payload.formations){
           html += `<p>(${formation.id}) ${formation.formation}<br></p>`;
       }
-      
+      html += `</div>`;
       wrapper.innerHTML = html;
       this.sendSocketNotification('ecouter', {suivant : "retour_formation"});
 
