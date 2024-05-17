@@ -40,7 +40,7 @@ Module.register("MMM-voice_control", {
                     html += `<p style="flex-basis: 50%; font-size: 20px;">`;
 
                     for (let i = 1; i < lines1.length; i++){
-                        html += `${lines1[i]} `;
+                        html += `${lines1[i]} <br>`;
                     }
                     html += `</p>`;
                     html += `</div>`;
