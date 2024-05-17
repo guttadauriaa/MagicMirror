@@ -125,9 +125,10 @@ Module.register("inscription_NFC", {
       }
     }
 
+    
     if (notification === 'choix_options'){
       console.log("[retour_options] La sortie est :", payload.options);
-      
+      this.userDetails.options = payload.options;
       let html = `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
       for (let option of payload.options){
           html += `<p>(${option.id}) ${option.option}<br></p>`;
@@ -136,16 +137,12 @@ Module.register("inscription_NFC", {
       this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
     }
 
+
     if (notification === 'retour_option'){
       let redemander = false;
       console.log("[demande_option] La sortie est :", payload.sortie);
       let option = null;
-      //min et max index formations de cette année 
-      let minIndexValue = payload.options[0].id;
-      console.log(minIndexValue);
-      let maxIndexValue = payload.options[payload.options.length - 1].id;
-      console.log(maxIndexValue);
-      for (let i = minIndexValue; i <= maxIndexValue; i++ ){
+      for (let i = 0; i <= this.userDetails.options.length; i++ ){
         console.log("index",i);
         let index = i.toString();
         console.log("payload.sortie",payload.sortie);
