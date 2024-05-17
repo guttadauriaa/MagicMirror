@@ -158,7 +158,7 @@ Module.register("inscription_NFC", {
       let option = null;
       for (let i = 0; i <= this.userDetails.options.length; i++ ){
         console.log("index",i);
-        let index = i.toString();
+        let index = ' '+i.toString()+' ';
         console.log("payload.sortie",payload.sortie);
           if (payload.sortie.includes(index)){
               option = i;
