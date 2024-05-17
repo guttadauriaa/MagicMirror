@@ -156,9 +156,9 @@ Module.register("inscription_NFC", {
       let redemander = false;
       console.log("[demande_option] La sortie est :", payload.sortie);
       let option = null;
-      for (let i = 0; i <= this.userDetails.options.length; i++ ){
+      for (let i = this.userDetails.options.length; i >= 0; i-- ){
         console.log("index",i);
-        let index = ' '+i.toString()+' ';
+        let index = i.toString();
         console.log("payload.sortie",payload.sortie);
           if (payload.sortie.includes(index)){
               option = i;
