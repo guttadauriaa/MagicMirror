@@ -230,10 +230,11 @@ Module.register("inscription_NFC", {
     // quand la notification depuis le module MMM-planning est "SETUP_BADGE", on lance l'enregistrement d'un nouvel utilisateur
     if (notification === 'SETUP_BADGE'){
       console.log(payload);
-
+      //affichage du module donc execution de resume() et réinitialisation des variables
+      this.show();
       //quand on a la valeur du nouveau badge à enregistrer
       this.userDetails.NFCid = payload.badge;
-      this.show(); //affichage du module donc execution de resume() 
+       
 
       waiting();
 
