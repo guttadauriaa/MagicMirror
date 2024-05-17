@@ -202,7 +202,9 @@ Module.register("inscription_NFC", {
         };
         this.sendSocketNotification('enregistrer_newUser', {newUser : newUser});
         //on cache le module + réinitialisation des variables + envoi de la notification pour relancer le voice control
-        this.hide();
+        setTimeout(() => {
+          this.hide();
+        },5000);
         
       }
     }

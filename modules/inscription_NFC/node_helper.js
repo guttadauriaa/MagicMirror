@@ -16,6 +16,9 @@ module.exports = NodeHelper.create({
                 }
 
                 console.log("[ecouter] La sortie est :", stdout);
+                if (stdout.includes("annuler")) {
+                    this.hide();
+                }
                 this.sendSocketNotification(payload.suivant, {sortie :stdout});
                 
             });
