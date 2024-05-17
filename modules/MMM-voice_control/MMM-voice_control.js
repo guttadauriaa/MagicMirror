@@ -36,10 +36,10 @@ Module.register("MMM-voice_control", {
                 if (lines1[1]){
                     html += `<h2>Pour réactiver le contrôle vocal secouez votre main au-dessus de l'heure</h2>`;
                 
-                    html += `<div style="column-count: 2; column-gap: 10px;">`;
+                    html += `<div style="column-count: 2; column-gap: 20px;">`;
 
                     for (let i = 1; i < lines1.length; i++){
-                        html += `<p style="font-size: 30px;">${lines1[i]}</p>`;
+                        html += `<p style="font-size: 30px; margin-bottom: 5px;">${lines1[i]}</p>`;
                     }
 
                     html += `</div>`;
