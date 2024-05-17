@@ -201,6 +201,8 @@ Module.register("inscription_NFC", {
           optionid: this.userDetails.optionid
         };
         this.sendSocketNotification('enregistrer_newUser', {newUser : newUser});
+        //on cache le module + réinitialisation des variables + envoi de la notification pour relancer le voice control
+        this.hide();
         
       }
     }
@@ -230,11 +232,11 @@ Module.register("inscription_NFC", {
     // quand la notification depuis le module MMM-planning est "SETUP_BADGE", on lance l'enregistrement d'un nouvel utilisateur
     if (notification === 'SETUP_BADGE'){
       console.log(payload);
-      //affichage du module donc execution de resume() et réinitialisation des variables
+      //affichage du module donc execution de resume() 
       this.show();
       //quand on a la valeur du nouveau badge à enregistrer
       this.userDetails.NFCid = payload.badge;
-       
+      
 
       waiting();
 
@@ -256,6 +258,12 @@ Module.register("inscription_NFC", {
   resume: function() {
     this.sendNotification("HIDE_VOICE_CONTROL", {});
     console.log("demande arret voice control")
+    
+  },
+  suspend: function() {
+    this.sendNotification("SHOW_VOICE_CONTROL", {});
+    this.sendSocketNotification('SETUP_BADGE_end',{});
+    console.log("demande relancement voice control")
     this.userDetails = {
       NFCid: null,
       annee: null,
@@ -267,10 +275,6 @@ Module.register("inscription_NFC", {
       options: null
       // Ajoutez d'autres propriétés ici si nécessaire
     };
-  },
-  suspend: function() {
-    this.sendNotification("SHOW_VOICE_CONTROL", {});
-    console.log("demande relancement voice control")
   },
   getDom: function() {
       let wrapper = document.createElement("div");
