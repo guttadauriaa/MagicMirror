@@ -102,9 +102,11 @@ Module.register("inscription_NFC", {
           setTimeout(() => {
             let html = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
             html += `<h1> Dites le numéro de votre formation pour l'année ${this.userDetails.annee} ou "annuler" pour arrêter</h1>`;
+            html += `<div style="column-count: 2;">`;
             for (let form of this.userDetails.formations){
                 html += `<p>(${form.id}) ${form.formation}<br></p>`;
             }
+            html += `</div>`;
             wrapper.innerHTML = html;
           }, 2000);
             
@@ -145,9 +147,12 @@ Module.register("inscription_NFC", {
       }else{
         this.userDetails.options = payload.options;
         let html = `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
+        html += `<div style="column-count: 2; column-gap: 20px;">`;
         for (let option of payload.options){
             html += `<p>(${option.id}) ${option.option}<br></p>`;
         }
+        html += `</div>`;
+
         wrapper.innerHTML = html;
         this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
       }
@@ -177,9 +182,13 @@ Module.register("inscription_NFC", {
           setTimeout(() => {
             let html = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
             html += `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
+            html += `<div style="column-count: 2; column-gap: 20px;">`;
+            
             for (let opt of payload.options){
                 html += `<p>(${opt.id}) ${opt.option}<br></p>`;
             }
+            html += `</div>`;
+
             wrapper.innerHTML = html;
           }, 2000);
             
