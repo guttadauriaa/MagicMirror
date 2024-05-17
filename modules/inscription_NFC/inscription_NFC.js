@@ -112,6 +112,7 @@ Module.register("inscription_NFC", {
         if (formationObject) {
           this.userDetails.formation = formationObject.formation;
           let html = `Vous avez choisi : ${this.userDetails.formationid} - ${this.userDetails.formation}`;
+          html += `<h2> Patientez, nous récupérons les options disponibles pour cette formation ...</h2>`;
           wrapper.innerHTML = html;
         }else{
           console.error("Erreur de récupération de la formation dans le tableau des formations");
@@ -125,16 +126,29 @@ Module.register("inscription_NFC", {
       }
     }
 
-    
+
     if (notification === 'choix_options'){
       console.log("[retour_options] La sortie est :", payload.options);
-      this.userDetails.options = payload.options;
-      let html = `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
-      for (let option of payload.options){
-          html += `<p>(${option.id}) ${option.option}<br></p>`;
+      if (payload.options.length === 0){
+        let html = `<h1>Il n'y a pas d'options disponibles pour cette formation</h1>`;
+        html += `<h1>Vous êtes inscrit en ${this.userDetails.formation} sans option</h1>`;
+        wrapper.innerHTML = html;
+        let newUser = {
+          NFCid: this.userDetails.NFCid,
+          formationid: this.userDetails.formationid,
+          optionid: 0
+        };
+        this.sendSocketNotification('enregistrer_newUser', {newUser : newUser});
+        
+      }else{
+        this.userDetails.options = payload.options;
+        let html = `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
+        for (let option of payload.options){
+            html += `<p>(${option.id}) ${option.option}<br></p>`;
+        }
+        wrapper.innerHTML = html;
+        this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
       }
-      wrapper.innerHTML = html;
-      this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
     }
 
 
@@ -169,14 +183,15 @@ Module.register("inscription_NFC", {
             
       }else{
         this.userDetails.optionid = option;
-        let optionObject = this.userDetails.options.find(f => f.id === option.toString());
+        let optionObject = this.userDetails.options.find(f => f.id === option);
         if (optionObject) {
           this.userDetails.option = optionObject.option;
           let html = `Vous avez choisi : ${this.userDetails.optionid} - ${this.userDetails.option}`;
+          html += '<h2>Votre badge est maintenant enregistré, vous pouvez le scanner pour accéder à votre horaire</h2>'
           wrapper.innerHTML = html;
         }else{
           console.error("Erreur de récupération de l'option dans le tableau des options");
-          let html = `Vous avez choisi : ${this.userDetails.option}`;
+          let html = `Vous avez choisi : ${this.userDetails.optionid}`;
           wrapper.innerHTML = html;
         }
         //enregistrement de l'utilisateur dans la base de données
@@ -240,7 +255,17 @@ Module.register("inscription_NFC", {
   resume: function() {
     this.sendNotification("HIDE_VOICE_CONTROL", {});
     console.log("demande arret voice control")
-
+    this.userDetails = {
+      NFCid: null,
+      annee: null,
+      formation: null,
+      formationid: null,
+      formations: null,
+      option: null,
+      optionid: null,
+      options: null
+      // Ajoutez d'autres propriétés ici si nécessaire
+    };
   },
   suspend: function() {
     this.sendNotification("SHOW_VOICE_CONTROL", {});
