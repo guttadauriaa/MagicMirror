@@ -167,6 +167,13 @@ socketNotificationReceived: function(notification, payload) {
   }
 },
 
+notificationReceived: function(notification, payload, sender) {
+  let wrapper = document.getElementById('MMM-planning');
+  if (notification === 'SETUP_BADGE_end'){
+    this.updateDom();
+  }
+},
+
   getDom: function() {
       console.log("dom1");
       let wrapper = document.createElement("div");
