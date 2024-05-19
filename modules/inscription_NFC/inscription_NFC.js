@@ -62,7 +62,7 @@ Module.register("inscription_NFC", {
     if (notification === 'choix_formations'){
       this.userDetails.formations = payload.formations;
       let html = '';
-      html = `<h1> Dites le numéro de votre formation pour l'année ${payload.annee} ou "annuler" pour arrêter</h1>`;
+      html = `<h1> Dites "formation" suivi du numéro de votre formation pour l'année ${payload.annee} ou "annuler" pour arrêter</h1>`;
       html += `<div style="column-count: 2;">`;
       
       for (let formation of payload.formations){
@@ -101,7 +101,7 @@ Module.register("inscription_NFC", {
           this.sendSocketNotification('ecouter', {suivant : 'retour_formation'});
           setTimeout(() => {
             let html = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
-            html += `<h1> Dites le numéro de votre formation pour l'année ${this.userDetails.annee} ou "annuler" pour arrêter</h1>`;
+            html += `<h1> Dites "formation" suivi du numéro de votre formation pour l'année ${this.userDetails.annee} ou "annuler" pour arrêter</h1>`;
             html += `<div style="column-count: 2;">`;
             for (let form of this.userDetails.formations){
                 html += `<p>(${form.id}) ${form.formation}<br></p>`;
@@ -146,7 +146,7 @@ Module.register("inscription_NFC", {
         
       }else{
         this.userDetails.options = payload.options;
-        let html = `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
+        let html = `<h1> Dites "option" suivi du numéro de votre option ou "annuler" pour arrêter</h1>`;
         html += `<div style="column-count: 2; column-gap: 20px;">`;
         for (let option of payload.options){
             html += `<p>(${option.id}) ${option.option}<br></p>`;
@@ -181,7 +181,7 @@ Module.register("inscription_NFC", {
           this.sendSocketNotification('ecouter', {suivant : 'retour_option'});
           setTimeout(() => {
             let html = "<h1>Je n'ai pas compris, veuillez répéter.</h1>";
-            html += `<h1> Dites le numéro de votre option ou "annuler" pour arrêter</h1>`;
+            html += `<h1> Dites "option" suivi du numéro de votre option ou "annuler" pour arrêter</h1>`;
             html += `<div style="column-count: 2; column-gap: 20px;">`;
             
             for (let opt of payload.options){
