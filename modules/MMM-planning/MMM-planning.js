@@ -170,7 +170,9 @@ socketNotificationReceived: function(notification, payload) {
 notificationReceived: function(notification, payload, sender) {
   let wrapper = document.getElementById('MMM-planning');
   if (notification === 'SETUP_BADGE_end'){
-    this.updateDom();
+      wrapper.style.marginTop = "-10cm"; // Ajouter une marge supérieure de 2cm
+      wrapper.innerHTML = "<h1>Pour afficher votre horaire, scannez votre badge UMons -> </h1>";
+      return wrapper;
   }
 },
 
