@@ -278,7 +278,7 @@ Module.register("inscription_NFC", {
   },
   suspend: function() {
     this.sendNotification("SHOW_VOICE_CONTROL", {});
-    this.sendSocketNotification('SETUP_BADGE_end',{});
+    this.sendNotification('SETUP_BADGE_end',{});
     console.log("demande relancement voice control")
     this.userDetails = {
       NFCid: null,
