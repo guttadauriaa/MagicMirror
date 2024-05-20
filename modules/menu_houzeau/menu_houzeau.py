@@ -84,5 +84,10 @@ if (jourPre+2 < jourToday and moisPre == moisToday) or moisPre < moisToday:
     jourfinsemaine = int(listemots[-3])
     dicomois = {"janvier": 1, "février": 2, "mars": 3, "avril": 4, "mai": 5, "juin": 6, "juillet": 7, "août": 8, "septembre": 9, "octobre": 10, "novembre": 11, "décembre": 12}
     moisMenu = dicomois[listemots[-2]]
-    with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt", "w") as f:
-        f.write(f"{jourfinsemaine}\n{moisMenu}")
+
+    if (jourfinsemaine < jourToday and moisMenu == moisToday) or moisMenu < moisToday:
+        print("Le menu du restaurant universitaire de cette semaine n'est pas encore disponible.")
+    else:
+        print("true")
+        with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt", "w") as f:
+            f.write(f"{jourfinsemaine}\n{moisMenu}")

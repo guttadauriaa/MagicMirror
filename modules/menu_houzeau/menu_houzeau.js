@@ -16,8 +16,9 @@ Module.register("menu_houzeau", {
                 html += payload;
                 const imagePath = "./modules/menu_houzeau/menu.png";
                 
-                
-                html += `<img src="${imagePath}" alt="Your Image" style="width: 60%; height: 60%;" />`;
+                if (payload === "true"){
+                    html += `<img src="${imagePath}" alt="Your Image" style="width: 60%; height: 60%;" />`;
+                }
                 wrapper.innerHTML = html;
             }
         }

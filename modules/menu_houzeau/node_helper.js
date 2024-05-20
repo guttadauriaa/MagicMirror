@@ -15,7 +15,7 @@ module.exports = NodeHelper.create({
                     console.error(`Erreur d'exécution du script Python: ${error}`);
                     return;
                 }
-
+                
                 // renvoie les données du script Python au module menu_houzeau.js
                 this.sendSocketNotification('PYTHON_DATA_MENU_HOUZEAU', stdout);
             });
