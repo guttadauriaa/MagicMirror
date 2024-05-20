@@ -12,7 +12,7 @@ Module.register("menu_houzeau", {
             let wrapper = document.getElementById('menu_houzeau');
             if (wrapper) {
                 console.log("notification de menu_houzeau", payload);
-                data = payload.prase();
+                data = JSON.prase(payload);
                 let html = "";
                 
                 const imagePath = "./modules/menu_houzeau/menu.png";
