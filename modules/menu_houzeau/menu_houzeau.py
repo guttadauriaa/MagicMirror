@@ -20,7 +20,7 @@ today = date.today()
 #jourToday = today.day
 #moisToday = today.month
 jourToday =15
-moisToday = 5
+moisToday = 4
 #print(jourPre, moisPre, jourToday, moisToday)
 if (jourPre+2 < jourToday and moisPre == moisToday) or moisPre < moisToday:
     #charger un nouveau menu
@@ -95,5 +95,5 @@ if (jourPre+2 < jourToday and moisPre == moisToday) or moisPre < moisToday:
             f.write(f"{jourfinsemaine}\n{moisMenu}")
 else:
     print("true")
-       
+
     
