@@ -36,6 +36,9 @@ module.exports = NodeHelper.create({
                 if(stdout.includes("c'était ma tante")){
                     stdout = "C'était la maison de ma tante";
                 }
+                if(stdout.includes("qui est-le plus beau")){
+                    stdout = "M. Benjelloun";
+                }
                 this.sendSocketNotification('DISPLAY_TEXT', stdout);
                 if (stdout.includes("éteindre")) {
                     exec("sudo shutdown -h now", (error, stdout, stderr) => {
