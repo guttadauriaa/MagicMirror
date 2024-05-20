@@ -93,5 +93,7 @@ if (jourPre+2 < jourToday and moisPre == moisToday) or moisPre < moisToday:
         print("true")
         with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt", "w") as f:
             f.write(f"{jourfinsemaine}\n{moisMenu}")
-    
+else:
+    print("true")
+       
     
