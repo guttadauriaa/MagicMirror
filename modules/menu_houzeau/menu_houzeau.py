@@ -17,8 +17,10 @@ with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt","r") as f:
     moisPre = int(f.readline())
 
 today = date.today()
-jourToday = today.day
-moisToday = today.month
+#jourToday = today.day
+#moisToday = today.month
+jourToday =15
+moisToday = 5
 #print(jourPre, moisPre, jourToday, moisToday)
 if (jourPre+2 < jourToday and moisPre == moisToday) or moisPre < moisToday:
     #charger un nouveau menu
