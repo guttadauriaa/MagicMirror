@@ -134,7 +134,7 @@ let config = {
 		{
 			module: "MMM-MotionDetector",
 			position: "top_left", // Optional. This can be any of the regions. Displays debug informations.
-			hiddenOnStartup: true,
+			//hiddenOnStartup: true,
 			config: {
 			  // The config property is optional.
 			  // See 'Configuration options' for more information.
