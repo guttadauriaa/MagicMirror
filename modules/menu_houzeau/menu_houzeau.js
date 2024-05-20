@@ -12,11 +12,12 @@ Module.register("menu_houzeau", {
             let wrapper = document.getElementById('menu_houzeau');
             if (wrapper) {
                 console.log("notification de menu_houzeau", payload);
+                data = payload.prase();
                 let html = "";
                 
                 const imagePath = "./modules/menu_houzeau/menu.png";
                 
-                if (payload === "1"){
+                if (data.val === 1){
                     html = `<img src="${imagePath}" alt="Your Image" style="width: 60%; height: 60%;" />`;
                 }else{
                     html = "Le menu de cette semaine n'est pas encore disponible.";
