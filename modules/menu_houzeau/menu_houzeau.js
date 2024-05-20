@@ -13,11 +13,13 @@ Module.register("menu_houzeau", {
             if (wrapper) {
                 console.log("notification de menu_houzeau");
                 let html = "";
-                html += payload;
+                
                 const imagePath = "./modules/menu_houzeau/menu.png";
                 
                 if (payload === "true"){
                     html = `<img src="${imagePath}" alt="Your Image" style="width: 60%; height: 60%;" />`;
+                }else{
+                    html = payload;
                 }
                 wrapper.innerHTML = html;
             }
