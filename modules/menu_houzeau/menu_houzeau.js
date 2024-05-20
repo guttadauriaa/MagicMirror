@@ -16,10 +16,10 @@ Module.register("menu_houzeau", {
                 
                 const imagePath = "./modules/menu_houzeau/menu.png";
                 
-                if (payload === true){
+                if (payload === "1"){
                     html = `<img src="${imagePath}" alt="Your Image" style="width: 60%; height: 60%;" />`;
                 }else{
-                    html = payload;
+                    html = "Le menu de cette semaine n'est pas encore disponible.";
                 }
                 wrapper.innerHTML = html;
             }
