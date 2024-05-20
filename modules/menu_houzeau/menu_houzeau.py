@@ -75,7 +75,7 @@ if (jourPre+2 < jourToday and moisPre == moisToday) or moisPre < moisToday:
 
     # Convertir le PDF en PNG
     images = convert_from_path(pdf_path)
-
+    os.remove(pdf_path) #supprimer le pdf
     # Enregistrer les images
     images[0].save(f"/home/miroir/MagicMirror/modules/menu_houzeau/menu.png", "PNG")
     #print(json.dumps(f"{last_downloaded_file} a été converti en image avec succès"))
@@ -91,3 +91,5 @@ if (jourPre+2 < jourToday and moisPre == moisToday) or moisPre < moisToday:
         print("true")
         with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt", "w") as f:
             f.write(f"{jourfinsemaine}\n{moisMenu}")
+    
+    
