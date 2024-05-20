@@ -34,7 +34,7 @@ Module.register("MMM-voice_control", {
                 let html = '';
                 html += `<h1>${lines1[0]}</h1><br>`;
                 if (lines1[1]){
-                    html += `<h2>Pour réactiver le contrôle vocal secouez votre main au-dessus de l'heure</h2>`;
+                    html += `<h2>Pour réactiver le contrôle vocal placez votre main au-dessus de l'heure</h2>`;
                 
                     html += `<div style="column-count: 2; column-gap: 20px;">`;
 
@@ -66,7 +66,7 @@ Module.register("MMM-voice_control", {
             }
             
             setTimeout(() => {
-                let html = "<h1>Secouez votre main au-dessus de l'heure pour activer le contrôle vocal</h1>";
+                let html = "<h1>Placez votre main au-dessus de l'heure pour activer le contrôle vocal</h1>";
                 wrapper.innerHTML = html;
                 this.running = false;
             }, x);
@@ -304,7 +304,7 @@ Module.register("MMM-voice_control", {
     getDom: function() {
         let wrapper = document.createElement("div");
         wrapper.id = "MMM-voice_control";
-        let html = "<h1>Secouez votre main au-dessus de l'heure pour activer le contrôle vocal</h1>";
+        let html = "<h1>Placez votre main au-dessus de l'heure pour activer le contrôle vocal</h1>";
         wrapper.innerHTML = html;
         return wrapper;
     }

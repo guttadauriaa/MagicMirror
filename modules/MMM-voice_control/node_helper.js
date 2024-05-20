@@ -30,8 +30,12 @@ module.exports = NodeHelper.create({
                     return;
                 }
                 
+                
                 console.log("[voice_control] La sortie est :", stdout);
-            
+                
+                if(stdout.includes("c'était ma tante")){
+                    stdout = "C'était la maison de ma tante";
+                }
                 this.sendSocketNotification('DISPLAY_TEXT', stdout);
                 if (stdout.includes("éteindre")) {
                     exec("sudo shutdown -h now", (error, stdout, stderr) => {
@@ -41,6 +45,7 @@ module.exports = NodeHelper.create({
                         }
                     });
                 }
+                
                 
             });
         }
