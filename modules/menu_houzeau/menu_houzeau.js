@@ -11,7 +11,7 @@ Module.register("menu_houzeau", {
             console.log("notification de menu_houzeau python");
             let wrapper = document.getElementById('menu_houzeau');
             if (wrapper) {
-                console.log("notification de menu_houzeau");
+                console.log("notification de menu_houzeau", payload);
                 let html = "";
                 
                 const imagePath = "./modules/menu_houzeau/menu.png";
