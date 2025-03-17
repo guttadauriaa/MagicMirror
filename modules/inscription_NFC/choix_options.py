@@ -11,6 +11,14 @@ import time
 import json
 import sys
 
+# L'année est requise pour l'url d'hyperplanning
+# Année - 1 si nous sommes en septembre ou plus tard
+from datetime import date
+today = date.today()
+year = today.year
+if today.month < 9:
+    year = year - 1
+
 if len(sys.argv) > 1:
     cours_id = sys.argv[1]
     #print(f"ID du cours : {cours_id}")
@@ -37,13 +45,13 @@ service = Service(executable_path = "/usr/lib/firefox/geckodriver")
 
 driver = webdriver.Firefox(service=service, options=firefox_options)
 
-driver.get("https://hplanning2023.umons.ac.be/invite")
+driver.get(f"https://hplanning{year}.umons.ac.be/invite")
 
 #pour selectionner les bonnes options: 
 #on parcours les cours et puis les options
 
 #pour pouvoir choisir le cours/option voulu => on attend jusqu'à ce que la page soit chargée et on sélectionne
-edit_button = WebDriverWait(driver, 5).until(
+edit_button = WebDriverWait(driver, 8).until(
     EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[{1}].bouton_Edit"))
 )
 edit_button.click()

@@ -11,6 +11,14 @@ import time
 import json
 import sys
 
+# L'année est requise pour l'url d'hyperplanning
+# Année - 1 si nous sommes en septembre ou plus tard
+from datetime import date
+today = date.today()
+year = today.year
+if today.month < 9:
+    year = year - 1
+
 #pour exetuter le code à distance
 from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 800))
@@ -28,7 +36,7 @@ service = Service(executable_path = "/usr/lib/firefox/geckodriver")
 driver = webdriver.Firefox(service=service, options=firefox_options)
 
 
-driver.get("https://hplanning2023.umons.ac.be/invite")
+driver.get(f"https://hplanning{year}.umons.ac.be/invite")
 
 #on crée un tableau qui va stocker toutes les formations
 formation = []
