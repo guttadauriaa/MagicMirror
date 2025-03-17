@@ -46,15 +46,33 @@ module.exports = NodeHelper.create({
         }
 
         // notification pour lancer le script Python planning.py et récupérer le planning de l'étudiant
+        // if (notification === 'START_PLANNING') {
+        //     exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/hyperplanning.py ${payload.NFCid}`, (error, stdout, stderr) => {
+        //         if (error) {
+        //             console.error(`Erreur d'exécution du script Python planning: ${error}`);
+        //             return;
+        //         }
+        //         console.log(stdout);
+        //         // on envoie le planning au module MMM-planning
+        //         this.sendSocketNotification('Planning', stdout);
+        //     });
+        // }
         if (notification === 'START_PLANNING') {
             exec(`/home/miroir/MirrorPyEnv/bin/python3 ./modules/MMM-planning/hyperplanning.py ${payload.NFCid}`, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur d'exécution du script Python planning: ${error}`);
                     return;
                 }
-                console.log(stdout);
-                // on envoie le planning au module MMM-planning
-                this.sendSocketNotification('Planning', stdout);
+                console.log("Planning reçu:", stdout);
+                try {
+                    // Vérifier que la sortie est bien au format JSON
+                    const planningData = JSON.parse(stdout);
+                    // on envoie le planning au module MMM-planning
+                    this.sendSocketNotification('Planning', planningData);
+                } catch (e) {
+                    console.error("Erreur de parsing JSON:", e);
+                    this.sendSocketNotification('PLANNING_ERROR', "Format de données invalide");
+                }
             });
         }
 
