@@ -11,6 +11,13 @@ import json
 from selenium.webdriver.firefox.options import Options
 import sys
 
+# L'année est requise pour l'url d'Hyperplanning
+# Année - 1 si nous sommes en septembre ou plus tard
+from datetime import date
+today = date.today()
+year = today.year
+if today.month < 9:
+    year = year - 1
 
 NFCid= sys.argv[1]
 horaire = [52, 5] #formation, option par defaut
@@ -48,14 +55,14 @@ service = Service(executable_path = "/usr/lib/firefox/geckodriver")
 
 driver = webdriver.Firefox(service=service, options=firefox_options)
 
-driver.get("https://hplanning2023.umons.ac.be/invite")
+driver.get(f"https://hplanning{year}.umons.ac.be/invite")
 
 #pour selectionner les bonnes options: 
 #on parcours les cours et puis les options
 for i, j in enumerate (horaire):
 
     #pour pouvoir choisir le cours/option voulu => on attend jusqu'à ce que la page soit chargée et on sélectionne
-    edit_button = WebDriverWait(driver, 5).until(
+    edit_button = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[{i+1}].bouton_Edit"))
     )
     edit_button.click()
@@ -64,7 +71,7 @@ for i, j in enumerate (horaire):
     while True:
         try:
             # Attendre que l'élément du cours soit présent sur la page
-            course_element = WebDriverWait(driver, 1).until(
+            course_element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.ID, f"GInterface.Instances[1].Instances[{i+1}]_{j}"))
             )
             time.sleep(0.05)
@@ -84,8 +91,8 @@ for i, j in enumerate (horaire):
 # button_semaine.click()
 
 # on active l'option pour voir l'horaire complet
-button_fullhoraire = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.XPATH, "//*[@id=\"id_262\"]/div/div/i[5]"))
+button_fullhoraire = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//*[@id=\"id_282\"]/div/div/i[5]"))
     )
 button_fullhoraire.click()
 
@@ -130,7 +137,9 @@ while True:
         #cours = WebDriverWait(driver, 5).until(
         #    EC.presence_of_element_located((By.ID, f"id_42_cours_{numero}"))
         #)
-        cours = driver.find_element(By.ID, f"id_42_cours_{numero}")
+        #print("numero", numero)
+        cours = driver.find_element(By.ID, f"id_44_cours_{numero}")
+        #print(cours.text)
 
         numero += 1
 
@@ -139,18 +148,29 @@ while True:
 
         #on utilise une expression régulière pour rechercher la valeur de l'attribut left
         match = re.search(r'left:\s*(-?\d+)px;', style_value)
+        #print("match", match)
 
         #pour cree le tableau de correspondance des jours
         if not lecture:
             match2 = re.search(r'width:\s*(-?\d+)px;', style_value)
-            
+            #print("width", match2)
+            #print("match2.group(1)", match2.group(1))
+
+            positions = [-1, 173, 345, 515, 683, 849, 1013]
             for i in range (7):
-                correspondance_jour[(-1+(i*(1+int(match2.group(1)))))] = driver.find_element(By.ID, f"id_39_titreTranche{i}").text
-            lecture = True
-        #print(correspondance_jour)
-        left_value = int(match.group(1))  #Récupérer la valeur de l'attribut left
-        jour = correspondance_jour[left_value]
-        #print(jour)
+                jour = driver.find_element(By.ID, f"id_41_titreTranche{i}").text
+                #print("jour", jour)
+                correspondance_jour[positions[i]] = jour
+
+            # Fonction pour trouver la position la plus proche
+            def trouve_position_proche(left_value, positions):
+                return min(positions, key=lambda x: abs(x - left_value))
+
+            lecture = True  # Pour éviter de recréer le dictionnaire à chaque itération
+
+        left_value = int(match.group(1))
+        position_proche = trouve_position_proche(left_value, positions)
+        jour = correspondance_jour[position_proche]
 
         #on extrait les infos interressantes liées au cours sauf si le cours a été annulé
 
@@ -169,6 +189,7 @@ while True:
             #nom du cours, local, date, heure début, heure fin, type de cours
             info = [title, local, jour, heure_debut, heure_fin]
             infoObj = Cours(title, local, jour, heure_debut, heure_fin)
+
             if infoObj.titre != "1":
                 liste_cours.append(infoObj)
 
@@ -194,3 +215,4 @@ print(json.dumps(data))
 driver.quit()
 
 # display.stop()
+
