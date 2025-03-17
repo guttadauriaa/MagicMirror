@@ -15,14 +15,17 @@ from datetime import date
 with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt","r") as f:
     jourPre = int(f.readline())
     moisPre = int(f.readline())
+    anneePre = int(f.readline())
 
 today = date.today()
 jourToday = today.day
 moisToday = today.month
+anneeToday= today.year
+
 # jourToday =15
 # moisToday = 4
 #print(jourPre, moisPre, jourToday, moisToday)
-if (jourPre+2 < jourToday and moisPre == moisToday) or moisPre < moisToday:
+if (jourPre+2 < jourToday and moisPre == moisToday) or moisPre < moisToday or anneePre < anneeToday:
     #charger un nouveau menu
 
     #pour ne pas afficher la fenêtre du navigateur
@@ -92,11 +95,10 @@ if (jourPre+2 < jourToday and moisPre == moisToday) or moisPre < moisToday:
     else:
         val = 1
         with open("/home/miroir/MagicMirror/modules/menu_houzeau/menu.txt", "w") as f:
-            f.write(f"{jourfinsemaine}\n{moisMenu}")
+            f.write(f"{jourfinsemaine}\n{moisMenu}\n{anneeToday}")
 else:
     val = 1
 
 
 print(json.dumps({"val":val}))
 
-    
